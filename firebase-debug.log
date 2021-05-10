@@ -1,0 +1,153 @@
+[debug] [2021-05-10T02:40:36.865Z] ----------------------------------------------------------------------
+[debug] [2021-05-10T02:40:36.867Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init
+[debug] [2021-05-10T02:40:36.868Z] CLI Version:   9.10.2
+[debug] [2021-05-10T02:40:36.868Z] Platform:      darwin
+[debug] [2021-05-10T02:40:36.868Z] Node Version:  v14.15.4
+[debug] [2021-05-10T02:40:36.869Z] Time:          Mon May 10 2021 08:10:36 GMT+0530 (India Standard Time)
+[debug] [2021-05-10T02:40:36.869Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-05-10T02:40:36.875Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-05-10T02:40:36.875Z] > authorizing via signed-in user (inmailtarun@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/Tarun/gofresher
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2021-05-10T02:40:46.219Z] > refreshing access token with scopes: []
+[debug] [2021-05-10T02:40:46.220Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-10T02:40:46.477Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Mon, 10 May 2021 02:40:50 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-10T02:40:46.512Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2021-05-10T02:40:47.114Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2021-05-10T02:40:47.114Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project gofresher-e433c (Gofresher) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2021-05-10T02:42:19.287Z] TypeError: Cannot read property 'setRawMode' of null
+    at ReadStream.setRawMode (tty.js:75:28)
+    at Interface._setRawMode (readline.js:298:16)
+    at Interface.close (readline.js:421:10)
+    at ReadStream.ontermend (readline.js:209:10)
+    at ReadStream.emit (events.js:327:22)
+    at ReadStream.EventEmitter.emit (domain.js:467:12)
+    at endReadableNT (internal/streams/readable.js:1327:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2021-05-10T02:42:19.291Z] Error: write EIO
+    at afterWriteDispatched (internal/stream_base_commons.js:156:25)
+    at writeGeneric (internal/stream_base_commons.js:147:3)
+    at WriteStream.Socket._writeGeneric (net.js:785:11)
+    at WriteStream.Socket._write (net.js:797:8)
+    at writeOrBuffer (internal/streams/writable.js:358:12)
+    at WriteStream.Writable.write (internal/streams/writable.js:303:10)
+    at Console.log (/usr/local/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/usr/local/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/usr/local/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/usr/local/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/usr/local/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/usr/local/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (events.js:327:22)
+    at DerivedLogger.EventEmitter.emit (domain.js:467:12)
+    at addChunk (/usr/local/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+    at readableAddChunk (/usr/local/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:280:11)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2021-05-10T02:45:24.670Z] ----------------------------------------------------------------------
+[debug] [2021-05-10T02:45:24.672Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2021-05-10T02:45:24.673Z] CLI Version:   9.10.2
+[debug] [2021-05-10T02:45:24.673Z] Platform:      darwin
+[debug] [2021-05-10T02:45:24.673Z] Node Version:  v14.15.4
+[debug] [2021-05-10T02:45:24.674Z] Time:          Mon May 10 2021 08:15:24 GMT+0530 (India Standard Time)
+[debug] [2021-05-10T02:45:24.674Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-05-10T02:45:24.681Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-05-10T02:45:24.682Z] > authorizing via signed-in user (inmailtarun@gmail.com)
+[debug] [2021-05-10T02:45:24.682Z] [iam] checking project gofresher-e433c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-05-10T02:45:24.684Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/gofresher-e433c:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-05-10T02:45:26.244Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 10 May 2021 02:45:30 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1352","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-10T02:45:26.247Z] > refreshing access token with scopes: []
+[debug] [2021-05-10T02:45:26.247Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-10T02:45:26.453Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Mon, 10 May 2021 02:45:30 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-10T02:45:26.490Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gofresher-e433c [none]
+[debug] [2021-05-10T02:45:27.068Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gofresher-e433c 200
+[debug] [2021-05-10T02:45:27.068Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gofresher-e433c {"projectId":"gofresher-e433c","projectNumber":"101545999274","displayName":"Gofresher","name":"projects/gofresher-e433c","resources":{"hostingSite":"gofresher-e433c"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'gofresher-e433c'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2021-05-10T02:45:27.072Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-05-10T02:45:27.072Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-10T02:45:27.269Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Mon, 10 May 2021 02:45:31 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-10T02:45:27.301Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/gofresher-e433c/versions  
+ {"config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2021-05-10T02:45:29.146Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 10 May 2021 02:45:33 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[gofresher-e433c]: beginning deploy... 
+[info] i  hosting[gofresher-e433c]: found 6 files in public 
+[debug] [2021-05-10T02:45:29.154Z] [hosting] hash cache [cHVibGlj] not populated
+[debug] [2021-05-10T02:45:29.161Z] > refreshing access token with scopes: []
+[debug] [2021-05-10T02:45:29.161Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-10T02:45:29.163Z] [hosting] hash cache [cHVibGlj] stored for 6 files
+[debug] [2021-05-10T02:45:29.163Z] [hosting][hash queue][FINAL] {"max":5,"min":4,"avg":4.333333333333333,"active":0,"complete":6,"success":6,"errored":0,"retried":0,"total":6,"elapsed":9}
+[debug] [2021-05-10T02:45:29.351Z] <<< HTTP RESPONSE 200 {"date":"Mon, 10 May 2021 02:45:33 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-10T02:45:29.383Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/sites/gofresher-e433c/versions/b20af632b913e202:populateFiles [none]
+[debug] [2021-05-10T02:45:29.383Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/gofresher-e433c/versions/b20af632b913e202:populateFiles {"files":{"/favicon.ico":"b72f7455f00e4e58792d2bca892abb068e2213838c0316d6b7a0d6d16acd1955","/index.html":"abb5524b04fc5bb93ff087cd3ab7fdcbd7bd621a5226ce5b14226aa3a401d15e","/manifest.json":"341d52628782f8ac9290bbfc43298afccb47b7cbfcee146ae30cf0f46bc30900","/robots.txt":"391d14b3c2f8c9143a27a28c7399585142228d4d1bdbe2c87ac946de411fa9a2","/logo512.png":"191fc21360b4ccfb1cda11a1efb97f489ed22672ca83f4064316802bbfdd750e","/logo192.png":"caff018b7f1e8fd481eb1c50d75b0ef236bcd5078b1d15c8bb348453fee30293"}}
+[debug] [2021-05-10T02:45:31.159Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/sites/gofresher-e433c/versions/b20af632b913e202:populateFiles 200
+[debug] [2021-05-10T02:45:31.159Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/gofresher-e433c/versions/b20af632b913e202:populateFiles {"uploadRequiredHashes":["abb5524b04fc5bb93ff087cd3ab7fdcbd7bd621a5226ce5b14226aa3a401d15e"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/gofresher-e433c/versions/b20af632b913e202/files"}
+[debug] [2021-05-10T02:45:31.159Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/gofresher-e433c/versions/b20af632b913e202/files/abb5524b04fc5bb93ff087cd3ab7fdcbd7bd621a5226ce5b14226aa3a401d15e [none]
+[debug] [2021-05-10T02:45:31.160Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/gofresher-e433c/versions/b20af632b913e202/files/abb5524b04fc5bb93ff087cd3ab7fdcbd7bd621a5226ce5b14226aa3a401d15e [stream]
+[debug] [2021-05-10T02:45:31.161Z] [hosting][populate queue][FINAL] {"max":1998,"min":1998,"avg":1998,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":2000}
+[debug] [2021-05-10T02:45:31.161Z] [hosting] uploads queued: 1
+[debug] [2021-05-10T02:45:33.634Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/gofresher-e433c/versions/b20af632b913e202/files/abb5524b04fc5bb93ff087cd3ab7fdcbd7bd621a5226ce5b14226aa3a401d15e 200
+[debug] [2021-05-10T02:45:33.635Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/gofresher-e433c/versions/b20af632b913e202/files/abb5524b04fc5bb93ff087cd3ab7fdcbd7bd621a5226ce5b14226aa3a401d15e [stream]
+[debug] [2021-05-10T02:45:33.635Z] [hosting][upload queue][FINAL] {"max":2476,"min":2476,"avg":2476,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":2476}
+[info] ✔  hosting[gofresher-e433c]: file upload complete 
+[debug] [2021-05-10T02:45:33.636Z] [hosting] deploy completed after 4489ms
+[debug] [2021-05-10T02:45:33.802Z] [
+  {
+    "config": {
+      "public": "public",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "site": "gofresher-e433c"
+    },
+    "site": "gofresher-e433c",
+    "version": "sites/gofresher-e433c/versions/b20af632b913e202"
+  }
+]
+[info] i  hosting[gofresher-e433c]: finalizing version... 
+[debug] [2021-05-10T02:45:33.803Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-05-10T02:45:33.803Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-10T02:45:33.990Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Mon, 10 May 2021 02:45:38 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-10T02:45:34.025Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/gofresher-e433c/versions/b20af632b913e202?updateMask=status  
+ {"status":"FINALIZED"}
