@@ -27,7 +27,7 @@ const myfirstelement = (
   
   <div className="two col-sm-12">
     <div className="logo col-sm-4">
-      <div className="logo-img"><img src='gofresher-logo.svg' alt='Gofresher Company Logo'/></div>
+      <div className="logo-img"><img src='gofresher-logo.svg' width="250" height="102" alt='Gofresher Company Logo'/></div>
     </div>
     <div className="menu col-sm-8">
       <ul>
@@ -59,7 +59,7 @@ const myfirstelement = (
     <div className="companyImage col-sm-6">
       <div className="imageHolder">
         <div className="imageBorder">
-          <div className="mainImage"><img src="company-building.svg" alt="Company Interior"/></div>
+          <div className="mainImage"><img src="company-building.svg" width="320" height="350" alt="Company Interior"/></div>
         </div>
       </div>
     </div>
