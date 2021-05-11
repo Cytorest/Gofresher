@@ -9,7 +9,7 @@ const myfirstelement = (
   <div>
   <div className="one col-sm-12">
       <div className="contact col-sm-10">
-        <div className="phone-container"><i className="fas fa-phone"></i> <span className="number">+91-9667606944</span></div>
+        <div className="phone-container"><i className="fas fa-phone"></i> <span className="number">+91-9870967898</span></div>
         <div className="email-container"><i className="fas fa-envelope"></i> <span className="email">support@gofresher.org</span></div>
       </div>
       
@@ -32,7 +32,7 @@ const myfirstelement = (
     <div className="menu col-sm-8">
       <ul>
         <li>Home</li>
-        <li>About</li>
+        <li>About Us</li>
         <li>Services</li>
         <li>Feedback</li>
         <li>Contact</li>
@@ -107,7 +107,7 @@ const myfirstelement = (
     <div className="dot-and-bar"><span className="circle"></span><span className="line"></span></div>
     <div className="address-details">
       <div className="name-div"><i className="fas fa-tag"></i><div className="company-name">Gofresher</div></div>
-      <div className="phone-div"><i className="fas fa-phone"></i><div className="number"> +91-9667606944</div></div>
+      <div className="phone-div"><i className="fas fa-phone"></i><div className="number"> +91-9870967898</div></div>
       <div className="email-div"><i className="fas fa-envelope"></i><div className="email"> support@gofresher.org</div></div>
       <div className="location-div"><i className="fas fa-map-marked-alt"></i><div className="location-text"> Lucknow</div></div>
       <div className="social">
