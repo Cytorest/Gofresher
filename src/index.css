@@ -109,6 +109,40 @@ h3{
   padding-top: 45px;
   padding-bottom:45px;
 }
+.smallBox{
+  width: 95%;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.seven.col-sm-12, .eight.col-sm-12{
+margin:0;
+padding:0;
+}
+.eight.col-sm-12{
+margin-top:4%;
+}
+.nine.col-sm-12{
+text-align:center;
+}
+.review-button{
+  margin-top:45px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #000;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.avt.col-sm-4{
+text-align:center;
+}
+.seven.col-sm-12 img, .eight.col-sm-12 img{
+  width:95%;
+}
 .address-font{
   font-family: 'Nunito', sans-serif;
   margin-left: 45px;
@@ -533,5 +567,23 @@ margin-left:16px;
 .fix{
   position: relative;
   top: -22px;
+}
+.smallBox{
+  width:100%;
+}
+.avt.col-sm-4{
+  margin-bottom: 40px;
+}
+.avt.col-sm-4 img{
+  width:99%;
+}
+.eight{
+  display:none;
+}
+.smallBox > .avt.col-sm-4:nth-child(3) {
+  display:none;
+}
+.review-button{
+  margin-top:0;
 }
 }

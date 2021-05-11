@@ -44,7 +44,7 @@ const myfirstelement = (
   <div className="about-head col-sm-12">About Us</div>
     <div className="dot-and-bar"><span className="line"></span><span className="circle"></span><span className="line"></span></div>
     <div className="companyDetails col-sm-6">
-      <div className="companyText"><h1>Gofresher</h1> is one of the Indian leaders in helping jobseekers get their dream job. We specialize in resume development services and placement assistance services that aims at guiding job seekers on how to land a job and search for jobs in the right manner.</div>
+      <div className="companyText"><h1>Gofresher</h1> is a group of working professionals who help jobseekers get their dream job. We provide resume development services and placement assistance services with an aim of guiding job seekers on how scoring a job and searching for a job in the right way.</div>
   
   <div className="focus-detail col-sm-12">
         <div className="left-detail col-sm-6">
@@ -80,6 +80,25 @@ const myfirstelement = (
     <div className="automation col-sm-12">Feedback</div>
     <div className="dot-and-bar"><span className="line"></span><span className="circle"></span><span className="line"></span></div>
     <div className="automation-text">We are overwhelmed by the kind of response received from<h3> all our placed jobseekers through guidance from professionals on our site and through groups like Facebook & Twitter</h3> who have written to us with such delightful reviews. People have been placed in companies like <h3>TCS, Cognizant, Wipro, Larsen & Toubro, Ernst & Young</h3> and many more. Through your hard work and dedication and a little help from us, <h3>you can also get placed.</h3> Connect with us and achieve your dream job. <h3>We are always here for your help.</h3></div>
+    <div className="seven col-sm-12">
+      <div className="smallBox">
+        <div className="avt col-sm-4"><img src='feedback-placeholder.svg' alt='Feedback Placeholder 1 Gofresher'/></div>
+        <div className="avt col-sm-4"><img src='feedback-placeholder.svg' alt='Feedback Placeholder 2 Gofresher'/></div>
+        <div className="avt col-sm-4"><img src='feedback-placeholder.svg' alt='Feedback Placeholder 3 Gofresher'/></div>
+      </div>
+    </div>
+    <div className="eight col-sm-12">
+      <div className="smallBox">
+        <div className="avt col-sm-4"><img src='feedback-placeholder.svg' alt='Feedback Placeholder 1 Gofresher'/></div>
+        <div className="avt col-sm-4"><img src='feedback-placeholder.svg' alt='Feedback Placeholder 2 Gofresher'/></div>
+        <div className="avt col-sm-4"><img src='feedback-placeholder.svg' alt='Feedback Placeholder 3 Gofresher'/></div>
+      </div>
+    </div>
+    <div className="nine col-sm-12">
+      <a href="https://www.facebook.com/groups/1570589976551608" target="_blank"><div className="review-button">
+      See All Reviews >>
+      </div></a>
+    </div>
   </div>
   
   <div className="six col-sm-12">
@@ -181,4 +200,15 @@ window.addEventListener("load", () => {
       $(this).attr("src", "more.svg");
     });
   },5000);
+});
+
+window.addEventListener("load", () => {
+  window.setTimeout(function () {
+  document.getElementsByClassName("avt")[0].innerHTML = "<img src='review-1.svg' alt='Review 1 Gofresher'/>";
+  document.getElementsByClassName("avt")[1].innerHTML = "<img src='review-2.svg' alt='Review 2 Gofresher'/>";
+  document.getElementsByClassName("avt")[2].innerHTML = "<img src='review-3.svg' alt='Review 3 Gofresher'/>";
+  document.getElementsByClassName("avt")[3].innerHTML = "<img src='review-4.svg' alt='Review 4 Gofresher'/>";
+  document.getElementsByClassName("avt")[4].innerHTML = "<img src='review-5.svg' alt='Review 5 Gofresher'/>";
+  document.getElementsByClassName("avt")[5].innerHTML = "<img src='review-6.svg' alt='Review 6 Gofresher'/>";
+  },3000);
 });
