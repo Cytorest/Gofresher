@@ -96,7 +96,7 @@ const myfirstelement = (
     </div>
     <div className="nine col-sm-12">
       <a href="https://www.facebook.com/groups/1570589976551608" target="_blank"><div className="review-button">
-      See All Reviews >>
+      See All Reviews &gt;&gt;
       </div></a>
     </div>
   </div>
