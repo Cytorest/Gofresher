@@ -32,7 +32,7 @@ const myfirstelement = (
     <div className="menu col-sm-8">
       <ul>
         <li>Home</li>
-        <li>About Us</li>
+        <li>About</li>
         <li>Services</li>
         <li>Feedback</li>
         <li>Contact</li>
