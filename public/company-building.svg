@@ -1,18 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="320" height="350" viewBox="0 0 320 350">
-  <g id="Group_8" data-name="Group 8" transform="translate(-42 -375)">
-    <rect id="Rectangle_1" data-name="Rectangle 1" width="320" height="350" transform="translate(42 375)" fill="#fff"/>
-    <text id="Gofresher" transform="translate(114 445.635)" fill="#3974c4" font-size="42" font-family="DINAlternate-Bold, DIN Alternate" font-weight="700"><tspan x="0" y="0">Gofresher</tspan></text>
-    <g id="Group" transform="translate(27.642 23.635)">
-      <text id="is_committed_to_helping_jobseekers_" data-name="is committed to helping jobseekers " transform="translate(56.97 468)" fill="#4b71a5" font-size="16" font-family="DINAlternate-Bold, DIN Alternate" font-weight="700"><tspan x="0" y="0">is committed to helping jobseekers </tspan></text>
-      <text id="through_the_help_of_dedicated_" data-name="through the help of dedicated " transform="translate(78.299 487.773)" fill="#4b71a5" font-size="16" font-family="DINAlternate-Bold, DIN Alternate" font-weight="700"><tspan x="0" y="0">through the help of dedicated </tspan></text>
-      <text id="professionals_who_aim_to_bring_" data-name="professionals who aim to bring " transform="translate(71.716 507.546)" fill="#4b71a5" font-size="16" font-family="DINAlternate-Bold, DIN Alternate" font-weight="700"><tspan x="0" y="0">professionals who aim to bring </tspan></text>
-      <text id="about_a_positive_change_to_the_life_of_" data-name="about a positive change to the life of " transform="translate(55.023 527.319)" fill="#4b71a5" font-size="16" font-family="DINAlternate-Bold, DIN Alternate" font-weight="700"><tspan x="0" y="0">about a positive change to the life of </tspan></text>
-      <text id="others._" data-name="others. " transform="translate(157.191 547.092)" fill="#4b71a5" font-size="16" font-family="DINAlternate-Bold, DIN Alternate" font-weight="700"><tspan x="0" y="0">others. </tspan></text>
-      <text id="We_would_like_to_thank_these_people_" data-name="We would like to thank these people " transform="translate(53.86 586.638)" fill="#4b71a5" font-size="16" font-family="DINAlternate-Bold, DIN Alternate" font-weight="700"><tspan x="0" y="0">We would like to thank these people </tspan></text>
-      <text id="from_the_bottom_of_our_heart_for_" data-name="from the bottom of our heart for " transform="translate(68.969 606.411)" fill="#4b71a5" font-size="16" font-family="DINAlternate-Bold, DIN Alternate" font-weight="700"><tspan x="0" y="0">from the bottom of our heart for </tspan></text>
-      <text id="taking_out_the_time_from_their_busy_" data-name="taking out the time from their busy " transform="translate(58.729 626.184)" fill="#4b71a5" font-size="16" font-family="DINAlternate-Bold, DIN Alternate" font-weight="700"><tspan x="0" y="0">taking out the time from their busy </tspan></text>
-      <text id="schedule_to_help_us_move_towards_" data-name="schedule to help us move towards " transform="translate(60.547 645.957)" fill="#4b71a5" font-size="16" font-family="DINAlternate-Bold, DIN Alternate" font-weight="700"><tspan x="0" y="0">schedule to help us move towards </tspan></text>
-      <text id="our_goal_of_unemployment_free_India." data-name="our goal of unemployment free India." transform="translate(50.358 665.73)" fill="#4b71a5" font-size="16" font-family="DINAlternate-Bold, DIN Alternate" font-weight="700"><tspan x="0" y="0">our goal of unemployment free India.</tspan></text>
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="358" viewBox="0 0 320 358">
+  <g id="Group_2" data-name="Group 2" transform="translate(-62 -410)">
+    <g id="Group_1" data-name="Group 1">
+      <rect id="Rectangle_1" data-name="Rectangle 1" width="320" height="358" transform="translate(62 410)" fill="#fff"/>
+      <text id="Gofresher" transform="translate(130 443)" fill="#4b5eaf" font-size="40" font-family="OctoberTL-Regular, October Tamil"><tspan x="0" y="30">Gofresher</tspan></text>
     </g>
+    <text id="is_committed_to_helping_jobseekers_through_the_help_of_dedicated_professionals_who_aim_to_bring_about_a_positive_change_to_the_life_of_others._We_would_like_to_thank_these_people_from_the_bottom_of_our_heart_for_taking_out_the_time_from_their_busy_schedul" data-name="is committed to helping jobseekers through the help of dedicated professionals who aim to bring about a positive change to the life of others.
+
+We would like to thank these people from the bottom of our heart for taking out the time from their busy schedul" transform="translate(83 509)" fill="#5969af" font-size="16" font-family="OctoberTL-Regular, October Tamil"><tspan x="8.752" y="12">is committed to helping jobseekers </tspan><tspan x="29.032" y="34">through the help of dedicated </tspan><tspan x="0.864" y="56">professionals who aim to bring about </tspan><tspan x="0.92" y="78">a positive change to the life of others.</tspan><tspan x="139" y="100"></tspan><tspan x="4.696" y="122">We would like to thank these people </tspan><tspan x="20.664" y="144">from the bottom of our heart for </tspan><tspan x="10.008" y="166">taking out the time from their busy </tspan><tspan x="11.904" y="188">schedule to help us move towards </tspan><tspan x="1.992" y="210">our goal of unemployment free India.</tspan></text>
   </g>
 </svg>
