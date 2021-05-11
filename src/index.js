@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 import reportWebVitals from './reportWebVitals';
+import $ from 'jquery';
 
 const myfirstelement = (
   <div>
@@ -78,11 +79,7 @@ const myfirstelement = (
   <div className="five col-sm-12">
     <div className="automation col-sm-12">Feedback</div>
     <div className="dot-and-bar"><span className="line"></span><span className="circle"></span><span className="line"></span></div>
-    <div className="automation-text">We are putting up a <h3>Highly Automated Garments Manufacturing Plant</h3> with complete <h3>Cutting Room Automation</h3> which includes CAD/CAM, Plotter, Automatic Fabric Spreader and Automatic CNC Cutting Machine. We have <h3>IOT</h3> technology installed on each sewing machine to maximise the efficiency. The factory will be managed by an <h3>ERP system.</h3></div>
-    <div className="machines col-sm-12">
-      <div className="left-m col-sm-6"><img src='cnc-machine.svg' alt='CNC Machine'/><div className="machine-name-l">Automatic CNC Cutting Machine</div></div>
-      <div className="right-m col-sm-6"><img src='automatic-fabric-cutter.svg' alt='Automatic Fabric Cutter'/><div className="machine-name-r">Automatic Fabric Spreader</div></div>
-    </div>
+    <div className="automation-text">We are overwhelmed by the kind of response received from<h3> all our placed jobseekers through guidance from professionals on our site and through groups like Facebook & Twitter</h3> who have written to us with such delightful reviews. People have been placed in companies like <h3>TCS, Cognizant, Wipro, Larsen & Toubro, Ernst & Young</h3> and many more. Through your hard work and dedication and a little help from us, <h3>you can also get placed.</h3> Connect with us and achieve your dream job. <h3>We are always here for your help.</h3></div>
   </div>
   
   <div className="six col-sm-12">
@@ -94,29 +91,29 @@ const myfirstelement = (
       <div className="phone-div"><i className="fas fa-phone"></i><div className="number"> +91-9667606944</div></div>
       <div className="email-div"><i className="fas fa-envelope"></i><div className="email"> support@gofresher.org</div></div>
       <div className="location-div"><i className="fas fa-map-marked-alt"></i><div className="location-text"> Lucknow</div></div>
-      {/* <div className="social">
+      <div className="social">
         <div className="fb-circle"><i className="fab fa-facebook-f"></i></div>
         <div className="in-circle"><i className="fab fa-instagram"></i></div>
         <div className="li-circle"><i className="fab fa-linkedin"></i></div>
         <div className="tw-circle"><i className="fab fa-twitter"></i></div>
         <div className="wh-circle"><i className="fab fa-whatsapp"></i></div>
         <div className="te-circle"><i className="fab fa-telegram"></i></div>
-      </div> */}
+      </div>
     </div>
-    <div className="team">
+    {/* <div className="team">
       <div className="col-sm-12">
       <div className="fix col-sm-3"><div className="member-1"><img src='rajiv-goyal.svg' alt='Rajiv Goyal'></img></div><div className="detail-1">Rajiv Goyal, Director</div></div>
       <div className="col-sm-3"><div className="member-2"><img src='vandana-goyal.svg' alt='Vandana Goyal'></img></div><div className="detail-2">Vandana Goyal, Director</div></div>
       <div className="col-sm-3"><div className="member-3"><img src='Ashok-Jain.svg' alt='Ashok Jain'></img></div><div className="detail-3">Ashok Jain, Head, Marketing</div></div>
       <div className="col-sm-3"><div className="member-4"><img src='rajat-goyal.svg' alt='Rajat Goyal'></img></div><div className="detail-4">Rajat Goyal, Head, Merchandizing</div></div>
       </div>
-      </div>
+      </div> */}
     </div>
     <div className="contact col-sm-6">
     <div className="contact-font">Contact</div>
     <div className="dot-and-bar"><span className="circle"></span><span className="line"></span></div>
     <div className="contact-details">
-      <div className="user-message">If you have any questions or just want to get in touch, use the form below. We look forward to hearing from you! You can get in touch with us directly at contact@purpletree.in</div>
+      <div className="user-message">If you have any questions or just want to get in touch, use the form below. We look forward to hearing from you! You can get in touch with us directly at support@gofresher.org</div>
       <div className="successful-message">Your Message Has Been Sent Successfully! We Will get back To You Within 24 - 48 Hours.</div>
       <div className="user-form">
         <form id="contactForm">
@@ -140,11 +137,48 @@ const myfirstelement = (
   </div>
   )
   
-  ReactDOM.render(myfirstelement, document.getElementById('root'));
+ReactDOM.render(myfirstelement, document.getElementById('root'));
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
 serviceWorkerRegistration.register();
+
+window.addEventListener("load", () => {
+  window.setTimeout(function () {
+    $(".client.1 img").hover(function () {
+      $(this).attr("src", "max-replace.svg");
+    }, function () {
+      $(this).attr("src", "max.svg");
+    });
+    $(".client.2 img").hover(function () {
+      $(this).attr("src", "reliance-replace.svg");
+    }, function () {
+      $(this).attr("src", "reliance.svg");
+    });
+    $(".client.3 img").hover(function () {
+      $(this).attr("src", "soch-replace.svg");
+    }, function () {
+      $(this).attr("src", "soch.svg");
+    });
+    $(".client.4 img").hover(function () {
+      $(this).attr("src", "pantaloons-replace.svg");
+    }, function () {
+      $(this).attr("src", "pantaloons.svg");
+    });
+    $(".client.5 img").hover(function () {
+      $(this).attr("src", "vishal-replace.svg");
+    }, function () {
+      $(this).attr("src", "vishal.svg");
+    });
+    $(".client.6 img").hover(function () {
+      $(this).attr("src", "home-shop-18-replace.svg");
+    }, function () {
+      $(this).attr("src", "home-shop-18.svg");
+    });
+    $(".client.7 img").hover(function () {
+      $(this).attr("src", "more-replace.svg");
+    }, function () {
+      $(this).attr("src", "more.svg");
+    });
+  },5000);
+});

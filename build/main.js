@@ -1,12 +1,12 @@
 var firebaseConfig = {
-  apiKey: "AIzaSyBHD-tpwQmuzukK-Iu7r96Vzxp-eEXK1Ss",
-  authDomain: "gofresher-e433c.firebaseapp.com",
-  databaseURL: "https://gofresher-e433c-default-rtdb.firebaseio.com",
-  projectId: "gofresher-e433c",
-  storageBucket: "gofresher-e433c.appspot.com",
-  messagingSenderId: "101545999274",
-  appId: "1:101545999274:web:d7d043a00de94c33f5c9d3",
-  measurementId: "G-5EP5C2QDES"
+    apiKey: "AIzaSyCipbZc8ygyrVuZH3DE5LP-LfIZeXTJCz8",
+    authDomain: "purpletree-59d5e.firebaseapp.com",
+    databaseURL: "https://purpletree-59d5e-default-rtdb.firebaseio.com",
+    projectId: "purpletree-59d5e",
+    storageBucket: "purpletree-59d5e.appspot.com",
+    messagingSenderId: "1089567153704",
+    appId: "1:1089567153704:web:9fca5f3556c6c11c8a5f1d",
+    measurementId: "G-3X64N3ZYZ7"
 };
 
   firebase.initializeApp(firebaseConfig);
