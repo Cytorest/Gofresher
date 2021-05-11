@@ -82,16 +82,16 @@ const myfirstelement = (
     <div className="automation-text">We are overwhelmed by the kind of response received from<h3> all our placed jobseekers through guidance from professionals on our site and through groups like Facebook & Twitter</h3> who have written to us with such delightful reviews. People have been placed in companies like <h3>TCS, Cognizant, Wipro, Larsen & Toubro, Ernst & Young</h3> and many more. Through your hard work and dedication and a little help from us, <h3>you can also get placed.</h3> Connect with us and achieve your dream job. <h3>We are always here for your help.</h3></div>
     <div className="seven col-sm-12">
       <div className="smallBox">
-        <div className="avt col-sm-4"><img src='feedback-placeholder.svg' width='95%' height='auto' alt='Feedback Placeholder 1 Gofresher'/></div>
-        <div className="avt col-sm-4"><img src='feedback-placeholder.svg' width='95%' height='auto' alt='Feedback Placeholder 2 Gofresher'/></div>
-        <div className="avt col-sm-4"><img src='feedback-placeholder.svg' width='95%' height='auto' alt='Feedback Placeholder 3 Gofresher'/></div>
+        <div className="avt col-sm-4"><img src='feedback-placeholder.svg' width='456' height='404' alt='Feedback Placeholder 1 Gofresher'/></div>
+        <div className="avt col-sm-4"><img src='feedback-placeholder.svg' width='456' height='404' alt='Feedback Placeholder 2 Gofresher'/></div>
+        <div className="avt col-sm-4"><img src='feedback-placeholder.svg' width='456' height='404' alt='Feedback Placeholder 3 Gofresher'/></div>
       </div>
     </div>
     <div className="eight col-sm-12">
       <div className="smallBox">
-        <div className="avt col-sm-4"><img src='feedback-placeholder.svg' width='95%' height='auto' alt='Feedback Placeholder 1 Gofresher'/></div>
-        <div className="avt col-sm-4"><img src='feedback-placeholder.svg' width='95%' height='auto' alt='Feedback Placeholder 2 Gofresher'/></div>
-        <div className="avt col-sm-4"><img src='feedback-placeholder.svg' width='95%' height='auto' alt='Feedback Placeholder 3 Gofresher'/></div>
+        <div className="avt col-sm-4"><img src='feedback-placeholder.svg' width='456' height='404' alt='Feedback Placeholder 1 Gofresher'/></div>
+        <div className="avt col-sm-4"><img src='feedback-placeholder.svg' width='456' height='404' alt='Feedback Placeholder 2 Gofresher'/></div>
+        <div className="avt col-sm-4"><img src='feedback-placeholder.svg' width='456' height='404' alt='Feedback Placeholder 3 Gofresher'/></div>
       </div>
     </div>
     <div className="nine col-sm-12">
@@ -204,11 +204,11 @@ window.addEventListener("load", () => {
 
 window.addEventListener("load", () => {
   window.setTimeout(function () {
-  document.getElementsByClassName("avt")[0].innerHTML = "<img src='review-1.svg' width='95%' height='auto' alt='Review 1 Gofresher'/>";
-  document.getElementsByClassName("avt")[1].innerHTML = "<img src='review-2.svg' width='95%' height='auto' alt='Review 2 Gofresher'/>";
-  document.getElementsByClassName("avt")[2].innerHTML = "<img src='review-3.svg' width='95%' height='auto' alt='Review 3 Gofresher'/>";
-  document.getElementsByClassName("avt")[3].innerHTML = "<img src='review-4.svg' width='95%' height='auto' alt='Review 4 Gofresher'/>";
-  document.getElementsByClassName("avt")[4].innerHTML = "<img src='review-5.svg' width='95%' height='auto' alt='Review 5 Gofresher'/>";
-  document.getElementsByClassName("avt")[5].innerHTML = "<img src='review-6.svg' width='95%' height='auto' alt='Review 6 Gofresher'/>";
+  document.getElementsByClassName("avt")[0].innerHTML = "<img src='review-1.svg' width='456' height='404' alt='Review 1 Gofresher'/>";
+  document.getElementsByClassName("avt")[1].innerHTML = "<img src='review-2.svg' width='456' height='404' alt='Review 2 Gofresher'/>";
+  document.getElementsByClassName("avt")[2].innerHTML = "<img src='review-3.svg' width='456' height='404' alt='Review 3 Gofresher'/>";
+  document.getElementsByClassName("avt")[3].innerHTML = "<img src='review-4.svg' width='456' height='404' alt='Review 4 Gofresher'/>";
+  document.getElementsByClassName("avt")[4].innerHTML = "<img src='review-5.svg' width='456' height='404' alt='Review 5 Gofresher'/>";
+  document.getElementsByClassName("avt")[5].innerHTML = "<img src='review-6.svg' width='456' height='404' alt='Review 6 Gofresher'/>";
   },3000);
 });

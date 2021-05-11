@@ -139,6 +139,14 @@ text-align:center;
 }
 .avt.col-sm-4{
 text-align:center;
+width: 1000px;
+height: 1000px;
+max-width: 456px;
+max-height: 404px;
+}
+.seven.col-sm-12 img, .eight.col-sm-12 img{
+  width:95%;
+  height:auto;
 }
 .address-font{
   font-family: 'Nunito', sans-serif;
@@ -570,6 +578,9 @@ margin-left:16px;
 }
 .avt.col-sm-4{
   margin-bottom: 40px;
+  height: auto;
+  max-width: 100%;
+  max-height: none;
 }
 .avt.col-sm-4 img{
   width:99%;
