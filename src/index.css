@@ -580,9 +580,9 @@ margin-left:16px;
 .eight{
   display:none;
 }
-.smallBox > .avt.col-sm-4:nth-child(3) {
+/* .smallBox > .avt.col-sm-4:nth-child(3) {
   display:none;
-}
+} */
 .review-button{
   margin-top:0;
 }
