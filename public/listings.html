@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<head>
+<title>Gofresher - Listings Page</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</noscript>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&display=swap">
+</noscript>
+<style>
+html, body{
+margin:0;
+padding:0;
+}
+.content{
+    height: 450px;
+    min-height:450px;
+    overflow: hidden;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    position: relative;
+    box-shadow: 0 0 6px 0 rgb(121 121 121 / 40%);
+}
+.company_name, .job_published, .job_category, .job_title, .job_id, .job_type, .job_description, .job_link{
+    font-size: 18px;
+    font-family: "Nunito",sans-serif;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+.heads{
+    font-weight:800;
+}
+.data{
+    font-size: 18px;
+    font-family: "Nunito",sans-serif;
+    color:#757575;
+}
+.bottom-gradient{
+    width: 100%;
+    height: 80px;
+    bottom: 0;
+    left: 0;
+    display: block;
+    position: absolute;
+    background-color: rgba(255,255,255,0.95);
+}
+.read-full-article{
+    font-size: 15px;
+    font-family: "Nunito",sans-serif;
+    background-color: #7cc6e2;
+    color: #000;
+    padding: 10px;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 4px;
+    cursor: pointer;
+}
+p{
+margin:0;
+padding:0;
+}
+.two{
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.contact.col-sm-10{
+    width:80%
+}
+.social-connect.col-sm-2{
+    width:20%
+}
+.main-2{
+text-align:center;
+margin-top:20px;
+margin-bottom:20px;
+}
+.load-more{
+    font-size: 15px;
+    font-family: "Nunito",sans-serif;
+    background-color: #3a1f3c;
+    color: #fff;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 4px;
+    cursor: pointer;
+    width:300px
+}
+a .data{
+color:rgb(0, 119, 255);
+}
+@media only screen and (max-width: 600px) {
+.two{
+    margin-bottom: 20px;
+} 
+.social-connect.col-sm-2 {
+    width: 100%;
+}
+.menu li {
+    margin: 2.1px !important;
+}
+}
+</style>
+<link rel="stylesheet" href="/src/index.css">
+<script>
+    window.addEventListener("load", () => {
+      window.setTimeout(function () {
+        t = document.createElement('script');
+        t.type = 'text/javascript';
+        t.src= "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js";
+        document.getElementsByTagName('head')[0].appendChild(t);
+  
+        u = document.createElement('script');
+        u.type = 'text/javascript';
+        u.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+        document.getElementsByTagName('head')[0].appendChild(u);
+  
+        v = document.createElement('script');
+        v.type = 'text/javascript';
+        v.src = 'https://kit.fontawesome.com/f49733d343.js';
+        document.getElementsByTagName('head')[0].appendChild(v);
+      }, 3000);
+    });
+</script>
+</head>
+<body>
+    <div class="one col-sm-12">
+        <div class="contact col-sm-10">
+          <div class="phone-container"><i class="fas fa-phone"></i> <span class="number">+91-9870967898</span></div>
+          <div class="email-container"><i class="fas fa-envelope"></i> <span class="email">support@gofresher.org</span></div>
+        </div>
+
+        <div class="social-connect col-sm-2">
+          <div class="icon-holder">
+           <i class="fab fa-facebook-f"></i>
+           <i class="fab fa-instagram"></i>
+           <i class="fab fa-linkedin"></i>
+           <i class="fab fa-twitter"></i>
+           <i class="fab fa-whatsapp"></i>
+           <i class="fab fa-telegram"></i>
+          </div>
+        </div>
+    </div>
+
+    <div class="two col-sm-12">
+        <div class="logo col-sm-4">
+          <div class="logo-img"><img src='gofresher-logo.svg' width="250" height="102" alt='Gofresher Company Logo'/></div>
+        </div>
+        <div class="menu col-sm-8">
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Feedback</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+      </div>
+
+    <div class="main"></div>
+    <div class="main-2"><div class="load-more">Load More</div></div>
+
+    <script>
+    var previous;
+    var index;
+
+    var stories_api = "https://remotive.io/api/remote-jobs?category=software-dev&limit=5";
+        fetch(stories_api).then(function (response) {
+            if (response.status !== 200) {
+                console.log('Looks like there was a problem. Status Code: ' + response.status);
+                return;
+            }
+            response.json().then(function(data) {
+                console.log(data);
+                console.log(data.jobs[0].category);
+                for (var i=0;i<data.jobs.length;i++)
+                {
+                    var container = document.createElement("div");
+                    document.body.appendChild(container);
+                    container.className = "content";
+                    container.id = "content_id";
+                    document.getElementsByClassName('main')[0].appendChild(container);
+                    document.getElementsByClassName("content")[i].innerHTML = "<div class='company_name'><span class='heads'>Company Name:</span> <span class='data'>" + data.jobs[i].company_name + "</span></div><div class='job_published'><span class='heads'>Job Published:</span> <span class='data'>" + new Date(data.jobs[i].publication_date).toString() + "</span></div><div class='job_category'><span class='heads'>Job Category:</span> <span class='data'>" + data.jobs[i].category + "</span></div><div class='job_title'><span class='heads'>Job Title:</span> <span class='data'>" + data.jobs[i].title + "</span></div><div class='job_id'><span class='heads'>Job Id:</span> <span class='data'>" + data.jobs[i].id + "</span></div><div class='job_type'><span class='heads'>Job Type:</span> <span class='data'>" + data.jobs[i].job_type + "</span></div><div class='job_link'><span class='heads'>Application Link:</span> <a href="+data.jobs[i].url+" target='_blank'><span class='data'>" + data.jobs[i].url + "</span></a></div><div class='job_description'><span class='heads'>Description:</span> " + data.jobs[i].description + "</div><div class='bottom-gradient'><div class='read-full-article' id='read-id'>Read Full Article</div></div>";
+                }
+
+                var button = document.querySelectorAll('.read-full-article');
+                for (var i = 0; i < button.length; i++) {    
+                    button[i].addEventListener('click', ((j) => {         
+                    return function() {
+                    index=j;
+                    console.log("previous =" + previous);
+                        if(previous != undefined)
+                            {
+                                document.getElementsByClassName("content")[previous].style.backgroundColor="#fff";
+                            }
+                    console.log("index =" + index);
+                    document.getElementsByClassName("read-full-article")[index].style.display="none";
+                    document.getElementsByClassName("bottom-gradient")[index].style.display="none";
+                    document.getElementsByClassName("content")[index].style.height="auto";
+                    document.getElementsByClassName("content")[index].style.backgroundColor="#fffeef";
+                    previous = index;
+                    }
+                })(i))
+                }
+    
+            });
+        }).catch(function (err) {});
+
+        document.getElementsByClassName("load-more")[0].addEventListener("click", function() {
+            console.log("load more clicked");
+            document.getElementsByClassName("main-2")[0].style.textAlign="left";
+            if(index != undefined){
+                document.getElementsByClassName("content")[index].style.backgroundColor="#fff";
+            }
+            document.getElementsByClassName("load-more")[0].style.display="none";
+            var stories_api = "https://remotive.io/api/remote-jobs?category=software-dev&limit=50";
+            fetch(stories_api).then(function (response) {
+            if (response.status !== 200) {
+                console.log('Looks like there was a problem. Status Code: ' + response.status);
+                return;
+            }
+            response.json().then(function(data) {
+                console.log(data);
+                console.log(data.jobs[0].category);
+                for (var i=5;i<data.jobs.length;i++)
+                {
+                    var container = document.createElement("div");
+                    document.body.appendChild(container);
+                    container.className = "content";
+                    container.id = "content_id";
+                    document.getElementsByClassName('main-2')[0].appendChild(container);
+                    document.getElementsByClassName("content")[i].innerHTML = "<div class='company_name'><span class='heads'>Company Name:</span> <span class='data'>" + data.jobs[i].company_name + "</span></div><div class='job_published'><span class='heads'>Job Published:</span> <span class='data'>" + new Date(data.jobs[i].publication_date).toString() + "</span></div><div class='job_category'><span class='heads'>Job Category:</span> <span class='data'>" + data.jobs[i].category + "</span></div><div class='job_title'><span class='heads'>Job Title:</span> <span class='data'>" + data.jobs[i].title + "</span></div><div class='job_id'><span class='heads'>Job Id:</span> <span class='data'>" + data.jobs[i].id + "</span></div><div class='job_type'><span class='heads'>Job Type:</span> <span class='data'>" + data.jobs[i].job_type + "</span></div><div class='job_link'><span class='heads'>Application Link:</span> <a href="+data.jobs[i].url+" target='_blank'><span class='data'>" + data.jobs[i].url + "</span></a></div><div class='job_description'><span class='heads'>Description:</span> " + data.jobs[i].description + "</div><div class='bottom-gradient'><div class='read-full-article' id='read-id'>Read Full Article</div></div>";
+                    document.getElementsByClassName("content")[i].style.backgroundColor="#f1fcff";
+                    document.getElementsByClassName("bottom-gradient")[i].style.backgroundColor="#f1fcff";
+                    document.getElementsByClassName("bottom-gradient")[i].style.opacity = "0.95";                   
+                }
+
+                setTimeout(function(){
+                    for (var i=5;i<data.jobs.length;i++)
+                    {
+                        document.getElementsByClassName("content")[i].style.backgroundColor="#fff";
+                        document.getElementsByClassName("bottom-gradient")[i].style.backgroundColor="#fff";
+                        document.getElementsByClassName("bottom-gradient")[i].style.opacity = "0.95";
+                    }
+                },1000); 
+
+                var previous;
+
+                var button = document.querySelectorAll('.read-full-article');
+                for (var i = 0; i < button.length; i++) {    
+                    button[i].addEventListener('click', ((j) => {         
+                    return function() {
+                    var index=j;
+                    console.log("previous =" + previous);
+                        if(previous != undefined)
+                            {
+                                document.getElementsByClassName("content")[previous].style.backgroundColor="#fff";
+                            }
+                    console.log("index =" + index);
+                    document.getElementsByClassName("read-full-article")[index].style.display="none";
+                    document.getElementsByClassName("bottom-gradient")[index].style.display="none";
+                    document.getElementsByClassName("content")[index].style.height="auto";
+                    document.getElementsByClassName("content")[index].style.backgroundColor="#fffeef";
+                    previous = index;
+                    }
+                })(i))
+                }
+
+            });
+        }).catch(function (err) {});
+        });
+    </script>
+</body>
+</html>
