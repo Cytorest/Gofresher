@@ -138,7 +138,7 @@ color:rgb(0, 119, 255);
     <div class="one col-sm-12">
         <div class="contact col-sm-10">
           <div class="phone-container"><i class="fas fa-phone"></i> <span class="number">+91-9870967898</span></div>
-          <div class="email-container"><i class="fas fa-envelope"></i> <span class="email">support@gofresher.org</span></div>
+          <div class="email-container"><i class="fas fa-envelope"></i> <span class="email">support@gofresher.in</span></div>
         </div>
 
         <div class="social-connect col-sm-2">
@@ -191,7 +191,7 @@ color:rgb(0, 119, 255);
                     container.className = "content";
                     container.id = "content_id";
                     document.getElementsByClassName('main')[0].appendChild(container);
-                    document.getElementsByClassName("content")[i].innerHTML = "<div class='company_name'><span class='heads'>Company Name:</span> <span class='data'>" + data.jobs[i].company_name + "</span></div><div class='job_published'><span class='heads'>Job Published:</span> <span class='data'>" + new Date(data.jobs[i].publication_date).toString() + "</span></div><div class='job_category'><span class='heads'>Job Category:</span> <span class='data'>" + data.jobs[i].category + "</span></div><div class='job_title'><span class='heads'>Job Title:</span> <span class='data'>" + data.jobs[i].title + "</span></div><div class='job_id'><span class='heads'>Job Id:</span> <span class='data'>" + data.jobs[i].id + "</span></div><div class='job_type'><span class='heads'>Job Type:</span> <span class='data'>" + data.jobs[i].job_type + "</span></div><div class='job_link'><span class='heads'>Application Link:</span> <a href="+data.jobs[i].url+" target='_blank'><span class='data'>" + data.jobs[i].url + "</span></a></div><div class='job_description'><span class='heads'>Description:</span> " + data.jobs[i].description + "</div><div class='bottom-gradient'><div class='read-full-article' id='read-id'>Read Full Article</div></div>";
+                    document.getElementsByClassName("content")[i].innerHTML = "<div class='company_name'><span class='heads'>Company Name:</span> <span class='data'>" + data.jobs[i].company_name + "</span></div><div class='job_published'><span class='heads'>Job Published:</span> <span class='data'>" + new Date(data.jobs[i].publication_date).toString() + "</span></div><div class='job_category'><span class='heads'>Job Category:</span> <span class='data'>" + data.jobs[i].category + "</span></div><div class='job_title'><span class='heads'>Job Title:</span> <span class='data'>" + data.jobs[i].title + "</span></div><div class='job_id'><span class='heads'>Job Id:</span> <span class='data'>" + data.jobs[i].id + "</span></div><div class='job_type'><span class='heads'>Job Type:</span> <span class='data'>" + data.jobs[i].job_type + "</span></div><div class='job_link'><span class='heads'>Application Link:</span> <a href="+data.jobs[i].url+" target='_blank' rel='noreferrer'><span class='data'>" + data.jobs[i].url + "</span></a></div><div class='job_description'><span class='heads'>Description:</span> " + data.jobs[i].description + "</div><div class='bottom-gradient'><div class='read-full-article' id='read-id'>Read Full Article</div></div>";
                 }
 
                 var button = document.querySelectorAll('.read-full-article');
