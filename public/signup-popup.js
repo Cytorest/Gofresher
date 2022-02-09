@@ -119,25 +119,23 @@ auth.onAuthStateChanged(function(user){
         div.innerHTML = "";
         div.innerHTML += "<span class='login-button-top'><i class='fas fa-user'></i><span> Login</span></span>";
     }
-    //code was here
-    // $(document).on('click', '.login-button-top', function(){
-    //     if(user){
-    //         document.getElementsByClassName("read-full-article")[0].style.display="none";
-    //         document.getElementsByClassName("bottom-gradient")[0].style.display="none";
-    //         document.getElementsByClassName("content")[0].style.height="auto";
-    //         document.getElementsByClassName("content")[0].style.backgroundColor="#fffeef";
-    //     }      
-    //     else{
-    //         if(counter==0)
-    //         {
-    //         console.log("Login To Apply");
-    //         $(".background-gradient").show();
-    //         $(".central-popup").show();
-    //         $(".close").show();
-    //         }
-    //     }
-    //     });
-    //
+    $(document).on('click', '.login-button-top', function(){
+        if(user){
+            document.getElementsByClassName("read-full-article")[0].style.display="none";
+            document.getElementsByClassName("bottom-gradient")[0].style.display="none";
+            document.getElementsByClassName("content")[0].style.height="auto";
+            document.getElementsByClassName("content")[0].style.backgroundColor="#fffeef";
+        }      
+        else{
+            if(counter==0)
+            {
+            console.log("Login To Apply");
+            $(".background-gradient").show();
+            $(".central-popup").show();
+            $(".close").show();
+            }
+        }
+        });
 });
 
     $(".close").click(function () {
