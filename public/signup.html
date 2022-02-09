@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<head>
+<title>Gofresher - Sign Up Page</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</noscript>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&display=swap">
+</noscript>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js" type="text/javascript"></script>
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js" type="text/javascript"></script>
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js" type="text/javascript"></script>
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-database.js" type="text/javascript"></script>
+<script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
+<script src="/signup.js" type="text/javascript"></script>
+<script>
+    window.addEventListener("load", () => {
+      window.setTimeout(function () {
+      }, 3000);
+    });
+</script>
+
+<style>
+    .top, .middle, .bottom, .passwordText, .signUp , .signIn, .message{
+        margin-top:50px;
+    }
+    .emailText, .passwordText{
+        font-size:20px;
+    }
+    input{
+        width:100%;
+        height:30px;
+        border-bottom:2px solid #2989ff;
+        border-left:none;
+        border-top:none;
+        border-right:none;
+        color:#2989ff;
+        font-size:20px;
+    }
+    input[type=text]:focus{
+        width:100%;
+        height:30px;
+        border-bottom:2px solid #2989ff;
+        border-left:none;
+        border-top:none;
+        border-right:none;
+        color:#2989ff;
+        font-size:20px;
+    }
+    *:focus {
+        outline: none;
+    }
+    input::placeholder{
+        font-size:20px;
+        color:rgb(59, 59, 59);
+    }
+    input:focus::placeholder {
+        color: transparent;
+    }
+    button{
+    width:120px;
+    border:none;
+    height:50px;
+    line-height:50px;
+    font-size:20px;
+    background-color:#ffffff;
+    border-radius:5px;
+    color:#2989ff;
+    box-shadow: 0 0 10px rgb(0 0 0 / 12%);
+    }
+    .bottom-signin, .bottom-signup{
+    font-size:20px;
+    color: #7a7a7a;
+    }
+    .bottom-signin .signin, .bottom-signup .signup, .fa-sign-in-alt, .fa-user-plus{
+    color:#2989ff;
+    }
+    .bottom, .two, #catch-error{
+        display:none
+    }
+    #email-message, #email-message1{
+        position: absolute;
+    }
+    .logo{
+        text-align:center;
+    }
+    .message{
+        text-align:left;
+        font-size:25px;
+    }
+    .logo img{
+        width: 100%;
+        max-width: 300px;
+    }
+</style>
+
+</head>
+
+<div class="top col-sm-12">
+    <div class="col-sm-4"></div>
+    <div class="logo col-sm-4">
+        <img src="/gofresher-logo.svg">
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+
+<div class="message col-sm-12">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4" id="message-text">Create An Account</div>
+    <div class="col-sm-4"></div>
+</div>
+
+<div id="formContainer" class="middle col-sm-12">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <div class="emailText"></div>
+        <div class="emailInput"><input type="email" placeholder="Email" id="email"><div id="email-message"></div></div>
+        <div class="passwordText"></div>
+        <div class="passwordInput"><input type="password" placeholder="Password" id="password"></div>
+        <button onclick="signUp()" id="signUp"class="signUp"> Sign Up </button>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+
+<div id="formContainer" class="bottom col-sm-12">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <div class="emailText"></div>
+        <div class="emailInput"><input type="email" placeholder="Email" id="email1"><div id="email-message1"></div></div>
+        <div class="passwordText"></div>
+        <div class="passwordInput"><input type="password" placeholder="Password" id="password1"></div>
+        <button onclick="signIn()" id="signIn" class="signIn"> Sign In </button>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+
+<div class="top col-sm-12 one">
+    <div class="col-sm-4"></div>
+    <div class=" bottom-signin col-sm-4">
+        Already Have An Account? <i class="fas fa-sign-in-alt"></i><span class="signin"> Sign In</span> Instead
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+
+<div class="top col-sm-12 two">
+    <div class="col-sm-4"></div>
+    <div class=" bottom-signup col-sm-4">
+        Don't Have An Account? <i class="fas fa-user-plus"></i><span class="signup"> Sign Up</span> Instead
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+
+<div id="catch-error"></div>
+
+</body>
+</html>
