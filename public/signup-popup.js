@@ -104,6 +104,7 @@ auth.onAuthStateChanged(function(user){
                 $(".central-popup").hide();
                 $(".close").hide();
                 $(".login-button-top").hide();
+                $(".read-full-article").html("Read Full Article");
             }
         });
 
@@ -118,6 +119,7 @@ auth.onAuthStateChanged(function(user){
         var div = document.getElementById('user');
         div.innerHTML = "";
         div.innerHTML += "<span class='login-button-top'><i class='fas fa-user'></i><span> Login</span></span>";
+        $(".read-full-article").html("Login To Apply");
     }
     $(document).on('click', '.login-button-top', function(){
         if(user){

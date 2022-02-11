@@ -181,7 +181,7 @@ color:rgb(0, 119, 255);
   }
   .central-popup{
     position: fixed;
-    width: 98%;
+    width: 90%;
     max-width: 450px;
     height: 90vh;
     left: 50%;
@@ -297,6 +297,21 @@ color:rgb(0, 119, 255);
     .pub_date{
         color:#00275a;
     }
+    @media only screen and (max-width: 384px) {
+        .top, .middle, .bottom, .passwordText, .signUp , .signIn, .message{
+        margin-top:42px;
+        }
+    }
+    @media only screen and (max-width: 375px) {
+        .top, .middle, .bottom, .passwordText, .signUp , .signIn, .message{
+        margin-top:46px;
+        }
+    }
+    @media only screen and (max-width: 360px) {
+        .top, .middle, .bottom, .passwordText, .signUp, .signIn, .message {
+        margin-top: 31px;
+        }
+    }
 </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
@@ -356,46 +371,6 @@ color:rgb(0, 119, 255);
       </div>
 
     <div class="main" id="main-wrapper">
-        <!-- <div class="content" id="job-wrapper">
-            <span id="hiring-organisation-logo" class="logo-top"></span>
-            <br><br>
-            <span id="custom-top-text"></span>
-            <br><br>
-            <span class="postings">Hiring Organisation Name: </span><span class="postings-text" id="hiring-organisation-name"></span>
-            <br><br>
-            <span class="postings">Job Title: </span> <span class="postings-text" id="job-title"></span>
-            <br><br>
-            <span class="postings">Job Description: </span> <span class="postings-text" id="job-description"></span>
-            <br><br>
-            <span class="postings">Date Posted: </span> <span class="postings-text" id="date-posted"></span>
-            <br><br>
-            <span class="postings">Date Closing: </span> <span class="postings-text" id="date-closing"></span>
-            <br><br>
-            <span class="postings">Employment Type: </span> <span class="postings-text" id="employment-type"></span>
-            <br><br>
-            <span class="postings">Hiring Organisation Type: </span> <span class="postings-text"id="hiring-organisation-type"></span>
-            <br><br>
-            <span class="postings">Hiring Organisation Url: </span><span class="postings-text" id="hiring-organisation-url"></span>
-            <br><br>
-            <span class="postings">Job Location Address: </span><span class="postings-text" id="location-address"></span>
-            <br><br>
-            <span class="postings">Job Location City: </span><span class="postings-text" id="location-city"></span>
-            <br><br>
-            <span class="postings">Job Location Region: </span><span class="postings-text" id="location-region"></span>
-            <br><br>
-            <span class="postings">Job Location Postal Code: </span><span class="postings-text" id="location-postal-code"></span>
-            <br><br>
-            <span class="postings">Job Location Address Country: </span><span class="postings-text" id="location-address-country"></span>
-            <br><br>
-            <span class="postings">Salary Currency: </span><span class="postings-text" id="salary-currency"></span>
-            <br><br>
-            <span class="postings">Salary Value: </span><span class="postings-text" id="salary-value"></span>
-            <br><br>
-            <span class="postings">Salary Unit: </span><span class="postings-text" id="salary-unit"></span>
-            <br><br>
-            <span class="postings">Application Link: </span><span class="postings-text" id="application-link"></span>
-            <div class="bottom-gradient"><div class="read-full-article" id="read-id">Read Full Article</div></div>
-        </div> -->
     </div>
 
     <div class='background-gradient'>
@@ -488,8 +463,9 @@ color:rgb(0, 119, 255);
                     console.log (all);
                     const date = doc.data()['pd'].toDate().toDateString();
                     const time = doc.data()['pd'].toDate().toLocaleTimeString('en-US');
-                    var content = document.getElementById('main-wrapper');                
-                    content.innerHTML += "<div class='content' id='job-wrapper-"+i+"'><span id='hiring-organisation-logo-"+i+"' class='logo-top'><img src="+ doc.data()['hol'] +"></span><br><br><span id='custom-top-text'>"+doc.data()['ctt']+"</span><br><br><span class='pub_date'>Published Date: </span><span class='pub_date'>"+date+" at "+time+"</span><br><br><span class='postings'>Hiring Organisation Name: </span><span class='postings-text' id='hiring-organisation-name="+i+"'>"+doc.data()['hon']+"</span><br><br><span class='postings'>Job Title: </span> <span class='postings-text' id='job-title-"+i+"'>"+doc.data()['jt']+"</span><br><br><span class='postings'>Job Description: </span> <span class='postings-text' id='job-description"+i+"'>"+doc.data()['jd']+"</span><br><br><span class='postings'>Date Posted: </span><span class='postings-text' id='date-posted'>"+doc.data()['dp']+"</span><br><br><span class='postings'>Date Closing: </span> <span class='postings-text' id='date-closing'>"+doc.data()['dc']+"</span><br><br><span class='postings'>Employment Type: </span> <span class='postings-text' id='employment-type'>"+doc.data()['et']+"</span><br><br><span class='postings'>Hiring Organisation Type: </span> <span class='postings-text' id='hiring-organisation-type'>"+doc.data()['hot']+"</span><br><br><span class='postings'>Hiring Organisation Url: </span><span class='postings-text' id='hiring-organisation-url'>"+doc.data()['hou']+"</span><br><br><span class='postings'>Job Location Address: </span><span class='postings-text' id='location-address'>"+doc.data()['jla']+"</span><br><br><span class='postings'>Job Location City: </span><span class='postings-text' id='location-city'>"+doc.data()['jlc']+"</span><br><br><span class='postings'>Job Location Region: </span><span class='postings-text' id='location-region'>"+doc.data()['jlr']+"</span><br><br><span class='postings'>Job Location Postal Code: </span><span class='postings-text' id='location-postal-code'>"+doc.data()['jlpc']+"</span><br><br><span class='postings'>Job Location Address Country: </span><span class='postings-text' id='location-address-country'>"+doc.data()['jlac']+"</span><br><br><span class='postings'>Salary Currency: </span><span class='postings-text' id='salary-currency'>"+doc.data()['sc']+"</span><br><br><span class='postings'>Salary Value: </span><span class='postings-text' id='salary-value'>"+doc.data()['sv']+"</span><br><br><span class='postings'>Salary Unit: </span><span class='postings-text' id='salary-unit'>"+doc.data()['su']+"</span><br><br><span class='postings'>Application Link: </span><span class='postings-text' id='application-link'><a href="+doc.data()['al']+" target='_blank'>"+doc.data()['al']+"</a></span><br><br><div class='bottom-gradient' id='bottom-graident-"+i+"'><div class='read-full-article' id='read-id-"+i+"'>Read Full Article</div></div></div>";
+                    var content = document.getElementById('main-wrapper');       
+                    content.innerHTML += "<div class='content' id='job-wrapper-"+i+"'><span id='hiring-organisation-logo-"+i+"' class='logo-top'><img src="+ doc.data()['hol'] +"></span><br><br><span id='custom-top-text'>"+doc.data()['ctt']+"</span><br><br><span class='pub_date'>Published Date: </span><span class='pub_date'>"+date+" at "+time+"</span><br><br><span class='postings'>Hiring Organisation Name: </span><span class='postings-text' id='hiring-organisation-name="+i+"'>"+doc.data()['hon']+"</span><br><br><span class='postings'>Job Title: </span> <span class='postings-text' id='job-title-"+i+"'>"+doc.data()['jt']+"</span><br><br><span class='postings'>Job Description: </span> <span class='postings-text' id='job-description"+i+"'>"+doc.data()['jd']+"</span><br><br><span class='postings'>Date Posted: </span><span class='postings-text' id='date-posted'>"+doc.data()['dp']+"</span><br><br><span class='postings'>Date Closing: </span> <span class='postings-text' id='date-closing'>"+doc.data()['dc']+"</span><br><br><span class='postings'>Employment Type: </span> <span class='postings-text' id='employment-type'>"+doc.data()['et']+"</span><br><br><span class='postings'>Hiring Organisation Type: </span> <span class='postings-text' id='hiring-organisation-type'>"+doc.data()['hot']+"</span><br><br><span class='postings'>Hiring Organisation Url: </span><span class='postings-text' id='hiring-organisation-url'>"+doc.data()['hou']+"</span><br><br><span class='postings'>Job Location Address: </span><span class='postings-text' id='location-address'>"+doc.data()['jla']+"</span><br><br><span class='postings'>Job Location City: </span><span class='postings-text' id='location-city'>"+doc.data()['jlc']+"</span><br><br><span class='postings'>Job Location Region: </span><span class='postings-text' id='location-region'>"+doc.data()['jlr']+"</span><br><br><span class='postings'>Job Location Postal Code: </span><span class='postings-text' id='location-postal-code'>"+doc.data()['jlpc']+"</span><br><br><span class='postings'>Job Location Address Country: </span><span class='postings-text' id='location-address-country'>"+doc.data()['jlac']+"</span><br><br><span class='postings'>Salary Currency: </span><span class='postings-text' id='salary-currency'>"+doc.data()['sc']+"</span><br><br><span class='postings'>Salary Value: </span><span class='postings-text' id='salary-value'>"+doc.data()['sv']+"</span><br><br><span class='postings'>Salary Unit: </span><span class='postings-text' id='salary-unit'>"+doc.data()['su']+"</span><br><br><span class='postings'>Application Link: </span><span class='postings-text' id='application-link'><a href="+doc.data()['al']+" target='_blank'>"+doc.data()['al']+"</a></span><br><br><div class='bottom-gradient' id='bottom-graident-"+i+"'><div class='read-full-article' id='read-id-"+i+"'></div></div></div>";
+                    $("#read-id-"+i).innerHTML = "Login To Apply";
                     $(document).on('click','#read-id-'+i, function(){
                         element = $(this).attr("id").slice(-1);
                         console.log(element);
@@ -518,7 +494,16 @@ color:rgb(0, 119, 255);
                     });
                 i++;
             });
+            if(counter==1){
+                $(".read-full-article").html("Read Full Article");
+                }
+                else if(counter==0){
+                $(".read-full-article").html("Login To Apply");
+            }
         });
+
+
+
     </script>
 
 </body>

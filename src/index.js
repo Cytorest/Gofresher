@@ -11,19 +11,18 @@ const myfirstelement = (
       <div className="contact col-sm-10">
         <div className="phone-container"><i className="fas fa-phone"></i> <span className="number">+91-9870967898</span></div>
         <div className="email-container"><i className="fas fa-envelope"></i> <span className="email">support@gofresher.in</span></div>
-        <div id="user">
-        </div>
       </div>
       
       <div className="social-connect col-sm-2">
-        <div className="icon-holder">
+        {/* <div className="icon-holder">
          <i className="fab fa-facebook-f"></i>
          <i className="fab fa-instagram"></i>
          <i className="fab fa-linkedin"></i>
          <i className="fab fa-twitter"></i>
          <i className="fab fa-whatsapp"></i>
          <i className="fab fa-telegram"></i>
-        </div>
+        </div> */}
+        <div id="user"></div>
       </div>
   </div>
   
