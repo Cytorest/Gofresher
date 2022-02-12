@@ -331,7 +331,6 @@ color:rgb(0, 119, 255);
             }, 500);
         });
     </script>
-
 <script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
@@ -455,6 +454,8 @@ color:rgb(0, 119, 255);
         var previous;
         var element;
         var all = [];
+        var output;
+        var link;
         firebase.firestore().collection("Job Posting").where(firebase.firestore.FieldPath.documentId(), '==', 'JzZeTtHLw0vQuWBNa1bo').get().then((querySnapshot) => {
             var i=0;
             querySnapshot.forEach((doc) => {
@@ -492,48 +493,17 @@ color:rgb(0, 119, 255);
                         }
                         }
                     });
-                    (function(){
-                var data = {
-                "@context": "http://www.schema.org",
-                "@type" : "JobPosting",
-                "title" : doc.data()['jt'],
-                "description" : doc.data()['jd'],
-                "datePosted" : doc.data()['dp'],
-                "validThrough" : doc.data()['dc'],
-                "employmentType" : doc.data()['et'],
-                "hiringOrganization" : {
-                "@type" : doc.data()['hot'],
-                "name" : doc.data()['hon'],
-                "sameAs" : doc.data()['hou'],
-                "logo" : doc.data()['hol']
-                },
-                "jobLocation": {
-                    "@type": "Place",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "streetAddress": doc.data()['jla'],
-                        "addressLocality": doc.data()['jlac'],
-                        "addressRegion": doc.data()['jlr'],
-                        "postalCode": doc.data()['jlpc'],
-                        "addressCountry": doc.data()['jlac']
-                    }
-                },
-                "baseSalary": {
-                "@type": "MonetaryAmount",
-                "currency": doc.data()['sc'],
-                    "value": {
-                        "@type": "QuantitativeValue",
-                        "value": doc.data()['sv'],
-                        "unitText": doc.data()['su']
-                    }
-                }
-            }
-                var el = document.createElement('script');
-                el.type = "application/ld+json";
-                el.text = JSON.stringify(data);
-                document.getElementsByTagName('head')[0].appendChild(el); 
-            })(document);
-            });
+                    a = document.createElement('script');
+                    a.type = 'application/ld+json';
+                    a.text = JSON.stringify({"@context":"http://www.schema.org","@type":"JobPosting","title":doc.data()['jt'],"description":doc.data()['jd'],"datePosted":doc.data()['dp'],"validThrough":doc.data()['dc'],"employmentType":doc.data()['et'],"hiringOrganization":{"@type":doc.data()['hot'],"name":doc.data()['hon'],"sameAs":doc.data()['hou'],"logo":doc.data()['hol']},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":doc.data()['jla'],"addressLocality":doc.data()['jlac'],"addressRegion":doc.data()['jlr'],"postalCode":doc.data()['jlpc'],"addressCountry":doc.data()['jlac']}},"baseSalary":{"@type":"MonetaryAmount","currency":doc.data()['sc'],"value":{"@type":"QuantitativeValue","value":doc.data()['sv'],"unitText":doc.data()['su']}}});
+                    document.getElementsByTagName('head')[0].appendChild(a);
+
+                    link = !!document.querySelector("link[rel='canonical']") ? document.querySelector("link[rel='canonical']") : document.createElement('link');
+                    link.setAttribute('rel', 'canonical');
+                    link.setAttribute('href', location.protocol + '//' + location.host + location.pathname);
+                    document.head.appendChild(link);
+
+            });  
             if(counter==1){
                 $(".read-full-article").html("Read Full Article");
                 }
@@ -542,49 +512,6 @@ color:rgb(0, 119, 255);
             }
         });
     </script>
-    
+
 </body>
 </html>
-
-        <!-- <script type="application/ld+json">
-        {
-        "@context" : "https://schema.org/",
-        "@type" : "JobPosting",
-        "title" : "Software Engineer",
-        "description" : "<p>Google aspires to be an organization that reflects the globally diverse audience that our products and technology serve. We believe that in addition to hiring the best talent, a diversity of perspectives, ideas and cultures leads to the creation of better products and services.</p>",
-        "identifier": {
-            "@type": "PropertyValue",
-            "name": "Google",
-            "value": "1234567"
-        },
-        "datePosted" : "2017-01-18",
-        "validThrough" : "2017-03-18T00:00",
-        "employmentType" : "CONTRACTOR",
-        "hiringOrganization" : {
-            "@type" : "Organization",
-            "name" : "Google",
-            "sameAs" : "http://www.google.com",
-            "logo" : "http://www.example.com/images/logo.png"
-        },
-        "jobLocation": {
-        "@type": "Place",
-            "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1600 Amphitheatre Pkwy",
-            "addressLocality": "Mountain View",
-            "addressRegion": "CA",
-            "postalCode": "94043",
-            "addressCountry": "US"
-            }
-        },
-        "baseSalary": {
-            "@type": "MonetaryAmount",
-            "currency": "USD",
-            "value": {
-            "@type": "QuantitativeValue",
-            "value": 40.00,
-            "unitText": "HOUR"
-            }
-        }
-        }
-        </script> -->
