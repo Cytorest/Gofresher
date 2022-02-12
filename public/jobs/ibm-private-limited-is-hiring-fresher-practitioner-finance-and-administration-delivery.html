@@ -528,10 +528,10 @@ color:rgb(0, 119, 255);
                     }
                 }
             }
-                var script = document.createElement('script');
-                script.type = "application/ld+json";
-                script.innerHTML = JSON.stringify(data);
-                document.getElementsByTagName('head')[0].appendChild(script); 
+                var el = document.createElement('script');
+                el.type = "application/ld+json";
+                el.text = JSON.stringify(data);
+                document.getElementsByTagName('head')[0].appendChild(el); 
             })(document);
             });
             if(counter==1){
@@ -542,7 +542,7 @@ color:rgb(0, 119, 255);
             }
         });
     </script>
-
+    
 </body>
 </html>
 
