@@ -557,14 +557,14 @@ color:rgb(0, 119, 255);
                     // OG Description Update
                     document.querySelector('meta[property="og:description"]').setAttribute("content", doc.data()['md']);
             });  
-            setTimeout(function() {
                 if(counter==1){
+                    $(".read-full-article").empty();
                     $(".read-full-article").html("Read Full Article");
                 }
                 else if(counter==0){
+                    $(".read-full-article").empty();
                     $(".read-full-article").html("Login To Apply");
                 }
-            },500);
         });
     </script>
 
