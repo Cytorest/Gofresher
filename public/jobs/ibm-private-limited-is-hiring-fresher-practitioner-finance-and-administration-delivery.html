@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <head>
 <title>Gofresher - IBM Private Limited Is Hiring Fresher Practitioner Finance And Administration Delivery</title>
-<meta name="title" content="Gofresher - IBM Private Limited Is Hiring Fresher Practitioner Finance And Administration Delivery"/>
-<meta name="description" content="Fresher Job Updates & Walkins By Gofresher - IBM Private Limited Is Hiring Fresher Practitioner Finance And Administration Delivery"/>
-<meta name="keywords" content="Jobs, Job, Job Updates, Off Campus Updates, Walkin, Ibm, Fresher">
+<meta name="title"/>
+<meta name="description"/>
+<meta name="keywords"/>
 
-<meta property="og:type" content="website"/><meta property="og:url" content="https://gofresher.in/"/>
-<meta property="og:title" content="Gofresher - IBM Private Limited Is Hiring Fresher Practitioner Finance And Administration Delivery"/>
-<meta property="og:description" content="Fresher Job Updates & Walkins By Gofresher - IBM Private Limited Is Hiring Fresher Practitioner Finance And Administration Delivery"/>
-<meta name="og:keywords" content="Jobs, Job, Job Updates, Off Campus Updates, Walkin, Ibm, Fresher">
+<meta property="og:type" content="website"/>
+<meta property="og:url"/>
+<meta property="og:title"/>
+<meta property="og:description"/>
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -531,6 +531,23 @@ color:rgb(0, 119, 255);
                     link.setAttribute('href', location.protocol + '//' + location.host + location.pathname);
                     document.head.appendChild(link);
 
+                    // Meta Title Update
+                    document.querySelector('meta[name="title"]').setAttribute("content", doc.data()['mt']);
+
+                    // Meta Description Update
+                    document.querySelector('meta[name="description"]').setAttribute("content", doc.data()['md']);
+
+                    // Meta Keywords
+                    document.querySelector('meta[name="keywords"]').setAttribute("content", doc.data()['mk']);
+
+                    //OG URL
+                    document.querySelector('meta[property="og:url"]').setAttribute("content", location.protocol + '//' + location.host + location.pathname);
+
+                    //OG TITLE
+                    document.querySelector('meta[property="og:title"]').setAttribute("content", doc.data()['mt']);
+
+                    // OG Description Update
+                    document.querySelector('meta[property="og:description"]').setAttribute("content", doc.data()['md']);
             });  
             if(counter==1){
                 $(".read-full-article").html("Read Full Article");

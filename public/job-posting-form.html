@@ -458,6 +458,18 @@ color:rgb(0, 119, 255);
                     <div class="guides">Ex: Direct Job Application Link To Job Posting</div>
                 </div>
                 <div class="field">
+                    <span class="postings">Meta Title: </span> <input type="Text" name="mt" id="mt" placeholder="" required></input>
+                    <div class="guides">Gofresher - IBM Private Limited Is Hiring Fresher Practitioner Finance And Administration Delivery</div>
+                </div>
+                <div class="field">
+                    <span class="postings">Meta Description: </span> <input type="Text" name="md" id="md" placeholder="" required></input>
+                    <div class="guides">Fresher Job Updates & Walkins By Gofresher - IBM Private Limited Is Hiring Fresher Practitioner Finance And Administration Delivery</div>
+                </div>
+                <div class="field">
+                    <span class="postings">Meta Keywords: </span> <input type="Text" name="mk" id="mk" placeholder="" required></input>
+                    <div class="guides">Jobs, Job, Job Updates, Off Campus Updates, Walkin, Ibm, Fresher</div>
+                </div>
+                <div class="field">
                   <button type="submit" value="submit_button_1" id="submit_1">Submit</button>
                 </div> 
                 <div class="field"></div>      
@@ -574,9 +586,12 @@ color:rgb(0, 119, 255);
         var sv = document.getElementById("sv").value;
         var su = document.getElementById("su").value;
         var al = document.getElementById("al").value;
+        var mt = document.getElementById("mt").value;
+        var md = document.getElementById("md").value;
+        var mk = document.getElementById("mk").value;
         var pd = new Date();
         firebase.firestore().collection("Job Posting").add({
-            pd:pd, ctt: ctt, hon: hon, jt: jt, jd: jd, dp:dp, dc:dc, et:et, hot:hot, hou:hou, hol:hol, jla:jla, jlc:jlc, jlr:jlr, jlpc:jlpc, jlac:jlac, sc:sc, sv:sv, su:su, al:al
+            mt:mt, md:md, mk:mk, pd:pd, ctt: ctt, hon: hon, jt: jt, jd: jd, dp:dp, dc:dc, et:et, hot:hot, hou:hou, hol:hol, jla:jla, jlc:jlc, jlr:jlr, jlpc:jlpc, jlac:jlac, sc:sc, sv:sv, su:su, al:al
         })
 
         .then(function() {
