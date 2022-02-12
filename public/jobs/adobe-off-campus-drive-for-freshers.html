@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-<title>Gofresher - IBM Private Limited Is Hiring Fresher Practitioner Finance And Administration Delivery</title>
+<title></title>
 <meta name="title"/>
 <meta name="description"/>
 <meta name="keywords"/>
@@ -536,6 +536,9 @@ color:rgb(0, 119, 255);
                     link.setAttribute('href', location.protocol + '//' + location.host + location.pathname);
                     document.head.appendChild(link);
 
+                    // Document Title
+                    document.title = doc.data()['mt'];
+                            
                     // Meta Title Update
                     document.querySelector('meta[name="title"]').setAttribute("content", doc.data()['mt']);
 
