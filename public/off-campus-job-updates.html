@@ -513,12 +513,14 @@ color:rgb(0, 119, 255);
                     });
                 i++;
             });
-            if(counter==1){
-                $(".read-full-article").html("Read Full Article");
+            setTimeout(function() {
+                if(counter==1){
+                    $(".read-full-article").html("Read Full Article");
                 }
                 else if(counter==0){
-                $(".read-full-article").html("Login To Apply");
-            }
+                    $(".read-full-article").html("Login To Apply");
+                }
+            },500);    
         });
 
 
