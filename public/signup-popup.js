@@ -84,6 +84,8 @@ auth.onAuthStateChanged(function(user){
         var domain = email.substring(email.lastIndexOf("@") +1);
         var div = document.getElementById('user');
         div.innerHTML += "<i class='fas fa-user'></i> welcome <span class='username' id='username'></span>" + name + "<span> </span><i class='fas fa-chevron-circle-down' id='menuArrow'></i><div id='myDropdown' class='dropdown-content'><li><button onclick='signOut()' id='signOut' class='signOut'> Sign Out </button></li></div>";
+        $(".read-full-article").empty();
+        $(".read-full-article").html("Read Full Article");
         $(document).on('click', '#user', function(){
             $('#myDropdown').toggle();
             $("#menuArrow").toggleClass("rotated");
