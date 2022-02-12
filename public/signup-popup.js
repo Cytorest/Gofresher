@@ -101,6 +101,8 @@ auth.onAuthStateChanged(function(user){
             var email = user.email;
             console.log(user.email);
             counter = 1;
+            $(".read-full-article").empty();
+            $(".read-full-article").html("Read Full Article");
             if(user.email){
                 $(".background-gradient").hide();
                 $(".central-popup").hide();
