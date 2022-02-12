@@ -138,6 +138,15 @@ auth.onAuthStateChanged(function(user){
             }
         }
         });
+
+        if(counter==1){
+            $(".read-full-article").empty();
+            $(".read-full-article").html("Read Full Article");
+        }
+        else if(counter==0){
+            $(".read-full-article").empty();
+            $(".read-full-article").html("Login To Apply");
+        }
 });
 
     $(".close").click(function () {
