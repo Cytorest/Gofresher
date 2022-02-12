@@ -454,10 +454,10 @@ a, a:focus, a:hover, a:active{
     padding:0;
   }
   .col-sm-2{
-    width:20%;
+    width:100%;
   }
   .col-sm-10{
-    width:80%;
+    width:100%;
   }  
   .icon-holder, .contact{
     text-align:center;
