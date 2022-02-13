@@ -458,6 +458,10 @@ color:rgb(0, 119, 255);
                     <div class="guides">Ex: Direct Job Application Link To Job Posting</div>
                 </div>
                 <div class="field">
+                    <span class="postings">Story Slug: </span> <input type="Text" name="slug" id="slug" placeholder="" required></input>
+                    <div class="guides">Ex: remo-software-hiring-fresher-software-developer-at-bangalore.html</div>
+                </div>
+                <div class="field">
                     <span class="postings">Meta Title: </span> <input type="Text" name="mt" id="mt" placeholder="" required></input>
                     <div class="guides">Gofresher - IBM Private Limited Is Hiring Fresher Practitioner Finance And Administration Delivery</div>
                 </div>
@@ -589,9 +593,10 @@ color:rgb(0, 119, 255);
         var mt = document.getElementById("mt").value;
         var md = document.getElementById("md").value;
         var mk = document.getElementById("mk").value;
+        var slug = document.getElementById("slug").value;
         var pd = new Date();
         firebase.firestore().collection("Job Posting").add({
-            mt:mt, md:md, mk:mk, pd:pd, ctt: ctt, hon: hon, jt: jt, jd: jd, dp:dp, dc:dc, et:et, hot:hot, hou:hou, hol:hol, jla:jla, jlc:jlc, jlr:jlr, jlpc:jlpc, jlac:jlac, sc:sc, sv:sv, su:su, al:al
+            slug:slug, mt:mt, md:md, mk:mk, pd:pd, ctt: ctt, hon: hon, jt: jt, jd: jd, dp:dp, dc:dc, et:et, hot:hot, hou:hou, hol:hol, jla:jla, jlc:jlc, jlr:jlr, jlpc:jlpc, jlac:jlac, sc:sc, sv:sv, su:su, al:al
         })
 
         .then(function() {

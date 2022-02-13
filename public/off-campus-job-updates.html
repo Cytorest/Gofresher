@@ -501,6 +501,7 @@ color:rgb(0, 119, 255);
                             $("#job-wrapper-"+element).css("background-color", "#effdff");
                             previous = element;
                             console.log(previous);
+                            window.history.pushState("", "", 'https://gofresher.in/jobs/'+doc.data()['slug']);
                             return;
                         }
                         else{
