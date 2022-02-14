@@ -18,6 +18,23 @@ html, body{
 margin:0;
 padding:0;
 }
+.load-more-off-campus{
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    font-size: 20px;
+    color: #ffffff;
+    font-family: "Nunito",sans-serif;
+    position: relative;
+    background-color: #7f7dff;
+    font-weight: 900;
+    max-width: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 12%);
+    cursor:pointer;
+}
 .content{
     height: 450px;
     min-height:450px;
@@ -478,16 +495,22 @@ color:rgb(0, 119, 255);
         var previous;
         let element;
         var all = [];
+        var doc = [];
+        var content;
+        let date;
+        let time;
         firebase.firestore().collection("Job Posting").orderBy("pd", "desc").get().then((querySnapshot) => {
             var i=0;
             querySnapshot.forEach((doc) => {
                     console.log(i);
                     all[i] = doc.data(i);
                     console.log (all);
-                    const date = doc.data()['pd'].toDate().toDateString();
-                    const time = doc.data()['pd'].toDate().toLocaleTimeString('en-US');
-                    var content = document.getElementById('main-wrapper');       
+                    date = doc.data()['pd'].toDate().toDateString();
+                    time = doc.data()['pd'].toDate().toLocaleTimeString('en-US');
+                    content = document.getElementById('main-wrapper');
+                    if(i<=5){    
                     content.innerHTML += "<div class='content' id='job-wrapper-"+i+"'><span id='hiring-organisation-logo-"+i+"' class='logo-top'><img src="+ doc.data()['hol'] +"></span><br><br><span id='custom-top-text'>"+doc.data()['ctt']+"</span><br><br><span class='pub_date'>Published Date: </span><span class='pub_date'>"+date+" at "+time+"</span><br><br><span class='postings'>Hiring Organisation Name: </span><span class='postings-text' id='hiring-organisation-name="+i+"'>"+doc.data()['hon']+"</span><br><br><span class='postings'>Job Title: </span> <span class='postings-text' id='job-title-"+i+"'>"+doc.data()['jt']+"</span><br><br><span class='postings'>Job Description: </span> <span class='postings-text' id='job-description"+i+"'>"+doc.data()['jd']+"</span><br><br><span class='postings'>Date Posted: </span><span class='postings-text' id='date-posted'>"+doc.data()['dp']+"</span><br><br><span class='postings'>Date Closing: </span> <span class='postings-text' id='date-closing'>"+doc.data()['dc']+"</span><br><br><span class='postings'>Employment Type: </span> <span class='postings-text' id='employment-type'>"+doc.data()['et']+"</span><br><br><span class='postings'>Hiring Organisation Type: </span> <span class='postings-text' id='hiring-organisation-type'>"+doc.data()['hot']+"</span><br><br><span class='postings'>Hiring Organisation Url: </span><span class='postings-text' id='hiring-organisation-url'>"+doc.data()['hou']+"</span><br><br><span class='postings'>Job Location Address: </span><span class='postings-text' id='location-address'>"+doc.data()['jla']+"</span><br><br><span class='postings'>Job Location City: </span><span class='postings-text' id='location-city'>"+doc.data()['jlc']+"</span><br><br><span class='postings'>Job Location Region: </span><span class='postings-text' id='location-region'>"+doc.data()['jlr']+"</span><br><br><span class='postings'>Job Location Postal Code: </span><span class='postings-text' id='location-postal-code'>"+doc.data()['jlpc']+"</span><br><br><span class='postings'>Job Location Address Country: </span><span class='postings-text' id='location-address-country'>"+doc.data()['jlac']+"</span><br><br><span class='postings'>Salary Currency: </span><span class='postings-text' id='salary-currency'>"+doc.data()['sc']+"</span><br><br><span class='postings'>Salary Value: </span><span class='postings-text' id='salary-value'>"+doc.data()['sv']+"</span><br><br><span class='postings'>Salary Unit: </span><span class='postings-text' id='salary-unit'>"+doc.data()['su']+"</span><br><br><span class='postings'>Application Link: </span><span class='postings-text' id='application-link'><a href="+doc.data()['al']+" target='_blank'>"+doc.data()['al']+"</a></span><br><br><div class='bottom-gradient' id='bottom-graident-"+i+"'><div class='read-full-article' id='read-id-"+i+"'>Read Full Article</div></div></div>";
+                    }
                     $(document).on('click','#read-id-'+i, function(){               
                         element = $(this).attr("id").replace('read-id-','');
                         console.log(element);
@@ -516,6 +539,14 @@ color:rgb(0, 119, 255);
                         }
                     });
                 i++;
+            });
+            content.innerHTML += "<div class='load-more-off-campus'>Load More Posts</div><div style='margin-bottom:20px'></div>";
+            $(document).on('click','.load-more-off-campus', function(){  
+                $(".load-more-off-campus").hide();
+            for (var j=6;j<=i;j++){
+                console.log(all[j]);
+                content.innerHTML += "<div class='content' id='job-wrapper-"+j+"'><span id='hiring-organisation-logo-"+j+"' class='logo-top'><img src="+ all[j]['hol'] +"></span><br><br><span id='custom-top-text'>"+all[j]['ctt']+"</span><br><br><span class='pub_date'>Published Date: </span><span class='pub_date'>"+date+" at "+time+"</span><br><br><span class='postings'>Hiring Organisation Name: </span><span class='postings-text' id='hiring-organisation-name="+j+"'>"+all[j]['hon']+"</span><br><br><span class='postings'>Job Title: </span> <span class='postings-text' id='job-title-"+i+"'>"+all[j]['jt']+"</span><br><br><span class='postings'>Job Description: </span> <span class='postings-text' id='job-description"+j+"'>"+all[j]['jd']+"</span><br><br><span class='postings'>Date Posted: </span><span class='postings-text' id='date-posted'>"+all[j]['dp']+"</span><br><br><span class='postings'>Date Closing: </span> <span class='postings-text' id='date-closing'>"+all[j]['dc']+"</span><br><br><span class='postings'>Employment Type: </span> <span class='postings-text' id='employment-type'>"+all[j]['et']+"</span><br><br><span class='postings'>Hiring Organisation Type: </span> <span class='postings-text' id='hiring-organisation-type'>"+all[j]['hot']+"</span><br><br><span class='postings'>Hiring Organisation Url: </span><span class='postings-text' id='hiring-organisation-url'>"+all[j]['hou']+"</span><br><br><span class='postings'>Job Location Address: </span><span class='postings-text' id='location-address'>"+all[j]['jla']+"</span><br><br><span class='postings'>Job Location City: </span><span class='postings-text' id='location-city'>"+all[j]['jlc']+"</span><br><br><span class='postings'>Job Location Region: </span><span class='postings-text' id='location-region'>"+all[j]['jlr']+"</span><br><br><span class='postings'>Job Location Postal Code: </span><span class='postings-text' id='location-postal-code'>"+all[j]['jlpc']+"</span><br><br><span class='postings'>Job Location Address Country: </span><span class='postings-text' id='location-address-country'>"+all[j]['jlac']+"</span><br><br><span class='postings'>Salary Currency: </span><span class='postings-text' id='salary-currency'>"+all[j]['sc']+"</span><br><br><span class='postings'>Salary Value: </span><span class='postings-text' id='salary-value'>"+all[j]['sv']+"</span><br><br><span class='postings'>Salary Unit: </span><span class='postings-text' id='salary-unit'>"+all[j]['su']+"</span><br><br><span class='postings'>Application Link: </span><span class='postings-text' id='application-link'><a href="+all[j]['al']+" target='_blank'>"+all[j]['al']+"</a></span><br><br><div class='bottom-gradient' id='bottom-graident-"+j+"'><div class='read-full-article' id='read-id-"+j+"'>Read Full Article</div></div></div>";
+            }
             });
         });
 
