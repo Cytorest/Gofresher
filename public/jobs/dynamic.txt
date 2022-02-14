@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <head>
-<title>Amazon Is Hiring Fresher IT Support Associate At Noida</title>
-<meta name="title" content="Amazon Is Hiring Fresher IT Support Associate At Noida">
-<meta name="description" content="Job Id: 1900766 - Fresher Required By Amazon At Noida Location">
-<meta name="keywords" content="Amazon Hiring, Fresher Required, Job Update, Job For Fresher, Amazon Fresher Job, Job y Gofresher, Job Update, Fresher Job">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://gofresher.in/jobs/amazon-hiring-fresher-it-support-associate.html">
-<meta property="og:title" content="Amazon Is Hiring Fresher IT Support Associate At Noida">
-<meta property="og:description" content="Job Id: 1900766 - Fresher Required By Amazon At Noida Location">
+<title></title>
+<meta name="title"/>
+<meta name="description"/>
+<meta name="keywords"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:url"/>
+<meta property="og:title"/>
+<meta property="og:description"/>
+
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index, follow">
@@ -357,7 +359,6 @@ color:rgb(0, 119, 255);
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
     <!-- End Google Tag Manager -->
-<script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"Amazon Is Hiring IT Support Associate II","description":"Job Id: 1900766<p><br>Job summary<br><br>At Amazon, we strive to be Earth’s most customer-centric company where people can find and discover anything they want to buy online. We hire the world’s brightest minds, offering them an environment in which they can relentlessly improve the experience for customers. Innovation and creativity are built into the DNA of the company and are encouraged at all levels of employment. Every day we solve complex technical and business problems with ingenuity and simplicity. We’re making history and the good news is we’ve only just begun. Amazon, one of the top 100 companies in the United States, has an immediate opening for an IT Support Engineer in our Fulfillment Center. Fulfillment Centers throughout the U.S. handle millions of items from tens of thousands of vendors and ships them across the globe each day. The successful IT Support Engineer will be responsible for utilizing his/her skills to provide assistance to the operations team in resolving technical problems within the Fulfillment Center that cover a multitude of technical disciplines. This position is the second level of support for the operations of the Fulfillment Center and serves as a resource to Technical Support Technicians while also acting as a representative of the IT department to internal customers. Amazon seeks individuals who are willing to Work Hard, Have Fun, and join us in making Worldwide History. The IT Support Engineer must have an excellent understanding of computers (both hardware and software) and a demonstrated willingness to learn and apply new technology. They must possess superior technical aptitude, written and oral communications skills and the ability to deal effectively with people in a wide variety of situations. Additionally they must possess strong analytical skills with demonstrated problem solving ability. Previous experience exercising high levels of initiative, judgment, and diplomacy required. Proven ability to operate in extreme high pressure situations, successfully handle multiple priorities and possess a high level of discipline while remaining flexible. They must possess superior people skills dealing with all levels of a team environment up to and including presentations and explanation of projects to upper level management. Regular activities include network engineering and troubleshooting, project management, mentorship of Technical Support Technicians, data cabling, systems administration in a variety of software and hardware environments, telecom/PBX administration, root cause analysis in problem solving, and assistance in managing the daily activities of the department. A willingness to relocate as career advancement opportunities throughout the company become available is strongly desired. Amazon is an Equal Opportunity-Affirmative Action Employer – Minority / Female / Disability / Vet.","datePosted":"2022-02-08","validThrough":"2022-08-28","employmentType":"Full-Time","hiringOrganization":{"@type":"Organization","name":"Amazon","sameAs":"https://www.amazon.in/","logo":"https://gofresher.in/company-logos/amazon.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"B-2/62, Tower #3, 5th Floor, Block B, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309","addressLocality":"India","addressRegion":"Noida, India","postalCode":"110096","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"300000","unitText":"Yearly"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Amazon Is Hiring IT Support Associate II","image":"https://gofresher.in/company-logos/amazon.png","datePublished":"2022-02-08","dateModified":"2022-02-08","author":[{"@type":"Person","name":"Gofresher Admin","url":"http://example.com/profile/janedoe123"}]}</script><link rel="canonical" href="https://gofresher.in/jobs/amazon-hiring-fresher-it-support-associate.html">
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -486,7 +487,7 @@ color:rgb(0, 119, 255);
         var all = [];
         var output;
         var link;
-        firebase.firestore().collection("Job Posting").where(firebase.firestore.FieldPath.documentId(), '==', 'fD8tCVFtB2IcalEgDQQc').get().then((querySnapshot) => {
+        firebase.firestore().collection("Job Posting").where(firebase.firestore.FieldPath.documentId(), '==', 'Pp6OYJ7reZGsfnuctNIZ').get().then((querySnapshot) => {
             var i=0;
             querySnapshot.forEach((doc) => {
                     console.log(i);
@@ -522,6 +523,41 @@ color:rgb(0, 119, 255);
                         }
                         }
                     });
+                    a = document.createElement('script');
+                    a.type = 'application/ld+json';
+                    a.text = JSON.stringify({"@context":"http://www.schema.org","@type":"JobPosting","title":doc.data()['jt'],"description":doc.data()['jd'],"datePosted":doc.data()['dp'],"validThrough":doc.data()['dc'],"employmentType":doc.data()['et'],"hiringOrganization":{"@type":doc.data()['hot'],"name":doc.data()['hon'],"sameAs":doc.data()['hou'],"logo":doc.data()['hol']},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":doc.data()['jla'],"addressLocality":doc.data()['jlac'],"addressRegion":doc.data()['jlr'],"postalCode":doc.data()['jlpc'],"addressCountry":doc.data()['jlac']}},"baseSalary":{"@type":"MonetaryAmount","currency":doc.data()['sc'],"value":{"@type":"QuantitativeValue","value":doc.data()['sv'],"unitText":doc.data()['su']}}});
+                    document.getElementsByTagName('head')[0].appendChild(a);
+
+                    b = document.createElement('script');
+                    b.type = 'application/ld+json';
+                    b.text = JSON.stringify({"@context":"https://schema.org","@type": "NewsArticle","headline": doc.data()['jt'],"image": doc.data()['hol'],"datePublished": doc.data()['dp'],"dateModified": doc.data()['dp'],"author":[{"@type": "Person","name": "Gofresher Admin","url": "http://example.com/profile/janedoe123"}]});
+                    document.getElementsByTagName('head')[0].appendChild(b);
+
+                    link = !!document.querySelector("link[rel='canonical']") ? document.querySelector("link[rel='canonical']") : document.createElement('link');
+                    link.setAttribute('rel', 'canonical');
+                    link.setAttribute('href', location.protocol + '//' + location.host + location.pathname);
+                    document.head.appendChild(link);
+                    
+                    // Document Title
+                    document.title = doc.data()['mt'];
+
+                    // Meta Title Update
+                    document.querySelector('meta[name="title"]').setAttribute("content", doc.data()['mt']);
+
+                    // Meta Description Update
+                    document.querySelector('meta[name="description"]').setAttribute("content", doc.data()['md']);
+
+                    // Meta Keywords
+                    document.querySelector('meta[name="keywords"]').setAttribute("content", doc.data()['mk']);
+
+                    //OG URL
+                    document.querySelector('meta[property="og:url"]').setAttribute("content", location.protocol + '//' + location.host + location.pathname);
+
+                    //OG TITLE
+                    document.querySelector('meta[property="og:title"]').setAttribute("content", doc.data()['mt']);
+
+                    // OG Description Update
+                    document.querySelector('meta[property="og:description"]').setAttribute("content", doc.data()['md']);
             });  
         });
     </script>
