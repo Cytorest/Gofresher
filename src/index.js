@@ -32,11 +32,11 @@ const myfirstelement = (
     </div>
     <div className="menu col-sm-8">
       <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Services</li>
-        <li>Feedback</li>
-        <li>Contact</li>
+        <a href="https://gofresher.in"><li>Home</li></a>
+        <a href="https://gofresher.in/about-us"><li>About</li></a>
+        <a href="https://gofresher.in"><li>Services</li></a>
+        <a href="https://gofresher.in"><li>Feedback</li></a>
+        <a href="https://gofresher.in/contact-us"><li>Contact</li></a>
       </ul>
     </div>
   </div>
