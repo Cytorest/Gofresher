@@ -321,6 +321,10 @@ color:rgb(0, 119, 255);
     .pub_date{
         color:#00275a;
     }
+    .ads{
+        text-align:center;
+        padding-bottom:15px;
+    }
     @media only screen and (max-width: 384px) {
         .top, .middle, .bottom, .passwordText, .signUp , .signIn, .message{
         margin-top:42px;
@@ -372,6 +376,10 @@ color:rgb(0, 119, 255);
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
     <!-- End Google Tag Manager -->
+<!-- Gogle Ad Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7589635024077576"
+     crossorigin="anonymous"></script>
+<!---->
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -414,6 +422,19 @@ color:rgb(0, 119, 255);
       </div>
     
     <div class="main" id="main-wrapper">
+    </div>
+
+    <div class='ads_unit'>
+        <!-- Off Campus Jobs Ad - 1 -->
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-7589635024077576"
+            data-ad-slot="2271816252"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
 
     <div class='background-gradient'>
@@ -540,6 +561,10 @@ color:rgb(0, 119, 255);
                         }
                     });
                 i++;
+                if(i == 3){
+                    content.innerHTML += "<div class='content ads'></div>";
+                    $('.ads_unit').children().appendTo(".content.ads");
+                }
             });
             content.innerHTML += "<div class='load-more-off-campus'>Load More Posts</div><div style='margin-bottom:20px'></div>";
             $(document).on('click','.load-more-off-campus', function(){  
@@ -549,6 +574,10 @@ color:rgb(0, 119, 255);
                 date = all[j]['pd'].toDate().toDateString();
                 time = all[j]['pd'].toDate().toLocaleTimeString('en-US');
                 content.innerHTML += "<div class='content' id='job-wrapper-"+j+"'><span id='hiring-organisation-logo-"+j+"' class='logo-top'><img src="+ all[j]['hol'] +"></span><br><br><span id='custom-top-text'>"+all[j]['ctt']+"</span><br><br><span class='pub_date'>Published Date: </span><span class='pub_date'>"+date+" at "+time+"</span><br><br><span class='postings'>Hiring Organisation Name: </span><span class='postings-text' id='hiring-organisation-name="+j+"'>"+all[j]['hon']+"</span><br><br><span class='postings'>Job Title: </span> <span class='postings-text' id='job-title-"+i+"'>"+all[j]['jt']+"</span><br><br><span class='postings'>Job Description: </span> <span class='postings-text' id='job-description"+j+"'>"+all[j]['jd']+"</span><br><br><span class='postings'>Date Posted: </span><span class='postings-text' id='date-posted'>"+all[j]['dp']+"</span><br><br><span class='postings'>Date Closing: </span> <span class='postings-text' id='date-closing'>"+all[j]['dc']+"</span><br><br><span class='postings'>Employment Type: </span> <span class='postings-text' id='employment-type'>"+all[j]['et']+"</span><br><br><span class='postings'>Hiring Organisation Type: </span> <span class='postings-text' id='hiring-organisation-type'>"+all[j]['hot']+"</span><br><br><span class='postings'>Hiring Organisation Url: </span><span class='postings-text' id='hiring-organisation-url'>"+all[j]['hou']+"</span><br><br><span class='postings'>Job Location Address: </span><span class='postings-text' id='location-address'>"+all[j]['jla']+"</span><br><br><span class='postings'>Job Location City: </span><span class='postings-text' id='location-city'>"+all[j]['jlc']+"</span><br><br><span class='postings'>Job Location Region: </span><span class='postings-text' id='location-region'>"+all[j]['jlr']+"</span><br><br><span class='postings'>Job Location Postal Code: </span><span class='postings-text' id='location-postal-code'>"+all[j]['jlpc']+"</span><br><br><span class='postings'>Job Location Address Country: </span><span class='postings-text' id='location-address-country'>"+all[j]['jlac']+"</span><br><br><span class='postings'>Salary Currency: </span><span class='postings-text' id='salary-currency'>"+all[j]['sc']+"</span><br><br><span class='postings'>Salary Value: </span><span class='postings-text' id='salary-value'>"+all[j]['sv']+"</span><br><br><span class='postings'>Salary Unit: </span><span class='postings-text' id='salary-unit'>"+all[j]['su']+"</span><br><br><span class='postings'>Application Link: </span><span class='postings-text' id='application-link'><a href="+all[j]['al']+" target='_blank'>"+all[j]['al']+"</a></span><br><br><div class='bottom-gradient' id='bottom-graident-"+j+"'><div class='read-full-article' id='read-id-"+j+"'>Read Full Article</div></div></div>";
+                if(j % 3 == 0){
+                    content.innerHTML += "<div class='content ads'></div>";
+                    $('.content.ads').children().appendTo(".content.ads");
+                }
             }
             });
         });
