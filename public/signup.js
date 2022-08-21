@@ -128,3 +128,11 @@ var firebaseConfig = {
         $(".two").hide();
         $("#message-text").html("Create An Account");
     });
+
+    $(document).on('click', '.forgotPass', function(){
+        $(".middle").hide();
+        $(".one").hide();
+        $(".bottom").hide();
+        $(".two").hide();
+        $("#message-text").html("Enter Email To Recover Password");
+    });

@@ -27,7 +27,7 @@
 </script>
 
 <style>
-    .top, .middle, .bottom, .passwordText, .signUp , .signIn, .message{
+    .top, .middle, .bottom, .passwordText, .signUp , .signIn, .message, .forgotPass{
         margin-top:50px;
     }
     .emailText, .passwordText{
@@ -78,7 +78,7 @@
     font-size:20px;
     color: #7a7a7a;
     }
-    .bottom-signin .signin, .bottom-signup .signup, .fa-sign-in-alt, .fa-user-plus{
+    .bottom-signin .signin, .bottom-signup .signup, .fa-sign-in-alt, .fa-user-plus, .forgotPass{
     color:#2989ff;
     }
     .bottom, .two, #catch-error{
@@ -136,6 +136,14 @@
         <div class="passwordText"></div>
         <div class="passwordInput"><input type="password" placeholder="Password" id="password1"></div>
         <button onclick="signIn()" id="signIn" class="signIn"> Sign In </button>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+
+<div class="top col-sm-12 one">
+    <div class="col-sm-4"></div>
+    <div class=" bottom-signin col-sm-4">
+        <span class="forgotPass">Forgot Password?</span>
     </div>
     <div class="col-sm-4"></div>
 </div>
