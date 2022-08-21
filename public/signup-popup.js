@@ -1,5 +1,7 @@
 const auth = firebase.auth();
 
+// auth.signOut(); | For Testing
+
 function signUp(){
     var email = document.getElementById("email");
     var password = document.getElementById("password");
@@ -64,6 +66,16 @@ function signIn(){
             window.setTimeout(function(){document.getElementById('email-message1').style.color = "transparent";},3000);
         }
     });
+}
+
+function resetPass(){
+    var email = document.getElementById("email2").value;
+    console.log(email);
+    auth.sendPasswordResetEmail(email).then(() => {
+        console.log("Password reset Email Sent");
+    }).catch(error =>{
+        console.log(error);
+    })
 }
 
 function signOut(){
@@ -161,4 +173,14 @@ auth.onAuthStateChanged(function(user){
         $(".bottom").hide();
         $(".two-message").hide();
         $("#message-text").html("Create An Account");
+    });
+
+    $(document).on('click', '.forgotPass', function(){
+        $(".forgot").show();
+        $(".middle").hide();
+        $(".one").hide();
+        $(".bottom").hide();
+        $(".two").hide();
+        $(".three").hide();
+        $("#message-text").html("Enter Email To Reset Password");
     });
