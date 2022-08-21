@@ -93,7 +93,7 @@ var firebaseConfig = {
 
     function signOut(){
         auth.signOut();
-        window.location.href = "/public/signup.html";
+        window.location.href = "/signup.html";
     }
 
     auth.onAuthStateChanged(function(user){
@@ -116,8 +116,8 @@ var firebaseConfig = {
         }
 
         else{
-            if(window.location.pathname != "/public/signup.html"){
-                window.location.href = "/public/signup.html";
+            if(window.location.pathname != "/signup.html"){
+                window.location.href = "/signup.html";
             }
         }
 
