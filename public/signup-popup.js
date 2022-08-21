@@ -179,12 +179,14 @@ auth.onAuthStateChanged(function(user){
         $("#message-text").html("Login To The Site");
     });
 
-    $(document).on('click', '.signup', function(){
-        $(".middle").show();
-        $(".one-message").show();
-        $(".bottom").hide();
-        $(".two-message").hide();
-        $(".three").hide();
-        $(".forgot").hide();
-        $("#message-text").html("Create An Account");
-    });
+    window.setTimeout(function () {
+        $(document).on('click', '.signup', function(){
+            $(".middle").show();
+            $(".one-message").show();
+            $(".bottom").hide();
+            $(".two-message").hide();
+            $(".three").hide();
+            $(".forgot").hide();
+            $("#message-text").html("Create An Account");
+        });
+    }, 1500);
