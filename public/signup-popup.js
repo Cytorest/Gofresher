@@ -159,6 +159,16 @@ auth.onAuthStateChanged(function(user){
     $(".close").hide();
     });
 
+    $(document).on('click', '.forgotPass', function(){
+        $(".forgot").show();
+        $(".middle").hide();
+        $(".one").hide();
+        $(".bottom").hide();
+        $(".two").hide();
+        $(".three").hide();
+        $("#message-text").html("Enter Email To Reset Password");
+    });
+
     $(document).on('click', '.signin', function(){
         $(".bottom").show();
         $(".two-message").show();
@@ -177,14 +187,4 @@ auth.onAuthStateChanged(function(user){
         $(".three").hide();
         $(".forgot").hide();
         $("#message-text").html("Create An Account");
-    });
-
-    $(document).on('click', '.forgotPass', function(){
-        $(".forgot").show();
-        $(".middle").hide();
-        $(".one").hide();
-        $(".bottom").hide();
-        $(".two").hide();
-        $(".three").hide();
-        $("#message-text").html("Enter Email To Reset Password");
     });
