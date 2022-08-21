@@ -101,8 +101,12 @@
         width: 100%;
         max-width: 300px;
     }
-    .three, .forgot{
+    .forgot{
         display:none;
+    }
+    .forgotPass{
+        font-size:20px;
+        margin-top:50px;
     }
 </style>
 
@@ -142,6 +146,7 @@
         <div class="passwordText"></div>
         <div class="passwordInput"><input type="password" placeholder="Password" id="password1"></div>
         <button onclick="signIn()" id="signIn" class="signIn"> Sign In </button>
+        <div class="forgotPass">Forgot Password? Click Here To Reset</div>
     </div>
     <div class="col-sm-4"></div>
 </div>
@@ -152,14 +157,6 @@
         <div class="emailText"></div>
         <div class="emailInput"><input type="email" placeholder="Email" id="email2"><div id="email-message2"></div></div>
         <button onclick="resetPass()" id="resetPass" class="resetPass"> Reset Password </button>
-    </div>
-    <div class="col-sm-4"></div>
-</div>
-
-<div class="top col-sm-12 three">
-    <div class="col-sm-4"></div>
-    <div class=" bottom-signin col-sm-4">
-        <span class="forgotPass">Forgot Password?</span>
     </div>
     <div class="col-sm-4"></div>
 </div>

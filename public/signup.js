@@ -14,6 +14,8 @@ var firebaseConfig = {
 
     const auth = firebase.auth();
 
+    // auth.signOut(); | For Testing
+
     function signUp(){
 
         var email = document.getElementById("email");
