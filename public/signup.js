@@ -81,9 +81,19 @@ var firebaseConfig = {
         });
     }
 
+    function resetPass(){
+        var email = document.getElementById("email2").value;
+        console.log(email);
+        auth.sendPasswordResetEmail(email).then(() => {
+            console.log("Password reset Email Sent");
+        }).catch(error =>{
+            console.log(error);
+        })
+    }
+
     function signOut(){
         auth.signOut();
-        window.location.href = "/signup.html";
+        window.location.href = "/public/signup.html";
     }
 
     auth.onAuthStateChanged(function(user){
@@ -106,8 +116,8 @@ var firebaseConfig = {
         }
 
         else{
-            if(window.location.pathname != "/signup.html"){
-                window.location.href = "/signup.html";
+            if(window.location.pathname != "/public/signup.html"){
+                window.location.href = "/public/signup.html";
             }
         }
 
@@ -116,8 +126,10 @@ var firebaseConfig = {
     $(document).on('click', '.signin', function(){
         $(".bottom").show();
         $(".two").show();
+        $(".three").show();
         $(".middle").hide();
         $(".one").hide();
+        $(".forgot").hide();
         $("#message-text").html("Login To The Site");
     });
 
@@ -126,13 +138,17 @@ var firebaseConfig = {
         $(".one").show();
         $(".bottom").hide();
         $(".two").hide();
+        $(".three").hide();
+        $(".forgot").hide();
         $("#message-text").html("Create An Account");
     });
 
     $(document).on('click', '.forgotPass', function(){
+        $(".forgot").show();
         $(".middle").hide();
         $(".one").hide();
         $(".bottom").hide();
         $(".two").hide();
-        $("#message-text").html("Enter Email To Recover Password");
+        $(".three").hide();
+        $("#message-text").html("Enter Email To Reset Password");
     });

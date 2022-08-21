@@ -18,7 +18,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js" type="text/javascript"></script>
 <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-database.js" type="text/javascript"></script>
 <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
-<script src="/signup.js" type="text/javascript"></script>
+<script src="/public/signup.js" type="text/javascript"></script>
 <script>
     window.addEventListener("load", () => {
       window.setTimeout(function () {
@@ -27,7 +27,7 @@
 </script>
 
 <style>
-    .top, .middle, .bottom, .passwordText, .signUp , .signIn, .message, .forgotPass{
+    .top, .middle, .bottom, .passwordText, .signUp , .signIn, .message, .forgotPass, .forgot, .resetPass{
         margin-top:50px;
     }
     .emailText, .passwordText{
@@ -78,8 +78,11 @@
     font-size:20px;
     color: #7a7a7a;
     }
-    .bottom-signin .signin, .bottom-signup .signup, .fa-sign-in-alt, .fa-user-plus, .forgotPass{
+    .bottom-signin .signin, .bottom-signup .signup, .fa-sign-in-alt, .fa-user-plus, .forgotPass, .resetPass{
     color:#2989ff;
+    }
+    .resetPass{
+        width: 170px;
     }
     .bottom, .two, #catch-error{
         display:none
@@ -97,6 +100,9 @@
     .logo img{
         width: 100%;
         max-width: 300px;
+    }
+    .three, .forgot{
+        display:none;
     }
 </style>
 
@@ -140,7 +146,17 @@
     <div class="col-sm-4"></div>
 </div>
 
-<div class="top col-sm-12 one">
+<div id="formContainer" class="forgot col-sm-12">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <div class="emailText"></div>
+        <div class="emailInput"><input type="email" placeholder="Email" id="email2"><div id="email-message2"></div></div>
+        <button onclick="resetPass()" id="resetPass" class="resetPass"> Reset Password </button>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+
+<div class="top col-sm-12 three">
     <div class="col-sm-4"></div>
     <div class=" bottom-signin col-sm-4">
         <span class="forgotPass">Forgot Password?</span>
