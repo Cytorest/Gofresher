@@ -162,8 +162,10 @@ auth.onAuthStateChanged(function(user){
     $(document).on('click', '.signin', function(){
         $(".bottom").show();
         $(".two-message").show();
+        $(".three").show();
         $(".middle").hide();
         $(".one-message").hide();
+        $(".forgot").hide();
         $("#message-text").html("Login To The Site");
     });
 
@@ -172,6 +174,8 @@ auth.onAuthStateChanged(function(user){
         $(".one-message").show();
         $(".bottom").hide();
         $(".two-message").hide();
+        $(".three").hide();
+        $(".forgot").hide();
         $("#message-text").html("Create An Account");
     });
 
