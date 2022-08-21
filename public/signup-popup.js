@@ -162,9 +162,7 @@ auth.onAuthStateChanged(function(user){
     $(document).on('click', '.forgotPass', function(){
         $(".forgot").show();
         $(".middle").hide();
-        $(".one").hide();
         $(".bottom").hide();
-        $(".two").hide();
         $(".three").hide();
         $("#message-text").html("Enter Email To Reset Password");
     });
