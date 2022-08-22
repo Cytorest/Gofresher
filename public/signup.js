@@ -154,5 +154,6 @@ var firebaseConfig = {
         $(".bottom").hide();
         $(".two").hide();
         $(".three").hide();
+        $(".one-message").show();
         $("#message-text").html("Enter Email To Reset Password");
     });
