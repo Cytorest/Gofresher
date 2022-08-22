@@ -166,8 +166,7 @@ auth.onAuthStateChanged(function(user){
         $(".middle").hide();
         $(".bottom").hide();
         $(".three").hide();
-        $(".one").show();
-        $(".two").show();
+        $(".one-message").show();
         $("#message-text").html("Enter Email To Reset Password");
     });
 
