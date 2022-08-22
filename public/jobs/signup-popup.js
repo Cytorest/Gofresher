@@ -1,5 +1,7 @@
 const auth = firebase.auth();
 
+// auth.signOut(); | For Testing
+
 function signUp(){
     var email = document.getElementById("email");
     var password = document.getElementById("password");
@@ -66,6 +68,18 @@ function signIn(){
     });
 }
 
+function resetPass(){
+    var email = document.getElementById("email2").value;
+    console.log(email);
+    auth.sendPasswordResetEmail(email).then(() => {
+        console.log("Password reset Email Sent");
+        document.getElementById('email-message2').innerHTML = "An email has been sent to your inbox with password reset link. Kindly check.";
+        document.getElementById('email-message2').setAttribute("style", "color: #27a300; font-size: 20px; margin-top: 20px;");
+    }).catch(error =>{
+        console.log(error);
+    })
+}
+
 function signOut(){
     auth.signOut();
     if(window.location.pathname != "/signup.html"){
@@ -84,6 +98,8 @@ auth.onAuthStateChanged(function(user){
         var domain = email.substring(email.lastIndexOf("@") +1);
         var div = document.getElementById('user');
         div.innerHTML += "<i class='fas fa-user'></i> welcome <span class='username' id='username'></span>" + name + "<span> </span><i class='fas fa-chevron-circle-down' id='menuArrow'></i><div id='myDropdown' class='dropdown-content'><li><button onclick='signOut()' id='signOut' class='signOut'> Sign Out </button></li></div>";
+        $(".read-full-article").empty();
+        $(".read-full-article").html("Read Full Article");
         $(document).on('click', '#user', function(){
             $('#myDropdown').toggle();
             $("#menuArrow").toggleClass("rotated");
@@ -104,7 +120,6 @@ auth.onAuthStateChanged(function(user){
                 $(".central-popup").hide();
                 $(".close").hide();
                 $(".login-button-top").hide();
-                $(".read-full-article").html("Read Full Article");
             }
         });
 
@@ -146,18 +161,33 @@ auth.onAuthStateChanged(function(user){
     $(".close").hide();
     });
 
+    $(document).on('click', '.forgotPass', function(){
+        $(".forgot").show();
+        $(".middle").hide();
+        $(".bottom").hide();
+        $(".three").hide();
+        $(".one-message").show();
+        $("#message-text").html("Enter Email To Reset Password");
+    });
+
     $(document).on('click', '.signin', function(){
         $(".bottom").show();
         $(".two-message").show();
+        $(".three").show();
         $(".middle").hide();
         $(".one-message").hide();
+        $(".forgot").hide();
         $("#message-text").html("Login To The Site");
     });
 
-    $(document).on('click', '.signup', function(){
-        $(".middle").show();
-        $(".one-message").show();
-        $(".bottom").hide();
-        $(".two-message").hide();
-        $("#message-text").html("Create An Account");
-    });
+    window.setTimeout(function () {
+        $(document).on('click', '.signup', function(){
+            $(".middle").show();
+            $(".one-message").show();
+            $(".bottom").hide();
+            $(".two-message").hide();
+            $(".three").hide();
+            $(".forgot").hide();
+            $("#message-text").html("Create An Account");
+        });
+    }, 1500);
