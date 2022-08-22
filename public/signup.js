@@ -88,6 +88,8 @@ var firebaseConfig = {
         console.log(email);
         auth.sendPasswordResetEmail(email).then(() => {
             console.log("Password reset Email Sent");
+            document.getElementById('email-message2').innerHTML = "An email has been sent to your inbox with password reset link. Kindly check.";
+            document.getElementById('email-message2').setAttribute("style", "color: #27a300; font-size: 20px; margin-top: 20px;");
         }).catch(error =>{
             console.log(error);
         })
