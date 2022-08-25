@@ -248,41 +248,6 @@
                         }
                         }
                     });
-                    a = document.createElement('script');
-                    a.type = 'application/ld+json';
-                    a.text = JSON.stringify({"@context":"http://www.schema.org","@type":"JobPosting","title":doc.data()['jt'],"description":doc.data()['jd'],"datePosted":doc.data()['dp'],"validThrough":doc.data()['dc'],"employmentType":doc.data()['et'],"hiringOrganization":{"@type":doc.data()['hot'],"name":doc.data()['hon'],"sameAs":doc.data()['hou'],"logo":doc.data()['hol']},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":doc.data()['jla'],"addressLocality":doc.data()['jlac'],"addressRegion":doc.data()['jlr'],"postalCode":doc.data()['jlpc'],"addressCountry":doc.data()['jlac']}},"baseSalary":{"@type":"MonetaryAmount","currency":doc.data()['sc'],"value":{"@type":"QuantitativeValue","value":doc.data()['sv'],"unitText":doc.data()['su']}}});
-                    document.getElementsByTagName('head')[0].appendChild(a);
-
-                    b = document.createElement('script');
-                    b.type = 'application/ld+json';
-                    b.text = JSON.stringify({"@context":"https://schema.org","@type": "NewsArticle","headline": doc.data()['jt'],"image": doc.data()['hol'],"datePublished": doc.data()['dp'],"dateModified": doc.data()['dp'],"author":[{"@type": "Person","name": "Gofresher Admin","url": "http://example.com/profile/janedoe123"}]});
-                    document.getElementsByTagName('head')[0].appendChild(b);
-
-                    link = !!document.querySelector("link[rel='canonical']") ? document.querySelector("link[rel='canonical']") : document.createElement('link');
-                    link.setAttribute('rel', 'canonical');
-                    link.setAttribute('href', location.protocol + '//' + location.host + location.pathname);
-                    document.head.appendChild(link);
-                    
-                    // Document Title
-                    document.title = doc.data()['mt'];
-
-                    // Meta Title Update
-                    document.querySelector('meta[name="title"]').setAttribute("content", doc.data()['mt']);
-
-                    // Meta Description Update
-                    document.querySelector('meta[name="description"]').setAttribute("content", doc.data()['md']);
-
-                    // Meta Keywords
-                    document.querySelector('meta[name="keywords"]').setAttribute("content", doc.data()['mk']);
-
-                    //OG URL
-                    document.querySelector('meta[property="og:url"]').setAttribute("content", location.protocol + '//' + location.host + location.pathname);
-
-                    //OG TITLE
-                    document.querySelector('meta[property="og:title"]').setAttribute("content", doc.data()['mt']);
-
-                    // OG Description Update
-                    document.querySelector('meta[property="og:description"]').setAttribute("content", doc.data()['md']);
             });  
         });
     </script>
