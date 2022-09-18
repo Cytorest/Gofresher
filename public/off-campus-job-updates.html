@@ -46,6 +46,10 @@ padding:0;
     box-shadow: 0 0 6px 0 rgb(121 121 121 / 40%);
     cursor:pointer;
 }
+.load-more-off-campus img{
+    width:50px;
+    height:50px;
+}
 .content{
     height: 450px;
     min-height:450px;
@@ -595,9 +599,12 @@ color:rgb(0, 119, 255);
                 }
             });
             content.innerHTML += "<div class='load-more-off-campus'>Load More Posts</div><div style='margin-bottom:20px'></div>";
-            $(document).on('click','.load-more-off-campus', function(){  
+            $(document).on('click','.load-more-off-campus', function(){
+                $('.load-more-off-campus').css({'padding-top': '0',});
+                document.getElementsByClassName("load-more-off-campus")[0].innerHTML =  "<img src='/public/company-logos/site_loader_image.gif'>";
+                setTimeout(() => {
                 $(".load-more-off-campus").hide();
-            for (var j=6;j<=i;j++){
+                for (var j=6;j<=i;j++){
                 console.log(all[j]);
                 date = all[j]['pd'].toDate().toDateString();
                 time = all[j]['pd'].toDate().toLocaleTimeString('en-US');
@@ -605,6 +612,7 @@ color:rgb(0, 119, 255);
                 if(j % 3 == 0){
                 }
             }
+            }, "100");
             });
         });
     </script>
