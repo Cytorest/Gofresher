@@ -545,15 +545,6 @@ color:rgb(0, 119, 255);
     </div>
 
     <script>
-        $('#bell-icon').click(function(){
-            OneSignal.push(function() {
-                OneSignal.showSlidedownPrompt();
-            });
-            console.log("Bell Icon Clicked");
-        });
-    </script>
-
-    <script>
         const firebaseConfig = {
         apiKey: "AIzaSyBHD-tpwQmuzukK-Iu7r96Vzxp-eEXK1Ss",
         authDomain: "gofresher-e433c.firebaseapp.com",
@@ -635,6 +626,15 @@ color:rgb(0, 119, 255);
             }
             }, "100");
             });
+        });
+    </script>
+
+    <script>
+        $('#bell-icon').click(function(){
+            OneSignal.push(function() {
+                OneSignal.showSlidedownPrompt();
+            });
+            console.log("Bell Icon Clicked");
         });
     </script>
 
