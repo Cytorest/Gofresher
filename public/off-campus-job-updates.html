@@ -363,6 +363,18 @@ color:rgb(0, 119, 255);
         margin-top: 31px;
         }
     }
+    #bell-icon{
+        position:fixed;
+        right:20px;
+        bottom:25px;
+        width:70px;
+        height:70px;
+        border:1px solid #ddd;
+        border-radius:50%;
+    }
+    #bell-icon img{
+        width:100%      
+    }
 </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
@@ -530,7 +542,20 @@ color:rgb(0, 119, 255);
 </script>
     </div>
 
+    <div id="bell-icon">
+    <img src="bell-icon.png"> 
     </div>
+
+    </div>
+
+    <script>
+        $('#bell-icon').click(function(){
+            OneSignal.push(function() {
+                OneSignal.showSlidedownPrompt();
+            });
+            console.log("Bell Icon Clicked");
+        });
+    </script>
 
     <script>
         const firebaseConfig = {
