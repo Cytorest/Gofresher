@@ -635,7 +635,9 @@ color:rgb(0, 119, 255);
             }
             }, "100");
             });
-            for(var i=0;i<document.getElementsByClassName("bell-icon").length;i++)
+        });
+
+        for(var i=0;i<document.getElementsByClassName("bell-icon").length;i++)
             {
                 $('#bell-icon-'+i).click(function(){
                     OneSignal.push(function() {
@@ -644,7 +646,7 @@ color:rgb(0, 119, 255);
                     console.log("Bell Icon Clicked");
                 });
             }  
-        });
+            
     </script>
 
 </body>
