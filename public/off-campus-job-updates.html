@@ -606,19 +606,19 @@ color:rgb(0, 119, 255);
                         }
                         }
                     });
-                    for(var i=0;i<document.getElementsByClassName("bell-icon").length;i++)
-                        {
-                            $('#bell-icon-'+i).click(function(){
-                                OneSignal.push(function() {
-                                    OneSignal.showSlidedownPrompt();
-                                });
-                                console.log("Bell Icon Clicked");
-                            });
-                        }  
                 i++;
                 if(i == 3){
                 }
             });
+            for(var i=0;i<document.getElementsByClassName("bell-icon").length;i++)
+            {
+                $('#bell-icon-'+i).click(function(){
+                    OneSignal.push(function() {
+                        OneSignal.showSlidedownPrompt();
+                    });
+                    console.log("Bell Icon Clicked");
+                });
+            }  
             content.innerHTML += "<div class='load-more-off-campus'>Load More Posts</div><div style='margin-bottom:20px'></div>";
             $(document).on('click','.load-more-off-campus', function(){
                 $('.load-more-off-campus').css({'padding-top': '0',});
