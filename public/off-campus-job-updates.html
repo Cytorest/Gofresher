@@ -630,15 +630,19 @@ color:rgb(0, 119, 255);
     </script>
 
     <script>
-    for(var i=0;i<document.getElementsByClassName("bell-icon").length;i++)
-    {
-    $('#bell-icon-'+i).click(function(){
-        OneSignal.push(function() {
-            OneSignal.showSlidedownPrompt();
-        });
-        console.log("Bell Icon Clicked");
+    window.addEventListener("load", () => {
+        window.setTimeout(function () {
+            for(var i=0;i<document.getElementsByClassName("bell-icon").length;i++)
+            {
+                $('#bell-icon-'+i).click(function(){
+                    OneSignal.push(function() {
+                        OneSignal.showSlidedownPrompt();
+                    });
+                    console.log("Bell Icon Clicked");
+                });
+            }
+        }, 500);
     });
-    }
     </script>
 
 </body>
