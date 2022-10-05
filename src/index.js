@@ -73,7 +73,7 @@ const myfirstelement = (
       <div className="pri col-sm-4"><a href="listings.html" target="_blank" rel="noreferrer"><div className="client 1"><img src='max.svg' width='150' height='150' alt='Max Fashion'/></div></a><div className="client 2"><img src='reliance.svg' width='150' height='150' alt='Reliance'/></div></div>
       <div className="sec col-sm-4"><div className="client 3"><img src='soch.svg' width='150' height='150' alt='Soch Apparels'/></div><div className="client 4"><img src='pantaloons.svg' width='150' height='150' alt='Pantaloons'/></div></div>
       <div className="tre col-sm-4"><div className="client 5"><img src='vishal.svg' width='150' height='150' alt='Vishal Mega Mart'/></div><a href="off-campus-job-updates.html"><div className="client 6"><img src='home-shop-18.svg' width='150' height='150' alt='Home Shop 18'/></div></a></div>
-      <div className="fou col-sm-4"><div className="client 7"><img src='more.svg' width='150' height='150' alt='More Retail Office'/></div><div className="client 8"><img src='more.svg' width='150' height='150' alt='More Retail Office'/></div></div>
+      <div className="fou col-sm-4"><div className="client 7"><img src='more.svg' width='150' height='150' alt='More Retail Office'/></div></div>
     </div>
   </div>
   
