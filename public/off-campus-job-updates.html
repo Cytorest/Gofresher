@@ -389,6 +389,7 @@ color:rgb(0, 119, 255);
     max-height: 120px;
     overflow: hidden;
     margin-right: 15px;
+    text-align:center;
     margin-top:15px;
     margin-left: 15px;
     margin-bottom: 20px;
@@ -483,7 +484,12 @@ color:rgb(0, 119, 255);
     <div class="header-ad" id="header-ad-id">
 <script>
     var header = document.getElementById('header-ad-id');
+    if(window.innerWidth>728){
     header.innerHTML += "<ins class='adsbygoogle' style='display:inline-block;width:728px;height:90px' data-ad-client='ca-pub-7589635024077576' data-ad-slot='4463812125'></ins>";
+    }
+    else{
+        header.innerHTML += "<ins class='adsbygoogle' style='display:inline-block;width:320px;height:100px' data-ad-client='ca-pub-7589635024077576' data-ad-slot='1809465296'></ins>";
+    }
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
     </div>
