@@ -21,4 +21,4 @@ jobs:
       - name: Create SA key JSON
         run: echo $GSA_KEY > "$HOME"/gcloud.json
       - name: Deploy
-        uses: GOOGLE_APPLICATION_CREDENTIALS="$HOME"/gcloud.json firebase deploy [project specific stuff]
+        run: GOOGLE_APPLICATION_CREDENTIALS="$HOME"/gcloud.json firebase deploy [project specific stuff]
