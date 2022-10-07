@@ -18,9 +18,7 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+      - name: Create SA key JSON
+        run: echo $GSA_KEY > "$HOME"/gcloud.json
       - name: Deploy
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only hosting
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        uses: GOOGLE_APPLICATION_CREDENTIALS="$HOME"/gcloud.json firebase deploy [project specific stuff]
