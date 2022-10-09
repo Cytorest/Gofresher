@@ -24,9 +24,6 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
@@ -39,6 +36,21 @@
                 a.type = 'text/javascript';
                 a.src = '/signup-popup.js';
                 document.getElementsByTagName('head')[0].appendChild(a);
+                
+                b = document.createElement('script');
+                b.type = 'text/javascript';
+                b.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js';
+                document.getElementsByTagName('head')[0].appendChild(b);
+                
+                c = document.createElement('script');
+                c.type = 'text/javascript';
+                c.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+                document.getElementsByTagName('head')[0].appendChild(c);
+
+                d = document.createElement('script');
+                d.type = 'text/javascript';
+                d.src = 'https://kit.fontawesome.com/f49733d343.js';
+                document.getElementsByTagName('head')[0].appendChild(d);
             }, 500);
         });
     </script>
