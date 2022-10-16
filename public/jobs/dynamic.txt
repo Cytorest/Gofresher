@@ -292,6 +292,10 @@
                     b.text = JSON.stringify({"@context":"https://schema.org","@type": "NewsArticle","headline": doc.data()['jt'],"image": doc.data()['hol'],"datePublished": doc.data()['dp'],"dateModified": doc.data()['dp'],"author":[{"@type": "Person","name": "Gofresher Admin","url": "http://example.com/profile/janedoe123"}]});
                     document.getElementsByTagName('head')[0].appendChild(b);
 
+                    c = document.createElement('script');
+                    c.type = 'application/ld+json';
+                    c.text=JSON.stringify({"@context":"https://schema.org","@type":"NewsArticle",sameAs:"",dateCreated:doc.data().dp+"T00:00:00+05:30",description:doc.data().jd,dateModified:doc.data().dp+"T00:00:00+05:30",datePublished:doc.data().dp+"T00:00:00+05:30",mainEntityOfPage:"https://gofresher.in/jobs/"+doc.data().slug,headline:doc.data().jt,articleBody:doc.data().jd,author:{"@type":"Person",name:"Admin Gofresher",sameAs:"https://gofresher.in/author/admin"},publisher:{"@type":"Organization",name:"Gofresher",logo:{"@type":"ImageObject",name:"Gofresher",url:"https://gofresher.in/jobs/amp/gofresher-amp-logo.png"}},image:{"@type":"ImageObject",url:doc.data().hol,width:"1200",height:"1200"}}),document.getElementsByTagName("head")[0].appendChild(c);
+
                     link = !!document.querySelector("link[rel='canonical']") ? document.querySelector("link[rel='canonical']") : document.createElement('link');
                     link.setAttribute('rel', 'canonical');
                     link.setAttribute('href', location.protocol + '//' + location.host + location.pathname);
