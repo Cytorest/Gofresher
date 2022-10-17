@@ -287,11 +287,6 @@
                     a.text = JSON.stringify({"@context":"http://www.schema.org","@type":"JobPosting","title":doc.data()['jt'],"description":doc.data()['jd'],"datePosted":doc.data()['dp'],"validThrough":doc.data()['dc'],"employmentType":doc.data()['et'],"hiringOrganization":{"@type":doc.data()['hot'],"name":doc.data()['hon'],"sameAs":doc.data()['hou'],"logo":doc.data()['hol']},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":doc.data()['jla'],"addressLocality":doc.data()['jlac'],"addressRegion":doc.data()['jlr'],"postalCode":doc.data()['jlpc'],"addressCountry":doc.data()['jlac']}},"baseSalary":{"@type":"MonetaryAmount","currency":doc.data()['sc'],"value":{"@type":"QuantitativeValue","value":doc.data()['sv'],"unitText":doc.data()['su']}}});
                     document.getElementsByTagName('head')[0].appendChild(a);
 
-                    b = document.createElement('script');
-                    b.type = 'application/ld+json';
-                    b.text = JSON.stringify({"@context":"https://schema.org","@type": "NewsArticle","headline": doc.data()['jt'],"image": doc.data()['hol'],"datePublished": doc.data()['dp'],"dateModified": doc.data()['dp'],"author":[{"@type": "Person","name": "Gofresher Admin","url": "http://example.com/profile/janedoe123"}]});
-                    document.getElementsByTagName('head')[0].appendChild(b);
-
                     c = document.createElement('script');
                     c.type = 'application/ld+json';
                     c.text=JSON.stringify({"@context":"https://schema.org","@type":"NewsArticle",sameAs:"",dateCreated:doc.data().dp+"T00:00:00+05:30",description:doc.data().md,dateModified:doc.data().dp+"T00:00:00+05:30",datePublished:doc.data().dp+"T00:00:00+05:30",mainEntityOfPage:"https://gofresher.in/jobs/"+doc.data().slug,headline:doc.data().jt,articleBody:doc.data().jd,author:{"@type":"Person",name:"Admin Gofresher",sameAs:"https://gofresher.in/author/admin"},publisher:{"@type":"Organization",name:"Gofresher",logo:{"@type":"ImageObject",name:"Gofresher",url:"https://gofresher.in/jobs/amp/gofresher-amp-logo.png"}},image:{"@type":"ImageObject",url:doc.data().hol,width:"1200",height:"1200"}}),document.getElementsByTagName("head")[0].appendChild(c);
