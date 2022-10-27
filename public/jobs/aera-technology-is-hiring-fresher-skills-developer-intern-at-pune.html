@@ -190,6 +190,21 @@
         </div>
     </div>
 
+    <div class="header-ad" id="header-ad-id">
+        <script>
+            var header = document.getElementById('header-ad-id');
+            if(window.innerWidth>728){
+            header.innerHTML += "<ins class='adsbygoogle' style='display:inline-block;width:728px;height:90px' data-ad-client='ca-pub-7589635024077576' data-ad-slot='8847392187'></ins>";
+            }
+            else{
+                header.style.height = '130px';
+                header.style.maxHeight = '130px';
+                header.innerHTML += "<ins class='adsbygoogle' style='display:inline-block;width:320px;height:100px' data-ad-client='ca-pub-7589635024077576' data-ad-slot='1143058332'></ins>";
+            }
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
     <div class="content ad-unit">
         <!-- Article BTS Ads -->
         <ins class="adsbygoogle"
