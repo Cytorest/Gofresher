@@ -625,9 +625,9 @@ color:rgb(0, 119, 255);
         firebase.firestore().collection("Job Posting").orderBy("pd", "desc").get().then((querySnapshot) => {
             var i=0;
             querySnapshot.forEach((doc) => {
-                    console.log(i);
+                    // console.log(i);
                     all[i] = doc.data(i);
-                    console.log (all);
+                    // console.log (all);
                     date = doc.data()['pd'].toDate().toDateString();
                     time = doc.data()['pd'].toDate().toLocaleTimeString('en-US');
                     content = document.getElementById('main-wrapper');
@@ -636,8 +636,8 @@ color:rgb(0, 119, 255);
                     }
                     $(document).on('click','#read-id-'+i, function(){             
                         element = $(this).attr("id").replace('read-id-','');
-                        console.log(element);
-                        console.log(previous);
+                        // console.log(element);
+                        // console.log(previous);
                         if(previous != undefined){
                             $("#job-wrapper-"+previous).css("background-color", "#ffffff");
                         }
@@ -647,14 +647,14 @@ color:rgb(0, 119, 255);
                             $("#job-wrapper-"+element).css('height','auto');
                             $("#job-wrapper-"+element).css("background-color", "#effdff");
                             previous = element;
-                            console.log(previous);
+                            // console.log(previous);
                             window.history.pushState("", "", 'https://gofresher.in/jobs/'+doc.data()['slug']);
                             return;
                         }
                         else{
                         if(counter==0)
                         {
-                        console.log("Login To Apply");
+                        // console.log("Login To Apply");
                         $(".background-gradient").show();
                         $(".central-popup").show();
                         $(".close").show();
@@ -669,12 +669,12 @@ color:rgb(0, 119, 255);
             var contentmore = document.getElementById('load-more-jobs');
             var k=0;
                 $(document).on('click','.load-more-off-campus', function(){
-                console.log("Click Detected");
+                // console.log("Click Detected");
                     for (var j=(k+6);j<=(k+15);j++){
                     date = all[j]['pd'].toDate().toDateString();
                     time = all[j]['pd'].toDate().toLocaleTimeString('en-US');
                     contentmore.innerHTML += "<div class='content' id='job-wrapper-"+j+"'><span id='hiring-organisation-logo-"+j+"' class='logo-top'><img src="+ all[j]['hol'] +"></span><br><br><a href='https://gofresher.in/jobs/"+all[j]['slug']+"' target='_blank'><span id='custom-top-text'>"+all[j]['ctt']+"</span></a><br><br><span class='pub_date'>Published Date: </span><span class='pub_date'>"+date+" at "+time+"</span><br><br><span class='postings'>Hiring Organisation Name: </span><span class='postings-text' id='hiring-organisation-name="+j+"'>"+all[j]['hon']+"</span><br><br><span class='postings'>Job Title: </span> <span class='postings-text' id='job-title-"+i+"'>"+all[j]['jt']+"</span><br><br><span class='postings'>Job Description: </span> <span class='postings-text' id='job-description"+j+"'>"+all[j]['jd']+"</span><br><br><span class='postings'>Date Posted: </span><span class='postings-text' id='date-posted'>"+all[j]['dp']+"</span><br><br><span class='postings'>Date Closing: </span> <span class='postings-text' id='date-closing'>"+all[j]['dc']+"</span><br><br><span class='postings'>Employment Type: </span> <span class='postings-text' id='employment-type'>"+all[j]['et']+"</span><br><br><span class='postings'>Hiring Organisation Type: </span> <span class='postings-text' id='hiring-organisation-type'>"+all[j]['hot']+"</span><br><br><span class='postings'>Hiring Organisation Url: </span><span class='postings-text' id='hiring-organisation-url'>"+all[j]['hou']+"</span><br><br><span class='postings'>Job Location Address: </span><span class='postings-text' id='location-address'>"+all[j]['jla']+"</span><br><br><span class='postings'>Job Location City: </span><span class='postings-text' id='location-city'>"+all[j]['jlc']+"</span><br><br><span class='postings'>Job Location Region: </span><span class='postings-text' id='location-region'>"+all[j]['jlr']+"</span><br><br><span class='postings'>Job Location Postal Code: </span><span class='postings-text' id='location-postal-code'>"+all[j]['jlpc']+"</span><br><br><span class='postings'>Job Location Address Country: </span><span class='postings-text' id='location-address-country'>"+all[j]['jlac']+"</span><br><br><span class='postings'>Salary Currency: </span><span class='postings-text' id='salary-currency'>"+all[j]['sc']+"</span><br><br><span class='postings'>Salary Value: </span><span class='postings-text' id='salary-value'>"+all[j]['sv']+"</span><br><br><span class='postings'>Salary Unit: </span><span class='postings-text' id='salary-unit'>"+all[j]['su']+"</span><br><br><span class='postings'>Application Link: </span><span class='postings-text' id='application-link'><a href="+all[j]['al']+" target='_blank'>"+all[j]['al']+"</a></span><br><br><div class='bottom-gradient' id='bottom-graident-"+j+"'><div class='read-full-article' id='read-id-"+j+"'>Read Full Article</div></div></div>";
-                    console.log(all[j]);
+                    // console.log(all[j]);
                     }
                     k=(j-6);
                 });
@@ -684,7 +684,7 @@ color:rgb(0, 119, 255);
             OneSignal.push(function() {
                 OneSignal.showSlidedownPrompt();
             });
-            console.log("Bell Icon Clicked");
+            // console.log("Bell Icon Clicked");
         });
     </script>
 </body>
