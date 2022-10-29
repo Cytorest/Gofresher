@@ -1,5 +1,5 @@
 const auth = firebase.auth();
-
+var cookie;
 // auth.signOut(); | For Testing
 
 function signUp(){
@@ -92,7 +92,7 @@ var counter = 0;
 
 auth.onAuthStateChanged(function(user){
 
-    if(user){
+    if(user && cookie == 0){
         var email = user.email;
         var name   = email.substring(0, email.lastIndexOf("@"));
         var domain = email.substring(email.lastIndexOf("@") +1);
