@@ -104,6 +104,7 @@ auth.onAuthStateChanged(function(user){
         }
         else{
         $(".read-full-article").html("Read Full Article");
+        console.log(cookie+" This loaded");
         }
         $(document).on('click', '#user', function(){
             $('#myDropdown').toggle();
