@@ -332,7 +332,7 @@
         });
 
         firebase.firestore().collection("Job Posting").orderBy("pd", "desc").get().then((querySnapshot) => {
-            var i=0;
+            var i=1;
             querySnapshot.forEach((doc) => {
                     console.log(i);
                     all[i] = doc.data(i);
