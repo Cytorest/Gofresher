@@ -59,10 +59,12 @@
             d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
             document.getElementsByTagName('head')[0].appendChild(d);
             ///Signup-Popup Js Load///
-            a = document.createElement('script');
-            a.type = 'text/javascript';
-            a.src = '/signup-popup.js';
-            document.getElementsByTagName('head')[0].appendChild(a);
+            window.setTimeout(function () {
+                a = document.createElement('script');
+                a.type = 'text/javascript';
+                a.src = '/signup-popup.js';
+                document.getElementsByTagName('head')[0].appendChild(a);
+            }, 500);
             ///Exit Loop After One Go
             throw "exit";
         }
