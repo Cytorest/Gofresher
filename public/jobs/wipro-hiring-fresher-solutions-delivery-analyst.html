@@ -25,9 +25,7 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <!-- <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script> -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
     <script>
         let lastKnownScrollPosition = 0;
@@ -97,6 +95,12 @@
             i.type = 'text/javascript';
             i.src = 'https://kit.fontawesome.com/f49733d343.js';
             document.getElementsByTagName('head')[0].appendChild(i);
+            ///Firebase Analytics
+            j = document.createElement('script');
+            j.type = 'text/javascript';
+            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js;
+            document.getElementsByTagName('head')[0].appendChild(j);
+            firebase.analytics();
             ///Exit Loop After One Go
             throw "exit";
         }
@@ -285,8 +289,6 @@
         };
     
         firebase.initializeApp(firebaseConfig);
-        
-        firebase.analytics();
 
         var previous;
         var element;
