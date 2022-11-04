@@ -43,6 +43,33 @@
             }, 500);
         });
 </script>
+<script>
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+
+        function doSomething(scrollPos) {
+        console.log(lastKnownScrollPosition);
+            b = document.createElement('script');
+            b.type = 'text/javascript';
+            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            document.getElementsByTagName('head')[0].appendChild(b);
+            throw "exit";
+        }
+
+        document.addEventListener('scroll', (e) => {
+        lastKnownScrollPosition = window.scrollY;
+
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+            doSomething(lastKnownScrollPosition);
+            ticking = false;
+                return false;
+            });
+
+            ticking = true;
+        }
+        });
+</script>
 <!-- <script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES"></script>
@@ -193,14 +220,6 @@
 
     <div class="header-ad" id="header-ad-id-2">
         <script>
-            let lastKnownScrollPosition = 0;
-            let ticking = false;
-            function doSomething(scrollPos) {
-            console.log(lastKnownScrollPosition);
-            b = document.createElement('script');
-            b.type = 'text/javascript';
-            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-            document.getElementsByTagName('head')[0].appendChild(b);
             var header = document.getElementById('header-ad-id-2');
             if(window.innerWidth>728){
             header.innerHTML += "<ins class='adsbygoogle' style='display:inline-block;width:728px;height:90px' data-ad-client='ca-pub-7589635024077576' data-ad-slot='8847392187'></ins>";
@@ -211,19 +230,6 @@
                 header.innerHTML += "<ins class='adsbygoogle' style='display:inline-block;width:300px;height:250px' data-ad-client='ca-pub-7589635024077576' data-ad-slot='1143058332'></ins>";
             }
             (adsbygoogle = window.adsbygoogle || []).push({});
-                throw "exit";
-            }
-            document.addEventListener('scroll', (e) => {
-            lastKnownScrollPosition = window.scrollY;
-            if (!ticking) {
-            window.requestAnimationFrame(() => {
-            doSomething(lastKnownScrollPosition);
-            ticking = false;
-                return false;
-            });
-            ticking = true;
-            }
-            });
         </script>
     </div>
 
