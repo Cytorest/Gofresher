@@ -25,7 +25,6 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
@@ -37,6 +36,11 @@
         let ticking = false;
         function doSomething(scrollPos) {
             console.log(lastKnownScrollPosition);
+            ///Add JQuery Script///
+            e = document.createElement('script');
+            e.type = 'text/javascript';
+            e.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js';
+            document.getElementsByTagName('head')[0].appendChild(e);
             ///Add Google Ad Script///
             b = document.createElement('script');
             b.type = 'text/javascript';
