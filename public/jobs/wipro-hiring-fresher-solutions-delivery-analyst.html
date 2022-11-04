@@ -42,32 +42,28 @@
                 document.getElementsByTagName('head')[0].appendChild(a);
             }, 500);
         });
-</script>
-<script>
+    </script>
+    <script>
         let lastKnownScrollPosition = 0;
         let ticking = false;
-
         function doSomething(scrollPos) {
-        console.log(lastKnownScrollPosition);
+            console.log(lastKnownScrollPosition);
             b = document.createElement('script');
             b.type = 'text/javascript';
             b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
             document.getElementsByTagName('head')[0].appendChild(b);
             throw "exit";
         }
-
         document.addEventListener('scroll', (e) => {
-        lastKnownScrollPosition = window.scrollY;
-
-        if (!ticking) {
-            window.requestAnimationFrame(() => {
-            doSomething(lastKnownScrollPosition);
-            ticking = false;
-                return false;
-            });
-
-            ticking = true;
-        }
+            lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+                    return false;
+                });
+                ticking = true;
+            }
         });
 </script>
 <!-- <script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
