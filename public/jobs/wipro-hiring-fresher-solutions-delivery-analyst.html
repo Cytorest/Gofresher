@@ -38,10 +38,10 @@
             f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
             document.getElementsByTagName('head')[0].appendChild(f);
             ///Add JQuery Script///
-            e = document.createElement('script');
-            e.type = 'text/javascript';
-            e.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js';
-            document.getElementsByTagName('head')[0].appendChild(e);
+            // e = document.createElement('script');
+            // e.type = 'text/javascript';
+            // e.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js';
+            // document.getElementsByTagName('head')[0].appendChild(e);
             ///Add Google Ad Script///
             b = document.createElement('script');
             b.type = 'text/javascript';
@@ -118,6 +118,27 @@
             }
         });
     </script>
+<script>
+(function() {
+      function getScript(url,success){
+        var script=document.createElement('script');
+        script.src=url;
+        var head=document.getElementsByTagName('head')[0],
+            done=false;
+        script.onload=script.onreadystatechange = function(){
+          if ( !done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete') ) {
+            done=true;
+            success();
+            script.onload = script.onreadystatechange = null;
+            head.removeChild(script);
+          }
+        };
+        head.appendChild(script);
+      }
+        getScript('https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js',function(){
+        });
+    })();
+</script>
 <script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"Wipro Hiring Fresher Solutions Delivery Analyst","description":"The Solutions Delivery Analyst is responsible for execution of ongoing operations tasks, identifying operational efficiencies, and identifying continuous improvement opportunities. The Solutions Delivery Analyst is often called upon to execute manual processes (requiring plan knowledge and analysis) but always with a focus to streamline, automate, and/or standardize the process. The Solutions Delivery Manager works with the Benefits Operations Manager (BOM) to identify process improvements by identifying issues, process delays, and quality problems and recommends solutions. The Solutions Delivery Analyst is responsible for resolution of participant and plan administration issues, workflow management, increased ownership of complex ongoing tasks, identifying operational efficiencies and continuous improvement opportunities. This role may be leveraged across multiple clients.","datePosted":"2022-01-01","validThrough":"2022-02-28","employmentType":"Full Time","hiringOrganization":{"@type":"Organization","name":"Wipro Limited","sameAs":"https://careers.wipro.com/","logo":"https://gofresher.in/company-logos/wipro.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"Plot No. A1","addressLocality":"India","addressRegion":"Noida, India","postalCode":"110096","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"250000","unitText":"Yearly"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Wipro Hiring Fresher Solutions Delivery Analyst","image":"https://gofresher.in/company-logos/wipro.png","datePublished":"2022-01-01","dateModified":"2022-01-01","author":[{"@type":"Person","name":"Gofresher Admin","url":"http://example.com/profile/janedoe123"}]}</script><link rel="canonical" href="https://gofresher.in/jobs/wipro-hiring-fresher-solutions-delivery-analyst.html"><link rel="amphtml" href="https://gofresher.in/jobs/amp/wipro-hiring-fresher-solutions-delivery-analyst.html"/>
 </head>
 <body id="body-id">
