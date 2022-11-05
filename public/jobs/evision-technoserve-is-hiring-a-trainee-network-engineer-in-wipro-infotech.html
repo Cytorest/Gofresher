@@ -24,53 +24,99 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
-    <script>   
-        window.addEventListener("load", () => {
+    <script>
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        function doSomething(scrollPos) {
+            console.log(lastKnownScrollPosition);
+            ///Firestore Database///
+            f = document.createElement('script');
+            f.type = 'text/javascript';
+            f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
+            document.getElementsByTagName('head')[0].appendChild(f);
+            ///Add Google Ad Script///
+            b = document.createElement('script');
+            b.type = 'text/javascript';
+            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            document.getElementsByTagName('head')[0].appendChild(b);
+            ///Add Moengage Script///
+            c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
+            document.getElementsByTagName('head')[0].appendChild(c);
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
+                });
+            });
+            ///Firsebase Login Auth///
+            d = document.createElement('script');
+            d.type = 'text/javascript';
+            d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
+            document.getElementsByTagName('head')[0].appendChild(d);
+            ///Signup-Popup Js Load///
             window.setTimeout(function () {
                 a = document.createElement('script');
                 a.type = 'text/javascript';
                 a.src = '/signup-popup.js';
                 document.getElementsByTagName('head')[0].appendChild(a);
             }, 500);
+            ///GTAG.JS///
+            g = document.createElement('script');
+            g.type = 'text/javascript';
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES';
+            document.getElementsByTagName('head')[0].appendChild(g);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5EP5C2QDES');
+            ///GTM.JS///
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W2MGKDH');
+            ///Bootstrap Min JS///
+            h = document.createElement('script');
+            h.type = 'text/javascript';
+            h.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+            document.getElementsByTagName('head')[0].appendChild(h);
+            ///Fontawesome JS///
+            i = document.createElement('script');
+            i.type = 'text/javascript';
+            i.src = 'https://kit.fontawesome.com/f49733d343.js';
+            document.getElementsByTagName('head')[0].appendChild(i);
+            ///Firebase Analytics
+            j = document.createElement('script');
+            j.type = 'text/javascript';
+            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js';
+            document.getElementsByTagName('head')[0].appendChild(j);
+            window.setTimeout(function () {
+                firebase.analytics();
+            }, 500);
+            ///Exit Loop After One Go
+            throw "exit";
+        }
+        document.addEventListener('scroll', (e) => {
+            lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+                    return false;
+                });
+                ticking = true;
+            }
         });
     </script>
-<script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5EP5C2QDES');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
-    <!-- End Google Tag Manager -->
 <script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"Evision Technoserve Is Hiring A Trainee Network Engineer In Wipro Infotech","description":"<br> Hiring Fresher Trainee Network Engineer <br><br> Job Highlights:<br> - Hiring Fresher Trainee Network Engineer<br> - Evision Technoserv (ISO 9001-2015) Hiring Trained Fresher Graduate for Tata Consultancy Any Graduate BE,B-Tech,MCA,BCA,BSc,MSc etc<br> - Basis Networking,Windows & Linux Exposer Required <br><br> Company: Wipro Infotech <br><br> Basis Networking,Windows & Linux Exposer Required <br><br> Salary: 25 K <br><br> Dail HR Anamika: 9315179008 <br><br> Evision Technoserv (ISO 9001-2015) Hiring Trained Fresher Graduate for Tata Consultancy <br><br> Required Candidate profile:<br> - Any Graduate BE, B-Tech, MCA, BCA, BSc, MSc etc.<br> - Ready to Work in 24* 7 MNC Work Environment.<br> - Quick Learner and Adaptable.<br> - Work in Highly Motivated Work Environment.<br> - Immediate Joiner. <br><br> About Evision Technoserve Pvt Ltd:<br> Evision Technoserve (ISO 9001- 2008) is Fast-Growing and Professionally Managed IT Consulting, Manpower Outsourcing and Staffing Recruitment Company with our operation based in Delhi, Bangalore, Noida, and Kolkata. Evision has successfully trained and placed 2500+ IT Fresher’s. We have Best Placement Record to Wipro, IBM and HCL Companies . Evision Latest Network Infrastructure and High Skill Technical Team provide IT Industry Oriented Training Programs for freshers. We train freshers as per industry needs and make them ready to be absorbed in the IT Industry. Evision is dedicated to assist the fresher to achieve MNC company standard of quality, ethics and productivity. We Hire, Train and Deliver as per company requirement. We bridge the gap between what is taught in the academics and what the industry demands. Evision is dedicated to assist the Fresher to be hard core professionals in their domain to achieve corporate standard of quality, employee efficiency and productivity. All fresher behave as a disciplined IT Professional so that they become fit to be a part of modern corporate culture. <br>","datePosted":"2022-03-06","validThrough":"2022-03-30","employmentType":"Full-Time","hiringOrganization":{"@type":"Organization","name":"Evision Technoserve Pvt Ltd","sameAs":"http://evisions.co.in/","logo":"https://gofresher.in/company-logos/evison.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"E 41, Block E, Sector 3, Noida, Uttar Pradesh 201301","addressLocality":"India","addressRegion":"Noida, Uttar Pradesh","postalCode":"201301","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"350000","unitText":"Yearly"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Evision Technoserve Is Hiring A Trainee Network Engineer In Wipro Infotech","image":"https://gofresher.in/company-logos/evison.png","datePublished":"2022-03-06","dateModified":"2022-03-06","author":[{"@type":"Person","name":"Gofresher Admin","url":"http://example.com/profile/janedoe123"}]}</script><link rel="canonical" href="https://gofresher.in/jobs/evision-technoserve-is-hiring-a-trainee-network-engineer-in-wipro-infotech.html"><link rel="amphtml" href="https://gofresher.in/jobs/amp/evision-technoserve-is-hiring-a-trainee-network-engineer-in-wipro-infotech.html">
-<!-- One Signal -->
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
-    });
-  });
-</script>
+
 </head>
-<body>
+<body id="body-id">
+    <script tyle="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -252,8 +298,6 @@
         };
     
         firebase.initializeApp(firebaseConfig);
-        
-        firebase.analytics();
 
         var previous;
         var element;

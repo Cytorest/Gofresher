@@ -24,53 +24,99 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
-    <script>   
-        window.addEventListener("load", () => {
+    <script>
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        function doSomething(scrollPos) {
+            console.log(lastKnownScrollPosition);
+            ///Firestore Database///
+            f = document.createElement('script');
+            f.type = 'text/javascript';
+            f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
+            document.getElementsByTagName('head')[0].appendChild(f);
+            ///Add Google Ad Script///
+            b = document.createElement('script');
+            b.type = 'text/javascript';
+            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            document.getElementsByTagName('head')[0].appendChild(b);
+            ///Add Moengage Script///
+            c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
+            document.getElementsByTagName('head')[0].appendChild(c);
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
+                });
+            });
+            ///Firsebase Login Auth///
+            d = document.createElement('script');
+            d.type = 'text/javascript';
+            d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
+            document.getElementsByTagName('head')[0].appendChild(d);
+            ///Signup-Popup Js Load///
             window.setTimeout(function () {
                 a = document.createElement('script');
                 a.type = 'text/javascript';
                 a.src = '/signup-popup.js';
                 document.getElementsByTagName('head')[0].appendChild(a);
             }, 500);
+            ///GTAG.JS///
+            g = document.createElement('script');
+            g.type = 'text/javascript';
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES';
+            document.getElementsByTagName('head')[0].appendChild(g);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5EP5C2QDES');
+            ///GTM.JS///
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W2MGKDH');
+            ///Bootstrap Min JS///
+            h = document.createElement('script');
+            h.type = 'text/javascript';
+            h.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+            document.getElementsByTagName('head')[0].appendChild(h);
+            ///Fontawesome JS///
+            i = document.createElement('script');
+            i.type = 'text/javascript';
+            i.src = 'https://kit.fontawesome.com/f49733d343.js';
+            document.getElementsByTagName('head')[0].appendChild(i);
+            ///Firebase Analytics
+            j = document.createElement('script');
+            j.type = 'text/javascript';
+            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js';
+            document.getElementsByTagName('head')[0].appendChild(j);
+            window.setTimeout(function () {
+                firebase.analytics();
+            }, 500);
+            ///Exit Loop After One Go
+            throw "exit";
+        }
+        document.addEventListener('scroll', (e) => {
+            lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+                    return false;
+                });
+                ticking = true;
+            }
         });
     </script>
-<script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5EP5C2QDES');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
-    <!-- End Google Tag Manager -->
 <script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"Req ID:506088BR | IBM Private Limited Is Hiring Fresher Practitioner – Finance and Administration Delivery","description":"<br> <br> Introduction: <br> The Finance & Admin Business Analyst is essential to the ongoing profitable operations for one of the most globally recognized and respected companies in the world. By overseeing our financial activities, you will enable IBM to continue to bring to market ground-breaking innovations such as Artificial Intelligence, Cognitive Solutions, Cloud Infrastructure, and Blockchain technologies, to name a few. <br> <br> Your Role and Responsibilities: <br> - As Delivery Practitioner, you are responsible for transaction processing in Accounts Payable and Accounts Receivable. <br> - If you thrive in a dynamic, collaborative workplace, IBM provides an environment where you will be challenged and inspired every single day. And if you relish the freedom to bring creative, thoughtful solutions to the table, there’s no limit to what you can accomplish here. <br> <br> Responsibilities: <br> - Co-ordinate all accounting activities associated with the General Ledger particularly fixed assets, inter-company, inventory, cash and bank, indirect tax and accruals. <br> - Identify risks or opportunities to revenues, cost and profitability and propose appropriate actions. <br> - Ensure client Service Level Agreements (SLA) and timelines are met. <br> <br> Required Technical and Professional Expertise: <br> - Minimum 0-1 year work experience in Finance and Accounting <br> - Ability to manage order fulfilment, Collecting and applying Cash payments <br> - Experience to identify duplicate records in the Vendor Invoice receipt, verify and process the invoice accurately and in timely manner <br> - Knowledge to match Invoices and identify errors and resolve exceptions, prioritize invoices and reduce aging of invoice <br> - Be part of a team that are Compliant to SOX – e.g. documents to be posted after due Approval <br> - Experience in handling manual and automatic payment requests along with verification and payment run proposal <br> - Solid understanding of Process Travel and Expense (T/E) claims and payments, duplicate payment resolution, recovery and vendor statement reconciliations <br> - Ability to handle queries through calls and Email follow-ups <br> - Working knowledge of basic accounting and various accounting principles. <br> - Ability to detect duplicate and or error records and take appropriate actions <br> - Proficient in expense management <br> <br> Preferred Technical and Professional Expertise: <br> - Proficient in Microsoft Office applications and familiar with Accounting terminologies <br> - Experience in handling queries via calls and emails is highly desired <br> - Comprehend and process data, handle order fulfilment, collect and apply cash payments <br> - Follows procedures, comfortable in adapting to transformation within business unit <br> - You love collaborative environments that use agile methodologies to encourage creative design thinking and find innovative ways to develop with cutting edge marketing trends <br> - Ambitious individual who can work under their own direction towards agreed targets/goals. <br> - Ability to manage change and be open to it good time management and an ability to work under stress <br> - Proven interpersonal skills while contributing to team effort by accomplishing related results as needed <br> - Maintain technical knowledge by attending educational workshops, reviewing publications <br> - We wish you great success in your career and encourage you to bring your best self to work with IBM. <br>","datePosted":"2022-02-07","validThrough":"2022-02-28","employmentType":"Full Time","hiringOrganization":{"@type":"Organization","name":"IBM Private Limited","sameAs":"https://careers.ibm.com/","logo":"https://gofresher.in/company-logos/ibm.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"186, Udyog Vihar-1, Gurugram, Haryana, 122016","addressLocality":"India","addressRegion":"Gurugram","postalCode":"122016","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"400000","unitText":"Yearly"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Req ID:506088BR | IBM Private Limited Is Hiring Fresher Practitioner – Finance and Administration Delivery","image":"https://gofresher.in/company-logos/ibm.png","datePublished":"2022-02-07","dateModified":"2022-02-07","author":[{"@type":"Person","name":"Gofresher Admin","url":"http://example.com/profile/janedoe123"}]}</script><link rel="canonical" href="https://gofresher.in/jobs/ibm-private-limited-is-hiring-fresher-practitioner-finance-and-administration-delivery.html"><link rel="amphtml" href="https://gofresher.in/jobs/amp/ibm-private-limited-is-hiring-fresher-practitioner-finance-and-administration-delivery.html"/>
-<!-- One Signal -->
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
-    });
-  });
-</script>
+
 </head>
-<body>
+<body id="body-id">
+    <script tyle="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -252,8 +298,6 @@
         };
     
         firebase.initializeApp(firebaseConfig);
-        
-        firebase.analytics();
 
         var previous;
         var element;

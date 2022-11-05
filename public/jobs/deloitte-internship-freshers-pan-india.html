@@ -24,53 +24,98 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
-    <script>   
-        window.addEventListener("load", () => {
+    <script>
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        function doSomething(scrollPos) {
+            console.log(lastKnownScrollPosition);
+            ///Firestore Database///
+            f = document.createElement('script');
+            f.type = 'text/javascript';
+            f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
+            document.getElementsByTagName('head')[0].appendChild(f);
+            ///Add Google Ad Script///
+            b = document.createElement('script');
+            b.type = 'text/javascript';
+            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            document.getElementsByTagName('head')[0].appendChild(b);
+            ///Add Moengage Script///
+            c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
+            document.getElementsByTagName('head')[0].appendChild(c);
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
+                });
+            });
+            ///Firsebase Login Auth///
+            d = document.createElement('script');
+            d.type = 'text/javascript';
+            d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
+            document.getElementsByTagName('head')[0].appendChild(d);
+            ///Signup-Popup Js Load///
             window.setTimeout(function () {
                 a = document.createElement('script');
                 a.type = 'text/javascript';
                 a.src = '/signup-popup.js';
                 document.getElementsByTagName('head')[0].appendChild(a);
             }, 500);
+            ///GTAG.JS///
+            g = document.createElement('script');
+            g.type = 'text/javascript';
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES';
+            document.getElementsByTagName('head')[0].appendChild(g);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5EP5C2QDES');
+            ///GTM.JS///
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W2MGKDH');
+            ///Bootstrap Min JS///
+            h = document.createElement('script');
+            h.type = 'text/javascript';
+            h.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+            document.getElementsByTagName('head')[0].appendChild(h);
+            ///Fontawesome JS///
+            i = document.createElement('script');
+            i.type = 'text/javascript';
+            i.src = 'https://kit.fontawesome.com/f49733d343.js';
+            document.getElementsByTagName('head')[0].appendChild(i);
+            ///Firebase Analytics
+            j = document.createElement('script');
+            j.type = 'text/javascript';
+            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js';
+            document.getElementsByTagName('head')[0].appendChild(j);
+            window.setTimeout(function () {
+                firebase.analytics();
+            }, 500);
+            ///Exit Loop After One Go
+            throw "exit";
+        }
+        document.addEventListener('scroll', (e) => {
+            lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+                    return false;
+                });
+                ticking = true;
+            }
         });
-    </script>
-<script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5EP5C2QDES');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
-    <!-- End Google Tag Manager -->
-    <!-- One Signal -->
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-    window.OneSignal = window.OneSignal || [];
-    OneSignal.push(function() {
-        OneSignal.init({
-        appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
-        });
-    });
     </script>
 <script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"Deloitte Internship Program | Pan India Freshers Apply","description":"<br><br> <span class=\"postings\">About Deloitte:</span> Deloitte Touche Tohmatsu Limited, commonly referred to as Deloitte, is an international professional services network headquartered in London, United Kingdom. Deloitte is the largest professional services network by revenue and number of professionals in the world and is considered one of the Big Four accounting firms along with EY, KPMG and PricewaterhouseCoopers. The firm was founded by William Welch Deloitte in London in 1845 and expanded into the United States in 1890. It merged with Haskins & Sells to form Deloitte Haskins & Sells in 1972 and with Touche Ross in the US to form Deloitte & Touche in 1989. In 1993, the international firm was renamed Deloitte Touche Tohmatsu, later abbreviated to Deloitte. In 2002, Arthur Andersen's practice in the UK as well as several of that firm's practices in Europe and North and South America agreed to merge with Deloitte. Subsequent acquisitions have included Monitor Group, a large strategy consulting business, in January 2013. The international firm is a UK private company, limited by guarantee, supported by a network of independent legal entities. <br> Deloitte provides audit, consulting, financial advisory, risk advisory, tax, and legal services with approximately 334,800 professionals globally. In FY 2021, the network earned revenues of US$50.2 billion in aggregate. As of 2020, Deloitte is the third-largest privately-owned company in the United States, according to Forbes. The firm has sponsored a number of activities and events including the 2012 Summer Olympics. <br> Controversies involving the firm, in addition to litigation surrounding a few of its audits, have included its involvement in a \"potentially misleading\" report on illicit tobacco trading in Australia, the fact that it suffered a major cyber-attack which breached client confidentiality as well as exposing extensive employee information in September 2017, its role as internal auditor of the insolvent contractor Carillion and its role as external auditor of Autonomy which was accused of \"accounting improprieties\" that contributed to an £8.8 billion write-down of value following its acquisition by Hewlett-Packard in 2011. <br><br> <span class=\"postings\">How Does Internships at Deloitte Feel Like?</span> Real life work experience, with mentoring, learning and networking <br> If you’re looking to make an impact that matters, join Deloitte for that high impact internship. An entryway to discover what a career with a professional services organization could turn out to be, an internship with Deloitte can be a unique opportunity for you. <br><br> <span class=\"postings\">High impact internships</span> <br> At Deloitte, we place a high value on you and your unique talents. Our internship program offers you the opportunity to work on real business problems and use your unique skills to propose practical solutions. The program is designed to provide you an opportunity to understand and experience what a career in a professional services organization can shape up to be. <br> As an intern, you’ll have the chance to accelerate your ambitions with the projects you work on – there will be ample opportunities to learn, apply your skill sets, and unleash your curiosity. This is how you’ll be able to make a difference as you learn more about the project, yourself and discover life at Deloitte. <br> Through the internship, you will get to experience Deloitte’s inclusive culture first-hand. You will get to learn from the experiences of our leaders and mentors. Their experience will not only help you have a meaningful internship at Deloitte, but also help you understand the functioning of a professional services organization. <br>r> Moreover, the tenure of the internship weaves in ample time and opportunities for you to build a cross-functional professional network, as you look to make an impact that matters. <br> To ensure you get the most from your experience, our internship program includes learning sessions that will put you in good stead in your professional journey. <br> So, use this chance to discover how to shine in a professional setting, as you learn essential skills that enable you to continue to grow throughout your career. <br><br> Self-paced learning plan and opportunities <br> Beyond exposure to real life projects, the internship program is designed to include learning sessions that are well planned and developed. These are an investment for the growth of our interns – to bring out the best in you and provide you a promising start to your professional journey. <br> To offer our interns a well-rounded experience of life at Deloitte, there are various opportunities for learning embedded along the journey – in the form of self-learning content, weekly learning modules and many training sessions to help you enhance your skills. <br><br> <span class=\"postings\">Latest edition</span> <br> As part of last year’s program, we had 26 interns join us from the top B-Schools like XIMB, TISS Mumbai, SIMS Pune, IIM Ranchi, IIM Raipur, IIM Kashipur, SCMHRD Mumbai and NMIMS Mumbai. <br><br> <br><br> <span class=\"postings\">How to apply</span> <br> Deloitte selects accomplished students from top colleges and universities across India. Please contact your campus placement cell to apply to this program.You can share this <a href=https://www2.deloitte.com/ui/en/pages/careers/articles/internships-at-deloitte.html\"\">official Deloitte blog post</a> with your campus placement officer and ask them to connect with Deloitte HR team for recruitment. <br><br> <span class=\"postings\">You can also find the form in this link to contact Deloitte for internship opportunities.</span> Please ask your placement officer to help you college fill out the form. <br><br> To those who look to start their internship journey with us, we hope you’ll connect your strengths with ours, and let the internship with Deloitte serve as a strong foundation for your career. <br><br> <span class=\"postings\">Exploring Careers At Deloitte:</span> For job seekers and students in search of internships We are devoted to giving job seekers and prospective interns the information they need.  Search for <a href=\"https://www2.deloitte.com/ui/en/careers/job-search.html\">job opportunities worldwide</a> and apply online. If you have questions, just use our email form. Make sure to choose \"careers\" in the list of topics.  ","datePosted":"2022-10-05","validThrough":"2023-10-05","employmentType":"Full-Time","hiringOrganization":{"@type":"Organization","name":"Deloitte","sameAs":"https://www2.deloitte.com/","logo":"https://gofresher.in/company-logos/deloitte.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"Survey No: 123 &132/2, Divyasree Technopolis, Block C, Kariyammana Agrahara Rd, Off Old Airport Road, Kadubeesanahalli, Yemlur Post, Bengaluru, Karnataka 560037","addressLocality":"India","addressRegion":"Bengaluru, Karnataka","postalCode":"560037","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"300000","unitText":"Yearly"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Deloitte Internship Program | Pan India Freshers Apply","image":"https://gofresher.in/company-logos/deloitte.png","datePublished":"2022-10-05","dateModified":"2022-10-05","author":[{"@type":"Person","name":"Gofresher Admin","url":"http://example.com/profile/janedoe123"}]}</script><link rel="canonical" href="https://gofresher.in/jobs/deloitte-internship-freshers-pan-india.html"><link rel="amphtml" href="https://gofresher.in/jobs/amp/deloitte-internship-freshers-pan-india.html"/>
 </head>
-<body>
+<body id="body-id">
+    <script tyle="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -252,8 +297,6 @@
         };
     
         firebase.initializeApp(firebaseConfig);
-        
-        firebase.analytics();
 
         var previous;
         var element;

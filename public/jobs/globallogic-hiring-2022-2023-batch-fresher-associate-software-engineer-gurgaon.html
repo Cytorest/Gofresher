@@ -24,53 +24,99 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
-    <script>   
-        window.addEventListener("load", () => {
+    <script>
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        function doSomething(scrollPos) {
+            console.log(lastKnownScrollPosition);
+            ///Firestore Database///
+            f = document.createElement('script');
+            f.type = 'text/javascript';
+            f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
+            document.getElementsByTagName('head')[0].appendChild(f);
+            ///Add Google Ad Script///
+            b = document.createElement('script');
+            b.type = 'text/javascript';
+            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            document.getElementsByTagName('head')[0].appendChild(b);
+            ///Add Moengage Script///
+            c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
+            document.getElementsByTagName('head')[0].appendChild(c);
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
+                });
+            });
+            ///Firsebase Login Auth///
+            d = document.createElement('script');
+            d.type = 'text/javascript';
+            d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
+            document.getElementsByTagName('head')[0].appendChild(d);
+            ///Signup-Popup Js Load///
             window.setTimeout(function () {
                 a = document.createElement('script');
                 a.type = 'text/javascript';
                 a.src = '/signup-popup.js';
                 document.getElementsByTagName('head')[0].appendChild(a);
             }, 500);
+            ///GTAG.JS///
+            g = document.createElement('script');
+            g.type = 'text/javascript';
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES';
+            document.getElementsByTagName('head')[0].appendChild(g);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5EP5C2QDES');
+            ///GTM.JS///
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W2MGKDH');
+            ///Bootstrap Min JS///
+            h = document.createElement('script');
+            h.type = 'text/javascript';
+            h.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+            document.getElementsByTagName('head')[0].appendChild(h);
+            ///Fontawesome JS///
+            i = document.createElement('script');
+            i.type = 'text/javascript';
+            i.src = 'https://kit.fontawesome.com/f49733d343.js';
+            document.getElementsByTagName('head')[0].appendChild(i);
+            ///Firebase Analytics
+            j = document.createElement('script');
+            j.type = 'text/javascript';
+            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js';
+            document.getElementsByTagName('head')[0].appendChild(j);
+            window.setTimeout(function () {
+                firebase.analytics();
+            }, 500);
+            ///Exit Loop After One Go
+            throw "exit";
+        }
+        document.addEventListener('scroll', (e) => {
+            lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+                    return false;
+                });
+                ticking = true;
+            }
         });
     </script>
-<script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5EP5C2QDES');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
-    <!-- End Google Tag Manager -->
 <script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"GlobalLogic Hiring 2022, 2023 Batch Fresher Associate Software Engineer At Gurgaon","description":"<br><br> About Company: GlobalLogic is an American digital services company providing software product design and development services. It is an independent subsidiary of Hitachi Ltd. GlobalLogic has corporate headquarters in San Jose, California. In 2014, GlobalLogic hired Zaheer Allam as chief delivery officer and opened new delivery centers in Nagpur, India and Kosice, Slovakia. In 2015, the company opened a delivery center in Kraków, Poland. In 2016, Peter Bonfield took over the role of board chairman. The same year, GlobalLogic acquired REC Global, a Poland-based software development provider specializing in embedded technologies. In 2017, the Canadian Pension Plan Investment Board (CPPIB) acquired 48% of GlobalLogic from Apax. In 2018, Apax Partners sold its remaining 48% stake private equity firm Partners Group,. In 2019, GlobalLogic acquired U.S.-based Skookum, a digital strategy and design firm. In 2020, GlobalLogic appointed Rajaram Radhakrishnan as chief revenue officer. The same year, GlobalLogic partnered with SimCorp to change the cloud delivery model for the SimCorp Dimension platform. GlobalLogic then acquired Meelogic Consulting AG, a Berlin-based healthcare and automotive-focused software engineering firm. Next it acquired the ECS Group, a UK-based digital transformation consultancy. On March 31, 2021, Hitachi announced that it would buy GlobalLogic for $9.6 billion. The acquisition was completed on July 14, 2021. Under the terms of merger, Globalogic will continue to operate as an independent subsidiary. In 2008, GlobalLogic opened offices in London, naming Mike Daniels as chairman of the board and hiring Shashank Samant as president. The same year, it acquired U.S.-based Validio Software and its Ukraine-based development center. Also, in 2008, the company received $29.5M in Series C venture round funding from Sequoia Capital, New Atlantic Ventures, and New Enterprise Associates. In 2009, GlobalLogic partnered with LumenData, a product development and services firm focused on enterprise data management, to open a delivery center in Bangalore.  GlobalLogic also acquired two software R&D services firms: InterObject and Cubika. InterObject, based in Ramat Gan, Israel, works with embedded software, mobile and streaming media products. Cubika, based in Buenos Aires, Argentina, builds software products for the media, entertainment, telecom and finance markets. In 2010, GlobalLogic received funding from Goldman Sachs. In 2011, GlobalLogic opened an office in Santiago, Chile to expand its operations in South America. It then acquired Rofous Software, a content engineering firm headquartered in Hyderabad, India with specialization in content engineering. The same year, GlobalLogic acquired Method Incorporated, a brand experience agency with offices in San Francisco, New York City and London. In 2012, CEO Peter Harrison became vice chairman and its president, Shashank Samant, was appointed CEO. In 2013, Apax Partners (\"Apax\"), a global private equity firm, acquired GlobalLogic. Rohan Haldea, Walden Rhines and Peter Bonfield joined the company's board of directors, and Salim Nathoo was named chairman. <br><br> GlobalLogic is a leader in digital engineering. We help brands across the globe design and build innovative products, platforms, and digital experiences for the modern world. By integrating experience design, complex engineering, and data expertise—we help our clients imagine what’s possible, and accelerate their transition into tomorrow’s digital businesses. Headquartered in Silicon Valley, GlobalLogic operates design studios and engineering centers around the world, extending our deep expertise to customers in the automotive, communications, financial services, healthcare and life sciences, manufacturing, media and entertainment, semiconductor, and technology industries. GlobalLogic is a Hitachi Group Company operating under Hitachi, Ltd. (TSE: 6501) which contributes to a sustainable society with a higher quality of life by driving innovation through data and technology as the Social Innovation Business. <br><br> Position: Associate Software Engineer <br><br> Job: IRC167395 <br><br> Location: India - Gurgaon <br><br> Experience:\t0-1 years <br><br> Function: Engineering <br><br> Skills: CSS, HTML, JavaScript, SQL <br><br> Description: <br>We help businesses deliver more efficient search results and enhanced user experiences by leveraging human curation, data analytics, research, domain knowledge, and automation to provide structured data across locations and languages. <br>- Build Global Search Experiences  <br>- Create New Search Domains <br>- Live Schematic Data Curation <br><br> Requirements: <br>- Advance JavaScript <br>- Good understanding of CSS Selector <br>- Good Knowledge of HTML, DOM, BOM <br>- OOPs Concept <br>- Good knowledge of any Programming language like Javascript <br>- Excellent written and verbal communication skills <br><br> Good to Have Knowledge: <br>- Debugging skill <br>- Analytical Skills to analyze websites <br>- Tools/Add-on’s used for analyzing websites <br><br> Preferences: Regular Expressions <br><br> Job Responsibilities: <br>Engineer shall perform (but not limited to) the below roles: <br>- Timely deliver different project’s data at the highest possible quality standard <br>- Quick learner and able to work with minimal guidance <br>- Communicate and participate on project forums <br>- Outstanding ability to think creatively, and identify and resolve problems <br>- Should be able to fix and maintain client’s bug list as per priority <br>- Route the ticket/issue to the relevant team whenever required <br><br> What We Offer <br>Exciting Projects: We focus on industries like High-Tech, communication, media, healthcare, retail and telecom. Our customer list is full of fantastic global brands and leaders who love what we build for them. <br><br> Collaborative Environment: You Can expand your skills by collaborating with a diverse team of highly talented people in an open, laidback environment — or even abroad in one of our global centers or client facilities! <br><br> Work-Life Balance: GlobalLogic prioritizes work-life balance, which is why we offer flexible work schedules, opportunities to work from home, and paid time off and holidays. <br><br> Professional Development: Our dedicated Learning & Development team regularly organizes Communication skills training(GL Vantage, Toast Master),Stress Management program, professional certifications, and technical and soft skill trainings. <br><br> Excellent Benefits: We provide our employees with competitive salaries, family medical insurance, Group Term Life Insurance, Group Personal Accident Insurance , NPS(National Pension Scheme ), Periodic health awareness program, extended maternity leave, annual performance bonuses, and referral bonuses. <br><br> Fun Perks: We want you to love where you work, which is why we host sports events, cultural activities, offer food on subsidies rates, Corporate parties. Our vibrant offices also include dedicated GL Zones, rooftop decks and GL Club where you can drink coffee or tea with your colleagues over a game of table and offer discounts for popular stores and restaurants!","datePosted":"2022-10-03","validThrough":"2022-12-03","employmentType":"Full-Time","hiringOrganization":{"@type":"Organization","name":"GlobalLogic","sameAs":"https://www.globallogic.com/in/","logo":"https://gofresher.in/company-logos/globallogic.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"Plot No.7, Oxygen Business Park SEZ, Tower, 3, Noida-Greater Noida Expy, Sector 144, Noida, Uttar Pradesh 201304","addressLocality":"India","addressRegion":"Noida, Uttar Pradesh","postalCode":"201304","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"500000","unitText":"Yearly"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"GlobalLogic Hiring 2022, 2023 Batch Fresher Associate Software Engineer At Gurgaon","image":"https://gofresher.in/company-logos/globallogic.png","datePublished":"2022-10-03","dateModified":"2022-10-03","author":[{"@type":"Person","name":"Gofresher Admin","url":"http://example.com/profile/janedoe123"}]}</script><link rel="canonical" href="https://gofresher.in/jobs/globallogic-hiring-2022-2023-batch-fresher-associate-software-engineer-gurgaon.html"><link rel="amphtml" href="https://gofresher.in/jobs/amp/globallogic-hiring-2022-2023-batch-fresher-associate-software-engineer-gurgaon.html"/>
-<!-- One Signal -->
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
-    });
-  });
-</script>
+
 </head>
-<body>
+<body id="body-id">
+    <script tyle="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -252,8 +298,6 @@
         };
     
         firebase.initializeApp(firebaseConfig);
-        
-        firebase.analytics();
 
         var previous;
         var element;

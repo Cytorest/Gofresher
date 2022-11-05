@@ -24,54 +24,99 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
-    <script>   
-        window.addEventListener("load", () => {
+    <script>
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        function doSomething(scrollPos) {
+            console.log(lastKnownScrollPosition);
+            ///Firestore Database///
+            f = document.createElement('script');
+            f.type = 'text/javascript';
+            f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
+            document.getElementsByTagName('head')[0].appendChild(f);
+            ///Add Google Ad Script///
+            b = document.createElement('script');
+            b.type = 'text/javascript';
+            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            document.getElementsByTagName('head')[0].appendChild(b);
+            ///Add Moengage Script///
+            c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
+            document.getElementsByTagName('head')[0].appendChild(c);
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
+                });
+            });
+            ///Firsebase Login Auth///
+            d = document.createElement('script');
+            d.type = 'text/javascript';
+            d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
+            document.getElementsByTagName('head')[0].appendChild(d);
+            ///Signup-Popup Js Load///
             window.setTimeout(function () {
                 a = document.createElement('script');
                 a.type = 'text/javascript';
                 a.src = '/signup-popup.js';
                 document.getElementsByTagName('head')[0].appendChild(a);
             }, 500);
+            ///GTAG.JS///
+            g = document.createElement('script');
+            g.type = 'text/javascript';
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES';
+            document.getElementsByTagName('head')[0].appendChild(g);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5EP5C2QDES');
+            ///GTM.JS///
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W2MGKDH');
+            ///Bootstrap Min JS///
+            h = document.createElement('script');
+            h.type = 'text/javascript';
+            h.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+            document.getElementsByTagName('head')[0].appendChild(h);
+            ///Fontawesome JS///
+            i = document.createElement('script');
+            i.type = 'text/javascript';
+            i.src = 'https://kit.fontawesome.com/f49733d343.js';
+            document.getElementsByTagName('head')[0].appendChild(i);
+            ///Firebase Analytics
+            j = document.createElement('script');
+            j.type = 'text/javascript';
+            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js';
+            document.getElementsByTagName('head')[0].appendChild(j);
+            window.setTimeout(function () {
+                firebase.analytics();
+            }, 500);
+            ///Exit Loop After One Go
+            throw "exit";
+        }
+        document.addEventListener('scroll', (e) => {
+            lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+                    return false;
+                });
+                ticking = true;
+            }
         });
-    </script>
-<script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5EP5C2QDES');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
-    <!-- End Google Tag Manager -->
-    <!-- One Signal -->
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-    window.OneSignal = window.OneSignal || [];
-    OneSignal.push(function() {
-        OneSignal.init({
-        appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
-        });
-    });
     </script>
 <script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"Intel Hiring Fresher Graduates PAN India | View Application Process","description":"<br><br> About Company: Intel Corporation is an American multinational corporation and technology company headquartered in Santa Clara, California. It is the world's largest semiconductor chip manufacturer by revenue, and is one of the developers of the x86 series of instruction sets, the instruction sets found in most personal computers (PCs). Incorporated in Delaware, Intel ranked No. 45 in the 2020 Fortune 500 list of the largest United States corporations by total revenue for nearly a decade, from 2007 to 2016 fiscal years. Intel supplies microprocessors for computer system manufacturers such as Acer, Lenovo, HP, and Dell. Intel also manufactures motherboard chipsets, network interface controllers and integrated circuits, flash memory, graphics chips, embedded processors and other devices related to communications and computing. Intel (integrated and electronics) was founded on July 18, 1968, by semiconductor pioneers Gordon Moore (of Moore's law) and Robert Noyce (1927–1990), and is associated with the executive leadership and vision of Andrew Grove. Intel was a key component of the rise of Silicon Valley as a high-tech center. Noyce was a key inventor of the integrated circuit (microchip). Intel was an early developer of SRAM and DRAM memory chips, which represented the majority of its business until 1981. Although Intel created the world's first commercial microprocessor chip in 1971, it was not until the success of the personal computer (PC) that this became its primary business. During the 1990s, Intel invested heavily in new microprocessor designs fostering the rapid growth of the computer industry. During this period, Intel became the dominant supplier of microprocessors for PCs and was known for aggressive and anti-competitive tactics in defense of its market position, particularly against Advanced Micro Devices (AMD), as well as a struggle with Microsoft for control over the direction of the PC industry. The Open Source Technology Center at Intel hosts PowerTOP and LatencyTOP, and supports other open-source projects such as Wayland, Mesa, Threading Building Blocks (TBB), and Xen. <br><br> Hiring Process At Intel <br><br> What to Expect? <br>Found something interesting? Great! You are sure to find many opportunities that will delight and inspire. To maximize your chances of getting an interview, we encourage applying to a select number of roles matching your qualifications and experience. <br><br> How To Apply For Job At Intel? <br>To apply for a job with Intel, <a href=\"https://jobs.intel.com/category/intern-student-jobs/599/8451568/1\">search for open roles here</a> and apply with your resume/C.V. <br> *Insider Tip: Think beyond tasks - use your resume to demonstrate impact and measurable results. <a href=\"https://jobs.intel.com/interview-tips\">Click here</a> for more tips. <br><br> How To Create a Profile At Intel? <br>Your profile allows our teams to quickly find your information and makes returning to <a href=\"https://jobs.intel.com/\">jobs.intel.com</a> easier with features such as “Saved Jobs” and “Applicant Login.” Our portal provides you with key explanations on each page so you may more accurately and effectively create your profile. <br><br> Wat Is The Application Process At Intel? <br>You will be asked a variety of questions, including ones regarding your skills and work experience. <br><br> How To Submit Job Application At Intel? <br>After completion and clicking \"Submit\", the portal will display a message acknowledging receipt of your profile and application. You will also receive a follow-up email confirming receipt and the next steps. <br><br> Candidate Help | Frequently Asked Questions (FAQs) <br><br> What is a basic search? <br>The Basic Search feature allows you to search the jobs database for a particular job category and/or location. You can also search by entering specific job number(s) or keyword(s). If you select a country using the \"Location\" field, another drop-down box will appear which allows you to refine your search by selecting one specific city within that country. You can include multiple job categories and locations in your search by selecting the \"Add\" options located under the applicable drop-down menus. If your search uses the \"Keyword\" or \"Job Number\" field, you can use a comma (,) to separate multiple entries.  <br> Click \"Search for Jobs\" to display the job list matching your criteria. The resulting list will indicate: <br>- whether the job is active or inactive (i.e., not accepting submissions) <br>- if you already added the job to your job cart, and <br>- if you already applied for the job (draft submission or completed submission) <br> Tip: To better view your job list results, you can select \"Hide Search Criteria\". <br>Alternatively, you can select \"Show Search Criteria\" to view the criteria you selected for your current search. Click \"Clear\" to reset all the fields and perform another search. <br><br> What is an advanced search? <br>In addition to the Basic Search criteria (Job Category, Location, Job Number, Keyword), the Advanced Search feature allows you to search the jobs database using criteria, such as Posting Date, Job Type, or Full/Part Time Schedules. You can make multiple selections in the Schedule and Job Type sections by clicking each applicable box. To deselect an item, click the box again. <br> Click \"Search for Jobs\" to display the job list matching your criteria. The resulting list will indicate: <br>- whether the job is active or inactive (i.e., not accepting submissions) <br>- if you already added the job to your job cart, and <br>- if you already applied for the job (draft submission or completed submission) <br>Tip: To better view your job list results, you can select \"Hide Search Criteria\". <br>Alternatively, you can select \"Show Search Criteria\" to view the criteria you selected for your current search. <br> Click \"Clear\" to reset all the fields and perform another search. Also see \"Can I save my searches for reuse at a later date?\" <br><br> How do I search and apply for a job? <br>Begin by clicking on the \"Job Search\" tab. Select your search method (basic or advanced) and specify your search criteria, then click \"Search for Jobs\". <br>Review the list of jobs created from your search criteria. Select a job opening, read the description and determine if you have the qualifications and interest in that job. If so, click \"Apply Online\". Next, you need to login to your candidate profile. If you are a new candidate, you will need to register and create a candidate profile. <br>Important: If you upload your resume/C.V. (in English) the first time you apply, the system will automatically extract the relevant information from this document and populate part of the online application. You will then be able to verify the extracted content and make appropriate changes. This special feature is only available the first time you apply, and if your resume/C.V. is in English. <br>Use the tool instructions to create or modify your profile. Complete all eight steps (nine steps in the U.S.). Returning candidates can quickly move through the steps using \"Save and Continue\". <br>If you don't have time to complete all the steps, you have the option to save your profile or application as a \"draft\" and come back to complete it later. Be sure to click \"Save as Draft\" (located under the Application Progress Bar and at the bottom of the page). If you select \"Quit\" you will lose all the information you entered since you last time you saved it as a draft. <br>Upon completing the application, the tool displays a message thanking you for applying to Intel. You will also receive an e-mail confirming receipt of your application <br><br> Can I save my searches for reuse at a later date? <br>You can save the search criteria settings you specified for reuse at a later date by clicking \"Save this Search\" at the top of the Job Search page. Your searches will be saved in the \"My Saved Searches\" section, under the \"My Jobpage\" tab. <br>You can save a maximum of five searches at a time. Once this number is reached, you must delete a saved search to be able to save a new one. <br><br> How do I search for a specific job number? <br>To locate a specific job opening, enter the job number in the \"Job Number\" field and click \"Search for Jobs\". <br><br> Why can’t I locate a specific job number? <br>Intel uses several job boards and recruiting events to post and market available positions. Most venues direct candidates to the Jobs at Intel web site to complete the application process. When we close a position and remove it from the company job posting list, the job description may continue to appear briefly on the job board. When this occurs, please direct your job search to other available opportunities. <br><br> How do I create my candidate profile? <br>- Click \"Access my profile\" located under the Candidate Profile section on the Job Search or My Jobpage tabs. After registering, you can submit your candidate information in two ways. <br>- Click \"I do not want to upload a resume/C.V.\"; this allows you to create a resume/C.V. using our online builder. <br>- Click \"I want to upload a resume/C.V.\"; this allows you to attach your resume/C.V. (must be in English). <br>The system will automatically extract relevant information from your document and populate part of the online application. Note: This feature is only available the first time you apply or create your profile. <br>Select the method you prefer, then click \"Save and Continue\".  <br>If you uploaded your resume/C.V., you should validate the extracted content and make appropriate changes as you move through all eight steps of the application process (nine steps in the U.S.). <br>The Application Progress Bar near the top of the page conveniently provides you with a visual representation of where you are in the process for a particular job and will help you navigate through the steps as quickly as possible. <br>You are required to move forward (by clicking \"Save and Continue\" on each page) in the defined order the first time through the process, but you can then move backwards for edits at any time. Once you have completed all the steps, you can jump directly to any page for edits as needed. <br>If you don't have time to complete all the steps, you have the option to save your profile as a \"draft\" and come back to complete it later. Be sure to click \"Save as Draft\" (located under the Application Progress Bar and at the bottom of the page). If you select \"Quit\" you will lose all the information you entered since you last time you saved it as a draft. <br>The last step is your Summary page. It will display all of the information you entered so you can review it, and if desired, edit it before submitting your application or profile. If you want to edit a particular section (e.g., the Education section), click the \"edit\" link next to the section header. This action will take you directly to the page where you entered your educational information. When you have finished editing the information, click \"Save and Continue\"; you will also have the option to view and print the data in a \"printer friendly\" format. <br>Once you are satisfied that your information is accurate and complete, you must click the \"Submit\" button. By clicking \"Submit”, your information will be successfully submitted for consideration, and the tool will display a message thanking you for your application. You will also receive an e-mail confirming receipt of your information. <br><br> How can I obtain my user name? <br>Click \"Forget your user name?\" on the Login page. On the next page, enter your email address* (use the account that you listed when you first applied or created your profile), then click \"Validate\". <br>*If you never provided your email address, leave the field empty and click \"Validate\". <br>You will be asked to provide some personal information. Fill in the fields, then click \"Validate\" to verify if the information you provided matches a unique candidate record. <br>The system will retrieve your user name along with options to either return to the login page or to use the “forgot password” feature if you also need to obtain your password.  <br><br> How can I obtain my password? <br>Click \"Forget your password?\" on the Login page. On the next page, enter the user name and email address you entered when setting up your candidate profile. Click \"OK\". <br>You will receive an e-mail containing instructions on how to change your password. <br><br> How important are the attachments I submit? <br>When a position opens, Staffing defines the search criteria to identify potential candidates. The search checks each candidate profile, including any attached documents, for matches, so your attachments can help match you to an open position. <br>To build your complete candidate profile, you can attach up to five documents (up to 500 KB each), including such items as your transcripts, letters of recommendation, certifications or awards. One of the documents can be your resume/C.V. in the local language. <br><br> What is the importance of specifying my preferences? <br>When a position opens, Staffing defines the search criteria to identify potential candidates. The search checks each candidate's work preferences so it is important to specify the job category(s) and location(s) that best match your professional interests. <br>On the preferences page select a function from the Job Category section, then click \"Add to List\".  <br>Repeat this process to continue adding preference entries. Click \"Remove\" to delete a preference. To clear all job category preferences, click \"Reset\". <br>Follow the same steps to specify your location preferences. <br><br> Why does Intel ask prescreen questions? <br>You will be asked several prescreening questions to better match your skills and experience to open positions. <br>If you are applying for a specific job, the questions asked will be relevant to that position. Otherwise, the questions will be more general in nature. <br><br> Should I include all my experience or just the information for a specific position? <br>We want to match your talents and skills to multiple job openings, so be sure to include all your work experience, education and volunteer activities. <br>To provide a more complete candidate profile, you can also attach up to five documents (up to 500 KB each), including such items as your transcripts, letters of recommendation, certifications or awards. One of the documents can also be your resume/curriculum vitae (C.V.) in the local language. <br>When a position opens, Staffing defines the search criteria to identify potential candidates. Besides checking the data in each candidate profile, the tool also checks the attached documents for matches. <br><br> Can I modify my information? <br>Each time you login to your profile or apply for a job, you have the opportunity to: <br>- Verify that your personal information, education, experience, and preferences are correct <br>- Add new information (including attachments) or modify any data that has changed. <br>To modify your profile, Click \"Access my profile\" located under the Candidate Profile section on the Job Search page or \"My Jobpage\" tab. Enter your User Name and Password. <br>Make the appropriate modifications. Be sure to click \"Save and Continue\" to store the changes to your profile. <br> You can update your account options. Click \"My Account Options\" at the top of each page. To set or modify your account information (e.g., personal information, login, etc), click \"Edit\" next to the section you want to update. <br><br> How do I remove my resume/Curriculum Vitae (CV) or candidate profile from Intel’s database? <br>If you want your resume/CV removed from our resume database so that you will no longer be considered for open positions, please follow these steps: <br>- On the Jobs at Intel web site, login to your candidate profile. <br>- Select the Attachments tab. <br>- From your list of attachments, select the file you want to remove and click the corresponding delete button. <br>- The system will ask you to confirm if you want to delete the file; select Yes <br><br>If you want your profile removed from our resume database, please send an email request to mailto:resume.removal@intel.comand we will handle your request in one of two ways*: <br><br>If you never applied for a specific job or Intel never matched you to an open position, we will completely delete your profile as requested. <br>If you applied for a specific job or Intel matched you to an open position where you met the basic qualifications, we must retain your profile for three (3) years and will purge it from the database after that time*. Until that time, we can specify in the Comment section of your profile that you are no longer interested in being contacted. <br><br> What is the hiring process at Intel? <br>To be considered for a position, you must submit your resume electronically using Intel's web-based tools. <br><br> Preparation <br>- Register and create your candidate profile <br>- Upon completion of your profile and clicking \"Submit\", the tool displays a message acknowledging receipt of your profile <br>- You will also receive an e-mail confirming receipt of your information. <br><br> Application <br>- Identify and apply for the job(s) that interest you and match your experience and education <br>- Review and update your candidate profile (as applicable) <br>- Upon completion of your application and clicking \"Submit\", the tool displays a message acknowledging receipt of your application <br>- The tool also sends an e-mail confirming the receipt of your application <br><br> Selection <br>- Any Intel hiring manager or recruiter can view your resume/C.V. and perform searches for specific education, experience, etc. <br>- If selected, you will receive a phone call from an Intel recruiter who will gather more information about your qualifications <br><br>Interview <br>- If selected, you will be contacted to make the necessary arrangements for your appointment <br>- After your interview, the tool sends an e-mail thanking you for participation in our interview process Offer <br>- You will be contacted by our staffing team to discuss the terms of your offer and start date Note: Candidates who were interviewed, but not selected will be notified the position has been filled. <br><br> Does Intel have an internship, student worker, or apprenticeship program? <br>Intel does have an internship program focused on undergraduate and graduate level students. Interested persons also may search for <a href=\"http://www.intel.com/content/www/us/en/jobs/locations/china/students.html\">student/intern positions.</a> <br><br> What is the minimum age a person a person must be to accept employment with Intel? <br>Intel complies with all local laws regarding the minimum age to work. Subject to these laws, Intel will not employ anyone under the age of 16 in any position and workers under the age of 18 are not considered for hazardous work. <br><br> How to check complete list of FAQs at Intel? <br>All candidates are requested to use <a href=\"https://www.intel.com/content/dam/jobs/documents/candidate-help-faqs.pdf\">this link</a> to get a sense of all FAQs at Intel Careers.","datePosted":"2022-10-15","validThrough":"2024-10-15","employmentType":"Full-Time","hiringOrganization":{"@type":"Organization","name":"Intel","sameAs":"https://www.intel.in/content/www/in/en/homepage.html","logo":"https://gofresher.in/company-logos/intel.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"Cyber Park, Salarpuria Sattva, Hitech City Rd, Jubilee Enclave, HITEC City, Hyderabad, Telangana 500081","addressLocality":"India","addressRegion":"Hyderabad, Telangana","postalCode":"500081","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"800000","unitText":"Yearly"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Intel Hiring Fresher Graduates PAN India | View Application Process","image":"https://gofresher.in/company-logos/intel.png","datePublished":"2022-10-15","dateModified":"2022-10-15","author":[{"@type":"Person","name":"Gofresher Admin","url":"http://example.com/profile/janedoe123"}]}</script><link rel="canonical" href="https://gofresher.in/jobs/intel-hiring-fresher-graduates-pan-india-careers-application-process-2021-2022-2023.html">
 <link rel="amphtml" href="https://gofresher.in/jobs/amp/intel-hiring-fresher-graduates-pan-india-careers-application-process-2021-2022-2023.html"/>
 </head>
-<body>
+<body id="body-id">
+    <script tyle="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -253,8 +298,6 @@
         };
     
         firebase.initializeApp(firebaseConfig);
-        
-        firebase.analytics();
 
         var previous;
         var element;

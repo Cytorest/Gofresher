@@ -24,53 +24,99 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
-    <script>   
-        window.addEventListener("load", () => {
+    <script>
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        function doSomething(scrollPos) {
+            console.log(lastKnownScrollPosition);
+            ///Firestore Database///
+            f = document.createElement('script');
+            f.type = 'text/javascript';
+            f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
+            document.getElementsByTagName('head')[0].appendChild(f);
+            ///Add Google Ad Script///
+            b = document.createElement('script');
+            b.type = 'text/javascript';
+            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            document.getElementsByTagName('head')[0].appendChild(b);
+            ///Add Moengage Script///
+            c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
+            document.getElementsByTagName('head')[0].appendChild(c);
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
+                });
+            });
+            ///Firsebase Login Auth///
+            d = document.createElement('script');
+            d.type = 'text/javascript';
+            d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
+            document.getElementsByTagName('head')[0].appendChild(d);
+            ///Signup-Popup Js Load///
             window.setTimeout(function () {
                 a = document.createElement('script');
                 a.type = 'text/javascript';
                 a.src = '/signup-popup.js';
                 document.getElementsByTagName('head')[0].appendChild(a);
             }, 500);
+            ///GTAG.JS///
+            g = document.createElement('script');
+            g.type = 'text/javascript';
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES';
+            document.getElementsByTagName('head')[0].appendChild(g);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5EP5C2QDES');
+            ///GTM.JS///
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W2MGKDH');
+            ///Bootstrap Min JS///
+            h = document.createElement('script');
+            h.type = 'text/javascript';
+            h.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+            document.getElementsByTagName('head')[0].appendChild(h);
+            ///Fontawesome JS///
+            i = document.createElement('script');
+            i.type = 'text/javascript';
+            i.src = 'https://kit.fontawesome.com/f49733d343.js';
+            document.getElementsByTagName('head')[0].appendChild(i);
+            ///Firebase Analytics
+            j = document.createElement('script');
+            j.type = 'text/javascript';
+            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js';
+            document.getElementsByTagName('head')[0].appendChild(j);
+            window.setTimeout(function () {
+                firebase.analytics();
+            }, 500);
+            ///Exit Loop After One Go
+            throw "exit";
+        }
+        document.addEventListener('scroll', (e) => {
+            lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+                    return false;
+                });
+                ticking = true;
+            }
         });
     </script>
-<script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5EP5C2QDES');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
-    <!-- End Google Tag Manager -->
 <script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"Intel Hiring 2021 & 2022 Batch Fresher GPU Software Development Engineer - Bangalore","description":"<br><br> Intern - GPU Software Development Engineer <br><br> Location: Bengaluru, India <br><br> Job ID: JR0202842 <br><br> Job Category: Intern/Student <br><br> Work Mode: Hybrid <br><br> Experience Level: Intern <br><br> Job Description: <br> Responsibilities may be quite diverse of a technical nature. U.S. experience and education requirements will vary significantly depending on the unique needs of the job. Job assignments are usually for the summer or for short periods during breaks from school. <br><br> Qualifications: <br>Minimum qualifications are required to be initially considered for this position. Preferred qualifications are in addition to the minimum requirements and are considered a plus factor in identifying top candidates. <br><br> Minimum Qualifications: B.Tech / M.Tech <br><br> Preferred Qualifications: B.Tech / M.Tech <br><br> Requirements listed would be obtained through a combination of industry relevant job experience, internship experiences and or schoolwork/classes/research. <br><br> Inside this Business Group <br> The Internet of Things Group (IOTG) consists of ~4700 dedicated employees across 25 locations across the world. IOTG drives significant growth in the Internet of Things (IoT) market, capitalizing on the inflection and creation of edge computing, leveraging smart, connected devices and artificial intelligence (AI) to enable partners to transform their businesses. IOTG's vision is to lead the industry and enterprises to enhance the way we live and work by making it easier to create exciting, new IoT/edge solutions. IOTG's strategy includes creating unique differentiated silicon to consolidate workloads at the Edge, investing in video and AI inference as the killer app for the Edge, creating new developer tools and ecosystems, and establishing a dedicated vertical consultative sales team to add value to our partners across many verticals. <br><br> Posting Statement <br> All qualified applicants will receive consideration for employment without regard to race, color, religion, religious creed, sex, national origin, ancestry, age, physical or mental disability, medical condition, genetic information, military and veteran status, marital status, pregnancy, gender, gender expression, gender identity, sexual orientation, or any other characteristic protected by local law, regulation, or ordinance. <br><br> Benefits <br> We offer a total compensation package that ranks among the best in the industry. It consists of competitive pay, stock, bonuses, and benefit programs. Find more information about our Amazing Benefits here: https://www.intel.com/content/www/us/en/jobs/benefits.htmlIt has come to our notice that some people have received fake job interview letters ostensibly issued by Intel, inviting them to attend interviews in Intel’s offices for various positions and further requiring them to deposit money to be eligible for the interviews. We wish to bring to your notice that these letters are not issued by Intel or any of its authorized representatives. Hiring at Intel is based purely on merit and Intel does not ask or require candidates to deposit any money. We would urge people interested in working for Intel, to apply directly at https://jobs.intel.com/ and not fall prey to unscrupulous elements. <br><br> Working Model <br> This role will be eligible for our hybrid work model which allows employees to split their time between working on-site at their assigned Intel site and off-site. In certain circumstances the work model may change to accommodate business needs. <br><br> About Company: Intel’s mission is to shape the future of technology to help create a better future for the entire world. By pushing forward in fields like AI, analytics and cloud-to-edge technology, Intel’s work is at the heart of countless innovations. From major breakthroughs like self-driving cars and rebuilding the coral reefs, to things that make everyday life better like blockbuster effects and improved shopping experiences — they’re all powered by Intel technology. With a career at Intel, you have the opportunity to help make the future more wonderful for everyone.  <br><br> Industry: Semiconductor Manufacturing <br><br> Company size: 10,001+ employees <br><br> Headquarters: Santa Clara, California <br><br> Founded: 1968 <br><br> Specialties: semiconductor design and manufacturing, artificial intelligence, autonomous driving, and non-volatile memory solutions","datePosted":"2022-09-27","validThrough":"2022-12-27","employmentType":"Full-Time","hiringOrganization":{"@type":"Organization","name":"Intel","sameAs":"https://www.intel.in/","logo":"https://gofresher.in/company-logos/intel.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"SRR Elite, RMZ Ecoworld Rd, Sector 3, Bellandur, Bengaluru, Karnataka 560103","addressLocality":"India","addressRegion":"Bengaluru, Karnataka","postalCode":"560103","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"400000","unitText":"Yearly"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Intel Hiring 2021 & 2022 Batch Fresher GPU Software Development Engineer - Bangalore","image":"https://gofresher.in/company-logos/intel.png","datePublished":"2022-09-27","dateModified":"2022-09-27","author":[{"@type":"Person","name":"Gofresher Admin","url":"http://example.com/profile/janedoe123"}]}</script><link rel="canonical" href="https://gofresher.in/jobs/intel-hiring-2021-2022-batch-fresher-intern-gpu-software-developer-engineer.html"><link rel="amphtml" href="https://gofresher.in/jobs/amp/intel-hiring-2021-2022-batch-fresher-intern-gpu-software-developer-engineer.html">
-<!-- One Signal -->
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
-    });
-  });
-</script>
+
 </head>
-<body>
+<body id="body-id">
+    <script tyle="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -252,8 +298,6 @@
         };
     
         firebase.initializeApp(firebaseConfig);
-        
-        firebase.analytics();
 
         var previous;
         var element;

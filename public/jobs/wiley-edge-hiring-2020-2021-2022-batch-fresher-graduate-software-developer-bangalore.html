@@ -24,56 +24,101 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
-    <script>   
-        window.addEventListener("load", () => {
+    <script>
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        function doSomething(scrollPos) {
+            console.log(lastKnownScrollPosition);
+            ///Firestore Database///
+            f = document.createElement('script');
+            f.type = 'text/javascript';
+            f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
+            document.getElementsByTagName('head')[0].appendChild(f);
+            ///Add Google Ad Script///
+            b = document.createElement('script');
+            b.type = 'text/javascript';
+            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            document.getElementsByTagName('head')[0].appendChild(b);
+            ///Add Moengage Script///
+            c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
+            document.getElementsByTagName('head')[0].appendChild(c);
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
+                });
+            });
+            ///Firsebase Login Auth///
+            d = document.createElement('script');
+            d.type = 'text/javascript';
+            d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
+            document.getElementsByTagName('head')[0].appendChild(d);
+            ///Signup-Popup Js Load///
             window.setTimeout(function () {
                 a = document.createElement('script');
                 a.type = 'text/javascript';
                 a.src = '/signup-popup.js';
                 document.getElementsByTagName('head')[0].appendChild(a);
             }, 500);
+            ///GTAG.JS///
+            g = document.createElement('script');
+            g.type = 'text/javascript';
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES';
+            document.getElementsByTagName('head')[0].appendChild(g);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5EP5C2QDES');
+            ///GTM.JS///
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W2MGKDH');
+            ///Bootstrap Min JS///
+            h = document.createElement('script');
+            h.type = 'text/javascript';
+            h.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+            document.getElementsByTagName('head')[0].appendChild(h);
+            ///Fontawesome JS///
+            i = document.createElement('script');
+            i.type = 'text/javascript';
+            i.src = 'https://kit.fontawesome.com/f49733d343.js';
+            document.getElementsByTagName('head')[0].appendChild(i);
+            ///Firebase Analytics
+            j = document.createElement('script');
+            j.type = 'text/javascript';
+            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js';
+            document.getElementsByTagName('head')[0].appendChild(j);
+            window.setTimeout(function () {
+                firebase.analytics();
+            }, 500);
+            ///Exit Loop After One Go
+            throw "exit";
+        }
+        document.addEventListener('scroll', (e) => {
+            lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+                    return false;
+                });
+                ticking = true;
+            }
         });
-    </script>
-<script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5EP5C2QDES');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
-    <!-- End Google Tag Manager -->
-    <!-- One Signal -->
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-    window.OneSignal = window.OneSignal || [];
-    OneSignal.push(function() {
-        OneSignal.init({
-        appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
-        });
-    });
     </script>
 <script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"Wiley Edge 2022 Graduate Program - Software Development | 2020, 2021, 2022 Batch | Bangalore","description":"<br><br> About Company: Wiley Edge is the emerging talent and reskill training partner for public and private organizations across the globe. Future-proofing is more important than ever. The pace of change is on the up, widening the gap between the skills needed and their availability in the workforce. More than 40 institutions in North America, EMEA and APAC, from government agencies to tier one investment banks to fintechs, have used Wiley Edge to meet this challenge. We bridge the skills gap in technology and other high-demand disciplines by connecting education to the working world. Aligned to industry, our Academy curriculum adapts to meet ever-changing requirements. Our Alumni offering focuses on custom-trained emerging talent. Through the hire-train-deploy model, we place outstanding graduates into a client’s team for 12 to 24 months, after which they can be converted to full-time employees at no extra cost. At the end of the program, ninety percent of Alumni stay on under our clients’ permanent headcount. In our Reskill offering, we create custom training for employees, enabling clients to retain valuable organizational knowledge while evolving along with the industry landscape. Diversity underpins everything we do for our clients. Reskill opens up a new demographic, tackling biases from age to education, and our Alumni population are 31% female and 51% Black, Asian, and Minority Ethnic, representing a step change in industry norms. Together, Alumni and Reskill help build pipelines of diverse, custom-trained talent – complementing traditional hiring strategies like internal graduate programs and reactive recruitment. In 2020 Wiley Edge joined Wiley (NYSE: JWA). Wiley is a global leader in research and education, unlocking human potential by enabling discovery, powering education, and shaping workforces. For over 200 years, Wiley has fueled the world’s knowledge ecosystem. Today, their high-impact content, platforms, and services help researchers, learners, institutions, and corporations achieve their goals in an ever-changing world. <br><br> About Opportunity:  <br><br> 1) 2022 Graduate Program: Software Development <br><br> You’ve worked hard, put the hours in at Uni, so now’s the time to kick-start your tech career with mthree.  We recruit year round and have start dates throughout 2022. Like the idea of working with technology to design and develop complex applications in a dynamic team environment?  Want to work with stakeholders across the business to create, test and improve applications that play a fundamental role in an organisation’s daily operations?  At Wiley Edge, we look to pair talented graduates with leading global businesses and we’re always on the lookout for ambitious people, like you, to join the Wiley Edge  Alumni Graduate Program.    We can provide you with professional, fully paid, free training to embark on your career as an Wiley Edge Alumni Graduate Software Developer.  We offer a generous graduate salary with pay rises every 6 months to reflect your progress  …. and we open doors to world leading organisations. <br><br> We’d like to hear from you if you have … <br>- Graduated in last two years or are completing your studies in 2022 (we have rolling start dates throughout the year!) <br>- A passion for programming and problem solving <br>- Some practical coding knowledge and experience <br>- A hunger to learn and upskill <br>- You will need to be a Australian or NZ Citizen, or a Permanent residency holder, as we are unable to provide visa sponsorship for this position <br><br> We offer training pathways in: <br>- Full stack engineering (Java) <br>- Full stack development (C#/.NET) <br>- Mainframe development using Cobol <br>- Programming in Q/KDB+ <br>- Software development with C++ <br><br> You’ll get: <br>- In-depth interactive training in small classes with graduates like you. Our training is created and delivered by industry experts who know your field inside out  <br>- A generous graduate salary with pay rises every 6 months to reflect your progress <br>- Ongoing training and support throughout your placement <br>- An opportunity to kickstart your career and gain valuable experience in an attractive and exciting industry <br><br> How it works: <br>- Apply via the Wiley Edge website <br>- Complete the assessments <br>- Get trained remotely (training is fully paid, free and there are no hidden costs or catches) <br>- Connect with opportunities at some of the world’s most exciting companies <br><br> Important information on Diversity <br>We take great pride in celebrating the diversity of every person who contributes to making Wiley Edge  the company it is today and will be in the future. We are proud to provide an environment where our colleagues can flourish. We never want people to change - only add to the amazing mix of people that work for Wiley Edge. <br><br> Location/Division:Bengaluru, Karnataka, India <br><br> Job Requisition:#AU01 <br><br> Application Link: https://edgejobs.wiley.com/en/position/2022-graduate-program-software-development-sydney-nsw-australia-7 <br><br> -------------------------------------------------------------- <br><br> 2) Graduate Java Developer - Bangalore (0-1 year experience) <br><br> About Role: At Wiley Edge, we pair talented graduates with leading global businesses. We’re always on the lookout for ambitious graduates to join the Alumni Graduate Program, kick-starting your tech career within an entry-level Java Developer role and working onsite with a leading investment bank, located in major cities across India. Our 24-month graduate program begins with 10 weeks of paid training and career coaching, where you’ll learn everything you need to hit the ground running as a Java Developer. <br><br> What you’ll do: <br>If successful, you’ll work with one of our clients as a software developer designing, building, testing and maintaining scalable and stable off the shelf application or custom-built technology solutions. <br>- Participate and contribute in the entire implementation process for new applications and enhancements to existing applications <br>- Provide input on the overall solution design <br>- Build and test applications <br>- Meet with business partners to understand business needs <br>- Conduct root cause analysis and implement basic performance tuning <br>- Responsible for ensuring the solution meets business needs <br><br> What you need: <br>- Degree in Computer Science, Technology, or related STEM subject <br>- Graduation in 2021 or 2022.  <br>- Academic aggregate of 60% or higher <br>- Strong programming skills in Java (mandatory) <br>- Competitive coding experience will be an advantage <br>- Solid software engineering principles (data structures, OOPs, design patterns, multithreading) <br>- Good trouble shooting and debugging skills <br>- Working knowledge of database concepts (SQL, stored procs, schema design) <br>- Understanding of the formal software development lifecycle (SDLC) <br>- Understanding of test-driven development <br><br> What you’ll receive: <br>- Fully paid, in-depth and interactive training with a diverse group of like-minded graduates, delivered by experts with working knowledge of the field. <br>- <br>- A competitive graduate salary <br>- Pay increases every 6 months <br>- A flexible benefits package <br>- Ongoing training and pastoral care <br>- Invaluable industry experience and the opportunity to start a career in a desirable and competitive industry <br><br> Important information on Diversity <br>We take great pride in celebrating the diversity of every individual who contributes to making Wiley Edge the company it is today and will be in the future. We value diversity both within Wiley Edge and with our partner companies, and we’re proud to provide an environment where all our colleagues can flourish by promoting a strong culture of equality and inclusion. We never want people to change - only add to the amazing mix of people that work for Wiley Edge.  <br><br> Location/Division:Bengaluru, Karnataka, India <br><br> Application Link: <a href=\"https://edgejobs.wiley.com/en/position/graduate-java-developer-bangalore-0-1-year-experience-bengaluru-karnataka-india\">https://edgejobs.wiley.com/en/position/graduate-java-developer-bangalore-0-1-year-experience-bengaluru-karnataka-india</a> -------------------------------------------------------------- <br><br>","datePosted":"2022-10-22","validThrough":"2023-02-22","employmentType":"Full-Time","hiringOrganization":{"@type":"Organization","name":"Wiley Edge","sameAs":"https://www.wiley.com/edge/","logo":"https://gofresher.in/company-logos/wiley-edge.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"Wiley India Pvt. Ltd. 1402, 14th Floor, World Trade Tower, Plot No. C - 1, Sector 16, Noida, Uttar Pradesh 201301","addressLocality":"India","addressRegion":"Noida, Uttar Pradesh","postalCode":"201301","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"600000","unitText":"Yearly"}}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","sameAs":"","dateCreated":"2022-10-22T00:00:00+05:30","description":"Wiley Edge Hiring Fresher Java Developer & Software Developer - 2020, 2021 & 2022 Batch At Bangalore. ","dateModified":"2022-10-22T00:00:00+05:30","datePublished":"2022-10-22T00:00:00+05:30","mainEntityOfPage":"https://gofresher.in/jobs/wiley-edge-hiring-2020-2021-2022-batch-fresher-graduate-software-developer-bangalore.html","headline":"Wiley Edge 2022 Graduate Program - Software Development | 2020, 2021, 2022 Batch | Bangalore","articleBody":"<br><br> About Company: Wiley Edge is the emerging talent and reskill training partner for public and private organizations across the globe. Future-proofing is more important than ever. The pace of change is on the up, widening the gap between the skills needed and their availability in the workforce. More than 40 institutions in North America, EMEA and APAC, from government agencies to tier one investment banks to fintechs, have used Wiley Edge to meet this challenge. We bridge the skills gap in technology and other high-demand disciplines by connecting education to the working world. Aligned to industry, our Academy curriculum adapts to meet ever-changing requirements. Our Alumni offering focuses on custom-trained emerging talent. Through the hire-train-deploy model, we place outstanding graduates into a client’s team for 12 to 24 months, after which they can be converted to full-time employees at no extra cost. At the end of the program, ninety percent of Alumni stay on under our clients’ permanent headcount. In our Reskill offering, we create custom training for employees, enabling clients to retain valuable organizational knowledge while evolving along with the industry landscape. Diversity underpins everything we do for our clients. Reskill opens up a new demographic, tackling biases from age to education, and our Alumni population are 31% female and 51% Black, Asian, and Minority Ethnic, representing a step change in industry norms. Together, Alumni and Reskill help build pipelines of diverse, custom-trained talent – complementing traditional hiring strategies like internal graduate programs and reactive recruitment. In 2020 Wiley Edge joined Wiley (NYSE: JWA). Wiley is a global leader in research and education, unlocking human potential by enabling discovery, powering education, and shaping workforces. For over 200 years, Wiley has fueled the world’s knowledge ecosystem. Today, their high-impact content, platforms, and services help researchers, learners, institutions, and corporations achieve their goals in an ever-changing world. <br><br> About Opportunity:  <br><br> 1) 2022 Graduate Program: Software Development <br><br> You’ve worked hard, put the hours in at Uni, so now’s the time to kick-start your tech career with mthree.  We recruit year round and have start dates throughout 2022. Like the idea of working with technology to design and develop complex applications in a dynamic team environment?  Want to work with stakeholders across the business to create, test and improve applications that play a fundamental role in an organisation’s daily operations?  At Wiley Edge, we look to pair talented graduates with leading global businesses and we’re always on the lookout for ambitious people, like you, to join the Wiley Edge  Alumni Graduate Program.    We can provide you with professional, fully paid, free training to embark on your career as an Wiley Edge Alumni Graduate Software Developer.  We offer a generous graduate salary with pay rises every 6 months to reflect your progress  …. and we open doors to world leading organisations. <br><br> We’d like to hear from you if you have … <br>- Graduated in last two years or are completing your studies in 2022 (we have rolling start dates throughout the year!) <br>- A passion for programming and problem solving <br>- Some practical coding knowledge and experience <br>- A hunger to learn and upskill <br>- You will need to be a Australian or NZ Citizen, or a Permanent residency holder, as we are unable to provide visa sponsorship for this position <br><br> We offer training pathways in: <br>- Full stack engineering (Java) <br>- Full stack development (C#/.NET) <br>- Mainframe development using Cobol <br>- Programming in Q/KDB+ <br>- Software development with C++ <br><br> You’ll get: <br>- In-depth interactive training in small classes with graduates like you. Our training is created and delivered by industry experts who know your field inside out  <br>- A generous graduate salary with pay rises every 6 months to reflect your progress <br>- Ongoing training and support throughout your placement <br>- An opportunity to kickstart your career and gain valuable experience in an attractive and exciting industry <br><br> How it works: <br>- Apply via the Wiley Edge website <br>- Complete the assessments <br>- Get trained remotely (training is fully paid, free and there are no hidden costs or catches) <br>- Connect with opportunities at some of the world’s most exciting companies <br><br> Important information on Diversity <br>We take great pride in celebrating the diversity of every person who contributes to making Wiley Edge  the company it is today and will be in the future. We are proud to provide an environment where our colleagues can flourish. We never want people to change - only add to the amazing mix of people that work for Wiley Edge. <br><br> Location/Division:Bengaluru, Karnataka, India <br><br> Job Requisition:#AU01 <br><br> Application Link: https://edgejobs.wiley.com/en/position/2022-graduate-program-software-development-sydney-nsw-australia-7 <br><br> -------------------------------------------------------------- <br><br> 2) Graduate Java Developer - Bangalore (0-1 year experience) <br><br> About Role: At Wiley Edge, we pair talented graduates with leading global businesses. We’re always on the lookout for ambitious graduates to join the Alumni Graduate Program, kick-starting your tech career within an entry-level Java Developer role and working onsite with a leading investment bank, located in major cities across India. Our 24-month graduate program begins with 10 weeks of paid training and career coaching, where you’ll learn everything you need to hit the ground running as a Java Developer. <br><br> What you’ll do: <br>If successful, you’ll work with one of our clients as a software developer designing, building, testing and maintaining scalable and stable off the shelf application or custom-built technology solutions. <br>- Participate and contribute in the entire implementation process for new applications and enhancements to existing applications <br>- Provide input on the overall solution design <br>- Build and test applications <br>- Meet with business partners to understand business needs <br>- Conduct root cause analysis and implement basic performance tuning <br>- Responsible for ensuring the solution meets business needs <br><br> What you need: <br>- Degree in Computer Science, Technology, or related STEM subject <br>- Graduation in 2021 or 2022.  <br>- Academic aggregate of 60% or higher <br>- Strong programming skills in Java (mandatory) <br>- Competitive coding experience will be an advantage <br>- Solid software engineering principles (data structures, OOPs, design patterns, multithreading) <br>- Good trouble shooting and debugging skills <br>- Working knowledge of database concepts (SQL, stored procs, schema design) <br>- Understanding of the formal software development lifecycle (SDLC) <br>- Understanding of test-driven development <br><br> What you’ll receive: <br>- Fully paid, in-depth and interactive training with a diverse group of like-minded graduates, delivered by experts with working knowledge of the field. <br>- <br>- A competitive graduate salary <br>- Pay increases every 6 months <br>- A flexible benefits package <br>- Ongoing training and pastoral care <br>- Invaluable industry experience and the opportunity to start a career in a desirable and competitive industry <br><br> Important information on Diversity <br>We take great pride in celebrating the diversity of every individual who contributes to making Wiley Edge the company it is today and will be in the future. We value diversity both within Wiley Edge and with our partner companies, and we’re proud to provide an environment where all our colleagues can flourish by promoting a strong culture of equality and inclusion. We never want people to change - only add to the amazing mix of people that work for Wiley Edge.  <br><br> Location/Division:Bengaluru, Karnataka, India <br><br> Application Link: <a href=\"https://edgejobs.wiley.com/en/position/graduate-java-developer-bangalore-0-1-year-experience-bengaluru-karnataka-india\">https://edgejobs.wiley.com/en/position/graduate-java-developer-bangalore-0-1-year-experience-bengaluru-karnataka-india</a> -------------------------------------------------------------- <br><br>","author":{"@type":"Person","name":"Admin Gofresher","sameAs":"https://gofresher.in/author/admin"},"publisher":{"@type":"Organization","name":"Gofresher","logo":{"@type":"ImageObject","name":"Gofresher","url":"https://gofresher.in/jobs/amp/gofresher-amp-logo.png"}},"image":{"@type":"ImageObject","url":"https://gofresher.in/company-logos/wiley-edge.png","width":"1200","height":"1200"}}</script>
 <link rel="canonical" href="https://gofresher.in/jobs/wiley-edge-hiring-2020-2021-2022-batch-fresher-graduate-software-developer-bangalore.html">
 <link rel="amphtml" href="https://gofresher.in/jobs/amp/wiley-edge-hiring-2020-2021-2022-batch-fresher-graduate-software-developer-bangalore.html"/>
 </head>
-<body>
+<body id="body-id">
+    <script tyle="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -255,8 +300,6 @@
         };
     
         firebase.initializeApp(firebaseConfig);
-        
-        firebase.analytics();
 
         var previous;
         var element;

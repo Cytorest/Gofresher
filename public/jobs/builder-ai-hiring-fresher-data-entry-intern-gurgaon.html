@@ -24,54 +24,99 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
-    <script>   
-        window.addEventListener("load", () => {
+    <script>
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        function doSomething(scrollPos) {
+            console.log(lastKnownScrollPosition);
+            ///Firestore Database///
+            f = document.createElement('script');
+            f.type = 'text/javascript';
+            f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
+            document.getElementsByTagName('head')[0].appendChild(f);
+            ///Add Google Ad Script///
+            b = document.createElement('script');
+            b.type = 'text/javascript';
+            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            document.getElementsByTagName('head')[0].appendChild(b);
+            ///Add Moengage Script///
+            c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
+            document.getElementsByTagName('head')[0].appendChild(c);
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
+                });
+            });
+            ///Firsebase Login Auth///
+            d = document.createElement('script');
+            d.type = 'text/javascript';
+            d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
+            document.getElementsByTagName('head')[0].appendChild(d);
+            ///Signup-Popup Js Load///
             window.setTimeout(function () {
                 a = document.createElement('script');
                 a.type = 'text/javascript';
                 a.src = '/signup-popup.js';
                 document.getElementsByTagName('head')[0].appendChild(a);
             }, 500);
+            ///GTAG.JS///
+            g = document.createElement('script');
+            g.type = 'text/javascript';
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES';
+            document.getElementsByTagName('head')[0].appendChild(g);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5EP5C2QDES');
+            ///GTM.JS///
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W2MGKDH');
+            ///Bootstrap Min JS///
+            h = document.createElement('script');
+            h.type = 'text/javascript';
+            h.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+            document.getElementsByTagName('head')[0].appendChild(h);
+            ///Fontawesome JS///
+            i = document.createElement('script');
+            i.type = 'text/javascript';
+            i.src = 'https://kit.fontawesome.com/f49733d343.js';
+            document.getElementsByTagName('head')[0].appendChild(i);
+            ///Firebase Analytics
+            j = document.createElement('script');
+            j.type = 'text/javascript';
+            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js';
+            document.getElementsByTagName('head')[0].appendChild(j);
+            window.setTimeout(function () {
+                firebase.analytics();
+            }, 500);
+            ///Exit Loop After One Go
+            throw "exit";
+        }
+        document.addEventListener('scroll', (e) => {
+            lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+                    return false;
+                });
+                ticking = true;
+            }
         });
-    </script>
-<script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5EP5C2QDES');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
-    <!-- End Google Tag Manager -->
-    <!-- One Signal -->
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-    window.OneSignal = window.OneSignal || [];
-    OneSignal.push(function() {
-        OneSignal.init({
-        appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
-        });
-    });
     </script>
 <script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"Builder.ai Hiring Fresher Data Entry Intern At Gurgaon","description":"<br><br> About Company: Our mission is to make it easy for you to build the software you need. Everyone should be able to do it – doesn’t matter what your background, tech knowledge or budget is. We believe that everyone should be empowered to unlock their true potential in being a Builder, irrespective of what they know, what they have and what they are afraid of. In everything we do, we believe in pushing the boundaries of conventional thinking – to look at every problem differently and from the ground up. Our founders were let down by developers. Did you know 78% software development projects fail? That’s over $3 trillion wasted. Our founders were once part of this statistic. And they had a vision – why should tech be a barrier to any business, entrepreneur or anyone at all? Their answer? An assembly line of reusable parts. Think about it. How many apps have Sign in pages? Or a checkout journey? The same features get used in thousands of apps that we use every day. So they decided to create code blocks for these features. Making it so they could fit together, like Lego. It’s more cost effective and you get your app quicker. Other development agencies waste time coding these components from scratch for each project. More time also means more money. We save you both, by automating the tedious bits of app building – and using your budget and timeline on the unique bits of your idea. Everyone’s unique and that can't be automated. So we combine automation with talented humans – the best of both – to ensure your software is high quality and exactly the way you want it. In fact, we’ve 85,000 designers and developers across the world and our AI picks the best ones for your requirements. And of course, you get your own dedicated expert who manages your project from first chat to successful delivery. Innovation is fuelled by the power of possibilities. A few years ago, it was virtually impossible to innovate because building software needed a degree, it was simply too expensive, too complex, too risky and ultimately too inefficient. That’s why only 16% of projects were ever done on budget and 78% failed. We're changing that. We’re flipping software development on its head and kicking out the notion that you need to be an expert or do boot camps to learn how to make your app. Builder.ai’s platform lets you order the perfect software app for whatever problem you’re trying to solve. Our AI powered assembly line brings together Lego-like reusable features and experts from around the world to bring world-class ideas to life – ANYONE’s world-class ideas. Building software needs to be like ordering pizza – pick what you want, get recommendations for the features you need and simply wait till it's cooked and ready for you. Our human-assisted AI platform helps anyone build, run & scale tailor-made software. Everyone from the bakery in Riyadh and nursery in London, to large fortune 100 companies like the BBC or Pepsi. <br><br> Life at Builder <br> It’s a place where everything moves at lightning pace and most definitely not for the faint hearted. We celebrate diversity, push everyone to do more with less and yet provide a culture that allows everyone to experiment, push boundaries and learn by doing. Every Builder runs to our core value system of HEARTT (Heart, Entrepreneurship, Accountability, Respect, Trust & Transparency) and we’re always looking for team players, with a point of view, a sense of humility and a let’s-get-stuff-done attitude. <br> Our scale up is at the intersection of a quirky startup where designers and machine learning specialists work on problems together to savvy commercial teams working with finance folks to invent new business models. #WhatWouldYouBuild <br><br> Requirements <br>1. Preparing and sorting documents for data entry. <br>2. Entering data into database software and checking to ensure the accuracy of the data that has been inputted. <br>3. Resolving discrepancies in information and obtaining further information for incomplete documents. <br>4. Creating data backups as part of a contingency plan. <br>5. Responding to information requests from authorized members. <br>6. Testing new database systems and software updates. <br>7. Computer literacy and familiarity with various computer programs such as MS Office.","datePosted":"2022-10-25","validThrough":"2023-02-25","employmentType":"Full-Time","hiringOrganization":{"@type":"Organization","name":"Builder.ai","sameAs":"https://www.builder.ai/","logo":"https://gofresher.in/company-logos/builder-ai.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"Ground Floor, 77B, Shaheed Ripon Katyal Marg, Sector 18, Gurugram, Haryana 122015","addressLocality":"India","addressRegion":"Gurugram, Haryana","postalCode":"122015","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"30000","unitText":"Yearly"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","sameAs":"","dateCreated":"2022-10-25T00:00:00+05:30","description":"Builder.ai Hiring 2021, 2022 & 2023 Batch Fresher As Data Entry Intern At Gurgaon. Data Entry Intern Fresher Hiring.","dateModified":"2022-10-25T00:00:00+05:30","datePublished":"2022-10-25T00:00:00+05:30","mainEntityOfPage":"https://gofresher.in/jobs/builder-ai-hiring-fresher-data-entry-intern-gurgaon.html","headline":"Builder.ai Hiring Fresher Data Entry Intern At Gurgaon","articleBody":"<br><br> About Company: Our mission is to make it easy for you to build the software you need. Everyone should be able to do it – doesn’t matter what your background, tech knowledge or budget is. We believe that everyone should be empowered to unlock their true potential in being a Builder, irrespective of what they know, what they have and what they are afraid of. In everything we do, we believe in pushing the boundaries of conventional thinking – to look at every problem differently and from the ground up. Our founders were let down by developers. Did you know 78% software development projects fail? That’s over $3 trillion wasted. Our founders were once part of this statistic. And they had a vision – why should tech be a barrier to any business, entrepreneur or anyone at all? Their answer? An assembly line of reusable parts. Think about it. How many apps have Sign in pages? Or a checkout journey? The same features get used in thousands of apps that we use every day. So they decided to create code blocks for these features. Making it so they could fit together, like Lego. It’s more cost effective and you get your app quicker. Other development agencies waste time coding these components from scratch for each project. More time also means more money. We save you both, by automating the tedious bits of app building – and using your budget and timeline on the unique bits of your idea. Everyone’s unique and that can't be automated. So we combine automation with talented humans – the best of both – to ensure your software is high quality and exactly the way you want it. In fact, we’ve 85,000 designers and developers across the world and our AI picks the best ones for your requirements. And of course, you get your own dedicated expert who manages your project from first chat to successful delivery. Innovation is fuelled by the power of possibilities. A few years ago, it was virtually impossible to innovate because building software needed a degree, it was simply too expensive, too complex, too risky and ultimately too inefficient. That’s why only 16% of projects were ever done on budget and 78% failed. We're changing that. We’re flipping software development on its head and kicking out the notion that you need to be an expert or do boot camps to learn how to make your app. Builder.ai’s platform lets you order the perfect software app for whatever problem you’re trying to solve. Our AI powered assembly line brings together Lego-like reusable features and experts from around the world to bring world-class ideas to life – ANYONE’s world-class ideas. Building software needs to be like ordering pizza – pick what you want, get recommendations for the features you need and simply wait till it's cooked and ready for you. Our human-assisted AI platform helps anyone build, run & scale tailor-made software. Everyone from the bakery in Riyadh and nursery in London, to large fortune 100 companies like the BBC or Pepsi. <br><br> Life at Builder <br> It’s a place where everything moves at lightning pace and most definitely not for the faint hearted. We celebrate diversity, push everyone to do more with less and yet provide a culture that allows everyone to experiment, push boundaries and learn by doing. Every Builder runs to our core value system of HEARTT (Heart, Entrepreneurship, Accountability, Respect, Trust & Transparency) and we’re always looking for team players, with a point of view, a sense of humility and a let’s-get-stuff-done attitude. <br> Our scale up is at the intersection of a quirky startup where designers and machine learning specialists work on problems together to savvy commercial teams working with finance folks to invent new business models. #WhatWouldYouBuild <br><br> Requirements <br>1. Preparing and sorting documents for data entry. <br>2. Entering data into database software and checking to ensure the accuracy of the data that has been inputted. <br>3. Resolving discrepancies in information and obtaining further information for incomplete documents. <br>4. Creating data backups as part of a contingency plan. <br>5. Responding to information requests from authorized members. <br>6. Testing new database systems and software updates. <br>7. Computer literacy and familiarity with various computer programs such as MS Office.","author":{"@type":"Person","name":"Admin Gofresher","sameAs":"https://gofresher.in/author/admin"},"publisher":{"@type":"Organization","name":"Gofresher","logo":{"@type":"ImageObject","name":"Gofresher","url":"https://gofresher.in/jobs/amp/gofresher-amp-logo.png"}},"image":{"@type":"ImageObject","url":"https://gofresher.in/company-logos/builder-ai.png","width":"1200","height":"1200"}}</script><link rel="canonical" href="https://gofresher.in/jobs/builder-ai-hiring-fresher-data-entry-intern-gurgaon.html">
 <link rel="amphtml" href="https://gofresher.in/jobs/amp/builder-ai-hiring-fresher-data-entry-intern-gurgaon.html"/>
 </head>
-<body>
+<body id="body-id">
+    <script tyle="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -253,8 +298,6 @@
         };
     
         firebase.initializeApp(firebaseConfig);
-        
-        firebase.analytics();
 
         var previous;
         var element;

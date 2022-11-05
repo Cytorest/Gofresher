@@ -24,53 +24,99 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
-    <script>   
-        window.addEventListener("load", () => {
+    <script>
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        function doSomething(scrollPos) {
+            console.log(lastKnownScrollPosition);
+            ///Firestore Database///
+            f = document.createElement('script');
+            f.type = 'text/javascript';
+            f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
+            document.getElementsByTagName('head')[0].appendChild(f);
+            ///Add Google Ad Script///
+            b = document.createElement('script');
+            b.type = 'text/javascript';
+            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            document.getElementsByTagName('head')[0].appendChild(b);
+            ///Add Moengage Script///
+            c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
+            document.getElementsByTagName('head')[0].appendChild(c);
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
+                });
+            });
+            ///Firsebase Login Auth///
+            d = document.createElement('script');
+            d.type = 'text/javascript';
+            d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
+            document.getElementsByTagName('head')[0].appendChild(d);
+            ///Signup-Popup Js Load///
             window.setTimeout(function () {
                 a = document.createElement('script');
                 a.type = 'text/javascript';
                 a.src = '/signup-popup.js';
                 document.getElementsByTagName('head')[0].appendChild(a);
             }, 500);
+            ///GTAG.JS///
+            g = document.createElement('script');
+            g.type = 'text/javascript';
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES';
+            document.getElementsByTagName('head')[0].appendChild(g);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5EP5C2QDES');
+            ///GTM.JS///
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W2MGKDH');
+            ///Bootstrap Min JS///
+            h = document.createElement('script');
+            h.type = 'text/javascript';
+            h.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+            document.getElementsByTagName('head')[0].appendChild(h);
+            ///Fontawesome JS///
+            i = document.createElement('script');
+            i.type = 'text/javascript';
+            i.src = 'https://kit.fontawesome.com/f49733d343.js';
+            document.getElementsByTagName('head')[0].appendChild(i);
+            ///Firebase Analytics
+            j = document.createElement('script');
+            j.type = 'text/javascript';
+            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js';
+            document.getElementsByTagName('head')[0].appendChild(j);
+            window.setTimeout(function () {
+                firebase.analytics();
+            }, 500);
+            ///Exit Loop After One Go
+            throw "exit";
+        }
+        document.addEventListener('scroll', (e) => {
+            lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+                    return false;
+                });
+                ticking = true;
+            }
         });
     </script>
-<script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5EP5C2QDES');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
-    <!-- End Google Tag Manager -->
 <script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"Infosys Hiring 2020, 2021, 2022 Batch Fresher As Java Developer","description":"<br><br> About Company: Infosys was founded by seven engineers in Pune, Maharashtra, India. Its initial capital was $250. It was registered as Infosys Consultants Private Limited on 2 July 1981.In 1983, it relocated to Bangalore, Karnataka. The company changed its name to Infosys Technologies Private Limited in April 1992 and to Infosys Technologies Limited when it became a public limited company in June 1992. It was renamed Infosys Limited in June 2011. An initial public offering (IPO) was floated in February 1993 with an offer price of ₹95 (equivalent to ₹580 or US$7.30 in 2020) per share against a book value of ₹20 (equivalent to ₹120 or US$1.50 in 2020) per share. The IPO was undersubscribed but it was \"bailed out\" by US investment bank Morgan Stanley, which picked up a 13% equity stake at the offer price. Its shares were listed in June 1993 with trading opening at ₹145 (equivalent to ₹890 or US$11 in 2020) per share. Infosys shares were listed on the Nasdaq stock exchange in 1999 as American depositary receipts (ADR). It became the first Indian company to be listed on Nasdaq.[citation needed] The share price surged to ₹8,100 (equivalent to ₹30,000 or US$370 in 2020) by 1999, making it the costliest share on the market at the time. At that time, Infosys was among the 20 biggest companies by market capitalization on the Nasdaq. The ADR listing was shifted from Nasdaq to NYSE Euronext to give European investors better access to the company's shares. On 28 July 2010, then-British Prime Minister David Cameron visited Infosys HQ in Bangalore and addressed Infosys employees. <br><br> Infosys, Bangalore Its annual revenue reached US$100 million in 1999, US$1 billion in 2004 and US$10 billion in 2017. <br><br> In 2012, Infosys announced a new office in Milwaukee, Wisconsin, to serve Harley-Davidson. Infosys hired 1,200 United States employees in 2011 and expanded the workforce by 2,000 employees in 2012. In April 2018, Infosys announced expanding in Indianapolis, Indiana. <br><br> In July 2014, Infosys started a product subsidiary called EdgeVerve Systems, focusing on enterprise software products for business operations, customer service, procurement and commerce network domains. In August 2015, assets from Finacle Global Banking Solutions were transferred from Infosys, thus becoming part of the product company EdgeVerve Systems' product portfolio. <br><br> Job Responsibilities:  <br>A day in the life of an Infoscion <br>• As part of the Infosys delivery team, your primary role would be to ensure effective Design, Development, Validation and Support activities, to assure that our clients are satisfied with the high levels of service in the technology domain. <br>• You will gather the requirements and specifications to understand the client requirements in a detailed manner and translate the same into system requirements. <br>• You will play a key role in the overall estimation of work requirements to provide the right information on project estimations to Technology Leads and Project Managers. <br>• You would be a key contributor to building efficient programs/ systems and if you think you fit right in to help our clients navigate their next in their digital transformation journey, this is the place for you! <br><br>If you think you fit right in to help our clients navigate their next in their digital transformation journey, this is the place for you! <br><br> Service Line: Application Development and Maintenance <br><br> Additional Responsibilities: <br>Knowledge of design principles and fundamentals of architecture <br>• Understanding of performance engineering <br>• Knowledge of quality processes and estimation techniques <br>• Basic understanding of project domain <br>• Ability to translate functional / nonfunctional requirements to systems requirements <br>• Ability to design and code complex programs <br>• Ability to write test cases and scenarios based on the specifications <br>• Good understanding of SDLC and agile methodologies <br>• Awareness of latest technologies and trends <br>• Logical thinking and problem solving skills along with an ability to collaborate <br><br> Technical and Professional Requirements: <br>• Primary skills:Java,Java->Springboot,Java-ALL <br><br> Preferred Skills: <br>Java-ALL, Java <br><br>Generic Skills: <br>Java->Microservices, Springboot <br><br>* Location of posting is subject to business requirements","datePosted":"2022-09-10","validThrough":"2022-12-10","employmentType":"Full-Time","hiringOrganization":{"@type":"Organization","name":"Infosys Limited","sameAs":"https://www.infosys.com/","logo":"https://gofresher.in/company-logos/infosys.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"Survey No. 41 (Pt),50 (pt), Pocharam Village, Singapore Township PO, Ghatkesar Mandal, Malkajgiri, Hyderabad, 500088","addressLocality":"India","addressRegion":"Hyderabad, India","postalCode":"500088","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"800000","unitText":"Yearly"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Infosys Hiring 2020, 2021, 2022 Batch Fresher As Java Developer","image":"https://gofresher.in/company-logos/infosys.png","datePublished":"2022-09-10","dateModified":"2022-09-10","author":[{"@type":"Person","name":"Gofresher Admin","url":"http://example.com/profile/janedoe123"}]}</script><link rel="canonical" href="https://gofresher.in/jobs/infosys-hiring-2020-2021-2022-batch-fresher-java-developer.html"><link rel="amphtml" href="https://gofresher.in/jobs/amp/infosys-hiring-2020-2021-2022-batch-fresher-java-developer.html"/>
-<!-- One Signal -->
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
-    });
-  });
-</script>
+
 </head>
-<body>
+<body id="body-id">
+    <script tyle="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -252,8 +298,6 @@
         };
     
         firebase.initializeApp(firebaseConfig);
-        
-        firebase.analytics();
 
         var previous;
         var element;

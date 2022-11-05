@@ -24,54 +24,99 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
-    <script>   
-        window.addEventListener("load", () => {
+    <script>
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        function doSomething(scrollPos) {
+            console.log(lastKnownScrollPosition);
+            ///Firestore Database///
+            f = document.createElement('script');
+            f.type = 'text/javascript';
+            f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
+            document.getElementsByTagName('head')[0].appendChild(f);
+            ///Add Google Ad Script///
+            b = document.createElement('script');
+            b.type = 'text/javascript';
+            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            document.getElementsByTagName('head')[0].appendChild(b);
+            ///Add Moengage Script///
+            c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
+            document.getElementsByTagName('head')[0].appendChild(c);
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
+                });
+            });
+            ///Firsebase Login Auth///
+            d = document.createElement('script');
+            d.type = 'text/javascript';
+            d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
+            document.getElementsByTagName('head')[0].appendChild(d);
+            ///Signup-Popup Js Load///
             window.setTimeout(function () {
                 a = document.createElement('script');
                 a.type = 'text/javascript';
                 a.src = '/signup-popup.js';
                 document.getElementsByTagName('head')[0].appendChild(a);
             }, 500);
+            ///GTAG.JS///
+            g = document.createElement('script');
+            g.type = 'text/javascript';
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES';
+            document.getElementsByTagName('head')[0].appendChild(g);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5EP5C2QDES');
+            ///GTM.JS///
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W2MGKDH');
+            ///Bootstrap Min JS///
+            h = document.createElement('script');
+            h.type = 'text/javascript';
+            h.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+            document.getElementsByTagName('head')[0].appendChild(h);
+            ///Fontawesome JS///
+            i = document.createElement('script');
+            i.type = 'text/javascript';
+            i.src = 'https://kit.fontawesome.com/f49733d343.js';
+            document.getElementsByTagName('head')[0].appendChild(i);
+            ///Firebase Analytics
+            j = document.createElement('script');
+            j.type = 'text/javascript';
+            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js';
+            document.getElementsByTagName('head')[0].appendChild(j);
+            window.setTimeout(function () {
+                firebase.analytics();
+            }, 500);
+            ///Exit Loop After One Go
+            throw "exit";
+        }
+        document.addEventListener('scroll', (e) => {
+            lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+                    return false;
+                });
+                ticking = true;
+            }
         });
-    </script>
-<script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5EP5C2QDES');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
-    <!-- End Google Tag Manager -->
-    <!-- One Signal -->
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-    window.OneSignal = window.OneSignal || [];
-    OneSignal.push(function() {
-        OneSignal.init({
-        appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
-        });
-    });
     </script>
 <script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"Merkle Internship 2023","description":"<br><br> Merkle Hiring 2022/ 2023 Batch Fresher Web Developer - Intern <br><br> Job Responsibilities:  <br>- Responsible for developing, maintaining and improving website  <br>- Coordination with Internal Teams and delivering desired output to stakeholders.  <br>- Ensure high quality graphic standards and brand consistency  <br>- Familiarity with browser testing and debugging  <br>- Planning & Organizing – to be able to handle multiple requests daily and take timely decisions for prioritization of tasks.      <br>- Knowledge of SEO principles              <br>- Understand the final output required and can generate good drafts for final output.  <br>- Ensure compliance to all standards and procedures in implementation process and integrate all site elements.  <br><br> If you are:   <br>- A tech graduate (BE, B.Sc) & having experience of 6-12month (maximum)   <br>- Good understanding in web markup, including HTML5, CSS3  <br>- Basic knowledge of image authoring tools, to be able to crop, resize, or perform small adjustments on an image. Familiarity with tools such as as Gimp or Photoshop is a plus.  <br>- Aggressive about meeting goals & timelines.   <br>- A Multi-tasking super hero.   <br>- A Great communicator with undivided focus on satisfying customers.  <br><br> About Company: Merkle is a leading data-driven customer experience management (CXM) company that specializes in the delivery of unique, personalized customer experiences across platforms and devices. For more than 30 years, Fortune 1000 companies and leading nonprofit organizations have partnered with Merkle to maximize the value of their customer portfolios. The company’s heritage in data, technology, and analytics forms the foundation for its unmatched skills in understanding consumer insights that drive hyper-personalized marketing strategies. Its combined strengths in performance media, customer experience, customer relationship management, loyalty, and enterprise marketing technology drive improved marketing results and competitive advantage. With 12,000 employees, Merkle is headquartered in Columbia, Maryland, with 50+ additional offices throughout the Americas, EMEA, and APAC. Merkle is a dentsu company. <br><br> More Information: <br> Our Culture: Merkle’s energy and personality lives through everything we say and do. Learn all about what defines our people and our vibe. <br> Students & Recent Graduates: Start your career at Merkle and get on the path to success. <br> Experienced Hires: Leverage your expertise, challenge the status quo and grow your career at Merkle.","datePosted":"2022-11-03","validThrough":"2023-02-03","employmentType":"Full-Time","hiringOrganization":{"@type":"Organization","name":"Merkle Inc.","sameAs":"https://www.merkle.com","logo":"https://gofresher.in/company-logos/merkle.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"Survey No. 35, Deep Complex, 1st floor, above Renault Showroom, Pune, Maharashtra 411045","addressLocality":"India","addressRegion":"Pune, Maharashtra","postalCode":"411045","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"350000","unitText":"Yearly"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","sameAs":"","dateCreated":"2022-11-03T00:00:00+05:30","description":"Merkle Hiring 2022/ 2023 Batch Fresher Web Developer - Intern. Pune Fresher Job Hiring By Merkle. All Freshers Must Apply.","dateModified":"2022-11-03T00:00:00+05:30","datePublished":"2022-11-03T00:00:00+05:30","mainEntityOfPage":"https://gofresher.in/jobs/merkle-internship-2023.html","headline":"Merkle Internship 2023","articleBody":"<br><br> Merkle Hiring 2022/ 2023 Batch Fresher Web Developer - Intern <br><br> Job Responsibilities:  <br>- Responsible for developing, maintaining and improving website  <br>- Coordination with Internal Teams and delivering desired output to stakeholders.  <br>- Ensure high quality graphic standards and brand consistency  <br>- Familiarity with browser testing and debugging  <br>- Planning & Organizing – to be able to handle multiple requests daily and take timely decisions for prioritization of tasks.      <br>- Knowledge of SEO principles              <br>- Understand the final output required and can generate good drafts for final output.  <br>- Ensure compliance to all standards and procedures in implementation process and integrate all site elements.  <br><br> If you are:   <br>- A tech graduate (BE, B.Sc) & having experience of 6-12month (maximum)   <br>- Good understanding in web markup, including HTML5, CSS3  <br>- Basic knowledge of image authoring tools, to be able to crop, resize, or perform small adjustments on an image. Familiarity with tools such as as Gimp or Photoshop is a plus.  <br>- Aggressive about meeting goals & timelines.   <br>- A Multi-tasking super hero.   <br>- A Great communicator with undivided focus on satisfying customers.  <br><br> About Company: Merkle is a leading data-driven customer experience management (CXM) company that specializes in the delivery of unique, personalized customer experiences across platforms and devices. For more than 30 years, Fortune 1000 companies and leading nonprofit organizations have partnered with Merkle to maximize the value of their customer portfolios. The company’s heritage in data, technology, and analytics forms the foundation for its unmatched skills in understanding consumer insights that drive hyper-personalized marketing strategies. Its combined strengths in performance media, customer experience, customer relationship management, loyalty, and enterprise marketing technology drive improved marketing results and competitive advantage. With 12,000 employees, Merkle is headquartered in Columbia, Maryland, with 50+ additional offices throughout the Americas, EMEA, and APAC. Merkle is a dentsu company. <br><br> More Information: <br> Our Culture: Merkle’s energy and personality lives through everything we say and do. Learn all about what defines our people and our vibe. <br> Students & Recent Graduates: Start your career at Merkle and get on the path to success. <br> Experienced Hires: Leverage your expertise, challenge the status quo and grow your career at Merkle.","author":{"@type":"Person","name":"Admin Gofresher","sameAs":"https://gofresher.in/author/admin"},"publisher":{"@type":"Organization","name":"Gofresher","logo":{"@type":"ImageObject","name":"Gofresher","url":"https://gofresher.in/jobs/amp/gofresher-amp-logo.png"}},"image":{"@type":"ImageObject","url":"https://gofresher.in/company-logos/merkle.png","width":"1200","height":"1200"}}</script><link rel="canonical" href="https://gofresher.in/jobs/merkle-internship-2023.html">
 <link rel="amphtml" href="https://gofresher.in/jobs/amp/merkle-internship-2023.html"/>
 </head>
-<body>
+<body id="body-id">
+    <script tyle="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -253,8 +298,6 @@
         };
     
         firebase.initializeApp(firebaseConfig);
-        
-        firebase.analytics();
 
         var previous;
         var element;

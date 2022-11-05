@@ -24,54 +24,99 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
-    <script>   
-        window.addEventListener("load", () => {
+    <script>
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        function doSomething(scrollPos) {
+            console.log(lastKnownScrollPosition);
+            ///Firestore Database///
+            f = document.createElement('script');
+            f.type = 'text/javascript';
+            f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
+            document.getElementsByTagName('head')[0].appendChild(f);
+            ///Add Google Ad Script///
+            b = document.createElement('script');
+            b.type = 'text/javascript';
+            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            document.getElementsByTagName('head')[0].appendChild(b);
+            ///Add Moengage Script///
+            c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
+            document.getElementsByTagName('head')[0].appendChild(c);
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
+                });
+            });
+            ///Firsebase Login Auth///
+            d = document.createElement('script');
+            d.type = 'text/javascript';
+            d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
+            document.getElementsByTagName('head')[0].appendChild(d);
+            ///Signup-Popup Js Load///
             window.setTimeout(function () {
                 a = document.createElement('script');
                 a.type = 'text/javascript';
                 a.src = '/signup-popup.js';
                 document.getElementsByTagName('head')[0].appendChild(a);
             }, 500);
+            ///GTAG.JS///
+            g = document.createElement('script');
+            g.type = 'text/javascript';
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES';
+            document.getElementsByTagName('head')[0].appendChild(g);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5EP5C2QDES');
+            ///GTM.JS///
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W2MGKDH');
+            ///Bootstrap Min JS///
+            h = document.createElement('script');
+            h.type = 'text/javascript';
+            h.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+            document.getElementsByTagName('head')[0].appendChild(h);
+            ///Fontawesome JS///
+            i = document.createElement('script');
+            i.type = 'text/javascript';
+            i.src = 'https://kit.fontawesome.com/f49733d343.js';
+            document.getElementsByTagName('head')[0].appendChild(i);
+            ///Firebase Analytics
+            j = document.createElement('script');
+            j.type = 'text/javascript';
+            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js';
+            document.getElementsByTagName('head')[0].appendChild(j);
+            window.setTimeout(function () {
+                firebase.analytics();
+            }, 500);
+            ///Exit Loop After One Go
+            throw "exit";
+        }
+        document.addEventListener('scroll', (e) => {
+            lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+                    return false;
+                });
+                ticking = true;
+            }
         });
-    </script>
-<script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5EP5C2QDES');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
-    <!-- End Google Tag Manager -->
-    <!-- One Signal -->
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-    window.OneSignal = window.OneSignal || [];
-    OneSignal.push(function() {
-        OneSignal.init({
-        appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
-        });
-    });
     </script>
 <script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"Loginext Hiring Fresher Junior Software Engineer | Analytics & Dev Ops | Mumbai","description":"<br><br> About Company: LogiNext is a global technology and automation company with a focus on the transportation, home deliveries, omni-channel fulfillment and B2B distribution market. Growing at an average rate of 150% YoY, LogiNext has helped its clients digitise and optimise order scheduling, customer communication, routing, dispatching and real-time tracking to reduce logistics costs and achieve operational excellence. A SaaS product configurable for CEP (Courier, Express and Parcel), QSR chains, Retail & eCommerce, and Transportation, LogiNext has more than 200 clients across 50+ countries. Headquartered in New York, LogiNext is backed with $50 million across three rounds of private equity investments made by Alibaba funded companies, Tiger Global Management and Steadview Capital. It has regional offices in Dubai, Mumbai, Delhi, Kuala Lumpur and Jakarta. <br><br> Open Positions:  <br><br> 1) Junior Software Engineer - Analytics <br>Mumbai, Maharashtra, India | Product Engineering | Full-time <br>LogiNext is looking for a technically savvy and passionate Junior Software Engineer - Analytics to analyze large amounts of raw information to find patterns that will help improve our company. We will rely on you to build data products to extract valuable business insights. In this role, you should be highly analytical with a knack for analysis, math and statistics. Critical thinking and problem-solving skills are essential for interpreting data. We also want to see a passion for machine-learning and research. Your goal will be to help our company analyze trends to make better decisions. Without knowledge of how the software works, data scientists might have difficulty in work. Apart from experience in developing R and Python, they must know modern approaches to software development and their impact. DevOps continuous integration and deployment, experience in cloud computing are everyday skills to manage and process data. <br>Responsibilities: <br>- Identify valuable data sources and automate collection processes <br>- Undertake preprocessing of structured and unstructured data <br>- Analyze large amounts of information to discover trends and patterns <br>- Build predictive models and machine-learning algorithms <br>- Combine models through ensemble modeling <br>- Present information using data visualization techniques <br>- Propose solutions and strategies to business challenges <br>- Collaborate with engineering and product development teams <br>Requirements: <br>- Bachelors degree or higher in Computer Science, Information Technology, Information Systems, Statistics, Mathematics, Commerce, Engineering, Business Management, Marketing or related field from top-tier school <br>- 0 to 1 year experince in in data mining, data modeling, and reporting. <br>- Understading of SaaS based products and services. <br>- Understanding of machine-learning and operations research <br>- Knowledge of R, SQL and Python; familiarity with Scala, Java or C++ is an asset <br>- Knowledge using business intelligence tools (e.g. Tableau) and data frameworks (e.g. Hadoop) <br>- Analytical mind and business acumen and problem-solving aptitude <br>- Excellent communication and presentation skills <br>- Proficiency in Excel for data management and manipulation <br>- Experience in statistical modeling techniques and data wrangling <br>- Able to work independently and set goals keeping business objectives in mind <br>Application Link: <a href=\"https://loginext.hire.trakstar.com/jobs/fk02nub/\">https://loginext.hire.trakstar.com/jobs/fk02nub/</a> <br><br> 2) Junior Software Engineer - DevOps <br> Mumbai, Maharashtra, India | Product Engineering | Full-time <br> LogiNext is looking for a technically savvy and passionate Junior DevOps Engineer to cater to the development and operations efforts in product. You will choose and deploy tools and technologies to build and support a robust and scalable infrastructure. Knowledge in building secure, high-performing and scalable infrastructure. Experience to automate and streamline the development operations and processes. You are a master in troubleshooting and resolving issues in non-production and production environments. <br> Responsibilities: <br>- Scale and optimise a variety of SQL and NoSQL databases, web servers, application frameworks, caches, and distributed messaging systems <br>- Automate the deployment and configuration of the virtualized infrastructure and the entire software stack <br>- Support several Linux servers running our SaaS platform stack on AWS, Azure, GCP <br>- Define and build processes to identify performance bottlenecks and scaling pitfalls <br>- Manage robust monitoring and alerting infrastructure  <br>- Explore new tools to improve development operations  <br> Requirements: <br>- Bachelor’s degree in Computer Science, Information Technology or a related field <br>- 0 to 1 years of experience in designing and maintaining high volume and scalable micro-services architecture on cloud infrastructure <br>- Knowledge in Linux/Unix Administration and Python/Shell Scripting <br>- Experience working with cloud platforms like AWS (EC2, ELB, S3, Auto-scaling, VPC, Lambda), GCP, Azure <br>- Knowledge in deployment automation, Continuous Integration and Continuous <br>- Deployment (Jenkins, Maven, Puppet, Chef, GitLab) and monitoring tools like Zabbix, Cloud Watch Monitoring, Nagios <br>- Knowledge of Java Virtual Machines, Apache Tomcat, Nginx, Apache Kafka, Microservices architecture, Caching mechanisms <br>- Experience in enterprise application development, maintenance and operations <br>- Knowledge of best practices and IT operations in an always-up, always-available service <br>- Excellent written and oral communication skills, judgment and decision-making skills <br>Applciation Link: <a href=\"https://loginext.hire.trakstar.com/jobs/fk02nsa/\">https://loginext.hire.trakstar.com/jobs/fk02nsa/</a>","datePosted":"2022-10-25","validThrough":"2023-02-25","employmentType":"Full-Time","hiringOrganization":{"@type":"Organization","name":"Loginext","sameAs":"https://www.loginextsolutions.com/","logo":"https://gofresher.in/company-logos/loginext.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"Bus Depot, Godrej & Boyce, Gate No 2, Plant No. 6, opposite Vikhroli, Vikhroli West, Mumbai, Maharashtra 400079","addressLocality":"India","addressRegion":"Mumbai, Maharashtra","postalCode":"400079","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"450000","unitText":"Yearly"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","sameAs":"","dateCreated":"2022-10-25T00:00:00+05:30","description":"Loginext Mumbai Fresher Hiring. 2020, 2021, 2022 & 2023 Batch Fresher Apply. Loginext off Campus 2022","dateModified":"2022-10-25T00:00:00+05:30","datePublished":"2022-10-25T00:00:00+05:30","mainEntityOfPage":"https://gofresher.in/jobs/loginext-hiring-2020-2021-2022-2023-batch-fresher-junior-software-developer-mumbai.html","headline":"Loginext Hiring Fresher Junior Software Engineer | Analytics & Dev Ops | Mumbai","articleBody":"<br><br> About Company: LogiNext is a global technology and automation company with a focus on the transportation, home deliveries, omni-channel fulfillment and B2B distribution market. Growing at an average rate of 150% YoY, LogiNext has helped its clients digitise and optimise order scheduling, customer communication, routing, dispatching and real-time tracking to reduce logistics costs and achieve operational excellence. A SaaS product configurable for CEP (Courier, Express and Parcel), QSR chains, Retail & eCommerce, and Transportation, LogiNext has more than 200 clients across 50+ countries. Headquartered in New York, LogiNext is backed with $50 million across three rounds of private equity investments made by Alibaba funded companies, Tiger Global Management and Steadview Capital. It has regional offices in Dubai, Mumbai, Delhi, Kuala Lumpur and Jakarta. <br><br> Open Positions:  <br><br> 1) Junior Software Engineer - Analytics <br>Mumbai, Maharashtra, India | Product Engineering | Full-time <br>LogiNext is looking for a technically savvy and passionate Junior Software Engineer - Analytics to analyze large amounts of raw information to find patterns that will help improve our company. We will rely on you to build data products to extract valuable business insights. In this role, you should be highly analytical with a knack for analysis, math and statistics. Critical thinking and problem-solving skills are essential for interpreting data. We also want to see a passion for machine-learning and research. Your goal will be to help our company analyze trends to make better decisions. Without knowledge of how the software works, data scientists might have difficulty in work. Apart from experience in developing R and Python, they must know modern approaches to software development and their impact. DevOps continuous integration and deployment, experience in cloud computing are everyday skills to manage and process data. <br>Responsibilities: <br>- Identify valuable data sources and automate collection processes <br>- Undertake preprocessing of structured and unstructured data <br>- Analyze large amounts of information to discover trends and patterns <br>- Build predictive models and machine-learning algorithms <br>- Combine models through ensemble modeling <br>- Present information using data visualization techniques <br>- Propose solutions and strategies to business challenges <br>- Collaborate with engineering and product development teams <br>Requirements: <br>- Bachelors degree or higher in Computer Science, Information Technology, Information Systems, Statistics, Mathematics, Commerce, Engineering, Business Management, Marketing or related field from top-tier school <br>- 0 to 1 year experince in in data mining, data modeling, and reporting. <br>- Understading of SaaS based products and services. <br>- Understanding of machine-learning and operations research <br>- Knowledge of R, SQL and Python; familiarity with Scala, Java or C++ is an asset <br>- Knowledge using business intelligence tools (e.g. Tableau) and data frameworks (e.g. Hadoop) <br>- Analytical mind and business acumen and problem-solving aptitude <br>- Excellent communication and presentation skills <br>- Proficiency in Excel for data management and manipulation <br>- Experience in statistical modeling techniques and data wrangling <br>- Able to work independently and set goals keeping business objectives in mind <br>Application Link: <a href=\"https://loginext.hire.trakstar.com/jobs/fk02nub/\">https://loginext.hire.trakstar.com/jobs/fk02nub/</a> <br><br> 2) Junior Software Engineer - DevOps <br> Mumbai, Maharashtra, India | Product Engineering | Full-time <br> LogiNext is looking for a technically savvy and passionate Junior DevOps Engineer to cater to the development and operations efforts in product. You will choose and deploy tools and technologies to build and support a robust and scalable infrastructure. Knowledge in building secure, high-performing and scalable infrastructure. Experience to automate and streamline the development operations and processes. You are a master in troubleshooting and resolving issues in non-production and production environments. <br> Responsibilities: <br>- Scale and optimise a variety of SQL and NoSQL databases, web servers, application frameworks, caches, and distributed messaging systems <br>- Automate the deployment and configuration of the virtualized infrastructure and the entire software stack <br>- Support several Linux servers running our SaaS platform stack on AWS, Azure, GCP <br>- Define and build processes to identify performance bottlenecks and scaling pitfalls <br>- Manage robust monitoring and alerting infrastructure  <br>- Explore new tools to improve development operations  <br> Requirements: <br>- Bachelor’s degree in Computer Science, Information Technology or a related field <br>- 0 to 1 years of experience in designing and maintaining high volume and scalable micro-services architecture on cloud infrastructure <br>- Knowledge in Linux/Unix Administration and Python/Shell Scripting <br>- Experience working with cloud platforms like AWS (EC2, ELB, S3, Auto-scaling, VPC, Lambda), GCP, Azure <br>- Knowledge in deployment automation, Continuous Integration and Continuous <br>- Deployment (Jenkins, Maven, Puppet, Chef, GitLab) and monitoring tools like Zabbix, Cloud Watch Monitoring, Nagios <br>- Knowledge of Java Virtual Machines, Apache Tomcat, Nginx, Apache Kafka, Microservices architecture, Caching mechanisms <br>- Experience in enterprise application development, maintenance and operations <br>- Knowledge of best practices and IT operations in an always-up, always-available service <br>- Excellent written and oral communication skills, judgment and decision-making skills <br>Applciation Link: <a href=\"https://loginext.hire.trakstar.com/jobs/fk02nsa/\">https://loginext.hire.trakstar.com/jobs/fk02nsa/</a>","author":{"@type":"Person","name":"Admin Gofresher","sameAs":"https://gofresher.in/author/admin"},"publisher":{"@type":"Organization","name":"Gofresher","logo":{"@type":"ImageObject","name":"Gofresher","url":"https://gofresher.in/jobs/amp/gofresher-amp-logo.png"}},"image":{"@type":"ImageObject","url":"https://gofresher.in/company-logos/loginext.png","width":"1200","height":"1200"}}</script><link rel="canonical" href="https://gofresher.in/jobs/loginext-hiring-2020-2021-2022-2023-batch-fresher-junior-software-developer-mumbai.html">
 <link rel="amphtml" href="https://gofresher.in/jobs/amp/loginext-hiring-2020-2021-2022-2023-batch-fresher-junior-software-developer-mumbai.html"/>
 </head>
-<body>
+<body id="body-id">
+    <script tyle="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -253,8 +298,6 @@
         };
     
         firebase.initializeApp(firebaseConfig);
-        
-        firebase.analytics();
 
         var previous;
         var element;

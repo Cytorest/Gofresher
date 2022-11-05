@@ -24,53 +24,99 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
-    <script>   
-        window.addEventListener("load", () => {
+    <script>
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        function doSomething(scrollPos) {
+            console.log(lastKnownScrollPosition);
+            ///Firestore Database///
+            f = document.createElement('script');
+            f.type = 'text/javascript';
+            f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
+            document.getElementsByTagName('head')[0].appendChild(f);
+            ///Add Google Ad Script///
+            b = document.createElement('script');
+            b.type = 'text/javascript';
+            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            document.getElementsByTagName('head')[0].appendChild(b);
+            ///Add Moengage Script///
+            c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
+            document.getElementsByTagName('head')[0].appendChild(c);
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
+                });
+            });
+            ///Firsebase Login Auth///
+            d = document.createElement('script');
+            d.type = 'text/javascript';
+            d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
+            document.getElementsByTagName('head')[0].appendChild(d);
+            ///Signup-Popup Js Load///
             window.setTimeout(function () {
                 a = document.createElement('script');
                 a.type = 'text/javascript';
                 a.src = '/signup-popup.js';
                 document.getElementsByTagName('head')[0].appendChild(a);
             }, 500);
+            ///GTAG.JS///
+            g = document.createElement('script');
+            g.type = 'text/javascript';
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES';
+            document.getElementsByTagName('head')[0].appendChild(g);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5EP5C2QDES');
+            ///GTM.JS///
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W2MGKDH');
+            ///Bootstrap Min JS///
+            h = document.createElement('script');
+            h.type = 'text/javascript';
+            h.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+            document.getElementsByTagName('head')[0].appendChild(h);
+            ///Fontawesome JS///
+            i = document.createElement('script');
+            i.type = 'text/javascript';
+            i.src = 'https://kit.fontawesome.com/f49733d343.js';
+            document.getElementsByTagName('head')[0].appendChild(i);
+            ///Firebase Analytics
+            j = document.createElement('script');
+            j.type = 'text/javascript';
+            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js';
+            document.getElementsByTagName('head')[0].appendChild(j);
+            window.setTimeout(function () {
+                firebase.analytics();
+            }, 500);
+            ///Exit Loop After One Go
+            throw "exit";
+        }
+        document.addEventListener('scroll', (e) => {
+            lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+                    return false;
+                });
+                ticking = true;
+            }
         });
     </script>
-<script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5EP5C2QDES');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
-    <!-- End Google Tag Manager -->
 <script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"HCL Technologies Is Hiring Fresher From 2020, 2021, 2022 Batch As 5G Software Engineer Across India","description":"<br>Designation:- Software Engineer <br><br> Process:-<br> 1) Technical Test<br> 2) Technical Interview<br> 3) HR Interview <br><br> Eligibility Criteria:-<br> 1)  60% and above in academics (10th ,12th, Graduation and Post Graduation all individually).<br> 2)  There should be no Back log at the time of applying.<br> 3) Should be from batch 2020 , 2021, 2022 <br><br> Location: PAN India <br><br> Roles and Responsibilities:-<br> As a 5G Engineer you would have opportunity to explore and choose among a range of opportunities in the development and deployment of 5G network, including, but not limited to -<br> 1. 5G RAN Network Engineer<br> 2. 5G Core Network Engineer<br> 3. 5G Cloud Platform Engineer<br> 4. 5G Service Assurance Solution Development Engineer<br> 5. 5G Test Automation Engineer<br> 6. 5G Core Development Engineer<br> 7. 5G Enterprise Application Development Engineer<br> 8. 5G ORAN Development Engineer<br> 9. 5G ORAN Test Automation Engineer<br> 10. Selected candidate would be provided extensive training by the HCL 5G Academy. <br><br> Become a key member within HCLs 5G center of excellence and solutions development and deployment team. <br><br> Become part of industry recognized ORAN team and develop software that will be used by operators across the world. <br><br> Analyze customer requirements and help in formulating strategies to address the requirements. <br><br> Mandatory Skills:-<br> - Team player<br> - Good communication skills in English<br> - Willing to learn niche technologies.<br> - Good analytical and problem-solving skills.<br> - Ability to work in Agile and remote work environment.<br> - Good understanding of one of the programming languages such as C++ or Java or Python. <br><br> Desirable Skills:-<br> - Experience of working on related area either in Internship or in academic project.<br> - Prior knowledge to any of the following area would be an added plus.<br> - Good understanding of Wireless Telecommunication fundamentals<br> - Understanding of virtualization concepts<br> - Understanding of cloud concepts<br> - Proficiency in any additional foreign language <br><br> Role: System Analyst <br><br> Industry Type: IT Services & Consulting <br><br> Functional Area: IT & Information Security <br><br> Employment Type: Full Time, Permanent <br><br> Role Category: IT Infrastructure Services <br><br> Education<br> UG :B.Tech/B.E. in Any Specialization <br>","datePosted":"2022-03-06","validThrough":"2022-03-30","employmentType":"Full-Time","hiringOrganization":{"@type":"Organization","name":"HCL Technologies","sameAs":"https://www.hcltech.com/","logo":"https://gofresher.in/company-logos/hcl.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"The Leela Galleria 23, 6th Floor, Commercial Block, HAL Old Airport Rd, Bengaluru, Karnataka 560008","addressLocality":"India","addressRegion":"Bengaluru, Karnataka","postalCode":"560008","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"750000","unitText":"Yearly"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"HCL Technologies Is Hiring Fresher From 2020, 2021, 2022 Batch As 5G Software Engineer Across India","image":"https://gofresher.in/company-logos/hcl.png","datePublished":"2022-03-06","dateModified":"2022-03-06","author":[{"@type":"Person","name":"Gofresher Admin","url":"http://example.com/profile/janedoe123"}]}</script><link rel="canonical" href="https://gofresher.in/jobs/hcl-technologies-is-hiring-fresher-from-2020-2021-2022-batch-as-5g-software-engineer-across-india.html"><link rel="amphtml" href="https://gofresher.in/jobs/amp/hcl-technologies-is-hiring-fresher-from-2020-2021-2022-batch-as-5g-software-engineer-across-india.html">
-<!-- One Signal -->
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
-    });
-  });
-</script>
+
 </head>
-<body>
+<body id="body-id">
+    <script tyle="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -252,8 +298,6 @@
         };
     
         firebase.initializeApp(firebaseConfig);
-        
-        firebase.analytics();
 
         var previous;
         var element;

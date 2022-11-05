@@ -24,43 +24,98 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
-    <script>   
-        window.addEventListener("load", () => {
+    <script>
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        function doSomething(scrollPos) {
+            console.log(lastKnownScrollPosition);
+            ///Firestore Database///
+            f = document.createElement('script');
+            f.type = 'text/javascript';
+            f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
+            document.getElementsByTagName('head')[0].appendChild(f);
+            ///Add Google Ad Script///
+            b = document.createElement('script');
+            b.type = 'text/javascript';
+            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            document.getElementsByTagName('head')[0].appendChild(b);
+            ///Add Moengage Script///
+            c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
+            document.getElementsByTagName('head')[0].appendChild(c);
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
+                });
+            });
+            ///Firsebase Login Auth///
+            d = document.createElement('script');
+            d.type = 'text/javascript';
+            d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
+            document.getElementsByTagName('head')[0].appendChild(d);
+            ///Signup-Popup Js Load///
             window.setTimeout(function () {
                 a = document.createElement('script');
                 a.type = 'text/javascript';
                 a.src = '/signup-popup.js';
                 document.getElementsByTagName('head')[0].appendChild(a);
             }, 500);
+            ///GTAG.JS///
+            g = document.createElement('script');
+            g.type = 'text/javascript';
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES';
+            document.getElementsByTagName('head')[0].appendChild(g);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5EP5C2QDES');
+            ///GTM.JS///
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W2MGKDH');
+            ///Bootstrap Min JS///
+            h = document.createElement('script');
+            h.type = 'text/javascript';
+            h.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+            document.getElementsByTagName('head')[0].appendChild(h);
+            ///Fontawesome JS///
+            i = document.createElement('script');
+            i.type = 'text/javascript';
+            i.src = 'https://kit.fontawesome.com/f49733d343.js';
+            document.getElementsByTagName('head')[0].appendChild(i);
+            ///Firebase Analytics
+            j = document.createElement('script');
+            j.type = 'text/javascript';
+            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js';
+            document.getElementsByTagName('head')[0].appendChild(j);
+            window.setTimeout(function () {
+                firebase.analytics();
+            }, 500);
+            ///Exit Loop After One Go
+            throw "exit";
+        }
+        document.addEventListener('scroll', (e) => {
+            lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+                    return false;
+                });
+                ticking = true;
+            }
         });
     </script>
-<script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5EP5C2QDES');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
-    <!-- End Google Tag Manager -->
 <script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"Aera Technology is Hiring Fresher Skills Developer - Intern At Pune","description":"Position: Skills Developer - Intern <br><br> Location: PUNE, INDIA /R&D – ENGINEERING /INTERN <br><br> Do you want to shape the future of enterprise software? <br><br> Aera Technology is the Cognitive Automation company that makes business agility happen. We deliver the first scalable digital platform that integrates with existing systems to make and execute business decisions in real time. In the era of digital acceleration, Aera helps enterprises around the world transform how they respond to the ever-changing environment. <br><br> We're looking for passionate recent graduates or current student to join our Customer Solution Delivery organization. <br><br> You will build new data analytics models and develop the data processing code for Aera's cognitive applications (Aera \"Skills\"), used by many of the world’s largest organisations. In this role, you will be responsible for building new analytics models including facts, dimensions, and measures, while also designing innovative ways to process large datasets at high speeds. <br><br> This role will be based in our Pune office. <br><br> Responsibilities:<br> - Develop data processing scripts using SQL and be able to optimize complex sequences of SQL queries<br> - Support Skill Developers in building the cognitive skills for various use cases based on customer requirements<br> - Design and build data warehouse models in columnar database<br> - Build data crawlers to extract data from customers' sources using Aera's proprietary ETL platform, and troubleshoot the issues faced during data loading & processing<br> - Perform data analysis for complex use cases using SQL document technical specification for the cognitive applications that we are creating for the customers <br><br> About You: - Bachelor’s degree, preferably in computer science or equivalent<br> - Knowledge in SQL and data modeling and analytics<br> - Knowledge in Python/R is preferred but not mandatory<br> - Can start immediately and available for a full time (in-office) internship<br> Must be available for 6 months minimum<br> - Successful completion of internship with good performance will be considered for permanent role<br> Have relevant educational skills and an interest in pursuing a career in technology<br> - Strong analytical, problem solving and creative thinking skills<br> - Meticulous attention to detailExcellent communication and documentation skills<br> - At Aera, our purpose is to  enable a sustainable, efficient, and intelligent world with Cognitive Automation. Our Cognitive Operating System is increasingly used by the world's largest companies to fundamentally transform their organizations and how work is done. <br><br> If you share our passion for fundamentally transforming how people work — from people working machines, to machines working, guided by people.,, you’ve met your match. Headquartered in Mountain View, California, we're growing fast, with teams in Mountain View and San Francisco (California), Bucharest and Cluj-Napoca (Romania), Paris (France), Munich (Germany), London (UK), Pune and Bangalore (India), Sydney (Australia) and Singapore.  So join us, and let’s build the future of work together! <br><br> About Company:<br> Our belief, at our core, is helping companies transform. We believe in driving beyond digital transformation so that organizations can operate at internet speed and scale in the era of Cognitive Automation. <br> At Aera, we deliver the Cognitive Technology that enables the Self-Driving Enterprise™: a Cognitive Operating System™ that connects you with your business and autonomously orchestrates your operations. <br>","datePosted":"2022-02-26","validThrough":"2022-03-15","employmentType":"Full Time","hiringOrganization":{"@type":"Organization","name":"Aera Technology","sameAs":"https://www.aeratechnology.com/","logo":"https://gofresher.in/company-logos/aera-technology.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"Manikchand Icon, C Wing, Ground Floor, Dhole Patil Rd, Sangamvadi, Pune, Maharashtra 411001","addressLocality":"India","addressRegion":"Pune, Maharashtra","postalCode":"411001","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"500000","unitText":"Yearly"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Aera Technology is Hiring Fresher Skills Developer - Intern At Pune","image":"https://gofresher.in/company-logos/aera-technology.png","datePublished":"2022-02-26","dateModified":"2022-02-26","author":[{"@type":"Person","name":"Gofresher Admin","url":"http://example.com/profile/janedoe123"}]}</script><link rel="canonical" href="https://gofresher.in/jobs/aera-technology-is-hiring-fresher-skills-developer--intern-at-pune.html"><link ref="amphtml" href="https://gofresher.in/jobs/amp/aera-technology-is-hiring-fresher-skills-developer--intern-at-pune.html">
 </head>
-<body>
+<body id="body-id">
+    <script tyle="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -242,8 +297,6 @@
         };
     
         firebase.initializeApp(firebaseConfig);
-        
-        firebase.analytics();
 
         var previous;
         var element;

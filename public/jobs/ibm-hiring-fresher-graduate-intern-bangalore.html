@@ -24,53 +24,99 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
-    <script>   
-        window.addEventListener("load", () => {
+    <script>
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        function doSomething(scrollPos) {
+            console.log(lastKnownScrollPosition);
+            ///Firestore Database///
+            f = document.createElement('script');
+            f.type = 'text/javascript';
+            f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
+            document.getElementsByTagName('head')[0].appendChild(f);
+            ///Add Google Ad Script///
+            b = document.createElement('script');
+            b.type = 'text/javascript';
+            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            document.getElementsByTagName('head')[0].appendChild(b);
+            ///Add Moengage Script///
+            c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
+            document.getElementsByTagName('head')[0].appendChild(c);
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
+                });
+            });
+            ///Firsebase Login Auth///
+            d = document.createElement('script');
+            d.type = 'text/javascript';
+            d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
+            document.getElementsByTagName('head')[0].appendChild(d);
+            ///Signup-Popup Js Load///
             window.setTimeout(function () {
                 a = document.createElement('script');
                 a.type = 'text/javascript';
                 a.src = '/signup-popup.js';
                 document.getElementsByTagName('head')[0].appendChild(a);
             }, 500);
+            ///GTAG.JS///
+            g = document.createElement('script');
+            g.type = 'text/javascript';
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES';
+            document.getElementsByTagName('head')[0].appendChild(g);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5EP5C2QDES');
+            ///GTM.JS///
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W2MGKDH');
+            ///Bootstrap Min JS///
+            h = document.createElement('script');
+            h.type = 'text/javascript';
+            h.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+            document.getElementsByTagName('head')[0].appendChild(h);
+            ///Fontawesome JS///
+            i = document.createElement('script');
+            i.type = 'text/javascript';
+            i.src = 'https://kit.fontawesome.com/f49733d343.js';
+            document.getElementsByTagName('head')[0].appendChild(i);
+            ///Firebase Analytics
+            j = document.createElement('script');
+            j.type = 'text/javascript';
+            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js';
+            document.getElementsByTagName('head')[0].appendChild(j);
+            window.setTimeout(function () {
+                firebase.analytics();
+            }, 500);
+            ///Exit Loop After One Go
+            throw "exit";
+        }
+        document.addEventListener('scroll', (e) => {
+            lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+                    return false;
+                });
+                ticking = true;
+            }
         });
     </script>
-<script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5EP5C2QDES');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
-    <!-- End Google Tag Manager -->
 <script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"IBM Hiring B.E. / B.Tech Fresher Software Developer Intern","description":"About IBM Internships: Work on projects that have a lasting effect on the world we live in and define the technology of tomorrow. We are looking for the one-of-a-kind, to not just think outside the box, but reinvent it. At IBM, you will work alongside a global community of 6000+ interns in a workplace that champions inclusion and a culture of giving back. IBM’s internship programs are an opportunity to learn from the best and develop skills that will make you stand out in today’s rapidly-evolving market. If you’re ready to do what you love and having a great time doing it, join us. <br><br> About Company: IBM has developed a thoughtful, comprehensive approach to corporate citizenship that we believe aligns with IBM’s values and maximised the impact we can make as a global enterprise. We focus on specific societal issues, including the environment, community economic development, education and skills, public health, literacy, language and culture. The mission of India CSR is to foster life-long learning opportunities across India through streamlined initiatives that cut pathways across education [access], skills/employability [inclusion], and employment [equity and quality]. IBM believes that a company culture based on core values not only helps our business, but also defines the role that we can and should play in society.<br> 1. We identify and act upon new opportunities to apply our technology and expertise to societal problems.<br> 2. We scale our existing programs and initiatives to achieve maximum benefit.<br> 3. We integrate corporate citizenship and social responsibility into every aspect of our company. <br><br> Q. What Is The Application Process For Jobs AT IBM?<br> A. To learn more about IBM’s global application process for candidates, check out the various steps in our process below. Since we hire in most regions around the world, this process may differ slightly for some countries. If you’re ever unsure of the status of your application, you can check this in the candidate portal.<br> Step 1 (Apply): Once you find a role that interests you, the first step is to complete your application online. To help us stay connected, we recommend that you join our <a href=\"https://www.applytracking.com/optin.aspx?c=gLO3OFtwdyqJJyUrXdmEg3BCRNgaQznN\">Talent Network</a> when applying. <br> Step 2 (Screening): Your application will be read by real IBMers who are experts in screening resumes and specialists in their respective fields. <br> Step 3 (Online Assessment): You may be asked to complete some of our online assessments, which will vary depending on the role you applied to. <br> Don’t worry, our scientifically validated assessments are designed with you in mind - engaging, fair, and relevant to each role. <br> We use assessments to measure skills and abilities that do not commonly emerge from interviews. This stage in the process allows you to truly demonstrate who you are and what value you can bring to the role. <br> At IBM, we’re proud of our 100+ years of work on diversity, inclusion and equality in the workplace. That legacy, and our continued commitment to advance equity in the workplace informs our assessment approach. <br> We recognize the value a diverse workforce brings to IBM and our IBMers, which is why we don’t have a blanket policy or procedure in place with respect to providing individuals with a disability accommodations or adjustments for assessments or interviews. Instead, at the beginning of the assessment process, we provide guidance on the expectations for your assessment experience. <br> If you are a person with a disability, you will be able to confidentially self-identify and provide details on your accommodation or adjustment request to complete the assessment process. <br> Our team will then review the details of your needs and work with you on accommodation or adjustment options for your application. <br> Below are some examples of the types of assessments you may be asked to complete, depending on the role you applied to. Rest assured, no roles require you to complete all of them. <br> Coding Assessment: You’ll be presented with multiple choice and/or a coding interface to solve a few coding challenges, depending on the position you applied to. This assessment helps us understand your level of programming knowledge and ability. <br> Video Assessment: This type of assessment helps us get to know you better and evaluate your skills through a series of interview questions. Your responses are captured by your webcam and microphone. <br> English Language Assessment: This text-based assessment presents you with a series of multiple-choice questions. It helps us understand your English proficiency. <br><br> Details: <br> Position: Intern – Software Developer, Experience: From 0 to 1 year(s) of experience, Salary: ₹ 500000 <br><br> Job Description: <br> - You will be part of Squad which will be co-located in Bangalore or Hyderabad<br> - You will be involved in analysis/programming/testing of code in live projects in various CIO domains<br> - You will collaborate with other team members in the squad and across the tribe<br> - You will align to a social contract agreed upon within the team for all meetings and deliverables<br> - You will acquire the necessary Agile skills required within the project <br><br> Required Technical and Professional Expertise:<br> - Proven Programming Skills and analytical ability<br> - Problem solving ability with proven communication skills<br> - Ability to gain people s confidence and put them at ease<br> - Be persuasive, persistent and patient<br> - Ability to cope with pressure under tough circumstances<br> - Be flexible and adaptable and have a mature personality<br> - Valid organisational and administrative skills<br> - Have an ability to prioritise and manage deadlines <br><br> Preferred Technical and Professional Expertise:<br> - You love collaborative environments that use agile methodologies to encourage creative design thinking and find innovative ways to develop with cutting edge technologies<br> - You are an ambitious individual who can work under their own direction towards agreed targets/goals and with creative approach to work<br> - You are an Intuitive individual with an ability to manage change and proven time management<br> - You have the interpersonal skills to contribute to a team effort and to accomplish related results as needed<br> - You have up-to-date technical knowledge by attending educational workshops, reviewing publications <br><br> Education:<br> - BE/B.Tech or (Dual Degree M.Tech Only) with Branches - Computer Science, Information Science, Information Technology, Electronics & Communication, Electrical & Electronics and Telecommunication branches<br> - MCA & M.S/M.Sc Computer Science branches <br><br> Key Skills Required: Administration, Interpersonal skills, Analytical, Telecommunication, Information technology, Time management, Creative designing, Agile, Management <br><br> <span class=\"postings\">Must Fill Out This Internship Form</span>: <a href=\"https://careers.ibm.com/campaign/global-en-tf-400-general-talent-form/\">https://careers.ibm.com/campaign/global-en-tf-400-general-talent-form/</a><br><br>","datePosted":"2022-08-20","validThrough":"2022-09-20","employmentType":"Full-Time","hiringOrganization":{"@type":"Organization","name":"IBM","sameAs":"www.ibm.com","logo":"https://gofresher.in/company-logos/ibm.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"SA , No.12, Subramanya Arcade, Bannerghatta Road, Ba, Bangalore, Karnataka, India","addressLocality":"India","addressRegion":"Bengaluru, India","postalCode":"560029","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"500000","unitText":"Yearly"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"IBM Hiring B.E. / B.Tech Fresher Software Developer Intern","image":"https://gofresher.in/company-logos/ibm.png","datePublished":"2022-08-20","dateModified":"2022-08-20","author":[{"@type":"Person","name":"Gofresher Admin","url":"http://example.com/profile/janedoe123"}]}</script><link rel="canonical" href="https://gofresher.in/jobs/ibm-hiring-fresher-graduate-intern-bangalore.html"><link rel="amphtml" href="https://gofresher.in/jobs/amp/ibm-hiring-fresher-graduate-intern-bangalore.html">
-<!-- One Signal -->
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
-    });
-  });
-</script>
+
 </head>
-<body>
+<body id="body-id">
+    <script tyle="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -252,8 +298,6 @@
         };
     
         firebase.initializeApp(firebaseConfig);
-        
-        firebase.analytics();
 
         var previous;
         var element;

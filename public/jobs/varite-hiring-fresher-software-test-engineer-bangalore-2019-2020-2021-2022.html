@@ -24,53 +24,99 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
-    <script>   
-        window.addEventListener("load", () => {
+    <script>
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        function doSomething(scrollPos) {
+            console.log(lastKnownScrollPosition);
+            ///Firestore Database///
+            f = document.createElement('script');
+            f.type = 'text/javascript';
+            f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
+            document.getElementsByTagName('head')[0].appendChild(f);
+            ///Add Google Ad Script///
+            b = document.createElement('script');
+            b.type = 'text/javascript';
+            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            document.getElementsByTagName('head')[0].appendChild(b);
+            ///Add Moengage Script///
+            c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
+            document.getElementsByTagName('head')[0].appendChild(c);
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
+                });
+            });
+            ///Firsebase Login Auth///
+            d = document.createElement('script');
+            d.type = 'text/javascript';
+            d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
+            document.getElementsByTagName('head')[0].appendChild(d);
+            ///Signup-Popup Js Load///
             window.setTimeout(function () {
                 a = document.createElement('script');
                 a.type = 'text/javascript';
                 a.src = '/signup-popup.js';
                 document.getElementsByTagName('head')[0].appendChild(a);
             }, 500);
+            ///GTAG.JS///
+            g = document.createElement('script');
+            g.type = 'text/javascript';
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES';
+            document.getElementsByTagName('head')[0].appendChild(g);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5EP5C2QDES');
+            ///GTM.JS///
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W2MGKDH');
+            ///Bootstrap Min JS///
+            h = document.createElement('script');
+            h.type = 'text/javascript';
+            h.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+            document.getElementsByTagName('head')[0].appendChild(h);
+            ///Fontawesome JS///
+            i = document.createElement('script');
+            i.type = 'text/javascript';
+            i.src = 'https://kit.fontawesome.com/f49733d343.js';
+            document.getElementsByTagName('head')[0].appendChild(i);
+            ///Firebase Analytics
+            j = document.createElement('script');
+            j.type = 'text/javascript';
+            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js';
+            document.getElementsByTagName('head')[0].appendChild(j);
+            window.setTimeout(function () {
+                firebase.analytics();
+            }, 500);
+            ///Exit Loop After One Go
+            throw "exit";
+        }
+        document.addEventListener('scroll', (e) => {
+            lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+                    return false;
+                });
+                ticking = true;
+            }
         });
     </script>
-<script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5EP5C2QDES');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
-    <!-- End Google Tag Manager -->
 <script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"Varite Hiring Fresher Software Test Engineer At Bangalore","description":"<br><br>About Company: VARITE has a definite spirit. A spirit that derives from the promise of what we do that comes with knowing our services are helping businesses to implement their technology initiatives. At Varite, we provide contract and permanent staffing services to Fortune 100 companies in the USA. <br> With 1000+ Global teams and operations in the USA, UK, CANADA, and INDIA, VARITE is currently engaged with leading technology, financial, automotive, defense, energy, pharmaceuticals/life sciences, semiconductor, and engineering companies to provide software consulting, team augmentation and key business process outsourcing. <br> VARITE has ranked #124 in the Entrepreneur Magazine’s HOT 500 list of fastest-growing businesses in America, Winner of the Cisco Business Growth Award, PRO Unlimited Global Supplier Awardee, People Scout Select Supplier, and a 5 times winner of Workforce Logiq Proven Performer Award. <br><br> Duties: JD for Product Validation/Testing <br><br> Experience: 0-2 years <br><br> Education: BE/ B.Tech, ME/ M.Tech <br><br> Job Description: <br> 1) Must have Good understanding of Product Testing/Validation process, Good hands on Compatibility testing, Performance Testing. <br> 2) Should have knowledge of various Operating Systems in the market (Android, Windows, MAC, Linux flavors & different iOS versions). <br> 3) Should has knowledge of Embedded /Storage domain and should understand Hardware and Software interaction, Firmware & Controllers. <br> 4) Good experience in SD, uSD, USB, Cfast, CFexpress, PCIe product validation and writing the test cases to improve test coverage. <br> 5) Excellent Debugging and Failure Analysis skills with exposure to tools like protocol analyzers, Logical analyzers, Bus doctor etc. <br> 6) Should be proactive, self-motivated and has ability to perform multi-task and meet deadlines. <br> 7) Proven ability to achieve results in a fast moving, dynamic environment and has a mindset towards delivering the Highest Quality product to the customer. <br> 8) Should has knowledge on USB specifications (2.0/3.0/3.1) & SD/uSD protocols. <br> 9) Should be familiar with Bug Tracking tools & Bug life cycles. <br> 10) Should have good troubleshooting skills & Out of the box thinking and should be able bring out value addition for the team. <br> 11) Should have good leadership qualities and should be a good team player. <br> 12) Should has higher degree of Commitment & responsibilities towards assigned tasks. <br> 13) Should be willing to take up the work ownership and has an attitude to extend the work hours in case of tough situations. <br> 14) Should be good in Report data preparation, Mail communication and F2F communication. <br><br> Role: Test Analyst <br><br> Industry Type: Management Consulting <br><br> Functional Area: Engineering - Software & QA <br><br> Employment Type: Full Time, Permanent <br><br> Role Category: Quality Assurance and Testing <br><br> Education: <br> UG: B.Tech/B.E. in Production/Industrial <br> PG: M.Tech in Electronics/Telecommunication <br><br> Key Skills: <br> Product quality, Linux, USB Debugging, Performance testing, Windows, Test cases, product validation, Troubleshooting, Android","datePosted":"2022-09-02","validThrough":"2022-11-02","employmentType":"Full-Time","hiringOrganization":{"@type":"Organization","name":"Varite Inc","sameAs":"https://www.varite.com","logo":"https://gofresher.in/company-logos/varite.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"301/302, 3rd Floor, Saket Callipolis, Sarjapur - Marathahalli Rd, Doddakannelli, Bengaluru, Karnataka 560035","addressLocality":"India","addressRegion":"Bengaluru, India","postalCode":"560035","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"600000","unitText":"Yearly"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Varite Hiring Fresher Software Test Engineer At Bangalore","image":"https://gofresher.in/company-logos/varite.png","datePublished":"2022-09-02","dateModified":"2022-09-02","author":[{"@type":"Person","name":"Gofresher Admin","url":"http://example.com/profile/janedoe123"}]}</script><link rel="canonical" href="https://gofresher.in/jobs/varite-hiring-fresher-software-test-engineer-bangalore-2019-2020-2021-2022.html"><link rel="amphtml" href="https://gofresher.in/jobs/amp/varite-hiring-fresher-software-test-engineer-bangalore-2019-2020-2021-2022.html">
-<!-- One Signal -->
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
-    });
-  });
-</script>
+
 </head>
-<body>
+<body id="body-id">
+    <script tyle="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -252,8 +298,6 @@
         };
     
         firebase.initializeApp(firebaseConfig);
-        
-        firebase.analytics();
 
         var previous;
         var element;

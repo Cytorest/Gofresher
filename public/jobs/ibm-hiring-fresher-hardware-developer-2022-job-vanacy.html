@@ -24,53 +24,99 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
-    <script>   
-        window.addEventListener("load", () => {
+    <script>
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        function doSomething(scrollPos) {
+            console.log(lastKnownScrollPosition);
+            ///Firestore Database///
+            f = document.createElement('script');
+            f.type = 'text/javascript';
+            f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
+            document.getElementsByTagName('head')[0].appendChild(f);
+            ///Add Google Ad Script///
+            b = document.createElement('script');
+            b.type = 'text/javascript';
+            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            document.getElementsByTagName('head')[0].appendChild(b);
+            ///Add Moengage Script///
+            c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
+            document.getElementsByTagName('head')[0].appendChild(c);
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
+                });
+            });
+            ///Firsebase Login Auth///
+            d = document.createElement('script');
+            d.type = 'text/javascript';
+            d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
+            document.getElementsByTagName('head')[0].appendChild(d);
+            ///Signup-Popup Js Load///
             window.setTimeout(function () {
                 a = document.createElement('script');
                 a.type = 'text/javascript';
                 a.src = '/signup-popup.js';
                 document.getElementsByTagName('head')[0].appendChild(a);
             }, 500);
+            ///GTAG.JS///
+            g = document.createElement('script');
+            g.type = 'text/javascript';
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES';
+            document.getElementsByTagName('head')[0].appendChild(g);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5EP5C2QDES');
+            ///GTM.JS///
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W2MGKDH');
+            ///Bootstrap Min JS///
+            h = document.createElement('script');
+            h.type = 'text/javascript';
+            h.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+            document.getElementsByTagName('head')[0].appendChild(h);
+            ///Fontawesome JS///
+            i = document.createElement('script');
+            i.type = 'text/javascript';
+            i.src = 'https://kit.fontawesome.com/f49733d343.js';
+            document.getElementsByTagName('head')[0].appendChild(i);
+            ///Firebase Analytics
+            j = document.createElement('script');
+            j.type = 'text/javascript';
+            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js';
+            document.getElementsByTagName('head')[0].appendChild(j);
+            window.setTimeout(function () {
+                firebase.analytics();
+            }, 500);
+            ///Exit Loop After One Go
+            throw "exit";
+        }
+        document.addEventListener('scroll', (e) => {
+            lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+                    return false;
+                });
+                ticking = true;
+            }
         });
     </script>
-<script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5EP5C2QDES');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
-    <!-- End Google Tag Manager -->
 <script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"Hardware Developer","description":"<br> About Company: IBM Off Campus Drive 2022:- International Business Machines Corporation (commonly referred to as IBM) is an American multinational technology and consulting corporation, with headquarters in Armonk, New York. IBM manufactures and markets computer hardware, middleware and software, and offers infrastructure, hosting and consulting services in areas ranging from mainframe computers to nanotechnology.IBM Off Campus Drive 2022IBM has been present in India since 1992. IBM India’s solutions and services span all major industries including financial services, healthcare, government, automotive, telecommunications and education, among others. As a trusted partner with wide-ranging service capabilities, IBM helps clients transform and succeed in challenging circumstances. <br><br> Company Website: www.ibm.com <br><br> Positions: Hardware Developer <br><br> Experience: Freshers (0 – 5 Years) <br><br> Salary: upto 10 LPA <br><br> Job Location: Bangalore <br><br> Eligibility Criteria for IBM Off Campus Drive 2022:<br> - BE/ B.Tech/ ME/ M.Tech – CSE/ IT/ EEE/ ECE<br> - 0-5 years of experience in Server/ASIC timing flows<br> - Good understanding of Static Timing Analysis and Physical design flows<br> - Tcl/Perl, Python.<br> - Good to have C/C++ skills <br><br> Job Description: As a Hardware Developer at IBM, you’ll get to work on the systems that are driving the quantum revolution and the AI era. Join an elite team of engineering professionals who enable IBM customers to make better decisions quicker on the most trusted hardware platform in today’s market. <br> We are seeking highly motivated engineers with a BS, MS degree in Electronics/ Computer Science Engineering to be part of EDA team. Join a great team of engineering professionals who are involved in development and testing of Timing flows used to design IBM’s high performance microprocessor chips. <br> In this role, you will collaborate with EDA timing developers, circuit design leads and leadership team to develop innovative solutions to improve quality and turnaround time of Timing methodologies for high performance microprocessor blocks for IBM Power and Z mainframe servers <br><br> Key Responsibilities: - Develop timing methodologies for signoff timing and optimization timing for high performance microprocessor blocks.<br> - Develop flows and methodologies solutions with thorough focus on quality and turnaround time<br> - Work with cross functional agile teams to adapt and integrate innovations in process, flows and technologies to tools and flows.<br> - Bring in innovative solutions for high frequency design automation tools<br> - Team player, with good problem solving and communication skills and excellent scripting skills<br> - How to Apply for IBM Off Campus Drive 2022?<br> Desirous candidates may apply through online mode. <br><br>","datePosted":"2022-08-19","validThrough":"2022-08-30","employmentType":"Full-Time","hiringOrganization":{"@type":"Organization","name":"IBM","sameAs":"https://www.ibm.com/in-en","logo":"https://gofresher.in/company-logos/ibm.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"XJ3V+5HP, Embassy Golf Links Road, Embassy Golf Links Business Park, Domlur, Bengaluru, Karnataka 560071","addressLocality":"India","addressRegion":"Bangalore","postalCode":"560071","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"500000","unitText":"Yearly"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Hardware Developer","image":"https://gofresher.in/company-logos/ibm.png","datePublished":"2022-08-19","dateModified":"2022-08-19","author":[{"@type":"Person","name":"Gofresher Admin","url":"http://example.com/profile/janedoe123"}]}</script><link rel="canonical" href="https://gofresher.in/jobs/ibm-hiring-fresher-hardware-developer-2022-job-vanacy.html"><link rel="amphtml" href="https://gofresher.in/jobs/amp/ibm-hiring-fresher-hardware-developer-2022-job-vanacy.html">
-<!-- One Signal -->
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
-    });
-  });
-</script>
+
 </head>
-<body>
+<body id="body-id">
+    <script tyle="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -233,8 +279,6 @@
         };
     
         firebase.initializeApp(firebaseConfig);
-        
-        firebase.analytics();
 
         var previous;
         var element;

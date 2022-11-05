@@ -24,53 +24,99 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
-    <script>   
-        window.addEventListener("load", () => {
+    <script>
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        function doSomething(scrollPos) {
+            console.log(lastKnownScrollPosition);
+            ///Firestore Database///
+            f = document.createElement('script');
+            f.type = 'text/javascript';
+            f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
+            document.getElementsByTagName('head')[0].appendChild(f);
+            ///Add Google Ad Script///
+            b = document.createElement('script');
+            b.type = 'text/javascript';
+            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            document.getElementsByTagName('head')[0].appendChild(b);
+            ///Add Moengage Script///
+            c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
+            document.getElementsByTagName('head')[0].appendChild(c);
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
+                });
+            });
+            ///Firsebase Login Auth///
+            d = document.createElement('script');
+            d.type = 'text/javascript';
+            d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
+            document.getElementsByTagName('head')[0].appendChild(d);
+            ///Signup-Popup Js Load///
             window.setTimeout(function () {
                 a = document.createElement('script');
                 a.type = 'text/javascript';
                 a.src = '/signup-popup.js';
                 document.getElementsByTagName('head')[0].appendChild(a);
             }, 500);
+            ///GTAG.JS///
+            g = document.createElement('script');
+            g.type = 'text/javascript';
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES';
+            document.getElementsByTagName('head')[0].appendChild(g);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5EP5C2QDES');
+            ///GTM.JS///
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W2MGKDH');
+            ///Bootstrap Min JS///
+            h = document.createElement('script');
+            h.type = 'text/javascript';
+            h.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+            document.getElementsByTagName('head')[0].appendChild(h);
+            ///Fontawesome JS///
+            i = document.createElement('script');
+            i.type = 'text/javascript';
+            i.src = 'https://kit.fontawesome.com/f49733d343.js';
+            document.getElementsByTagName('head')[0].appendChild(i);
+            ///Firebase Analytics
+            j = document.createElement('script');
+            j.type = 'text/javascript';
+            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js';
+            document.getElementsByTagName('head')[0].appendChild(j);
+            window.setTimeout(function () {
+                firebase.analytics();
+            }, 500);
+            ///Exit Loop After One Go
+            throw "exit";
+        }
+        document.addEventListener('scroll', (e) => {
+            lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+                    return false;
+                });
+                ticking = true;
+            }
         });
     </script>
-<script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5EP5C2QDES');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
-    <!-- End Google Tag Manager -->
 <script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"Tata Communications Hiring 2020, 2021 & 2022 Batch Fresher As Jr Customer Service Executive","description":"<br><br> About Company: Tata Communications Limited is an Indian telecommunications company previously known as Videsh Sanchar Nigam Limited (VSNL). It was previously a government- owned-telecommunications service provider and under the ownership of Department of Telecommunications, Ministry of Communications, Government of India. It was sold by Department of Telecommunications, Ministry of Communications, Government of India to Tata Group when Atal Bihari Vajpayee-Bharatiya Janta Party-National Democratic Alliance was in power. Presently the company is part of the Tata Group. Tata's communications network spans more than 500,000 kilometres (310,000 mi) of subsea fibre and more than 210,000 kilometres (130,000 mi) of terrestrial fibre. The company has invested $1.19 billion in its global subsea fibre network. It provides network services and software-defined network platforms, such as Ethernet, SD-WAN, content delivery networks (CDNs), the internet, Multiprotocol Label Switching (MPLS), and private lines. It has more than 400 points of presence (PoPs) with a data centre, Cloud (Private Cloud and Puiblic Cloud Management) and co-location in 44 sites. It is listed on the Bombay Stock Exchange and the National Stock Exchange of India. It also holds a stake on its Sri Lankan subsidiaries, Tata Communications Lanka. The company is listed as one of AON Hewitt's Best Employers in India for 2017. The business was founded as Videsh Sanchar Nigam Limited (VSNL) in 1986. Under the chairmanship of B. K. Syngal (1991-1998), VSNL launched the first publicly-available Internet plans in India in 1995. After the Government of India launched Disinvestment of Public Sector Units in India, The international arm of VSNL (VSNL International) was launched in 2004. VSNL was completely acquired by the Tata Group and renamed as Tata Communications on 13 February 2008. In 2009, Tata Communications and Tyco Telecommunications completed the TGN-Intra Asia cable system. In 2012, the company completed its network across Egypt linking Europe to India. It created a subsea fibre network that circumnavigates the world. The 9,280-kilometre (5,770 mi) Eurasian section of the Tata Global Network runs across the Mediterranean Sea and the Middle East, connecting Mumbai with Marseilles. Also providing a low-latency connection with a round-trip delay of 92 ms, and speeds of between 2 Mbit/s and 10 Gbit/s. The company has more than 15 terabits per second of international bandwidth lit capacity. In January 2016, Windstream Communications announced it was extending its 100 Gigabit Ethernet (100G) network from New Jersey data center operator NJFX's presence at Tata's Cable Landing Station (CLS) in Wall Township, New Jersey, to Ashburn, Virginia's internet hub. <br><br> Other knowledge/skills <br>- Should have all the educational documents without any standing arrears with PAN & Aadhaar.  <br><br> Skill Set Required: <br>- Basic knowledge on telecom network infrastructure & Excellent communication <br>- Project work in Cloud/Unix/Windows/Database/Storage/Backup/Network/Information Security technologies will be an added advantage. <br>- The candidate MUST have excellent communication skills. <br>- CCNA/ Networking Trained / Certified candidates preferred. <br><br> Job Profile: <br>- Telecommunications engineers use their technical expertise to provide a range of services and engineering solutions revolving around different modes of communication and information transfer, such as wireless telephony services, radio and satellite communications, internet and broadband technologies. <br>- Responsible & able to manage time effectively and work efficiently, both with and without direct supervision <br><br> Important: <br>- Candidates should be ready to work in any shift timings including night shifts <br>- The candidate needs to be flexible to take up any technology, work location and timings that would be allocated to them for training and deployment there afterwards <br><br> Important Pre-requisite <br>- Freshers should have good communication as they would be supporting for international accounts. <br>- Freshers should be flexible across locations and shifts.  <br>- Diversity candidates preferred. <br>- Night Shift readiness mandatory","datePosted":"2022-10-02","validThrough":"2022-12-02","employmentType":"Full-Time","hiringOrganization":{"@type":"Organization","name":"Tata Communications","sameAs":"https://www.tatacommunications.com/","logo":"https://gofresher.in/company-logos/tata-communications.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"226, Ambattur Red Hills Rd, Kallikuppam, Ambattur, Chennai, Tamil Nadu 600053","addressLocality":"India","addressRegion":"Chennai, Tamil Nadu","postalCode":"600053","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"600000","unitText":"Yearly"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Tata Communications Hiring 2020, 2021 & 2022 Batch Fresher As Jr Customer Service Executive","image":"https://gofresher.in/company-logos/tata-communications.png","datePublished":"2022-10-02","dateModified":"2022-10-02","author":[{"@type":"Person","name":"Gofresher Admin","url":"http://example.com/profile/janedoe123"}]}</script><link rel="canonical" href="https://gofresher.in/jobs/tata-communications-hiring-2020-2021-2022-batch-fresher-jr-customer-service-executive.html"><link rel="amphtml" href="https://gofresher.in/jobs/amp/tata-communications-hiring-2020-2021-2022-batch-fresher-jr-customer-service-executive.html">
-<!-- One Signal -->
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
-    });
-  });
-</script>
+
 </head>
-<body>
+<body id="body-id">
+    <script tyle="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -252,8 +298,6 @@
         };
     
         firebase.initializeApp(firebaseConfig);
-        
-        firebase.analytics();
 
         var previous;
         var element;

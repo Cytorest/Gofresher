@@ -24,54 +24,99 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
-    <script>   
-        window.addEventListener("load", () => {
+    <script>
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        function doSomething(scrollPos) {
+            console.log(lastKnownScrollPosition);
+            ///Firestore Database///
+            f = document.createElement('script');
+            f.type = 'text/javascript';
+            f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
+            document.getElementsByTagName('head')[0].appendChild(f);
+            ///Add Google Ad Script///
+            b = document.createElement('script');
+            b.type = 'text/javascript';
+            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            document.getElementsByTagName('head')[0].appendChild(b);
+            ///Add Moengage Script///
+            c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
+            document.getElementsByTagName('head')[0].appendChild(c);
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
+                });
+            });
+            ///Firsebase Login Auth///
+            d = document.createElement('script');
+            d.type = 'text/javascript';
+            d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
+            document.getElementsByTagName('head')[0].appendChild(d);
+            ///Signup-Popup Js Load///
             window.setTimeout(function () {
                 a = document.createElement('script');
                 a.type = 'text/javascript';
                 a.src = '/signup-popup.js';
                 document.getElementsByTagName('head')[0].appendChild(a);
             }, 500);
+            ///GTAG.JS///
+            g = document.createElement('script');
+            g.type = 'text/javascript';
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES';
+            document.getElementsByTagName('head')[0].appendChild(g);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5EP5C2QDES');
+            ///GTM.JS///
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W2MGKDH');
+            ///Bootstrap Min JS///
+            h = document.createElement('script');
+            h.type = 'text/javascript';
+            h.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+            document.getElementsByTagName('head')[0].appendChild(h);
+            ///Fontawesome JS///
+            i = document.createElement('script');
+            i.type = 'text/javascript';
+            i.src = 'https://kit.fontawesome.com/f49733d343.js';
+            document.getElementsByTagName('head')[0].appendChild(i);
+            ///Firebase Analytics
+            j = document.createElement('script');
+            j.type = 'text/javascript';
+            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js';
+            document.getElementsByTagName('head')[0].appendChild(j);
+            window.setTimeout(function () {
+                firebase.analytics();
+            }, 500);
+            ///Exit Loop After One Go
+            throw "exit";
+        }
+        document.addEventListener('scroll', (e) => {
+            lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+                    return false;
+                });
+                ticking = true;
+            }
         });
-    </script>
-<script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5EP5C2QDES');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
-    <!-- End Google Tag Manager -->
-    <!-- One Signal -->
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-    window.OneSignal = window.OneSignal || [];
-    OneSignal.push(function() {
-        OneSignal.init({
-        appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
-        });
-    });
     </script>
 <script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"Koch Hiring Fresher Graduate Engineer Trainee At Bangalore","description":"<br><br>Job Title : Graduate Engineer Trainee - Product Design <br><br> Dept/Section : PSBU India Engineering <br><br> Organisation Relationships: <br>- Report To:Manager - PSBU India Engineering <br>- Co-ordinates : Tool Engineer, Process Engineering, Manufacturing and Product management <br>- Internal : All PSBU manufacturing plants (includes purchase, planning, tool design, process engineering, quality), Product management, AQP, GSM, Application tooling, Lab etc. <br>- External: Customers, Vendors and Sub Contractors <br><br> Purpose Of Position:  <br> Sustenance engineering / Product maintenance / Product support, SPO's, product design transfers, new product support, Packaging design <br><br> Specific Responsibilities: <br> 1. Responsible for providing support on SPO's, providing sustenance support / providing maintenance support on legacy product families. <br> 2. Responsible for providing CAD/FEA/Testing support for New products / MOD's / SPO's <br> 3. Follow PDP process. Work collaboratively with Peers, supervisors, PM's, other engineering groups manufacturing plants, application tooling group and Lab. <br> 4. In depth understanding of assigned product families (SD, E, PK, PS, AS, TS etc.) <br> 5. Understand, aim and achieve organization / department /self goals. <br> 6. Show value creation, productivity improvement and continual improvements <br> 7. Responsible for working on CAD tools like NX/ECTR, Engineering change tools - SAP, presentation tools - power point, analytic tools - Microsoft excel etc. <br> 8. Responsible for self planning of work based on organizational priorities by closely working with supervisor <br> 9. Imbibe quality in every action / work performed. <br> 10. Come up with Innovative ideas / product suggestion <br><br> Job Specifications: <br>- Qualification:B.E (Graduate in Mechanical Engineering) <br>- Experience:Fresh Graduate to 1 year Experience <br><br> Skill Sets & Competencies: <br> 1. Excellent skills in NX / ECTR. Knowledge of Hypermesh preferable <br> 2. Understanding of product development process <br> 3. Good understanding of Engineering fundamentals. Able to read and interpret specifications <br> 4. Flexible and ready for change based on organization need. <br> 5. Basic knowledge of SAP ,ERP and PLM systems. <br> 6. Good oral and written communication <br> 7. Confident and capable of handling conference calls. 8. Self driven and quick learner.  <br><br> About Company: Koch Industries, Inc. (/koʊk/ KOHK) is an American privately held multinational conglomerate corporation based in Wichita, Kansas and is the second-largest privately held company in the United States, after Cargill. Its subsidiaries are involved in the manufacturing, refining, and distribution of petroleum, chemicals, energy, fiber, intermediates and polymers, minerals, fertilizer, pulp and paper, chemical technology equipment, cloud computing, finance, commodity market trading, and investments. Koch owns Flint Hills Resources, Georgia-Pacific, Guardian Industries, Infor, Invista, KBX, Koch Ag & Energy Solutions, Koch Engineered Solutions, Koch Investments Group, Koch Minerals & Trading, and Molex. The firm employs 122,000 people in 60 countries, with about half of its business in the United States. The company was founded by its namesake, Fred C. Koch, in 1940 after he developed an innovative crude oil refining process. Fred C. Koch died in 1967 and his majority interest in the company was split amongst his four sons. In June 1983, after a bitter legal and boardroom battle over the amount of dividends paid by the company, the stakes of Frederick R. Koch and William \"Bill\" Koch were bought out for $1.1 billion and Charles Koch and David Koch became majority owners in the company. Charles owns 42% of the company; trusts for the benefit of Elaine Tettemer Marshall (the daughter in-law of J. Howard Marshall) and Elaine's children, Preston Marshall and E. Pierce Marshall Jr., own 16% of the company. David Koch died on August 23, 2019 and his heirs own the remaining 42% balance of the corporation. Charles Koch has stated that the company would go public \"over my dead body\" and that the company has used its freedom from the pressures of public markets to make long-term investments and concentrate on growth.","datePosted":"2022-10-30","validThrough":"2022-12-30","employmentType":"Full-Time","hiringOrganization":{"@type":"Organization","name":"Koch Industries","sameAs":"https://www.kochind.com/","logo":"https://gofresher.in/company-logos/koch.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"Pine Block, Kalyani Platina, Kundalahalli Village, Hobli, Krishnarajapura, Bengaluru, Karnataka 560066","addressLocality":"India","addressRegion":"Bengaluru, Karnataka","postalCode":"560066","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"400000","unitText":"Yearly"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","sameAs":"","dateCreated":"2022-10-30T00:00:00+05:30","description":"Koch Hiring Fresher Mechanical Engineer Graduates As Engineer Trainee At Bangalore. Graduate Engineer Trainee Hiring By Koch At Bangalore For Mechanical Engineers","dateModified":"2022-10-30T00:00:00+05:30","datePublished":"2022-10-30T00:00:00+05:30","mainEntityOfPage":"https://gofresher.in/jobs/koch-hiring-2021-2022-2023-batch-fresher-graduate-engineer-trainee-bangalore.html","headline":"Koch Hiring Fresher Graduate Engineer Trainee At Bangalore","articleBody":"<br><br>Job Title : Graduate Engineer Trainee - Product Design <br><br> Dept/Section : PSBU India Engineering <br><br> Organisation Relationships: <br>- Report To:Manager - PSBU India Engineering <br>- Co-ordinates : Tool Engineer, Process Engineering, Manufacturing and Product management <br>- Internal : All PSBU manufacturing plants (includes purchase, planning, tool design, process engineering, quality), Product management, AQP, GSM, Application tooling, Lab etc. <br>- External: Customers, Vendors and Sub Contractors <br><br> Purpose Of Position:  <br> Sustenance engineering / Product maintenance / Product support, SPO's, product design transfers, new product support, Packaging design <br><br> Specific Responsibilities: <br> 1. Responsible for providing support on SPO's, providing sustenance support / providing maintenance support on legacy product families. <br> 2. Responsible for providing CAD/FEA/Testing support for New products / MOD's / SPO's <br> 3. Follow PDP process. Work collaboratively with Peers, supervisors, PM's, other engineering groups manufacturing plants, application tooling group and Lab. <br> 4. In depth understanding of assigned product families (SD, E, PK, PS, AS, TS etc.) <br> 5. Understand, aim and achieve organization / department /self goals. <br> 6. Show value creation, productivity improvement and continual improvements <br> 7. Responsible for working on CAD tools like NX/ECTR, Engineering change tools - SAP, presentation tools - power point, analytic tools - Microsoft excel etc. <br> 8. Responsible for self planning of work based on organizational priorities by closely working with supervisor <br> 9. Imbibe quality in every action / work performed. <br> 10. Come up with Innovative ideas / product suggestion <br><br> Job Specifications: <br>- Qualification:B.E (Graduate in Mechanical Engineering) <br>- Experience:Fresh Graduate to 1 year Experience <br><br> Skill Sets & Competencies: <br> 1. Excellent skills in NX / ECTR. Knowledge of Hypermesh preferable <br> 2. Understanding of product development process <br> 3. Good understanding of Engineering fundamentals. Able to read and interpret specifications <br> 4. Flexible and ready for change based on organization need. <br> 5. Basic knowledge of SAP ,ERP and PLM systems. <br> 6. Good oral and written communication <br> 7. Confident and capable of handling conference calls. 8. Self driven and quick learner.  <br><br> About Company: Koch Industries, Inc. (/koʊk/ KOHK) is an American privately held multinational conglomerate corporation based in Wichita, Kansas and is the second-largest privately held company in the United States, after Cargill. Its subsidiaries are involved in the manufacturing, refining, and distribution of petroleum, chemicals, energy, fiber, intermediates and polymers, minerals, fertilizer, pulp and paper, chemical technology equipment, cloud computing, finance, commodity market trading, and investments. Koch owns Flint Hills Resources, Georgia-Pacific, Guardian Industries, Infor, Invista, KBX, Koch Ag & Energy Solutions, Koch Engineered Solutions, Koch Investments Group, Koch Minerals & Trading, and Molex. The firm employs 122,000 people in 60 countries, with about half of its business in the United States. The company was founded by its namesake, Fred C. Koch, in 1940 after he developed an innovative crude oil refining process. Fred C. Koch died in 1967 and his majority interest in the company was split amongst his four sons. In June 1983, after a bitter legal and boardroom battle over the amount of dividends paid by the company, the stakes of Frederick R. Koch and William \"Bill\" Koch were bought out for $1.1 billion and Charles Koch and David Koch became majority owners in the company. Charles owns 42% of the company; trusts for the benefit of Elaine Tettemer Marshall (the daughter in-law of J. Howard Marshall) and Elaine's children, Preston Marshall and E. Pierce Marshall Jr., own 16% of the company. David Koch died on August 23, 2019 and his heirs own the remaining 42% balance of the corporation. Charles Koch has stated that the company would go public \"over my dead body\" and that the company has used its freedom from the pressures of public markets to make long-term investments and concentrate on growth.","author":{"@type":"Person","name":"Admin Gofresher","sameAs":"https://gofresher.in/author/admin"},"publisher":{"@type":"Organization","name":"Gofresher","logo":{"@type":"ImageObject","name":"Gofresher","url":"https://gofresher.in/jobs/amp/gofresher-amp-logo.png"}},"image":{"@type":"ImageObject","url":"https://gofresher.in/company-logos/koch.png","width":"1200","height":"1200"}}</script><link rel="canonical" href="https://gofresher.in/jobs/koch-hiring-2021-2022-2023-batch-fresher-graduate-engineer-trainee-bangalore.html">
 <link rel="amphtml" href="https://gofresher.in/jobs/amp/koch-hiring-2021-2022-2023-batch-fresher-graduate-engineer-trainee-bangalore.html"/>
 </head>
-<body>
+<body id="body-id">
+    <script tyle="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -253,8 +298,6 @@
         };
     
         firebase.initializeApp(firebaseConfig);
-        
-        firebase.analytics();
 
         var previous;
         var element;

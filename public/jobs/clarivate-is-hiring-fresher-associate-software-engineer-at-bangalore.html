@@ -24,53 +24,99 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
-    <script>   
-        window.addEventListener("load", () => {
+    <script>
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        function doSomething(scrollPos) {
+            console.log(lastKnownScrollPosition);
+            ///Firestore Database///
+            f = document.createElement('script');
+            f.type = 'text/javascript';
+            f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
+            document.getElementsByTagName('head')[0].appendChild(f);
+            ///Add Google Ad Script///
+            b = document.createElement('script');
+            b.type = 'text/javascript';
+            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            document.getElementsByTagName('head')[0].appendChild(b);
+            ///Add Moengage Script///
+            c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
+            document.getElementsByTagName('head')[0].appendChild(c);
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
+                });
+            });
+            ///Firsebase Login Auth///
+            d = document.createElement('script');
+            d.type = 'text/javascript';
+            d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
+            document.getElementsByTagName('head')[0].appendChild(d);
+            ///Signup-Popup Js Load///
             window.setTimeout(function () {
                 a = document.createElement('script');
                 a.type = 'text/javascript';
                 a.src = '/signup-popup.js';
                 document.getElementsByTagName('head')[0].appendChild(a);
             }, 500);
+            ///GTAG.JS///
+            g = document.createElement('script');
+            g.type = 'text/javascript';
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES';
+            document.getElementsByTagName('head')[0].appendChild(g);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5EP5C2QDES');
+            ///GTM.JS///
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W2MGKDH');
+            ///Bootstrap Min JS///
+            h = document.createElement('script');
+            h.type = 'text/javascript';
+            h.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+            document.getElementsByTagName('head')[0].appendChild(h);
+            ///Fontawesome JS///
+            i = document.createElement('script');
+            i.type = 'text/javascript';
+            i.src = 'https://kit.fontawesome.com/f49733d343.js';
+            document.getElementsByTagName('head')[0].appendChild(i);
+            ///Firebase Analytics
+            j = document.createElement('script');
+            j.type = 'text/javascript';
+            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js';
+            document.getElementsByTagName('head')[0].appendChild(j);
+            window.setTimeout(function () {
+                firebase.analytics();
+            }, 500);
+            ///Exit Loop After One Go
+            throw "exit";
+        }
+        document.addEventListener('scroll', (e) => {
+            lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+                    return false;
+                });
+                ticking = true;
+            }
         });
     </script>
-<script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5EP5C2QDES');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
-    <!-- End Google Tag Manager -->
 <script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"Clarivate Is Hiring Fresher Associate Software Engineer At Bangalore","description":"<br> Job Post: Associate Software Engineer <br><br> Company Name: Clarivate <br><br> Experience: 0 years <br><br> Salary: ₹ 5,00,000 - 6,00,000 P.A. <br><br> Location: Noida, Bangalore/Bengaluru <br><br> Job Highlights: <br>- Nice to have internship / college project <br>- We invite fresh graduates like you to kick start your career in technology <br>- Engineering graduates passing in 2022 starting to kick start their career in technology <br>- BE / BTech (2021 and 2022 - batch) All stream <br><br> Details:<br> Clarivate Analytics is a global leader in providing insights & analytics in scientific information with headquarters in Philadelphia, USA. Currently, it is a 1 Billion $ Company. The company is into subscription-based services. Academic institutions, Research-related institutions, and independent companies subscribe to the products (research-related information). Were an independently owned company with a rich heritage and a bold entrepreneurial mission. We are the Largest scientific information provider in the world. We are the largest IP information provider in the world. IP is related to patents. We read and summarize patent information, which helps scientists around the world to accelerate the pace of innovation. All major global innovation companies are our clients. <br><br> We offer solutions that drive the entire lifecycle of innovation: Scientific and academic research Patent intelligence and compliance standards Pharmaceutical and biotech intelligence Trademark, domain and brand protection. <br><br> We now have more than 5,300 colleagues in over 40 countries worldwide, and we work with over 200 partners to deliver value and success for our customers. Today, Clarivate is a publicly traded company, listed on the New York Stock Exchange under the tickers NYSE:CCC. <br><br> Our products are built on unique content sets that are curated by Clarivate Analytics and sold as a subscription. In India, we are a 1500+ strong organization with offices in Mumbai, Chennai, Hyderabad and NCR. Bangalore is our India Technology hub, hosting close to 600 colleagues <br><br> Clarivate Analytics clients are the trailblazers and risk takers who come up with life-changing ideas. We’re looking for our own trailblazers to help us keep providing clients some of the world’s most trusted brands, spanning scientific and academic research, patent analytics, pharmaceutical and biotech intelligence and IP management. If you’re excited by the thought of helping people and organizations go from new ideas to life-changing innovations faster, we’re excited to explore your fitment in our organization. We invite fresh graduates like you to kick start your career in technology. <br><br> Requirements: <br> 1. Engineering graduates passing in 2022 starting to kick start their career in technology. <br> 2. Ideal candidate should have hand-on interest in programming and some experience in writing software applications. If you have a GitHub profile, please provide link to your work. Nice to have internship / college project. <br> 3. Knowledge of one or more programming language to write fully executable and functional code is very desirable. Knowledge of databases is also desirable. Both these may be at a Beginner or Advanced Beginner level. <br> 4. You should be focused, enthusiastic, motivated, and have a desire to progress by learning, executing and experimenting. <br><br> Desirable skills – <br> 1. Demonstrable problem solving, analytical skills. <br> 2. Ability to program (at Beginner or Advanced Beginner level in one or more programming language like Java, C#, Python, JavaScript etc.). <br> 3. Ability to think through a problem at conceptual level and propose solutions. <br> 4. Excellent verbal and written communication skills. <br> 5. Keen desire to learn, stretch and a never-give-up attitude. <br> 6. Very strong interpersonal skills and an easy-going personality. <br> 7. Highly proactive, result-oriented and team player. <br> 8. Ability to stay current with new technology. <br><br> Criteria: <br> BE/BTech – (2021 and 2022 - batch) – All stream <br> CGPA : 70% <br>","datePosted":"2022-02-22","validThrough":"2022-03-15","employmentType":"Full Time","hiringOrganization":{"@type":"Organization","name":"Clarivate","sameAs":"https://clarivate.com/","logo":"https://gofresher.in/company-logos/clarivate.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"Bagmane Commerz, No.02, Bagmane Tech Park, C V, C V Raman Nagar, Bengaluru, Karnataka 560093","addressLocality":"India","addressRegion":"Bengaluru, India","postalCode":"560093","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"600000","unitText":"Yearly"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Clarivate Is Hiring Fresher Associate Software Engineer At Bangalore","image":"https://gofresher.in/company-logos/clarivate.png","datePublished":"2022-02-22","dateModified":"2022-02-22","author":[{"@type":"Person","name":"Gofresher Admin","url":"http://example.com/profile/janedoe123"}]}</script><link rel="canonical" href="https://gofresher.in/jobs/clarivate-is-hiring-fresher-associate-software-engineer-at-bangalore.html"><link rel="amphtml" href="https://gofresher.in/jobs/amp/clarivate-is-hiring-fresher-associate-software-engineer-at-bangalore.html"/>
-<!-- One Signal -->
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
-    });
-  });
-</script>
+
 </head>
-<body>
+<body id="body-id">
+    <script tyle="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -252,8 +298,6 @@
         };
     
         firebase.initializeApp(firebaseConfig);
-        
-        firebase.analytics();
 
         var previous;
         var element;

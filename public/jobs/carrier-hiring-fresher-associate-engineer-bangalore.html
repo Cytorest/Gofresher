@@ -24,54 +24,99 @@
 <noscript>
     <link rel="stylesheet" href="job-page.css">
 </noscript>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/f49733d343.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
-    <script>   
-        window.addEventListener("load", () => {
+    <script>
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        function doSomething(scrollPos) {
+            console.log(lastKnownScrollPosition);
+            ///Firestore Database///
+            f = document.createElement('script');
+            f.type = 'text/javascript';
+            f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
+            document.getElementsByTagName('head')[0].appendChild(f);
+            ///Add Google Ad Script///
+            b = document.createElement('script');
+            b.type = 'text/javascript';
+            b.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            document.getElementsByTagName('head')[0].appendChild(b);
+            ///Add Moengage Script///
+            c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
+            document.getElementsByTagName('head')[0].appendChild(c);
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
+                });
+            });
+            ///Firsebase Login Auth///
+            d = document.createElement('script');
+            d.type = 'text/javascript';
+            d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
+            document.getElementsByTagName('head')[0].appendChild(d);
+            ///Signup-Popup Js Load///
             window.setTimeout(function () {
                 a = document.createElement('script');
                 a.type = 'text/javascript';
                 a.src = '/signup-popup.js';
                 document.getElementsByTagName('head')[0].appendChild(a);
             }, 500);
+            ///GTAG.JS///
+            g = document.createElement('script');
+            g.type = 'text/javascript';
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES';
+            document.getElementsByTagName('head')[0].appendChild(g);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5EP5C2QDES');
+            ///GTM.JS///
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W2MGKDH');
+            ///Bootstrap Min JS///
+            h = document.createElement('script');
+            h.type = 'text/javascript';
+            h.src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
+            document.getElementsByTagName('head')[0].appendChild(h);
+            ///Fontawesome JS///
+            i = document.createElement('script');
+            i.type = 'text/javascript';
+            i.src = 'https://kit.fontawesome.com/f49733d343.js';
+            document.getElementsByTagName('head')[0].appendChild(i);
+            ///Firebase Analytics
+            j = document.createElement('script');
+            j.type = 'text/javascript';
+            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js';
+            document.getElementsByTagName('head')[0].appendChild(j);
+            window.setTimeout(function () {
+                firebase.analytics();
+            }, 500);
+            ///Exit Loop After One Go
+            throw "exit";
+        }
+        document.addEventListener('scroll', (e) => {
+            lastKnownScrollPosition = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+                    return false;
+                });
+                ticking = true;
+            }
         });
-    </script>
-<script data-ad-client="ca-pub-7589635024077576" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EP5C2QDES"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5EP5C2QDES');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W2MGKDH');</script>
-    <!-- End Google Tag Manager -->
-    <!-- One Signal -->
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-    window.OneSignal = window.OneSignal || [];
-    OneSignal.push(function() {
-        OneSignal.init({
-        appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
-        });
-    });
     </script>
 <script type="application/ld+json">{"@context":"http://www.schema.org","@type":"JobPosting","title":"Carrier Fresher Associate Engineer Hiring - Bangalore","description":"<br><br> Position: Associate Engineer <br><br> Profile: Business Unit Carrier <br><br> Job ID: 30083628 <br><br> City: Bangalore <br><br> State: Karnataka <br><br> Country: India <br><br> Location: RGA Tech Park, Chikkannhelli Village, Sarjapur Main Road, Bangalore - 560035, India <br><br> Responsibilities: <br>- Provides product and technical knowledge, resolving issues surrounding installation, usage, upgrade, and training. <br>- May respond to customer calls and sends issue to appropriate level to satisfy customer requirements. <br>- Partners with Customer Service representatives to identify customer training and support needs. <br>- Completes proper documentation of issues used for future analysis. <br><br> Carrier is An Equal Opportunity/Affirmative Action Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability or veteran status, age or any other federally protected class. <br><br> About Company: Carrier Global Corporation is an American multinational heating, ventilation, and air conditioning (HVAC), refrigeration, and fire and security equipment corporation based in Palm Beach Gardens, Florida. Carrier was founded in 1915 as an independent company manufacturing and distributing HVAC systems, and has since expanded to include manufacturing commercial refrigeration and food service equipment, and fire and security technologies. As of 2020, it was an $18.6 billion company with over 53,000 employees serving customers in 160 countries on six continents. Carrier was acquired by United Technologies in 1979, but it was spun off as an independent company 41 years later in 2020, as was the Otis Elevator Company. Willis Carrier is credited with inventing modern air conditioning in July 1902. In 1908, the Carrier Air Conditioner Company of America was created as a subsidiary of the Buffalo Forge Company, with Willis Carrier as its vice president. With the onset of World War I in late 1914, the Buffalo Forge Company, where Carrier had been employed for 12 years, decided to confine its activities entirely to manufacturing. The result was that in 1915, Carrier and six other engineers pooled $32,600 to form the Carrier Engineering Corporation. They purchased their first factory in 1920, in Newark, New Jersey. The corporation bearing his name marketed its air conditioner to the residential market in the 1950s, which led to formerly sparsely populated areas such as the American Southwest becoming home to sprawling suburbs. In 1955, Carrier merged with Affiliated Gas Equipment, Inc., which owned the Bryant Heater Co., Day & Night Water Heater Co., and Payne Furnace & Supply Co. Carrier Corporation was acquired by United Technologies Corporation (UTC) in July 1979. Prior to the acquisition by UTC, Carrier Corporation was known as the Carrier Air Conditioning Company.","datePosted":"2022-11-02","validThrough":"2023-01-02","employmentType":"Full-Time","hiringOrganization":{"@type":"Organization","name":"Carrier","sameAs":"https://www.carrier.com/carrier/en/worldwide/","logo":"https://gofresher.in/company-logos/carrier.png"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"RGA Tech Park, Chikkannhelli Village, Sarjapur Main Road, Bangalore, Karnataka - 560035, India","addressLocality":"India","addressRegion":"Bangalore, Karnataka","postalCode":"560035","addressCountry":"India"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":"450000","unitText":"Yearly"}}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","sameAs":"","dateCreated":"2022-11-02T00:00:00+05:30","description":"Carrier Hiring 2021, 2022 & 2023 Batch Fresher As Associate Engineer At Bangalore. Job ID 30083628, Bangalore Associate Fresher Software Engineer Hiring By Carrier.","dateModified":"2022-11-02T00:00:00+05:30","datePublished":"2022-11-02T00:00:00+05:30","mainEntityOfPage":"https://gofresher.in/jobs/carrier-hiring-fresher-associate-engineer-bangalore.html","headline":"Carrier Fresher Associate Engineer Hiring - Bangalore","articleBody":"<br><br> Position: Associate Engineer <br><br> Profile: Business Unit Carrier <br><br> Job ID: 30083628 <br><br> City: Bangalore <br><br> State: Karnataka <br><br> Country: India <br><br> Location: RGA Tech Park, Chikkannhelli Village, Sarjapur Main Road, Bangalore - 560035, India <br><br> Responsibilities: <br>- Provides product and technical knowledge, resolving issues surrounding installation, usage, upgrade, and training. <br>- May respond to customer calls and sends issue to appropriate level to satisfy customer requirements. <br>- Partners with Customer Service representatives to identify customer training and support needs. <br>- Completes proper documentation of issues used for future analysis. <br><br> Carrier is An Equal Opportunity/Affirmative Action Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability or veteran status, age or any other federally protected class. <br><br> About Company: Carrier Global Corporation is an American multinational heating, ventilation, and air conditioning (HVAC), refrigeration, and fire and security equipment corporation based in Palm Beach Gardens, Florida. Carrier was founded in 1915 as an independent company manufacturing and distributing HVAC systems, and has since expanded to include manufacturing commercial refrigeration and food service equipment, and fire and security technologies. As of 2020, it was an $18.6 billion company with over 53,000 employees serving customers in 160 countries on six continents. Carrier was acquired by United Technologies in 1979, but it was spun off as an independent company 41 years later in 2020, as was the Otis Elevator Company. Willis Carrier is credited with inventing modern air conditioning in July 1902. In 1908, the Carrier Air Conditioner Company of America was created as a subsidiary of the Buffalo Forge Company, with Willis Carrier as its vice president. With the onset of World War I in late 1914, the Buffalo Forge Company, where Carrier had been employed for 12 years, decided to confine its activities entirely to manufacturing. The result was that in 1915, Carrier and six other engineers pooled $32,600 to form the Carrier Engineering Corporation. They purchased their first factory in 1920, in Newark, New Jersey. The corporation bearing his name marketed its air conditioner to the residential market in the 1950s, which led to formerly sparsely populated areas such as the American Southwest becoming home to sprawling suburbs. In 1955, Carrier merged with Affiliated Gas Equipment, Inc., which owned the Bryant Heater Co., Day & Night Water Heater Co., and Payne Furnace & Supply Co. Carrier Corporation was acquired by United Technologies Corporation (UTC) in July 1979. Prior to the acquisition by UTC, Carrier Corporation was known as the Carrier Air Conditioning Company.","author":{"@type":"Person","name":"Admin Gofresher","sameAs":"https://gofresher.in/author/admin"},"publisher":{"@type":"Organization","name":"Gofresher","logo":{"@type":"ImageObject","name":"Gofresher","url":"https://gofresher.in/jobs/amp/gofresher-amp-logo.png"}},"image":{"@type":"ImageObject","url":"https://gofresher.in/company-logos/carrier.png","width":"1200","height":"1200"}}</script><link rel="canonical" href="https://gofresher.in/jobs/carrier-hiring-fresher-associate-engineer-bangalore.html">
 <link rel="amphtml" href="https://gofresher.in/jobs/amp/carrier-hiring-fresher-associate-engineer-bangalore.html"/>
 </head>
-<body>
+<body id="body-id">
+    <script tyle="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -253,8 +298,6 @@
         };
     
         firebase.initializeApp(firebaseConfig);
-        
-        firebase.analytics();
 
         var previous;
         var element;
