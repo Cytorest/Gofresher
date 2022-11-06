@@ -95,6 +95,8 @@
             window.setTimeout(function () {
                 firebase.analytics();
             }, 500);
+            ///Add Central Popup Logo
+            document.getElementById("central-popup-logo").innerHTML += "<img src='/gofresher-logo.svg' alt='company logo'>";
             ///Exit Loop After One Go
             throw "exit";
         }
@@ -178,8 +180,8 @@
             <div class='close' id="close-button">X</div>
             <div class="top col-sm-12">
                 <div class="col-sm-1"></div>
-                <div class="logo col-sm-10">
-                    <img src="/gofresher-logo.svg" alt="company logo">
+                <div class="logo col-sm-10" id="central-popup-logo">
+
                 </div>
                 <div class="col-sm-1"></div>
             </div>
