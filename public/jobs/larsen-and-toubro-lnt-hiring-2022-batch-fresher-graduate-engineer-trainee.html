@@ -31,15 +31,14 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
     <script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/javascript"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
+    <script src="/signup-popup.js" type="text/javascript"></script>
     <script>
         let lastKnownScrollPosition = 0;
         let ticking = false;
         function doSomething(scrollPos) {
             console.log(lastKnownScrollPosition);
-            ///Firestore Database///
-            f = document.createElement('script');
-            f.type = 'text/javascript';
-            f.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js';
             document.getElementsByTagName('head')[0].appendChild(f);
             ///Add OneSignal Script///
             c = document.createElement('script');
@@ -52,18 +51,6 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
                 appId: "07a48142-9d1a-4910-bc87-06a9f5b40364",
                 });
             });
-            ///Firsebase Login Auth///
-            d = document.createElement('script');
-            d.type = 'text/javascript';
-            d.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js';
-            document.getElementsByTagName('head')[0].appendChild(d);
-            ///Signup-Popup Js Load///
-            window.setTimeout(function () {
-                a = document.createElement('script');
-                a.type = 'text/javascript';
-                a.src = '/signup-popup.js';
-                document.getElementsByTagName('head')[0].appendChild(a);
-            }, 500);
             ///GTAG.JS///
             g = document.createElement('script');
             g.type = 'text/javascript';
