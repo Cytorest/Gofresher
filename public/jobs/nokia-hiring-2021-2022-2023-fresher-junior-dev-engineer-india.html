@@ -31,8 +31,10 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&display=swap">
 </noscript>
     <script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/javascript"></script>   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>  
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js" type="text/javascript"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js" type="text/javascript"></script>
     <script src="/signup-popup.js" type="text/javascript"></script>
@@ -77,14 +79,6 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
             i.type = 'text/javascript';
             i.src = 'https://kit.fontawesome.com/f49733d343.js';
             document.getElementsByTagName('head')[0].appendChild(i);
-            ///Firebase Analytics
-            j = document.createElement('script');
-            j.type = 'text/javascript';
-            j.src = 'https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js';
-            document.getElementsByTagName('head')[0].appendChild(j);
-            window.setTimeout(function () {
-                firebase.analytics();
-            }, 500);
             ///Add Central Popup Logo
             document.getElementById("central-popup-logo").innerHTML += "<img src='/gofresher-logo.svg' alt='company logo'>";
             ///Set Visibility Of Company Logo
@@ -108,7 +102,6 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
 <link rel="amphtml" href="https://gofresher.in/jobs/amp/nokia-hiring-2021-2022-2023-fresher-junior-dev-engineer-india.html"/>
 </head>
 <body id="body-id">
-    <script tyle="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
