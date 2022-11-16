@@ -411,7 +411,7 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
             });  
 });
 
-        firebase.firestore().collection("Job Posting").orderBy("pd", "desc").get().then((querySnapshot) => {
+        firebase.firestore().collection("Job Posting").orderBy("pd", "desc").limit(12).get().then((querySnapshot) => {
             var i=1;
             querySnapshot.forEach((doc) => {
                     console.log(i);
