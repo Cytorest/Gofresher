@@ -109,7 +109,7 @@ const myfirstelement = (
     <div className="address-details">
       <div className="name-div"><i className="fas fa-tag"></i><div className="company-name">Gofresher</div></div>
       <div className="phone-div"><i className="fas fa-phone"></i><div className="number"> +91-9870967898</div></div>
-      <div className="email-div"><i className="fas fa-envelope"></i><div className="email"> support@gofresher.org</div></div>
+      <div className="email-div"><i className="fas fa-envelope"></i><div className="email"> support@gofresher.in</div></div>
       <div className="location-div"><i className="fas fa-map-marked-alt"></i><div className="location-text"> Lucknow</div></div>
       <div className="social">
         <div className="fb-circle"><i className="fab fa-facebook-f"></i></div>
@@ -133,7 +133,7 @@ const myfirstelement = (
     <div className="contact-font">Contact</div>
     <div className="dot-and-bar"><span className="circle"></span><span className="line"></span></div>
     <div className="contact-details">
-      <div className="user-message">If you have any questions or just want to get in touch, use the form below. We look forward to hearing from you! You can get in touch with us directly at support@gofresher.org</div>
+      <div className="user-message">If you have any questions or just want to get in touch, use the form below. We look forward to hearing from you! You can get in touch with us directly at support@gofresher.in</div>
       <div className="successful-message">Your Message Has Been Sent Successfully! We Will get back To You Within 24 - 48 Hours.</div>
       <div className="user-form">
         <form id="contactForm">
