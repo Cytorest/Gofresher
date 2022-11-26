@@ -45,14 +45,14 @@ const myfirstelement = (
   <div className="about-head col-sm-12">About Us</div>
     <div className="dot-and-bar"><span className="line"></span><span className="circle"></span><span className="line"></span></div>
     <div className="companyDetails col-sm-6">
-      <div className="companyText"><h1>Gofresher</h1> is a group of working professionals who help jobseekers get their dream job. We provide resume development services and placement assistance services with an aim of guiding job seekers on how scoring a job and searching for a job in the right way.</div>
+      <div className="companyText"><h1>Gofresher</h1> is a group of working professionals who help jobseekers get their dream job. We provide resume development services and placement assistance services with an aim of guiding job seekers on how to score a job and search for a job in the right way.</div>
   
   <div className="focus-detail col-sm-12">
         <div className="left-detail col-sm-6">
-        <div className="left-heading"><h2>20+ Years Of Experience</h2><div className="left-text">We are backed by a highly dedicated placement assistance team to ensure that jobseekers with different backgrounds are able to pursure leads with a high chance for response. The resume development and designing team spends a lot of time understanding the latest trends and plans the portfolio accordingly.</div></div>
+        <div className="left-heading"><h2>20+ Years Of Experience</h2><div className="left-text">We are backed by a highly dedicated placement assistance team to ensure that jobseekers with different backgrounds are able to pursue leads with a high chance of response. The resume development and designing team spends a lot of time understanding the latest trends and plans the portfolio accordingly.</div></div>
         </div>
         <div className="right-detail col-sm-6">
-        <div className="right-heading"><h2>Commited To Helping And Assisting</h2><div className="right-text">While the market is very dynamic and the hiring pattern for companies is changing regularly, the team offers dedicated jobseelers to cultivate and utilize our experience and knowledge in the jobseeking domain to land a job. Since we are working professions who aim to help jobseekers through whatever help we get from company professionals and employees, the pricing has been included so that it is justifiable to our team as well as is easy on your pockets.</div></div>
+        <div className="right-heading"><h2>Committed To Helping And Assisting</h2><div className="right-text">While the market is very dynamic and the hiring pattern for companies is changing regularly, the team offers dedicated jobseekers to cultivate and utilize our experience and knowledge in the jobseeking domain to land a job. Since we are working professionals who aim to help job seekers through whatever help we get from company professionals and employees, the pricing has been included so that it is justifiable to our team as well as is easy on your pockets.</div></div>
         </div>
       </div>
   
@@ -80,7 +80,7 @@ const myfirstelement = (
   <div className="five col-sm-12">
     <div className="automation col-sm-12">Feedback</div>
     <div className="dot-and-bar"><span className="line"></span><span className="circle"></span><span className="line"></span></div>
-    <div className="automation-text">We are overwhelmed by the kind of response received from<h3> all our placed jobseekers through guidance from professionals on our site and through groups like Facebook & Twitter</h3> who have written to us with such delightful reviews. People have been placed in companies like <h3>TCS, Cognizant, Wipro, Larsen & Toubro, Ernst & Young</h3> and many more. Through your hard work and dedication and a little help from us, <h3>you can also get placed.</h3> Connect with us and achieve your dream job. <h3>We are always here for your help.</h3></div>
+    <div className="automation-text">We are overwhelmed by the kind of response received from<h3> all our placed jobseekers through guidance from professionals on our site and through groups like Facebook & Twitter</h3> who have written to us with such delightful reviews. People have been placed in companies like <h3>TCS, Cognizant, Wipro, Larsen & Toubro, Ernst & Young</h3>, and many more. Through your hard work and dedication and a little help from us, <h3>you can also get placed.</h3> Connect with us and achieve your dream job. <h3>We are always here for your help.</h3></div>
     <div className="seven col-sm-12">
       <div className="smallBox">
         <div className="avt col-sm-4"><img src='feedback-placeholder.svg' width='456' height='404' alt='Feedback Placeholder 1 Gofresher'/></div>
