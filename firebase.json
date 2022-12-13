@@ -26,11 +26,11 @@
       }
   ]
   },
-  "redirects": [
-    {
-      "source": "jobs/zoho-corporation-hiring-2021-2022-2023-batch-fresher-pan-india.html",
-      "destination": "jobs/zoho-corporation-hiring-2021-2022-2023-batch-freshers-pan-india.html",
-      "type": 301
-    }
+  "redirects":[
+  {
+    "source": "/jobs/zoho-corporation-hiring-2021-2022-2023-batch-fresher-pan-india.html",
+    "destination": "/jobs/zoho-corporation-hiring-2021-2022-2023-batch-freshers-pan-india.html",
+    "type": 301
+  }
   ]
 }
