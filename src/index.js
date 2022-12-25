@@ -40,6 +40,23 @@ const myfirstelement = (
       </ul>
     </div>
   </div>
+
+  <div class="navigation-menu col-sm-12">
+        <div class="navigation-items">
+            <a class="navigation-item" href="/topic/fresher-jobs.html">Fresher Jobs</a>
+            <a class="navigation-item" href="/topic/internships-in-india.html">Internships</a>
+            <a class="navigation-item" href="/topic/2021-batch.html">2021 Batch</a>
+            <a class="navigation-item" href="/topic/2022-batch.html">2022 Batch</a>
+            <a class="navigation-item" href="/topic/2023-batch.html">2023 Batch</a>
+            <a class="navigation-item" href="/topic/bangalore-fresher-jobs.html">Bangalore Fresher Jobs</a>
+            <a class="navigation-item" href="/topic/chennai-fresher-jobs.html">Chennai Fresher Jobs</a>
+            <a class="navigation-item" href="/topic/hyderabad-fresher-jobs.html">Hyderabad Fresher Jobs</a>
+            <a class="navigation-item" href="/topic/mumbai-fresher-jobs.html">Mumbai Fresher Jobs</a>
+            <a class="navigation-item" href="/topic/noida-fresher-jobs.html">Noida Fresher Jobs</a>
+            <a class="navigation-item" href="/topic/pune-fresher-jobs.html">Pune Fresher Jobs</a>
+            <a class="navigation-item" href="/topic/off-campus-updates.html">Off Campus Updates</a>
+        </div>
+    </div>
   
   <div className="three col-sm-12">
   <div className="about-head col-sm-12">About Us</div>
