@@ -425,41 +425,6 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
                     });
                     console.log("Bell Icon Clicked");
                     });
-                    // ----------------------------------------------------
-                    a = document.createElement('script');
-                    a.type = 'application/ld+json';
-                    a.text = JSON.stringify({"@context":"http://www.schema.org","@type":"JobPosting","title":doc.data()['jt'],"description":doc.data()['jd'],"datePosted":doc.data()['dp'],"validThrough":doc.data()['dc'],"employmentType":doc.data()['et'],"hiringOrganization":{"@type":doc.data()['hot'],"name":doc.data()['hon'],"sameAs":doc.data()['hou'],"logo":doc.data()['hol']},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":doc.data()['jla'],"addressLocality":doc.data()['jlac'],"addressRegion":doc.data()['jlr'],"postalCode":doc.data()['jlpc'],"addressCountry":doc.data()['jlac']}},"baseSalary":{"@type":"MonetaryAmount","currency":doc.data()['sc'],"value":{"@type":"QuantitativeValue","value":doc.data()['sv'],"unitText":doc.data()['su']}}});
-                    document.getElementsByTagName('head')[0].appendChild(a);
-
-                    c = document.createElement('script');
-                    c.type = 'application/ld+json';
-                    c.text=JSON.stringify({"@context":"https://schema.org","@type":"NewsArticle",sameAs:"",dateCreated:doc.data().dp+"T00:00:00+05:30",description:doc.data().md,dateModified:doc.data().dp+"T00:00:00+05:30",datePublished:doc.data().dp+"T00:00:00+05:30",mainEntityOfPage:"https://gofresher.in/jobs/"+doc.data().slug,headline:doc.data().jt,articleBody:doc.data().jd,author:{"@type":"Person",name:"Admin Gofresher",sameAs:"https://gofresher.in/author/admin"},publisher:{"@type":"Organization",name:"Gofresher",logo:{"@type":"ImageObject",name:"Gofresher",url:"https://gofresher.in/jobs/amp/gofresher-amp-logo.png"}},image:{"@type":"ImageObject",url:doc.data().hol,width:"1200",height:"1200"}}),document.getElementsByTagName("head")[0].appendChild(c);
-
-                    link = !!document.querySelector("link[rel='canonical']") ? document.querySelector("link[rel='canonical']") : document.createElement('link');
-                    link.setAttribute('rel', 'canonical');
-                    link.setAttribute('href', location.protocol + '//' + location.host + location.pathname);
-                    document.head.appendChild(link);
-                    
-                    // Document Title
-                    document.title = doc.data()['mt'];
-
-                    // Meta Title Update
-                    document.querySelector('meta[name="title"]').setAttribute("content", doc.data()['mt']);
-
-                    // Meta Description Update
-                    document.querySelector('meta[name="description"]').setAttribute("content", doc.data()['md']);
-
-                    // Meta Keywords
-                    document.querySelector('meta[name="keywords"]').setAttribute("content", doc.data()['mk']);
-
-                    //OG URL
-                    document.querySelector('meta[property="og:url"]').setAttribute("content", location.protocol + '//' + location.host + location.pathname);
-
-                    //OG TITLE
-                    document.querySelector('meta[property="og:title"]').setAttribute("content", doc.data()['mt']);
-
-                    // OG Description Update
-                    document.querySelector('meta[property="og:description"]').setAttribute("content", doc.data()['md']);
             });  
         });
 
