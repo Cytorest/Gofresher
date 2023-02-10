@@ -164,6 +164,7 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
     </div>
     <div class="main" id="main-wrapper">
         <div class='content' id="job-wrapper-0">
+            <span class="postings"><u><!-- Headline Goes Here --></u></span>
             <!-- Body Copy Goes Here -->
             <br><br>
             <div class="bottom-gradient" id="bottom-graident-0"><div class="read-full-article" id="read-id-0">Read Full Article</div></div>
