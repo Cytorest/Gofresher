@@ -1,6 +1,6 @@
 import React from 'react';
 
-const YourComponent = () => {
+const Website = () => {
     return (
       <div>
         <script type="application/ld+json">
@@ -16,6 +16,13 @@ const YourComponent = () => {
           }
           `}
         </script>
+      </div>
+    )
+  };
+
+  const Webpage = () => {
+    return (
+        <div>
         <script type="application/ld+json">
           {`
           {
@@ -41,4 +48,6 @@ const YourComponent = () => {
     )
   };
   
-  export default YourComponent;
+  export default Website;
+
+  export default Webpage;
