@@ -7,14 +7,9 @@ import $ from 'jquery';
 import website from './schema.js';
 import webpage from './schema.js';
 
-const website=(
+const schema=(
     <div>
       <website/>
-    </div>
-  );
-
-  const webpage=(
-    <div>
       <webpage/>
     </div>
   );
@@ -190,9 +185,7 @@ const myfirstelement = (
   
 ReactDOM.render(myfirstelement, document.getElementById('root'));
 
-ReactDOM.render(website, document.getElementById('website'));
-
-ReactDOM.render(webpage, document.getElementById('webpage'));
+ReactDOM.render(schema, document.getElementById('schema'));
 
 reportWebVitals();
 
