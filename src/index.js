@@ -4,18 +4,18 @@ import './index.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 import reportWebVitals from './reportWebVitals';
 import $ from 'jquery';
-import Website from './schema.js';
-import Webpage from './schema.js';
+import website from './schema.js';
+import webpage from './schema.js';
 
-const Website=(
+const website=(
     <div>
-      <Website/>
+      <website/>
     </div>
   );
 
-  const Webpage=(
+  const webpage=(
     <div>
-      <Webpage/>
+      <webpage/>
     </div>
   );
 
@@ -190,9 +190,9 @@ const myfirstelement = (
   
 ReactDOM.render(myfirstelement, document.getElementById('root'));
 
-ReactDOM.render(Website, document.getElementById('website'));
+ReactDOM.render(website, document.getElementById('website'));
 
-ReactDOM.render(Webpage, document.getElementById('webpage'));
+ReactDOM.render(webpage, document.getElementById('webpage'));
 
 reportWebVitals();
 
