@@ -8,10 +8,10 @@ const YourComponent = () => {
           {
             "@context":"https://schema.org",
             "@type":"WebSite",
-            "url":"https://gofresher-e433c.web.app/",
+            "url":"https://gofresher.in",
             "potentialAction":{
             "@type":"SearchAction",
-            "target":"https://gofresher-e433c.web.app/search?q={search_term_string}",
+            "target":"https://gofresher.in/search?q={search_term_string}",
             "query-input":"required name=search_term_string"
           }
           `}
@@ -31,7 +31,7 @@ const YourComponent = () => {
             "Gofresher Is A Community Of JobSeekers Seeking Jobs In India. We Help Job Seekers Get A Job Through Our Help."
             ]
             },
-            "url":"https://gofresher-e433c.web.app/",
+            "url":"https://gofresher.in",
             "mainContentOfPage":"Online Job Portal",
             "inLanguage":"en"
           }
