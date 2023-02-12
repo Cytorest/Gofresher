@@ -183,7 +183,7 @@ const myfirstelement = (
   
 ReactDOM.render(myfirstelement, document.getElementById('root'));
 
-ReactDOM.render(schema, document.getElementById('schema');
+ReactDOM.render(schema, document.getElementById('schema'));
 
 reportWebVitals();
 
