@@ -4,13 +4,11 @@ import './index.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 import reportWebVitals from './reportWebVitals';
 import $ from 'jquery';
-import website from './schema.js';
-import webpage from './schema.js';
+import YourComponent from './schema.js';
 
-const schema=(
+const schema =(
     <div>
-      <website/>
-      <webpage/>
+      <YourComponent/>
     </div>
   );
 

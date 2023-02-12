@@ -1,6 +1,6 @@
 import React from 'react';
 
-const website = () => {
+const YourComponent = () => {
     return (
       <div>
         <script type="application/ld+json">
@@ -14,15 +14,10 @@ const website = () => {
             "target":"https://gofresher.in/search?q={search_term_string}",
             "query-input":"required name=search_term_string"
           }
+          }
           `}
         </script>
-      </div>
-    )
-  };
-
-  const webpage = () => {
-    return (
-        <div>
+        
         <script type="application/ld+json">
           {`
           {
@@ -48,6 +43,4 @@ const website = () => {
     )
   };
   
-  export default website;
-
-  export default webpage;
+  export default YourComponent;
