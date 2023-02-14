@@ -170,4 +170,14 @@
         $("#message-text").html("Enter Email To Reset Password");
     });
 
-document.getElementById('signInWithGoogle').addEventListener('click', signInWithGoogle);
+    $(document).on('click', '.forgotPass', function(){
+        $(".forgot").show();
+        $(".middle").hide();
+        $(".one").hide();
+        $(".bottom").hide();
+        $(".two").hide();
+        $(".three").hide();
+        $(".one").show();
+        $(".two").show();
+        $("#message-text").html("Enter Email To Reset Password");
+    });

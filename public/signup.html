@@ -142,7 +142,7 @@
     <div class="col-sm-4" id="message-text">Create An Account</div>
     <div class="col-sm-4"></div>
     <div class="col-sm-4 google-in-form">
-        <button id="signInWithGoogle"><img src="/public/google-signin.png"></button>
+        <button id="signInWithGoogle"><img src="/google-signin.png"></button>
     </div>
 </div>
 
@@ -198,6 +198,8 @@
 </div>
 
 <div id="catch-error"></div>
+
+<script>document.getElementById('signInWithGoogle').addEventListener('click', signInWithGoogle);</script>
 
 </body>
 </html>
