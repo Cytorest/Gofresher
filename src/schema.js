@@ -60,7 +60,6 @@ const YourComponent = () => {
           }
         `}
         </script>
-
       </div>
     )
   };
