@@ -100,7 +100,6 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
         });
     </script>
 <link rel="amphtml" href=""/>
-
 </div>
 </head>
 <body id="body-id">
