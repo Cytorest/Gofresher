@@ -107,16 +107,6 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <div id="schema"></div>
-    <script> 
-      fetch('https://gofresher.in')
-      .then(response => response.text())
-      .then(structuredDataText => {
-        const script = document.createElement('script');
-        script.setAttribute('type', 'application/ld+json');
-        script.textContent = {"@context":"http://schema.org","@graph":[{"@type":"Organization","name":"Gofresher","url":"https://gofresher.in","logo":{"@type":"ImageObject","url":"https://gofresher.in/logo192.png","width":192,"height":192}}]};
-        document.head.appendChild(script);
-      });
-      </script>
   </body>
 </html>
 
