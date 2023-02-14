@@ -39,6 +39,27 @@ const YourComponent = () => {
           }
           `}
         </script>
+
+        <script defer type="application/ld+json">
+        {`
+          {
+            "@context": "http://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "name": "Gofresher",
+                "url": "https://gofresher.in",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://gofresher.in/logo192.png",
+                  "width": 192,
+                  "height": 192
+                }
+              }
+            ]
+          }
+        `}
+        </script>
       </div>
     )
   };
