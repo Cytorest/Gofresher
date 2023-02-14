@@ -5,10 +5,17 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 import reportWebVitals from './reportWebVitals';
 import $ from 'jquery';
 import YourComponent from './schema.js';
+import Breadcrumb from './breadcrumb-schema.js';
 
 const schema =(
     <div>
       <YourComponent/>
+    </div>
+  );
+
+  const breadcrumb =(
+    <div>
+      <Breadcrumb/>
     </div>
   );
 
@@ -184,6 +191,8 @@ const myfirstelement = (
 ReactDOM.render(myfirstelement, document.getElementById('root'));
 
 ReactDOM.render(schema, document.getElementById('schema'));
+
+ReactDOM.render(breadcrumb, document.getElementById('breadcrumb'));
 
 reportWebVitals();
 
