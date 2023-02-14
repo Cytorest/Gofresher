@@ -28,8 +28,11 @@
 </script>
 
 <style>
-    .top, .middle, .bottom, .passwordText, .signUp , .signIn, .message, .forgotPass, .forgot, .resetPass{
+    .top, .bottom, .passwordText, .signUp , .signIn, .message, .forgotPass, .forgot, .resetPass{
         margin-top:50px;
+    }
+    .middle{
+        margin-top:30px;
     }
     .emailText, .passwordText{
         font-size:20px;
@@ -126,6 +129,15 @@
         float: left;
         margin-right: 5px;
     }
+    .bifurcator{
+        font-size:17px;
+        margin-top:50px;
+    }
+    .or{
+        display: inline;
+        margin-left: 20px;
+        font-size: 18px;
+    }
 </style>
 
 </head>
@@ -143,8 +155,9 @@
     <div class="col-sm-4" id="message-text">Create An Account</div>
     <div class="col-sm-4"></div>
     <div class="col-sm-4 google-in-form">
-        <button id="signInWithGoogle"><div class="google-logo-img"><img src="/public/google-signin.png"></div> Loign With Google</button>
+        <button id="signInWithGoogle"><div class="google-logo-img"><img src="/public/google-signin.png"></div> Loign With Google</button><div class="or">OR</div>
     </div>
+    <div class="col-sm-4 bifurcator">Sign In With The Below Form</div>
 </div>
 
 <div id="formContainer" class="middle col-sm-12">
