@@ -134,7 +134,7 @@ auth.onAuthStateChanged(function(user){
             counter = 1;
             if(user.email){
                 $(".background-gradient").hide();
-                $(".central-popup").hide();
+                $(".central-popup-cover").hide();
                 $(".close").hide();
                 $(".login-button-top").hide();
             }
@@ -165,7 +165,7 @@ auth.onAuthStateChanged(function(user){
             {
             console.log("Login To Apply");
             $(".background-gradient").show();
-            $(".central-popup").show();
+            $(".central-popup-cover").show();
             $(".close").show();
             }
         }
@@ -174,7 +174,7 @@ auth.onAuthStateChanged(function(user){
 
     $(".close").click(function () {
     $(".background-gradient").hide();
-    $(".central-popup").hide();
+    $(".central-popup-cover").hide();
     $(".close").hide();
     });
 

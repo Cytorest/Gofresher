@@ -49,7 +49,7 @@ function createCookie(name,value,days) {
             {
             console.log("Login To Apply");
             $(".background-gradient").show();
-            $(".central-popup").show();
+            $(".central-popup-cover").show();
             $(".close").show();
             }
             }
@@ -83,7 +83,7 @@ function createCookie(name,value,days) {
                 {
                 console.log("Login To Apply");
                 $(".background-gradient").show();
-                $(".central-popup").show();
+                $(".central-popup-cover").show();
                 $(".close").show();
                 }
                 }
