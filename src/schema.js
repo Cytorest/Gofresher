@@ -40,24 +40,16 @@ const YourComponent = () => {
           `}
         </script>
 
-        <script defer type="application/ld+json">
-        {`
-          {
-            "@context": "http://schema.org",
-            "@graph": [
-              {
-                "@type": "Organization",
-                "name": "Gofresher",
-                "url": "https://gofresher.in",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": "https://gofresher.in/logo192.png",
-                  "width": 192,
-                  "height": 192
-                }
-              }
-            ]
-          }
+        <script> 
+        {` 
+        fetch('https://gofresher.in')
+        .then(response => response.text())
+        .then(structuredDataText => {
+          const script = document.createElement('script');
+          script.setAttribute('type', 'application/ld+json');
+          script.textContent = {"@context":"http://schema.org","@graph":[{"@type":"Organization","name":"Gofresher","url":"https://gofresher.in","logo":{"@type":"ImageObject","url":"https://gofresher.in/logo192.png","width":192,"height":192}}]};
+          document.head.appendChild(script);
+        });
         `}
         </script>
       </div>
