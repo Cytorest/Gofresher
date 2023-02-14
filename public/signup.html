@@ -113,17 +113,18 @@
         margin-top:20px;
     }
     #signInWithGoogle {
-        width: 52px;
-        border-radius: 50%;
-        position: relative;
+        width: auto;
     }
     #signInWithGoogle img{
         width:40px;
         height:40px;
-        position:absolute;
-        left:50%;
-        top:50%;
-        transform:translate(-50%,-50%);
+    }
+    .google-logo-img{
+        width: 40px;
+        margin-top: -3px;
+        display: inline;
+        float: left;
+        margin-right: 5px;
     }
 </style>
 
@@ -142,7 +143,7 @@
     <div class="col-sm-4" id="message-text">Create An Account</div>
     <div class="col-sm-4"></div>
     <div class="col-sm-4 google-in-form">
-        <button id="signInWithGoogle"><img src="/google-signin.png"></button>
+        <button id="signInWithGoogle"><div class="google-logo-img"><img src="/public/google-signin.png"></div> Loign With Google</button>
     </div>
 </div>
 
