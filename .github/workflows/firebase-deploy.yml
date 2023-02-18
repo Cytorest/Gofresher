@@ -15,7 +15,9 @@ jobs:
       - name: Initialize Node
         uses: actions/setup-node@master
       - name: Install Dependencies
-        run: npm install
+        run: npm install -g n
+      - name: Node Version 6.10.3
+        run: n 6.10.3
       - name: Build
         run: npm run build
       - name: Deploy
