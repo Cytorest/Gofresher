@@ -15,7 +15,11 @@ jobs:
       - name: Initialize Node
         uses: actions/setup-node@master
       - name: Install Dependencies
-        run: npm install
+        run: sudo npm install -g n
+      - name: Upgrading to the latest stable version
+        run: sudo n stable
+      - name: Change to version 10.16.0
+        run: sudo n 10.16.0
       - name: Build
         run: npm run build
       - name: Deploy
