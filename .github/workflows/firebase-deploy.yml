@@ -15,9 +15,7 @@ jobs:
       - name: Initialize Node
         uses: actions/setup-node@master
       - name: Install Dependencies
-        run: npm install -g npm-check-updates
-      - name: Update
-        run: npm update
+        run: npm install n v16.16.0
       - name: Build
         run: npm run build
       - name: Deploy
