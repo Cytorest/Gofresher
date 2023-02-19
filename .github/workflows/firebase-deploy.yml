@@ -15,7 +15,7 @@ jobs:
       - name: Initialize Node
         uses: actions/setup-node@master
       - name: Clear Cache
-        run: sudo npm cache clean --force
+        run: npm cache clean --force
       - name: Install Dependencies
         run: npm install n v16.16.0
       - name: Build
