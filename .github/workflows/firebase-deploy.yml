@@ -15,7 +15,7 @@ jobs:
       - name: Initialize Node
         uses: actions/setup-node@master
       - name: Install Dependencies
-        run: npm install n v9.2.0
+        run: npm install
       - name: Build
         run: npm run build
       - name: Deploy
