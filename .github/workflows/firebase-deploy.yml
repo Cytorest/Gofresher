@@ -15,7 +15,7 @@ jobs:
       - name: Initialize Node
         uses: actions/setup-node@master
       - name: Install Dependencies
-        run: npm install
+        run: npm audit fix --force
       - name: Build
         run: npm run build
       - name: Deploy
