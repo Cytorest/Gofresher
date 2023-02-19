@@ -14,6 +14,8 @@ jobs:
         uses: actions/checkout@master
       - name: Initialize Node
         uses: actions/setup-node@master
+      - name: Testing
+        run: npm i react-scripts@latest
       - name: Install Dependencies
         run: npm install
       - name: Build
