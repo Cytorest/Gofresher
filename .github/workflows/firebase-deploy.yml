@@ -16,10 +16,10 @@ jobs:
         uses: actions/setup-node@master
       - name: Update
         run: npm update --force
-      - name: Audit
-        run: npm audit fix --force
       - name: Install Dependencies
         run: npm install n v16.16.0
+      - name: Audit
+        run: npm audit fix --force
       - name: Build
         run: npm run build
       - name: Deploy
