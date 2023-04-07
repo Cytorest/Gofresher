@@ -135,9 +135,11 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
         <div class="navigation-items">
             <a class="navigation-item" href="/topic/fresher-jobs.html">Fresher Jobs</a>
             <a class="navigation-item" href="/topic/internships-in-india.html">Internships</a>
+            <a class="navigation-item" href="/topic/2020-batch.html">2020 Batch</a>
             <a class="navigation-item" href="/topic/2021-batch.html">2021 Batch</a>
             <a class="navigation-item" href="/topic/2022-batch.html">2022 Batch</a>
             <a class="navigation-item" href="/topic/2023-batch.html">2023 Batch</a>
+            <a class="navigation-item" href="/topic/2024-batch.html">2024 Batch</a>
             <a class="navigation-item" href="/topic/bangalore-fresher-jobs.html">Bangalore Fresher Jobs</a>
             <a class="navigation-item" href="/topic/chennai-fresher-jobs.html">Chennai Fresher Jobs</a>
             <a class="navigation-item" href="/topic/hyderabad-fresher-jobs.html">Hyderabad Fresher Jobs</a>
