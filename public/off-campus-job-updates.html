@@ -701,7 +701,12 @@ color:rgb(0, 119, 255);
         var content;
         let date;
         let time;
-        firebase.firestore().collection("Job Posting").orderBy("pd", "desc").get().then((querySnapshot) => {
+        let random = ["pd", "mk", "ctt", "al", "dc", "dp", "et", "hon", "hot", "hol", "hou", "jd", "jla", "jlac", "jlc", "jlpc", "jlr", "jt", "md", "mt", "sc", "slug", "su", "sv"];
+        function randomIntFromInterval(min, max){
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+        let value = randomIntFromInterval(0,23);
+        firebase.firestore().collection("Job Posting").orderBy(""+random[value]+"", "desc").get().then((querySnapshot) => {
             var i=0;
             querySnapshot.forEach((doc) => {
                     // console.log(i);
