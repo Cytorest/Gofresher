@@ -48,22 +48,45 @@ const myfirstelement = (
     </div>
   </div>
 
-  <div class="navigation-menu col-sm-12">
-        <div class="navigation-items">
-            <a class="navigation-item" href="/topic/fresher-jobs.html">Fresher Jobs</a>
-            <a class="navigation-item" href="/topic/internships-in-india.html">Internships</a>
-            <a class="navigation-item" href="/topic/2020-batch.html">2020 Batch</a>
-            <a class="navigation-item" href="/topic/2021-batch.html">2021 Batch</a>
-            <a class="navigation-item" href="/topic/2022-batch.html">2022 Batch</a>
-            <a class="navigation-item" href="/topic/2023-batch.html">2023 Batch</a>
-            <a class="navigation-item" href="/topic/2024-batch.html">2024 Batch</a>
-            <a class="navigation-item" href="/topic/bangalore-fresher-jobs.html">Bangalore Fresher Jobs</a>
-            <a class="navigation-item" href="/topic/chennai-fresher-jobs.html">Chennai Fresher Jobs</a>
-            <a class="navigation-item" href="/topic/hyderabad-fresher-jobs.html">Hyderabad Fresher Jobs</a>
-            <a class="navigation-item" href="/topic/mumbai-fresher-jobs.html">Mumbai Fresher Jobs</a>
-            <a class="navigation-item" href="/topic/noida-fresher-jobs.html">Noida Fresher Jobs</a>
-            <a class="navigation-item" href="/topic/pune-fresher-jobs.html">Pune Fresher Jobs</a>
-            <a class="navigation-item" href="/topic/off-campus-updates.html">Off Campus Updates</a>
+  <div className="navigation-menu col-sm-12">
+        <div className="navigation-items">
+            <a className="navigation-item" href="/topic/fresher-jobs.html">Fresher Jobs</a>
+            <a className="navigation-item" href="/topic/internships-in-india.html">Internships</a>
+            <a className="navigation-item" href="/topic/2020-batch.html">2020 Batch</a>
+            <a className="navigation-item" href="/topic/2021-batch.html">2021 Batch</a>
+            <a className="navigation-item" href="/topic/2022-batch.html">2022 Batch</a>
+            <a className="navigation-item" href="/topic/2023-batch.html">2023 Batch</a>
+            <a className="navigation-item" href="/topic/2024-batch.html">2024 Batch</a>
+            <a className="navigation-item" href="/topic/bangalore-fresher-jobs.html">Bangalore Fresher Jobs</a>
+            <a className="navigation-item" href="/topic/chennai-fresher-jobs.html">Chennai Fresher Jobs</a>
+            <a className="navigation-item" href="/topic/hyderabad-fresher-jobs.html">Hyderabad Fresher Jobs</a>
+            <a className="navigation-item" href="/topic/mumbai-fresher-jobs.html">Mumbai Fresher Jobs</a>
+            <a className="navigation-item" href="/topic/noida-fresher-jobs.html">Noida Fresher Jobs</a>
+            <a className="navigation-item" href="/topic/pune-fresher-jobs.html">Pune Fresher Jobs</a>
+            <a className="navigation-item" href="/topic/off-campus-updates.html">Off Campus Updates</a>
+        </div>
+    </div>
+
+    <div className="navigation-menu col-sm-12">
+        <div className="navigation-items">
+            <a className="navigation-item" href="/topic/zoho-fresher-jobs.html">Zoho Hiring Freshers</a>
+            <a className="navigation-item" href="/topic/dell-fresher-jobs.html">Dell Hiring Freshers</a>
+            <a className="navigation-item" href="/topic/deloitte-fresher-jobs.html">Deloitte Hiring Freshers</a>
+            <a className="navigation-item" href="/topic/genpact-fresher-jobs.html">Genpact Hiring Freshers</a>
+            <a className="navigation-item" href="/topic/hcl-fresher-jobs.html">HCL Hiring Freshers</a>
+            <a className="navigation-item" href="/topic/wipro-fresher-jobs.html">Wipro Hiring Freshers</a>
+            <a className="navigation-item" href="/topic/tcs-fresher-jobs.html">TCS Hiring Freshers</a>
+            <a className="navigation-item" href="/topic/infosys-fresher-jobs.html">Infosys Hiring Freshers</a>
+            <a className="navigation-item" href="/topic/hp-fresher-jobs.html">HP Hiring Freshers</a>
+            <a className="navigation-item" href="/topic/honeywell-fresher-jobs.html">Honeywell Hiring Freshers</a>
+            <a className="navigation-item" href="/topic/mindtree-fresher-jobs.html">Mindtree Hiring Freshers</a>
+            <a className="navigation-item" href="/topic/cognizant-fresher-jobs.html">Cognizant Hiring Freshers</a>
+            <a className="navigation-item" href="/topic/oracle-fresher-jobs.html">Oracle Hiring Freshers</a>
+            <a className="navigation-item" href="/topic/paytm-fresher-jobs.html">Paytm Hiring Freshers</a>
+            <a className="navigation-item" href="/topic/intel-fresher-jobs.html">Intel Hiring Freshers</a>
+            <a className="navigation-item" href="/topic/jp-morgan-fresher-jobs.html">JP Morgan Hiring Freshers</a>
+            <a className="navigation-item" href="/topic/goldman-sachs-fresher-jobs.html">Goldman Sachs Hiring Freshers</a>
+            <a className="navigation-item" href="/topic/apple-fresher-jobs.html">Apple Hiring Freshers</a>
         </div>
     </div>
   
