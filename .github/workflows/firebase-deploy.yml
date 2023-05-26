@@ -16,10 +16,10 @@ jobs:
         uses: actions/setup-node@master
       - name: Update React Scripts
         run: npm i react-scripts@latest
-      - name: Updtae Babel Dependency
-        run: npm install --save-dev @babel/plugin-proposal-class-properties
       - name: Install Dependencies
         run: npm install
+      - name: Install Babel Dependency
+        run: yarn add @babel/plugin-proposal-private-property-in-object --dev && yarn
       - name: Build
         run: npm run build
       - name: Deploy
