@@ -18,8 +18,6 @@ jobs:
         run: npm i react-scripts@latest
       - name: Install Dependencies
         run: npm install
-      - name: Install Babel Dependency
-        run: yarn add @babel/plugin-proposal-private-property-in-object --dev && yarn
       - name: Build
         run: npm run build
       - name: Deploy
