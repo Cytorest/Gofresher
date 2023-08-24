@@ -454,7 +454,38 @@ a, a:focus, a:hover, a:active{
 }
 .col-sm-10{
   width:80%;
-}  
+} 
+.join_us_on_telegram{
+  width: 300px;
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  z-index: 1;
+  background-color: #17a4e7;
+  border-radius: 10px 10px 0px 0px;
+}
+.join_us_on_telegram img{
+  height:50px;
+  margin-top:6px;
+  position: absolute;
+  left: 0px;
+}
+.telegram_elem > span{
+  height:50px;
+  line-height:62px;
+  left:60px;
+  color:#fff;
+  position:absolute;
+  font-size:20px
+}
+.telegram_elem{
+  text-align:center;
+  position: relative;
+  height:60px;
+  width:265px;
+  left:50%;
+  transform: translateX(-50%);
+}
 @media only screen and (max-width: 600px) {
   body{
     margin-top: -15px;
@@ -659,5 +690,11 @@ a, a:focus, a:hover, a:active{
   } */
   .review-button{
     margin-top:0;
+  }
+  .join_us_on_telegram{
+    right:0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
   }
 }
