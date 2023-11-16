@@ -264,3 +264,10 @@ window.addEventListener("load", () => {
   document.getElementsByClassName("avt")[5].innerHTML = "<img src='review-6.svg' width='456' height='404' alt='Review 6 Gofresher'/>";
   },3000);
 });
+
+
+document.getElementById("whatsapp_close_id").addEventListener("click", closeWhatsapp);
+function closeWhatsapp() {
+    $(".widget_whatsapp").hide();
+}
+setTimeout(function(){$(".widget_whatsapp").show();},20000);
