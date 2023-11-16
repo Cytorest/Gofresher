@@ -270,4 +270,4 @@ document.getElementById("whatsapp_close_id").addEventListener("click", closeWhat
 function closeWhatsapp() {
     $(".widget_whatsapp").hide();
 }
-setTimeout(function(){$(".widget_whatsapp").show();},10000);
+setTimeout(function(){$(".widget_whatsapp").show();},30000);
