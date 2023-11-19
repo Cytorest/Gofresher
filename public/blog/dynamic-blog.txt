@@ -98,6 +98,22 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
+    <div class="header-ad" id="header-ad-id">
+        <script>
+            var header = document.getElementById('header-ad-id');
+            if(window.innerWidth>728){
+            header.innerHTML += "<ins class='adsbygoogle' style='display:block' data-ad-client='ca-pub-7589635024077576' data-ad-slot='5934862428' data-ad-format='auto' data-full-width-responsive='true'></ins>";
+            }
+            else{
+                header.style.height = '130px';
+                header.style.maxHeight = '130px';
+                header.innerHTML += "<ins class='adsbygoogle' style='display:block' data-ad-client='ca-pub-7589635024077576' data-ad-slot='5934862428' data-ad-format='auto' data-full-width-responsive='true'></ins>";
+            }
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
     <div class="one col-sm-12">
         <div class="contact col-sm-10">
             <div class="phone-container"><i class="fas fa-phone"></i> <span class="number">+91-9870967898</span></div>
