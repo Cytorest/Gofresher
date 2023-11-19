@@ -35,7 +35,7 @@ const myfirstelement = (
   
   <div className="two col-sm-12">
     <div className="logo col-sm-4">
-      <div className="logo-img"><img src='gofresher-logo.svg' width="250" height="102" alt='Gofresher Company Logo'/></div>
+      <a href="https://gofresher.in/"><div className="logo-img"><img src='gofresher-logo.svg' width="250" height="102" alt='Gofresher Company Logo'/></div></a>
     </div>
     <div className="menu col-sm-8">
       <ul>
