@@ -382,31 +382,7 @@ color:rgb(0, 119, 255);
         margin-top: 31px;
         }
     }
-    .bell-icon{
-        position: fixed;
-        right: 0;
-        bottom: 40%;
-        width: 60px;
-        height: 60px;
-        border-bottom-left-radius: 50%;
-        border-top-left-radius: 50%;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        cursor: pointer;
-        border: 2px solid #000000;
-        z-index: 2;
-        background-color: rgb(0 0 0);
-        text-align: center;
-        box-shadow: 5px 4px 6px 0 rgb(121 121 121 / 40%);
-    }
-    .bell-icon img{
-        width: 85%;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
-    }
-</style>
+    </style>
 <style>
 .header-ad{
     height: 120px;
@@ -677,8 +653,6 @@ color:rgb(0, 119, 255);
 
     <!-- Article BTS Ad -->
 
-    <div class='bell-icon' id='bell-icon-0'><img src='bell-icon.png' alt='bell icon'></div>
-
     <script>
         const firebaseConfig = {
         apiKey: "AIzaSyBHD-tpwQmuzukK-Iu7r96Vzxp-eEXK1Ss",
@@ -772,13 +746,6 @@ color:rgb(0, 119, 255);
                 });
         });    
         
-        $('#bell-icon-0').click(function(){
-            OneSignal.push(function() {
-                OneSignal.showSlidedownPrompt();
-            });
-            // console.log("Bell Icon Clicked");
-        });
-
         document.getElementById('signInWithGoogle').addEventListener('click', signInWithGoogle);
     </script>
 
