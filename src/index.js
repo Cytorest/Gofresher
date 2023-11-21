@@ -115,17 +115,7 @@ const myfirstelement = (
       </div>
     </div>
   </div>
-  
-  <div className="four col-sm-12">
-    <div className="client-head col-sm-12">Services</div>
-    <div className="dot-and-bar"><span className="line"></span><span className="circle"></span><span className="line"></span></div>
-    <div className="client-name col-sm-12">
-      <div className="pri col-sm-4"><a href="off-campus-job-updates.html"><div className="client 6"><img src='home-shop-18.svg' width='150' height='150' alt='Home Shop 18'/></div></a><div className="client 2"><img src='reliance.svg' width='150' height='150' alt='Reliance'/></div></div>
-      <div className="sec col-sm-4"><div className="client 3"><img src='soch.svg' width='150' height='150' alt='Soch Apparels'/></div><div className="client 4"><img src='pantaloons.svg' width='150' height='150' alt='Pantaloons'/></div></div>
-      <div className="tre col-sm-4"><div className="client 5"><img src='vishal.svg' width='150' height='150' alt='Vishal Mega Mart'/></div><div className="client 7"><img src='more.svg' width='150' height='150' alt='More Retail Office'/></div></div>
-    </div>
-  </div>
-  
+
   <div className="five col-sm-12">
     <div className="automation col-sm-12">Feedback</div>
     <div className="dot-and-bar"><span className="line"></span><span className="circle"></span><span className="line"></span></div>
@@ -148,6 +138,16 @@ const myfirstelement = (
       <a href="https://www.facebook.com/groups/1570589976551608" target="_blank" rel="noreferrer"><div className="review-button">
       See All Reviews &gt;&gt;
       </div></a>
+    </div>
+  </div>
+  
+  <div className="four col-sm-12">
+    <div className="client-head col-sm-12">Services</div>
+    <div className="dot-and-bar"><span className="line"></span><span className="circle"></span><span className="line"></span></div>
+    <div className="client-name col-sm-12">
+      <div className="pri col-sm-4"><a href="off-campus-job-updates.html"><div className="client 6"><img src='home-shop-18.svg' width='150' height='150' alt='Home Shop 18'/></div></a><div className="client 2"><img src='reliance.svg' width='150' height='150' alt='Reliance'/></div></div>
+      <div className="sec col-sm-4"><div className="client 3"><img src='soch.svg' width='150' height='150' alt='Soch Apparels'/></div><div className="client 4"><img src='pantaloons.svg' width='150' height='150' alt='Pantaloons'/></div></div>
+      <div className="tre col-sm-4"><div className="client 5"><img src='vishal.svg' width='150' height='150' alt='Vishal Mega Mart'/></div><div className="client 7"><img src='more.svg' width='150' height='150' alt='More Retail Office'/></div></div>
     </div>
   </div>
   
