@@ -101,8 +101,6 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
     </script>
 <link rel="amphtml" href=""/>
 </div>
-<!-- Bidvertiser2088929 -->
-<meta name="verify-admitad" content="867bb47f94" />
 </head>
 <body id="body-id">
     <a href="https://telegram.me/fresherandexperiencejobupdates" target="_blank"><div class="join_us_on_telegram"><div class="telegram_elem"><img src="https://gofresher.in/company-logos/telegram.svg"><span> Join Us On Telegram</span></div></div></a>
