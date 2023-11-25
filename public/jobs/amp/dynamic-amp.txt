@@ -13,7 +13,6 @@
 <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 // Add Schema
 <meta name="verify-admitad" content="867bb47f94" />
-<script data-cfasync="false" src="/sw.js"></script>
 </head>
 <body>
     <div class="one col-sm-12">
