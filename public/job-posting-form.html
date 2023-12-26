@@ -461,60 +461,12 @@ color:rgb(0, 119, 255);
                     <div class="guides">Ex: Full Description Of The Job</div>
                 </div>
                 <div class="field">
-                    <span class="postings">Date Posted: </span> <input type="Text" name="dp" id="dp" placeholder="" required></input>
-                    <div class="guides">Ex: Date In Format YYYY-MM-DD</div>
-                </div>
-                <div class="field">
-                    <span class="postings">Date Closing: </span> <input type="Text" name="dc" id="dc" placeholder="" required></input>
-                    <div class="guides">Ex: Date In Format YYYY-MM-DD</div>
-                </div>
-                <div class="field">
-                    <span class="postings">Employment Type: </span> <input type="Text" name="et" id="et" placeholder="" required></input>
-                    <div class="guides">Ex: Contract / Full-Time</div>
-                </div>
-                <div class="field">
-                    <span class="postings">Hiring Organisation Type: </span> <input type="Text" name="hot" id="hot" placeholder="" required></input>
-                    <div class="guides">Ex: Organization</div>
-                </div>
-                <div class="field">
                     <span class="postings">Hiring Organisation Url: </span> <input type="Text" name="hou" id="hou" placeholder="" required></input>
                     <div class="guides">Ex: Company Url</div>
                 </div>
                 <div class="field">
                     <span class="postings">Hiring Organisation Logo: </span> <input type="Text" name="hol" id="hol" placeholder="" required></input>
                     <div class="guides">Ex: https://gofresher.in/company-logos/remo-software.png (Preferrably Square)</div>
-                </div>
-                <div class="field">
-                    <span class="postings">Job Location Address: </span> <input type="Text" name="jla" id="jla" placeholder="" required></input>
-                    <div class="guides">Ex: Company Address</div>
-                </div>
-                <div class="field">
-                    <span class="postings">Job Location City: </span> <input type="Text" name="jlc" id="jlc" placeholder="" required></input>
-                    <div class="guides">Ex: City Of Job</div>
-                </div>
-                <div class="field">
-                    <span class="postings">Job Location Region: </span> <input type="Text" name="jlr" id="jlr" placeholder="" required></input>
-                    <div class="guides">Ex: Region Where Job Is Happening</div>
-                </div>
-                <div class="field">
-                    <span class="postings">Job Location Postal Code: </span> <input type="Text" name="jlpc" id="jlpc" placeholder="" required></input>
-                    <div class="guides">Ex: Job Location's City Postal Code</div>
-                </div>
-                <div class="field">
-                    <span class="postings">Job Location Address Country: </span> <input type="Text" name="jlac" id="jlac" placeholder="" required></input>
-                    <div class="guides">Ex: Country Of Office For Job</div>
-                </div>
-                <div class="field">
-                    <span class="postings">Salary Currency: </span> <input type="Text" name="sc" id="sc" placeholder="" required></input>
-                    <div class="guides">Ex: INR, USD</div>
-                </div>
-                <div class="field">
-                    <span class="postings">Salary Value: </span> <input type="Text" name="sv" id="sv" placeholder="" required></input>
-                    <div class="guides">Ex: Amount Of Money To Be Provided As Salary (Estimate)</div>
-                </div>
-                <div class="field">
-                    <span class="postings">Salary Unit: </span> <input type="Text" name="su" id="su" placeholder="" required></input>
-                    <div class="guides">Ex: Yearly</div>
                 </div>
                 <div class="field">
                     <span class="postings">Application Link: </span> <input type="Text" name="al" id="al" placeholder="" required></input>
@@ -622,6 +574,14 @@ color:rgb(0, 119, 255);
     </div>
 
     <script>
+
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        today = yyyy + '/' + mm + '/' + dd;
+        document.write(today);
+
         const firebaseConfig = {
         apiKey: "AIzaSyBHD-tpwQmuzukK-Iu7r96Vzxp-eEXK1Ss",
         authDomain: "gofresher-e433c.firebaseapp.com",
@@ -651,20 +611,20 @@ color:rgb(0, 119, 255);
         var hon = document.getElementById("hon").value;
         var jt = document.getElementById("jt").value;
         var jd = document.getElementById("jd").value;
-        var dp = document.getElementById("dp").value;
-        var dc = document.getElementById("dc").value;
-        var et = document.getElementById("et").value;
-        var hot = document.getElementById("hot").value;
+        var dp = today;
+        var dc = "2025-12-31";
+        var et = "Full-Time";
+        var hot = "Organization";
         var hou = document.getElementById("hou").value;
         var hol = document.getElementById("hol").value;
-        var jla = document.getElementById("jla").value;
-        var jlc = document.getElementById("jlc").value;
-        var jlr = document.getElementById("jlr").value;
-        var jlpc = document.getElementById("jlpc").value;
-        var jlac = document.getElementById("jlac").value;
-        var sc = document.getElementById("sc").value;
-        var sv = document.getElementById("sv").value;
-        var su = document.getElementById("su").value;
+        var jla = "Bengaluru";
+        var jlc = "Bengaluru";
+        var jlr = "Karnataka";
+        var jlpc = "NA";
+        var jlac = "India";
+        var sc = "INR";
+        var sv = "450000";
+        var su = "Yearly";
         var al = document.getElementById("al").value;
         var mt = document.getElementById("mt").value;
         var md = document.getElementById("md").value;
