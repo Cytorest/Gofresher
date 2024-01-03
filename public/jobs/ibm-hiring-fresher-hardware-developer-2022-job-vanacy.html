@@ -110,18 +110,19 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
     <!-- End Google Tag Manager (noscript) -->
     
     <div class="div-text upper-ad-text">Advertisement</div>
-    <div class="top-ad">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7589635024077576"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout-key="-gc+2r+am-7l-il"
-     data-ad-client="ca-pub-7589635024077576"
-     data-ad-slot="9253020553"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>  
+    <div class="top-ad" id="top-ad-id">
+        <script>
+            var header = document.getElementById('top-ad-id');
+            if(window.innerWidth>728){
+            header.innerHTML += "<ins class='adsbygoogle' style='display:inline-block;width:728px;height:90px' data-ad-client='ca-pub-7589635024077576' data-ad-slot='4202771172'></ins>";
+            }
+            else{
+                header.style.height = '130px';
+                header.style.maxHeight = '130px';
+                header.innerHTML += "<ins class='adsbygoogle' style='display:inline-block;width:300px;height:250px' data-ad-client='ca-pub-7589635024077576' data-ad-slot='3874618053'></ins>";
+            }
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
 
     <div class="one col-sm-12">
