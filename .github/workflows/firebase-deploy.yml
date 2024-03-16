@@ -19,7 +19,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Deploy
-        uses: --project gofresher-e433c
+        uses: w9jds/firebase-action@v12.8.0
         with:
           args: deploy --only hosting:default
         env:
