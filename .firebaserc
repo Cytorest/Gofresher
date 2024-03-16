@@ -1,5 +1,7 @@
 {
   "projects": {
     "default": "gofresher-e433c"
-  }
+  },
+  "targets": {},
+  "etags": {}
 }
