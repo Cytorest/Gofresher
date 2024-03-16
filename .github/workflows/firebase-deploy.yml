@@ -18,6 +18,8 @@ jobs:
         run: npm install --legacy-peer-deps
       - name: Build
         run: npm run build
+      - name: Execute
+        run: firebase use deafult
       - name: Deploy
         uses: w9jds/firebase-action@v12.8.0
         with:
