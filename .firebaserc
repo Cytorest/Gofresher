@@ -1,7 +1,6 @@
 {
   "projects": {
-    "default": "gofresher-e433c",
-    "production": "gofresher-e433c"
+    "default": "gofresher-e433c"
   },
   "targets": {},
   "etags": {}
