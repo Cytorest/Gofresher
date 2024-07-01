@@ -433,6 +433,7 @@ color:rgb(0, 119, 255);
 <script>
   window.googletag = window.googletag || {cmd: []};
   googletag.cmd.push(function() {
+    googletag.defineSlot('/22811654898/BottomStickyAd', [[320, 50], [728, 90]], 'div-gpt-ad-1719804169865-0').addService(googletag.pubads());
     googletag.defineSlot('/22811654898/GoogleAdsenseAdUnitBM72890', [300, 250], 'div-gpt-ad-1719732076429-0').addService(googletag.pubads());
     googletag.defineSlot('/22811654898/GoogleAdsenseAdUnitATF', [300, 250], 'div-gpt-ad-1719681613096-0').addService(googletag.pubads());
     googletag.defineSlot('/22811654898/GoogleAdsenseAdUnit', [300, 250], 'div-gpt-ad-1719646710739-0').addService(googletag.pubads());
@@ -440,8 +441,62 @@ color:rgb(0, 119, 255);
     googletag.enableServices();
   });
 </script>
+
+<style>
+    /* Style for the ad container */
+    #ad-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    }
+    
+    #div-gpt-ad-1719804169865-0 {
+      display: inline-block;
+      margin: 0 auto;
+    }
+  
+    /* Media query for mobile devices */
+    @media (max-width: 767px) {
+      #div-gpt-ad-1719804169865-0 {
+        width: 320px;
+        height: 50px;
+      }
+    }
+  
+    /* Media query for desktop devices */
+    @media (min-width: 768px) {
+      #div-gpt-ad-1719804169865-0 {
+        width: 728px;
+        height: 90px;
+      }
+    }
+  
+    /* Style for the close button */
+    #close-btn {
+      position: absolute;
+      right: 10px;
+      top: -5px;
+      right:5px;
+      width: 22px;
+      height: 21px;
+      line-height: 17px;
+      font-size: 15px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+
 </head>
-<body>
+<body id="body-id">
+    
+    <div id=ad-container><button id=close-btn>X</button><div id="div-gpt-ad-1719804169865-0"><script>googletag.cmd.push(function(){googletag.display("div-gpt-ad-1719804169865-0")})</script></div></div>
+    <script>document.getElementById("close-btn").addEventListener("click",function(){document.getElementById("ad-container").style.display="none"})</script>
     
     <div class="widget_whatsapp"><div class="whatsapp_close" id="whatsapp_close_id">X</div><div class="gradient"></div><a href="https://whatsapp.com/channel/0029VaDgdUPA2pLCjZjQbF02"><div class="whatsapp"><img src="https://gofresher.in/join_on_whatsapp.png"></div></a></div>
     <!-- Google Tag Manager (noscript) -->
