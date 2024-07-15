@@ -111,7 +111,7 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
 
 <style>
     /* Style for the ad container */
-    #ad-container {
+    #ad-container, #ad-container-mobile {
       position: fixed;
       bottom: 0;
       left: 0;
@@ -121,7 +121,7 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
       background-color: rgba(185, 185, 185, 0.7);
     }
     
-    #div-gpt-ad-1719847419917-0 {
+    #div-gpt-ad-1719847419917-0, #div-gpt-ad-1721063806843-0 {
       display: inline-block;
       margin: 0 auto;
     }
@@ -129,12 +129,17 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
     /* Media query for mobile devices */
     @media (max-width: 767px) {
       #div-gpt-ad-1719847419917-0 {
+        display:none;
+      }
+      #div-gpt-ad-1721063806843-0 {
         width: 320px;
         height: 50px;
-        display:none;
       }
       #ad-container{
         display:none;
+      }
+      #ad-container-mobile{
+        display:block;
       }
     }
   
@@ -144,6 +149,15 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
         width: 728px;
         height: 90px;
       }
+      #div-gpt-ad-1721063806843-0 {
+        display:none;
+      }
+      #ad-container{
+        display:block;
+      }
+      #ad-container-mobile{
+        display:none;
+      }
     }
 </style>
 
@@ -152,6 +166,7 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
   window.googletag = window.googletag || {cmd: []};
   googletag.cmd.push(function() {
     googletag.defineSlot('/22811654898/BottomStickyAdUnit', [728, 90], 'div-gpt-ad-1719847419917-0').addService(googletag.pubads());
+    googletag.defineSlot('/22811654898/BottomStickyAdUnitMobile', [320, 50], 'div-gpt-ad-1721063806843-0').addService(googletag.pubads());
     googletag.defineSlot('/22811654898/GoogleAdsenseAdUnitBM72890', [300, 250], 'div-gpt-ad-1719732076429-0').addService(googletag.pubads());
     googletag.defineSlot('/22811654898/GoogleAdsenseAdUnitATF', [300, 250], 'div-gpt-ad-1719681613096-0').addService(googletag.pubads());
     googletag.defineSlot('/22811654898/GoogleAdsenseAdUnit', [300, 250], 'div-gpt-ad-1719646710739-0').addService(googletag.pubads());
@@ -163,7 +178,8 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
 </head>
 <body id="body-id">
     
-    <div id=ad-container><div id="div-gpt-ad-1719847419917-0"><script>if(window.innerWidth>728){googletag.cmd.push(function(){googletag.display("div-gpt-ad-1719847419917-0")})}</script></div></div>
+    <div id="ad-container"><div id="div-gpt-ad-1719847419917-0"><script>if(window.innerWidth>728){googletag.cmd.push(function(){googletag.display("div-gpt-ad-1719847419917-0")})}</script></div></div>
+    <div id="ad-container-mobile"><div id="div-gpt-ad-1721063806843-0"><script>if(window.innerWidth<728){googletag.cmd.push(function(){googletag.display("div-gpt-ad-1721063806843-0")})}</script></div></div>
     <!-- <div class="widget_whatsapp"><div class="whatsapp_close" id="whatsapp_close_id">X</div><div class="gradient"></div><a href="https://whatsapp.com/channel/0029VaDgdUPA2pLCjZjQbF02"><div class="whatsapp"><img src="https://gofresher.in/join_on_whatsapp.png"></div></a></div> -->
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2MGKDH"

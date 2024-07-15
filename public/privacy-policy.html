@@ -342,7 +342,7 @@ color:rgb(0, 119, 255);
 
 <style>
     /* Style for the ad container */
-    #ad-container {
+    #ad-container, #ad-container-mobile {
       position: fixed;
       bottom: 0;
       left: 0;
@@ -352,7 +352,7 @@ color:rgb(0, 119, 255);
       background-color: rgba(185, 185, 185, 0.7);
     }
     
-    #div-gpt-ad-1719847419917-0 {
+    #div-gpt-ad-1719847419917-0, #div-gpt-ad-1721063806843-0 {
       display: inline-block;
       margin: 0 auto;
     }
@@ -360,12 +360,17 @@ color:rgb(0, 119, 255);
     /* Media query for mobile devices */
     @media (max-width: 767px) {
       #div-gpt-ad-1719847419917-0 {
+        display:none;
+      }
+      #div-gpt-ad-1721063806843-0 {
         width: 320px;
         height: 50px;
-        display:none;
       }
       #ad-container{
         display:none;
+      }
+      #ad-container-mobile{
+        display:block;
       }
     }
   
@@ -375,6 +380,15 @@ color:rgb(0, 119, 255);
         width: 728px;
         height: 90px;
       }
+      #div-gpt-ad-1721063806843-0 {
+        display:none;
+      }
+      #ad-container{
+        display:block;
+      }
+      #ad-container-mobile{
+        display:none;
+      }
     }
 </style>
 
@@ -383,6 +397,7 @@ color:rgb(0, 119, 255);
   window.googletag = window.googletag || {cmd: []};
   googletag.cmd.push(function() {
     googletag.defineSlot('/22811654898/BottomStickyAdUnit', [728, 90], 'div-gpt-ad-1719847419917-0').addService(googletag.pubads());
+    googletag.defineSlot('/22811654898/BottomStickyAdUnitMobile', [320, 50], 'div-gpt-ad-1721063806843-0').addService(googletag.pubads());
     googletag.defineSlot('/22811654898/GoogleAdsenseAdUnitBM72890', [300, 250], 'div-gpt-ad-1719732076429-0').addService(googletag.pubads());
     googletag.defineSlot('/22811654898/GoogleAdsenseAdUnitATF', [300, 250], 'div-gpt-ad-1719681613096-0').addService(googletag.pubads());
     googletag.defineSlot('/22811654898/GoogleAdsenseAdUnit', [300, 250], 'div-gpt-ad-1719646710739-0').addService(googletag.pubads());
