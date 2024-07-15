@@ -103,7 +103,7 @@
 
   <style>
     /* Style for the ad container */
-    #ad-container {
+    #ad-container, #ad-container-mobile {
       position: fixed;
       bottom: 0;
       left: 0;
@@ -113,7 +113,7 @@
       background-color: rgba(185, 185, 185, 0.7);
     }
     
-    #div-gpt-ad-1719847419917-0 {
+    #div-gpt-ad-1719847419917-0, #div-gpt-ad-1721063806843-0 {
       display: inline-block;
       margin: 0 auto;
     }
@@ -121,12 +121,17 @@
     /* Media query for mobile devices */
     @media (max-width: 767px) {
       #div-gpt-ad-1719847419917-0 {
+        display:none;
+      }
+      #div-gpt-ad-1721063806843-0 {
         width: 320px;
         height: 50px;
-        display:none;
       }
       #ad-container{
         display:none;
+      }
+      #ad-container-mobile{
+        display:block;
       }
     }
   
@@ -136,8 +141,17 @@
         width: 728px;
         height: 90px;
       }
+      #div-gpt-ad-1721063806843-0 {
+        display:none;
+      }
+      #ad-container{
+        display:block;
+      }
+      #ad-container-mobile{
+        display:none;
+      }
     }
-  </style>
+</style>
 
   <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
   <script>
