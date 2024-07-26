@@ -705,5 +705,13 @@ color:rgb(0, 119, 255);
 
 
 
+<script>
+        document.getElementById("whatsapp_close_id").addEventListener("click", closeWhatsapp);
+        function closeWhatsapp() {
+            $(".widget_whatsapp").hide();
+        }
+        setTimeout(function(){$(".widget_whatsapp").show();},50000);
+    </script>
+
 </body>
 </html>
