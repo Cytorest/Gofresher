@@ -143,19 +143,23 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
       background-color: rgba(185, 185, 185, 0.7);
     }
     
-    #div-gpt-ad-1719847419917-0, #div-gpt-ad-1721063806843-0 {
+    #div-gpt-ad-1719847419917-0, #div-gpt-ad-1721063806843-0, #div-gpt-ad-1722873346901-0, #div-gpt-ad-1722873481934-0 {
       display: inline-block;
       margin: 0 auto;
     }
   
     /* Media query for mobile devices */
     @media (max-width: 767px) {
-      #div-gpt-ad-1719847419917-0 {
+      #div-gpt-ad-1719847419917-0, #div-gpt-ad-1722873346901-0 {
         display:none;
       }
       #div-gpt-ad-1721063806843-0 {
         width: 320px;
         height: 50px;
+      }
+      #div-gpt-ad-1722873481934-0 {
+        width: 320px;
+        height: 100px;
       }
       #ad-container{
         display:none;
@@ -171,7 +175,11 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
         width: 728px;
         height: 90px;
       }
-      #div-gpt-ad-1721063806843-0 {
+      #div-gpt-ad-1722873346901-0{
+        width: 970px;
+        height: 250px;
+      }
+      #div-gpt-ad-1721063806843-0, #div-gpt-ad-1722873481934-0 {
         display:none;
       }
       #ad-container{
@@ -190,6 +198,8 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
     googletag.defineSlot('/22811654898/BottomStickyAdUnit', [728, 90], 'div-gpt-ad-1719847419917-0').addService(googletag.pubads());
     googletag.defineSlot('/22811654898/BottomStickyAdUnitMobile', [320, 50], 'div-gpt-ad-1721063806843-0').addService(googletag.pubads());
     googletag.defineSlot('/22811654898/GoogleAdsenseAdUnitATF', [300, 250], 'div-gpt-ad-1719681613096-0').addService(googletag.pubads());
+    googletag.defineSlot('/22811654898/GoogleAdsenseAdUnit-970*250-BM', [970, 250], 'div-gpt-ad-1722873346901-0').addService(googletag.pubads());
+    googletag.defineSlot('/22811654898/GoogleAdsenseAdUnit-320*100', [320, 100], 'div-gpt-ad-1722873481934-0').addService(googletag.pubads());
     googletag.pubads().enableSingleRequest();
     googletag.enableServices();
   });
@@ -294,6 +304,26 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
             <a class="navigation-item" href="/topic/jp-morgan-fresher-jobs.html">JP Morgan Hiring Freshers</a>
             <a class="navigation-item" href="/topic/goldman-sachs-fresher-jobs.html">Goldman Sachs Hiring Freshers</a>
             <a class="navigation-item" href="/topic/apple-fresher-jobs.html">Apple Hiring Freshers</a>
+        </div>
+    </div>
+
+    <div class="div-text upper-ad-text">Advertisement</div>
+    <div class="header-ad" id="header-ad-id">
+        <!-- /22811654898/GoogleAdsenseAdUnit-970*250-BM -->
+        <div id='div-gpt-ad-1722873346901-0' style='min-width: 970px; min-height: 250px;'>
+        <script>
+        if(window.innerWidth>728){
+        googletag.cmd.push(function(){googletag.display('div-gpt-ad-1722873346901-0');});
+        }
+        </script>
+        </div>
+        <!-- /22811654898/GoogleAdsenseAdUnit-320*100 -->
+        <div id='div-gpt-ad-1722873481934-0' style='min-width: 320px; min-height: 100px;'>
+        <script>
+        if(window.innerWidth<728){
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1722873481934-0'); });
+        }
+        </script>
         </div>
     </div>
     
