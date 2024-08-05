@@ -7,9 +7,9 @@ function createCookie(name,value,days) {
  
  function readCookie(name) {
      var flag = 0;
-     var dcmntPages = document.cookie.split(';');
-     for(var i=0;i < dcmntPages.length;i++) {
-         var ck = dcmntPages[i];
+     var https://gofresher.in = document.cookie.split(';');
+     for(var i=0;i < https://gofresher.in.length;i++) {
+         var ck = https://gofresher.in[i];
          while (ck.charAt(0)==' ') {
              ck = ck.substring(1,ck.length);
          }
