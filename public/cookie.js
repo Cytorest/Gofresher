@@ -7,16 +7,16 @@ function createCookie(name,value,days) {
  
  function readCookie(name) {
      var flag = 0;
-     var https://gofresher.in = document.cookie.split(';');
-     for(var i=0;i < https://gofresher.in.length;i++) {
-         var ck = https://gofresher.in[i];
-         while (ck.charAt(0)==' ') {
-             ck = ck.substring(1,ck.length);
-         }
-         if(ck) {
-             cparts = ck.split('=');
-             if (cparts[0] == name) flag=1;
-         }              
+        var documentPages = document.cookie.split(';');
+        for(var i=0;i < documentPages.length;i++) {
+        var ck = documentPages[i];
+        while (ck.charAt(0)==' ') {
+            ck = ck.substring(1,ck.length);
+        }
+        if(ck) {
+            cparts = ck.split('=');
+            if (cparts[0] == name) flag=1;
+        }              
      }     
      if(flag) { 
          return true; 
