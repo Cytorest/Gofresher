@@ -111,7 +111,7 @@ auth.onAuthStateChanged(function(user){
         div.innerHTML += "<i class='fas fa-user'></i> welcome <span class='username' id='username'></span>" + name + "<span> </span><i class='fas fa-chevron-circle-down' id='menuArrow'></i><div id='myDropdown' class='dropdown-content'><li><button onclick='signOut()' id='signOut' class='signOut'> Sign Out </button></li></div>";
         $(".read-full-article").empty();
         if (cookie == 1){
-        $(".read-full-article").html("Read More");  
+        $(".read-full-article").html("Double Click To Apply");  
         }
         else{
         $(".read-full-article").html("Read Full Article");
