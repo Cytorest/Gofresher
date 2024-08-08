@@ -735,7 +735,6 @@ color:rgb(0, 119, 255);
         };
     
    firebase.initializeApp(firebaseConfig);
-
         
         firebase.analytics();
 
