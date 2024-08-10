@@ -598,7 +598,7 @@ html, body{margin:0;padding:0;}.view-all-button{height: 50px; min-height: 50px; 
             return Math.floor(Math.random() * (max - min + 1) + min)
         }
         let value = randomIntFromInterval(0,23);
-        firebase.firestore().collection("Job Posting").orderBy(""+random[value]+"", "desc").limit(12).get().then((querySnapshot) => {
+        firebase.firestore().collection("Job Posting").orderBy(""+random[value]+"", "desc").limit(4).get().then((querySnapshot) => {
             var i=1;
             querySnapshot.forEach((doc) => {
                     console.log(i);
