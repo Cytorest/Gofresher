@@ -770,7 +770,7 @@ color:rgb(0, 119, 255);
         let time;
         let text;
         let position;
-        firebase.firestore().collection("Job Posting").orderBy("pd", "desc").get().then((querySnapshot) => {
+        firebase.firestore().collection("Job Posting").limit(50).orderBy("pd", "desc").get().then((querySnapshot) => {
             var i=0;
             querySnapshot.forEach((doc) => {
                     // console.log(i);
