@@ -1,6 +1,6 @@
 <div class="support-widget">
     <div class="widget-content">
-        <img src="https://t3.ftcdn.net/jpg/05/30/29/46/360_F_530294690_lbc2C1ZhFpPP24mlLcqMkpPGaWVUf7Xr.jpg" alt="Support Us" class="widget-image">
+        <img src="https://gofresher.in/resume-icon.png" alt="Support Us" class="widget-image">
         <div class="widget-text">
             <p><b>Help Us Empower You</b></p>
             <div class="line-height"></div>
