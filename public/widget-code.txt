@@ -1,0 +1,130 @@
+<div class="support-widget">
+    <div class="widget-content">
+        <img src="https://t3.ftcdn.net/jpg/05/30/29/46/360_F_530294690_lbc2C1ZhFpPP24mlLcqMkpPGaWVUf7Xr.jpg" alt="Support Us" class="widget-image">
+        <div class="widget-text">
+            <p><b>Support Our Mission To Empower You</b></p>
+            <div class="line-height"></div>
+            <p>
+                We know how much it means to receive that life-changing interview call or find the right job through our postings. 
+                Over the past 9 years, if our <a href="https://gofresher.in/" target="_blank">website</a> or <a href="https://www.facebook.com/groups/TARUN.CAREERLAUNCHER/" target="_blank">Facebok group</a> has helped you in any way, we kindly ask for your support.
+            </p>
+            <div class="line-height"></div>
+            <p>
+                We dream of a space where your job search is free from distractions. With your help, we can make that a reality.
+                </p>
+            <div class="line-height"></div>
+            <p>
+                <b>Every contribution—₹99, ₹599, or ₹9999—can make a big difference.</b>
+            </p>
+            <div class="line-height"></div>
+            <button class="support-button">Support Us</button>
+        </div>
+    </div>
+</div>
+
+<style>
+.line-height{
+	height:6px;
+}
+.support-widget {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    max-width: 900px;
+    height: 250px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    z-index: 1000;
+}
+
+.widget-content {
+    display: flex;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.widget-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 30px;
+    margin-left: 20px;
+}
+
+.widget-text {
+    flex-grow: 1;
+    font-size: 16px;
+    text-align: left;
+}
+
+.widget-text p {
+    margin: 0 0 5px;
+    line-height: 1.4;
+}
+
+.support-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.support-button:hover {
+    background-color: #218838;
+}
+
+@media only screen and (max-width: 900px) {
+    .support-widget {
+        max-width: 300px;
+        height: 470px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .widget-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .widget-image {
+        width: 150px;
+        height: 150px;
+        margin-right: 0;
+        margin-bottom: 10px;
+        margin-left: 0;
+    }
+
+    .widget-text {
+        font-size: 14px;
+        text-align: left;
+        padding: 0 10px;
+    }
+
+    .support-button {
+        font-size: 14px;
+        padding: 8px 15px;
+        width: 100%;
+    }
+}
+</style>
+
+<script>
+window.onload = function() {
+    setTimeout(function() {
+        document.querySelector('.support-widget').style.display = 'flex';
+    }, 3000);
+}
+</script>
