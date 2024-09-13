@@ -217,9 +217,18 @@ html, body{margin:0;padding:0;}.view-all-button{margin-top:30px;  min-height: 50
         font-size: 16px;
         line-height: 16px;
         margin-top:20px;
-        width: 185px;
+        width: 180px;
         transition: background-color 0.3s ease;
         text-align: center;
+    }
+
+    .support-button.feedback-carousel{
+        margin-top: -5px;
+        margin-left: 15px;
+        margin-bottom:20px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
     }
     
     .support-button:hover {
@@ -256,6 +265,86 @@ html, body{margin:0;padding:0;}.view-all-button{margin-top:30px;  min-height: 50
             margin-top: 18px;
             font-size: 18px;
             width: 100%;
+        }
+
+        .support-button.feedback-carousel{
+        margin-right: 2.5%;
+        margin-left: 2.5%;
+        margin-bottom: 30px;
+        margin-top: -5px;
+        width:95%;
+        }
+    }
+</style>
+
+<style>
+    .video-slider-container {
+      position: relative;
+      width: 100%;
+      overflow:scroll;
+    }
+    
+    .video-slider {
+      display: flex;
+      flex-wrap: nowrap;
+      scroll-snap-type: x mandatory;
+      overflow-x: scroll; /* Brings back the scroll functionality */
+      scroll-behavior: smooth;
+      scrollbar-width: none; /* Firefox hides the scroll bar */
+      margin-left: 15px;
+      margin-bottom: 20px;
+      margin-top:5px;
+    }
+    
+    .video-slider::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera hides the scroll bar */
+    }
+    
+    .video-slider video {
+      width: 215px;
+      margin-right: 10px;
+      scroll-snap-align: start;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 0 6px 0 rgb(121 121 121 / 40%);
+    }
+    
+    .scroll-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+      width: 50px;
+      line-height: 100%;
+    }
+    
+    .left-btn {
+      left: 10px;
+      display: none;
+    }
+    
+    .right-btn {
+      right: 10px;
+      display: none;
+    }
+    
+    /* Hide the buttons by default, they'll appear based on the scroll position */
+    .scroll-btn.hidden {
+      display: none;
+    }
+    
+    .scroll-btn:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    @media only screen and (max-width: 900px) {
+        .video-slider video {
+            width: 280px;
         }
     }
 </style>
@@ -469,12 +558,30 @@ html, body{margin:0;padding:0;}.view-all-button{margin-top:30px;  min-height: 50
         </div>
     </div>
 
-    <div class="div-text upper-ad-text">Advertisement</div>
+    <div class="div-text upper-ad-text">Not An Advertisement</div>  
     <div class="header-ad" id="header-ad-id">
-    <div data-type="_mgwidget" data-widget-id="1647358">
-    </div>
-    <script>(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");
-    </script>        
+        <div class="support-widget">
+            <div class="widget-content">
+                <img src="https://gofresher.in/resume-icon.png" alt="Support Us" class="widget-image">
+                <div class="widget-text">
+                    <p><b style="font-size:22px;">Resume Development And Placement Assistance Service</b></p>
+                    <div class="line-height"></div>
+                    <p>
+                        We know how much it means to receive that life-changing interview call or find the right job through our postings. 
+                        Over the past 9 years, our <a href="https://gofresher.in/" target="_blank">Website</a> and <a href="https://www.facebook.com/groups/TARUN.CAREERLAUNCHER/" target="_blank">Facebok group</a> as helped countless job seekers like you land your first job.
+                    </p>
+                    <div class="line-height"></div>
+                    <p>
+                        You can apply for resume development and placement assistance service. Here are a some posts containing <a href="https://www.facebook.com/groups/TARUN.CAREERLAUNCHER/announcements" target="_blank">feedback from our placed candidates</a> on our official Facebook group.</i>
+                    </p>
+                    <div class="line-height"></div>
+                    <p>
+                        All users who subscribe to our service are automatically subscribed to receive <b>a Members Only Newsletter along with 10 Other Benefits.</b>
+                    </p>
+                    <a href="https://gofresher.co/wp-content/uploads/resume-builder.html" target="_blank"><button class="support-button">Become A Member</button></a>
+                </div>
+            </div>
+        </div> 
     </div>
 
     <!-- Article End Ad -->
@@ -504,11 +611,11 @@ html, body{margin:0;padding:0;}.view-all-button{margin-top:30px;  min-height: 50
     </div>
 
     <div class="div-text upper-ad-text">Advertisement</div>
-    <div class="top-ad" id="top-ad-id">
-        <div data-type="_mgwidget" data-widget-id="1647248">
-        </div>
-        <script>(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");
-        </script>        
+    <div class="header-ad" id="header-ad-id">
+    <div data-type="_mgwidget" data-widget-id="1647358">
+    </div>
+    <script>(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");
+    </script>        
     </div>
 
     <a href="https://gofresher.in/topic/fresher-jobs.html" target="_blank"><div class="view-all-button">View All Jobs</div></a>

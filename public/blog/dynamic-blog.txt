@@ -233,9 +233,18 @@ html, body{margin:0;padding:0;}.view-all-button{margin-top:30px;  min-height: 50
         font-size: 16px;
         line-height: 16px;
         margin-top:20px;
-        width: 185px;
+        width: 180px;
         transition: background-color 0.3s ease;
         text-align: center;
+    }
+
+    .support-button.feedback-carousel{
+        margin-top: -5px;
+        margin-left: 15px;
+        margin-bottom:20px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
     }
     
     .support-button:hover {
@@ -272,6 +281,86 @@ html, body{margin:0;padding:0;}.view-all-button{margin-top:30px;  min-height: 50
             margin-top: 18px;
             font-size: 18px;
             width: 100%;
+        }
+
+        .support-button.feedback-carousel{
+        margin-right: 2.5%;
+        margin-left: 2.5%;
+        margin-bottom: 30px;
+        margin-top: -5px;
+        width:95%;
+        }
+    }
+</style>
+
+<style>
+    .video-slider-container {
+      position: relative;
+      width: 100%;
+      overflow:scroll;
+    }
+    
+    .video-slider {
+      display: flex;
+      flex-wrap: nowrap;
+      scroll-snap-type: x mandatory;
+      overflow-x: scroll; /* Brings back the scroll functionality */
+      scroll-behavior: smooth;
+      scrollbar-width: none; /* Firefox hides the scroll bar */
+      margin-left: 15px;
+      margin-bottom: 20px;
+      margin-top:5px;
+    }
+    
+    .video-slider::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera hides the scroll bar */
+    }
+    
+    .video-slider video {
+      width: 215px;
+      margin-right: 10px;
+      scroll-snap-align: start;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 0 6px 0 rgb(121 121 121 / 40%);
+    }
+    
+    .scroll-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+      width: 50px;
+      line-height: 100%;
+    }
+    
+    .left-btn {
+      left: 10px;
+      display: none;
+    }
+    
+    .right-btn {
+      right: 10px;
+      display: none;
+    }
+    
+    /* Hide the buttons by default, they'll appear based on the scroll position */
+    .scroll-btn.hidden {
+      display: none;
+    }
+    
+    .scroll-btn:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    @media only screen and (max-width: 900px) {
+        .video-slider video {
+            width: 280px;
         }
     }
 </style>
