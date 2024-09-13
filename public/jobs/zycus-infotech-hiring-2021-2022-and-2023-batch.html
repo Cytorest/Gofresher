@@ -231,7 +231,7 @@ html, body{margin:0;padding:0;}.view-all-button{margin-top:30px;  min-height: 50
     
     @media only screen and (max-width: 900px) {
         .support-widget {
-            height: 646px;
+            height: 685px;
             border-radius: 10px 10px 0 0;
         }
     
@@ -260,6 +260,70 @@ html, body{margin:0;padding:0;}.view-all-button{margin-top:30px;  min-height: 50
             font-size: 18px;
             width: 100%;
         }
+    }
+</style>
+<style>
+    .video-slider-container {
+      position: relative;
+      width: 100%;
+      overflow:scroll;
+    }
+    
+    .video-slider {
+      display: flex;
+      flex-wrap: nowrap;
+      scroll-snap-type: x mandatory;
+      overflow-x: scroll; /* Brings back the scroll functionality */
+      scroll-behavior: smooth;
+      scrollbar-width: none; /* Firefox hides the scroll bar */
+      margin-left: 15px;
+      margin-bottom: 20px;
+      margin-top:5px;
+    }
+    
+    .video-slider::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera hides the scroll bar */
+    }
+    
+    .video-slider video {
+      width: 250px;
+      margin-right: 10px;
+      scroll-snap-align: start;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    
+    .scroll-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+      width: 50px;
+      line-height: 100%;
+    }
+    
+    .left-btn {
+      left: 10px;
+      display: none;
+    }
+    
+    .right-btn {
+      right: 10px;
+      display: none;
+    }
+    
+    /* Hide the buttons by default, they'll appear based on the scroll position */
+    .scroll-btn.hidden {
+      display: none;
+    }
+    
+    .scroll-btn:hover {
+      background-color: rgba(0, 0, 0, 0.7);
     }
 </style>
 
@@ -378,6 +442,21 @@ html, body{margin:0;padding:0;}.view-all-button{margin-top:30px;  min-height: 50
             <a class="navigation-item" href="/topic/apple-fresher-jobs.html">Apple Hiring Freshers</a>
         </div>
     </div>
+
+    <div class="div-text upper-ad-text">A Few Words From Our Placed Candidates</div>
+    <div class="video-slider-container">
+    <button class="scroll-btn left-btn" id="leftBtn" onclick="scrollLeft()">&#9664;</button>
+    <div class="video-slider" id="videoSlider">
+        <video src="https://gofresher.co/wp-content/uploads/2024/09/Gofresher-Candidate-Placement-Ritabrata-Das.mp4" autoplay muted loop controls></video>
+        <video src="https://gofresher.co/wp-content/uploads/2024/09/Gofresher-candidate-placement-Kiran.mp4" controls></video>
+        <video src="https://gofresher.co/wp-content/uploads/2024/09/Gofresher-candidate-placement-Vaidyanathan-Infosys.mp4" controls></video>
+        <video src="https://gofresher.co/wp-content/uploads/2024/09/Gofresher-candidate-placement-Anil.mp4" controls></video>
+        <video src="https://gofresher.co/wp-content/uploads/2024/09/Gofresher-candidate-placement-Mili.mp4" controls></video>
+        <video src="https://gofresher.co/wp-content/uploads/2024/09/Gofresher-candidate-placement-Mir-Cognizant.mp4" controls></video>
+        <video src="https://gofresher.co/wp-content/uploads/2024/09/Gofresher-candidate-placement-Faizul.mp4" controls></video>
+    </div>
+    <button class="scroll-btn right-btn" id="rightBtn" onclick="scrollRight()">&#9654;</button>
+    </div>  
 
     <div class="div-text upper-ad-text">Not An Advertisement</div>  
     <div class="header-ad" id="header-ad-id">
@@ -779,6 +858,48 @@ html, body{margin:0;padding:0;}.view-all-button{margin-top:30px;  min-height: 50
         }
         setTimeout(function(){$(".widget_whatsapp").show();},50000);
     </script>
+
+<script>
+    // Wait until the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.getElementById('videoSlider');
+    const leftBtn = document.getElementById('leftBtn');
+    const rightBtn = document.getElementById('rightBtn');
+
+    // Function to scroll left
+    leftBtn.addEventListener('click', function() {
+        slider.scrollBy({ left: -slider.clientWidth, behavior: 'smooth' });
+    });
+
+    // Function to scroll right
+    rightBtn.addEventListener('click', function() {
+        slider.scrollBy({ left: slider.clientWidth, behavior: 'smooth' });
+    });
+
+    // Function to update the visibility of scroll buttons
+    function updateScrollButtons() {
+        // Hide left button if scrolled all the way to the left
+        if (slider.scrollLeft <= 0) {
+        leftBtn.classList.add('hidden');
+        } else {
+        leftBtn.classList.remove('hidden');
+        }
+        
+        // Hide right button if scrolled all the way to the right
+        if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
+        rightBtn.classList.add('hidden');
+        } else {
+        rightBtn.classList.remove('hidden');
+        }
+    }
+
+    // Add event listener to update button visibility on scroll
+    slider.addEventListener('scroll', updateScrollButtons);
+
+    // Initial check when the page loads
+    updateScrollButtons();
+    });
+</script>
 
 </body>
 </html>
