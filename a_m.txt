@@ -1,5 +1,5 @@
-<div class="div-text upper-ad-text">Not An Advertisement</div>  
-    <div class="header-ad" id="header-ad-id">
+<div class="div-text upper-ad-text green">Not An Advertisement</div>  
+    <div class="header-ad green-border" id="header-ad-id">
         <div class="support-widget">
             <div class="widget-content">
                 <img src="https://gofresher.in/resume-icon.png" alt="Support Us" class="widget-image">
