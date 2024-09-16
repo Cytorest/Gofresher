@@ -478,7 +478,7 @@ html, body{margin:0;padding:0;}.view-all-button{margin-top:30px;  min-height: 50
         </div>
     </div>
 
-    <div class="div-text upper-ad-text green">A Few Words From Our Placed Candidates</div>
+    <div class="div-text upper-ad-text green">A Few Words From Our Placed Members</div>
     <div class="video-slider-container">
     <button class="scroll-btn left-btn" id="leftBtn" onclick="scrollLeft()">&#9664;</button>
     <div class="video-slider" id="videoSlider">
@@ -887,48 +887,6 @@ html, body{margin:0;padding:0;}.view-all-button{margin-top:30px;  min-height: 50
         }
         setTimeout(function(){$(".widget_whatsapp").show();},50000);
     </script>
-
-<script>
-    // Wait until the DOM is fully loaded
-    document.addEventListener('DOMContentLoaded', function() {
-    const slider = document.getElementById('videoSlider');
-    const leftBtn = document.getElementById('leftBtn');
-    const rightBtn = document.getElementById('rightBtn');
-
-    // Function to scroll left
-    leftBtn.addEventListener('click', function() {
-        slider.scrollBy({ left: -slider.clientWidth, behavior: 'smooth' });
-    });
-
-    // Function to scroll right
-    rightBtn.addEventListener('click', function() {
-        slider.scrollBy({ left: slider.clientWidth, behavior: 'smooth' });
-    });
-
-    // Function to update the visibility of scroll buttons
-    function updateScrollButtons() {
-        // Hide left button if scrolled all the way to the left
-        if (slider.scrollLeft <= 0) {
-        leftBtn.classList.add('hidden');
-        } else {
-        leftBtn.classList.remove('hidden');
-        }
-        
-        // Hide right button if scrolled all the way to the right
-        if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
-        rightBtn.classList.add('hidden');
-        } else {
-        rightBtn.classList.remove('hidden');
-        }
-    }
-
-    // Add event listener to update button visibility on scroll
-    slider.addEventListener('scroll', updateScrollButtons);
-
-    // Initial check when the page loads
-    updateScrollButtons();
-    });
-</script>
 
 </body>
 </html>
