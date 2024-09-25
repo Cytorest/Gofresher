@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+        var OneSignal = window.OneSignal || [];
+        OneSignal.push(function() {
+            OneSignal.init({
+                appId: "YOUR_ONESIGNAL_APP_ID", // Replace with your OneSignal App ID
+                allowLocalhostAsSecureOrigin: true, // Optional, for local testing
+                notifyButton: {
+                    enable: true, // Enable the OneSignal notification button
+                }
+            });
+
+            // Automatically prompt the user for notification permissions
+            OneSignal.registerForPushNotifications();
+
+            // Check subscription status
+            OneSignal.isPushNotificationsEnabled().then(function(isEnabled) {
+                if (isEnabled) {
+                    // User is subscribed, hide the button
+                    document.getElementById('subscribe').style.display = 'none';
+                } else {
+                    // User is not subscribed, show the button
+                    document.getElementById('subscribe').style.display = 'block';
+                }
+            });
+        });
+
+        function subscribeUser() {
+            OneSignal.registerForPushNotifications();
+        }
+    </script>
+</head>
+<body>
+    <button id="subscribe" onclick="subscribeUser()" style="display: none;">Subscribe to Notifications</button>
+</body>
+</html>
