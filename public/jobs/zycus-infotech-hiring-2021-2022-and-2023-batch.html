@@ -500,7 +500,8 @@ html, body{margin:0;padding:0;}.view-all-button{margin-top:30px;  min-height: 50
     style="width:100%; height:360px; position:absolute; left:0px; top:0px; overflow:hidden; border:none;"
     allowfullscreen
     title="Dailymotion Video Player"
-    allow="web-share">
+    allow="web-share"
+    id="dailymotion-video">
     </iframe>
     </div>
 
@@ -898,29 +899,35 @@ html, body{margin:0;padding:0;}.view-all-button{margin-top:30px;  min-height: 50
     </script>
 
     <script>
+        // Wait for the DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', () => {
             const videoFrame = document.getElementById('dailymotion-video');
 
-            // Wait for the iframe to load
-            videoFrame.onload = () => {
-                // Retry getting the video element after a short delay
-                setTimeout(() => {
-                    const videoElement = videoFrame.contentWindow.document.querySelector('video');
+            // Ensure the iframe is present
+            if (videoFrame) {
+                // Wait for the iframe to load
+                videoFrame.onload = () => {
+                    // Retry getting the video element after a short delay
+                    setTimeout(() => {
+                        const videoElement = videoFrame.contentWindow.document.querySelector('video');
 
-                    if (videoElement) {
-                        // Add event listener for when the video is playing
-                        videoElement.addEventListener('play', async () => {
-                            try {
-                                await videoElement.requestPictureInPicture(); // Request PiP when video plays
-                            } catch (error) {
-                                console.error('Error entering Picture-in-Picture mode:', error);
-                            }
-                        });
-                    } else {
-                        console.error('Video element not found inside the iframe.');
-                    }
-                }, 1000); // Delay to give time for the video element to load
-            };
+                        if (videoElement) {
+                            // Add event listener for when the video is playing
+                            videoElement.addEventListener('play', async () => {
+                                try {
+                                    await videoElement.requestPictureInPicture(); // Request PiP when video plays
+                                } catch (error) {
+                                    console.error('Error entering Picture-in-Picture mode:', error);
+                                }
+                            });
+                        } else {
+                            console.error('Video element not found inside the iframe.');
+                        }
+                    }, 1000); // Delay to give time for the video element to load
+                };
+            } else {
+                console.error('Iframe with ID "dailymotion-video" not found.');
+            }
         });
     </script>
 
