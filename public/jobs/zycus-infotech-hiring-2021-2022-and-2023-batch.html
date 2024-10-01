@@ -897,5 +897,33 @@ html, body{margin:0;padding:0;}.view-all-button{margin-top:30px;  min-height: 50
         setTimeout(function(){$(".widget_whatsapp").show();},50000);
     </script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const videoFrame = document.getElementById('dailymotion-video');
+
+            // Wait for the iframe to load
+            videoFrame.onload = () => {
+                // Retry getting the video element after a short delay
+                setTimeout(() => {
+                    const videoElement = videoFrame.contentWindow.document.querySelector('video');
+
+                    if (videoElement) {
+                        // Add event listener for when the video is playing
+                        videoElement.addEventListener('play', async () => {
+                            try {
+                                await videoElement.requestPictureInPicture(); // Request PiP when video plays
+                            } catch (error) {
+                                console.error('Error entering Picture-in-Picture mode:', error);
+                            }
+                        });
+                    } else {
+                        console.error('Video element not found inside the iframe.');
+                    }
+                }, 1000); // Delay to give time for the video element to load
+            };
+        });
+    </script>
+
+
 </body>
 </html>
