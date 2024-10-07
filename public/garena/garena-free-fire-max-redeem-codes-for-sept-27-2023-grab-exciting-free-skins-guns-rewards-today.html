@@ -488,9 +488,9 @@ html, body{margin:0;padding:0;}.view-all-button{margin-top:30px;  min-height: 50
     </div>
 
     <!-- Article BTS Ad -->
-    <div class="main" id="main-wrapper-2">
+    <!-- <div class="main" id="main-wrapper-2">
         <a href="https://gofresher.in/off-campus-job-updates.html" target="_blank"><div class="more-jobs-text">Jobs Matching Your Profile</div></a>
-    </div>
+    </div> -->
 
     <!-- Article BTS Ad -->
 
@@ -649,37 +649,37 @@ html, body{margin:0;padding:0;}.view-all-button{margin-top:30px;  min-height: 50
         //             if(i<=12){      
         //             content.innerHTML += "<div class='content-2 col-sm-3' id='job-wrapper-"+i+"'><span id='hiring-organisation-logo-"+i+"' class='logo-top'><img src="+ doc.data()['hol'] +" alt='company logo top' id='more-company-logo-"+i+"' class='more-company-logo'></span><br><br><a href='https://gofresher.in/jobs/"+doc.data()['slug']+"' target='_blank'><span id='custom-top-text'>"+doc.data()['ctt']+"</span></a><br><br><a href='https://www.facebook.com/sharer/sharer.php?quote="+doc.data()['jt']+"&u=https://gofresher.in/jobs/"+doc.data()['slug']+"' target='_blank'><div class='fa fa-facebook' id='fa-facebook'></div></a><a href='https://twitter.com/intent/tweet?text="+encodeURIComponent(doc.data()['jt'])+"&url=https://gofresher.in/jobs/"+doc.data()['slug']+"' target='_blank'><div class='fa fa-twitter' id='fa-twitter'></div></a><a href='mailto:?subject="+encodeURIComponent(doc.data()['jt'])+"&body=Check Out This Job Update From Gofresher.in: https://gofresher.in/jobs/"+doc.data()['slug']+"'><div class='fa fa-wifi' id='fa-wifi'></div></a><a href='https://www.linkedin.com/shareArticle?mini=true&url=https://gofresher.in/jobs/"+doc.data()['slug']+"&title="+encodeURIComponent(doc.data()['jt'])+"' target='_blank'><div class='fa fa-linkedin' id='fa-linkedin'></div></a><a href='https://telegram.me/share/url?url=https://gofresher.in/jobs/"+doc.data()['slug']+"&text="+encodeURIComponent(doc.data()['jt'])+"' target='_blank'><div class='fab fa-telegram-plane' id='fa-telegram-plane'></div></a><a href='https://wa.me?text="+encodeURIComponent(doc.data()['jt'])+". Apply Here: https://gofresher.in/jobs/"+doc.data()['slug']+"&title="+doc.data()['jt']+"' target='_blank'><div class='fa fa-whatsapp' id='fa-whatsapp'></div></a><br><br><span class='pub_date'>Published Date: </span><span class='pub_date'>"+date+" at "+time+"</span><br><br><span class='postings'>Hiring Organisation Name: </span><span class='postings-text' id='hiring-organisation-name="+i+"'>"+doc.data()['hon']+"</span><br><br><span class='postings'>Job Title: </span> <span class='postings-text' id='job-title-"+i+"'>"+doc.data()['jt']+"</span><br><br><span class='postings'>Job Description: </span> <span class='postings-text' id='job-description"+i+"'>"+doc.data()['jd']+"</span><br><br><span class='postings'>Date Posted: </span><span class='postings-text' id='date-posted'>"+doc.data()['dp']+"</span><br><br><span class='postings'>Date Closing: </span> <span class='postings-text' id='date-closing'>"+doc.data()['dc']+"</span><br><br><span class='postings'>Employment Type: </span> <span class='postings-text' id='employment-type'>"+doc.data()['et']+"</span><br><br><span class='postings'>Hiring Organisation Type: </span> <span class='postings-text' id='hiring-organisation-type'>"+doc.data()['hot']+"</span><br><br><span class='postings'>Hiring Organisation Url: </span><span class='postings-text' id='hiring-organisation-url'>"+doc.data()['hou']+"</span><br><br><span class='postings'>Job Location Address: </span><span class='postings-text' id='location-address'>"+doc.data()['jla']+"</span><br><br><span class='postings'>Job Location City: </span><span class='postings-text' id='location-city'>"+doc.data()['jlc']+"</span><br><br><span class='postings'>Job Location Region: </span><span class='postings-text' id='location-region'>"+doc.data()['jlr']+"</span><br><br><span class='postings'>Job Location Postal Code: </span><span class='postings-text' id='location-postal-code'>"+doc.data()['jlpc']+"</span><br><br><span class='postings'>Job Location Address Country: </span><span class='postings-text' id='location-address-country'>"+doc.data()['jlac']+"</span><br><br><span class='postings'>Salary Currency: </span><span class='postings-text' id='salary-currency'>"+doc.data()['sc']+"</span><br><br><span class='postings'>Salary Value: </span><span class='postings-text' id='salary-value'>"+doc.data()['sv']+"</span><br><br><span class='postings'>Salary Unit: </span><span class='postings-text' id='salary-unit'>"+doc.data()['su']+"</span><br><br><span class='postings'>Application Link: </span><span class='postings-text' id='application-link'><a href="+doc.data()['al']+" target='_blank'>"+doc.data()['al']+"</a></span><br><br><div class='bottom-gradient' id='bottom-graident-"+i+"'><a href='https://gofresher.in/jobs/"+doc.data()['slug']+"' target='_blank'><div class='read-full-article-more'>View This Job</div></a></div></div>";
         //             }
-                    if(lastKnownScrollPosition==0){
-                    document.getElementById('hiring-organisation-logo-'+i).style.background="#ddd";
-                    document.getElementById('more-company-logo-'+i).style.display="none";
-                    }
-                    $(document).on('click','#read-id-'+i, function(){             
-                        element = $(this).attr("id").replace('read-id-','');
-                        console.log(element);
-                        console.log(previous);
-                        if(previous != undefined){
-                            $("#job-wrapper-"+previous).css("background-color", "#ffffff");
-                        }
-                        if(counter==1){
-                            $("#read-id-"+element).hide();
-                            $("#bottom-graident-"+element).hide();
-                            $("#job-wrapper-"+element).css('height','auto');
-                            $("#job-wrapper-"+element).css("background-color", "#effdff");
-                            previous = element;
-                            console.log(previous);
-                            window.history.pushState("", "", 'https://gofresher.in/jobs/'+doc.data()['slug']);
-                            return;
-                        }
-                        else{
-                        if(counter==0)
-                        {
-                        console.log("Login To Read");
-                        $(".background-gradient").show();
-                        $(".central-popup-cover").show();
-                        $(".close").show();
-                        }
-                        }
-                    });
+        // if(lastKnownScrollPosition==0){
+        // document.getElementById('hiring-organisation-logo-'+i).style.background="#ddd";
+        // document.getElementById('more-company-logo-'+i).style.display="none";
+        // }
+        // $(document).on('click','#read-id-'+i, function(){             
+        //     element = $(this).attr("id").replace('read-id-','');
+        //     console.log(element);
+        //     console.log(previous);
+        //     if(previous != undefined){
+        //         $("#job-wrapper-"+previous).css("background-color", "#ffffff");
+        //     }
+        //     if(counter==1){
+        //         $("#read-id-"+element).hide();
+        //         $("#bottom-graident-"+element).hide();
+        //         $("#job-wrapper-"+element).css('height','auto');
+        //         $("#job-wrapper-"+element).css("background-color", "#effdff");
+        //         previous = element;
+        //         console.log(previous);
+        //         window.history.pushState("", "", 'https://gofresher.in/jobs/'+doc.data()['slug']);
+        //         return;
+        //     }
+        //     else{
+        //     if(counter==0)
+        //     {
+        //     console.log("Login To Read");
+        //     $(".background-gradient").show();
+        //     $(".central-popup-cover").show();
+        //     $(".close").show();
+        //     }
+        //     }
+        // });
         //         i++;
         //         if(i == 3){
         //         }
