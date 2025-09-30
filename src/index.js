@@ -17,7 +17,7 @@ const myfirstelement = (
 
   <div className="one col-sm-12">
       <div className="contact col-sm-10">
-        <div className="phone-container"><i className="fas fa-phone"></i> <span className="number">+91-9793336266</span></div>
+        <div className="phone-container"><i className="fas fa-phone"></i> <span className="number"></span></div>
         <div className="email-container"><i className="fas fa-envelope"></i> <span className="email">support@gofresher.in</span></div>
       </div>
       
